@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.5.0'
+
+    //okhttputils  不知道为啥，按理okhttputils里有引用okhttp的啊 ，根本不用本gradle再次引用才对
+    api 'com.zhy:okhttputils:2.6.2'
+
+    //Stetho调试框架  stetho+OkHttp+Chrome调试你的接口 参考：https://www.jianshu.com/p/6bc14895af96
+    //                                                  https://www.imooc.com/article/details/id/22235
+    //我有一点疑问，这不会造成数据泄露吗？
+    //调试android应用数据库
+    implementation 'com.facebook.stetho:stetho:1.4.1'
+    //Okhttp网络请求 这个是设置网络拦截器？builder.addNetworkInterceptor(new StethoInterceptor());
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.4.1'
+
+    //okhttp3 添加日志拦截器  参考https://www.jianshu.com/p/12a2155a01aa
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    //converter转换器
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    //适配器 对象的适配器模式  参考JAVA_APP com.example.java_lib.designpattern.adapter AdapterTest
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+    //Android 开发者的 RxJava
+    //使用了Observable和Schedulers
+    implementation 'io.reactivex:rxjava:1.1.6'
+    //使用了AndroidSchedulers
+    implementation 'io.reactivex:rxandroid:1.0.0'
+
+}
