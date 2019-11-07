@@ -280,7 +280,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn03://进程间ContentProvider通信-数据准备 db插入数据
                 ContentProviderServerActivity.startActivity(this);
                 break;
-            case R.id.btn04://进程间ContentProvider通信-子进程
+            case R.id.btn04://进程间ContentProvider通信-子进程（但子进程是可以直接读取数据库）
                 ContentProviderClientActivity.startActivity(this);
                 break;
         }
