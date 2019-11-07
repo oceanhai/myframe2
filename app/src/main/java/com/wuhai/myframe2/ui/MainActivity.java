@@ -7,6 +7,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
+import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
+import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -274,6 +276,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn02://捎货帮网络请求框架
                 RetrofitNetworkRequestActivity.startActivity(this);
+                break;
+            case R.id.btn03://进程间ContentProvider通信-数据准备 db插入数据
+                ContentProviderServerActivity.startActivity(this);
+                break;
+            case R.id.btn04://进程间ContentProvider通信-子进程
+                ContentProviderClientActivity.startActivity(this);
                 break;
         }
     }

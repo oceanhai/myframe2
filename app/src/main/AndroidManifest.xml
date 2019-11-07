@@ -21,6 +21,23 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.ConstraintLayoutActivity" />
+
+        <!--内容提供者 服务端-->
+        <activity android:name=".ui.contentprovider.ContentProviderServerActivity" />
+        <!--内容提供者 客户端-->
+        <activity
+            android:name=".ui.contentprovider.ContentProviderClientActivity"
+            android:process=":newprocess" />
+         <!--exported:属性值为true，则对外暴露数据 -->
+        <provider
+            android:name=".ui.contentprovider.MyProvider"
+            android:authorities="com.wuhai.myframe2.ui.contentprovider.MyProvider"
+            android:exported="true" />
+        <provider
+            android:name=".ui.contentprovider.MyProvider2"
+            android:authorities="com.wuhai.myframe2.ui.contentprovider.MyProvider2"
+            android:exported="true" />
+
     </application>
 
 </manifest>
