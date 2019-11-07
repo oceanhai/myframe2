@@ -42,7 +42,7 @@ dependencies {
     //                                                  https://www.imooc.com/article/details/id/22235
     //我有一点疑问，这不会造成数据泄露吗？
     //调试android应用数据库
-    implementation 'com.facebook.stetho:stetho:1.4.1'
+    api 'com.facebook.stetho:stetho:1.4.1'
     //Okhttp网络请求 这个是设置网络拦截器？builder.addNetworkInterceptor(new StethoInterceptor());
     implementation 'com.facebook.stetho:stetho-okhttp3:1.4.1'
 
@@ -52,7 +52,7 @@ dependencies {
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     //converter转换器
-    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    api 'com.squareup.retrofit2:converter-gson:2.1.0'
 
     //适配器 对象的适配器模式  参考JAVA_APP com.example.java_lib.designpattern.adapter AdapterTest
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'

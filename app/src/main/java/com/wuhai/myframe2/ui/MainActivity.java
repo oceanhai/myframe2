@@ -272,6 +272,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn01://ConstraintLayout约束布局
                 ConstraintLayoutActivity.startActivity(this);
                 break;
+            case R.id.btn02://捎货帮网络请求框架
+                RetrofitNetworkRequestActivity.startActivity(this);
+                break;
         }
     }
 }

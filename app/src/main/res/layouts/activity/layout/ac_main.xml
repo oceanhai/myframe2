@@ -17,7 +17,7 @@
                 android:id="@+id/btn01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="轮播图"
+            <Button android:text="捎货帮网络请求框架"
                 android:id="@+id/btn02"
                 android:clickable="true"
                 android:layout_width="wrap_content"
