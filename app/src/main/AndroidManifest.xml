@@ -12,27 +12,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.RetrofitNetworkRequestActivity"></activity>
-        <activity android:name=".ui.MainActivity">
+
+        <!--Intent+bundle实现跨进程通讯 接收方-->
+        <activity android:name=".ui.ActionReceiveActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.wuhai.myframe2.MYACTION" />
+                <data android:scheme="info" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--捎货帮网络请求框架-->
+        <activity android:name=".ui.RetrofitNetworkRequestActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ConstraintLayoutActivity" />
 
-        <!--内容提供者 服务端-->
-        <activity android:name=".ui.contentprovider.ContentProviderServerActivity" />
-        <!--内容提供者 客户端-->
+        <!--约束布局-->
+        <activity android:name=".ui.ConstraintLayoutActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 内容提供者 创建db插入数据 -->
+        <activity android:name=".ui.contentprovider.ContentProviderServerActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 内容提供者 校验MyProvider/MyProvider2 两个内容提供者 -->
         <activity
             android:name=".ui.contentprovider.ContentProviderClientActivity"
             android:process=":newprocess" />
-         <!--exported:属性值为true，则对外暴露数据 -->
+        <!-- exported:属性值为true，则对外暴露数据 -->
         <provider
             android:name=".ui.contentprovider.MyProvider"
             android:authorities="com.wuhai.myframe2.ui.contentprovider.MyProvider"
             android:exported="true" />
+        <!--myclient项目app 将从MyProvider2获取数据-->
         <provider
             android:name=".ui.contentprovider.MyProvider2"
             android:authorities="com.wuhai.myframe2.ui.contentprovider.MyProvider2"

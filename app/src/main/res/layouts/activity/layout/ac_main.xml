@@ -30,7 +30,7 @@
                 android:id="@+id/btn04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="Intent+bundle实现跨进程通讯：接收方"
                 android:id="@+id/btn05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
