@@ -12,6 +12,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
+import com.wuhai.myframe2.network.MyRequestHandler;
 import com.wuhai.retrofit.retrofit.BaseApi;
 import com.wuhai.retrofit.retrofit.NetProvider;
 import com.wuhai.retrofit.retrofit.RequestHandler;
@@ -84,18 +85,10 @@ public class BaseApplication extends Application {
 
             @Override
             public RequestHandler configHandler() {
-//                RequestHandler myRequestHandler = new MyRequestHandler.Builder()
-//                        .addGetParam(Common.Constant.TOKEN, AccountManager.getInstance().getToken())
-//                        .addGetParam(Common.Constant.ACCESS_TOKEN, SettingManager.getInstance().getAccessToken())
-//                        .addGetParam(Common.Constant.CV, AppUtils.getVersionName())
-//                        .addGetParam(Common.Constant.V, WMsApi.API_VERSION)//api版本
-//                        .addGetParam(Common.Constant.APP_KEY, WMsApi.APP_KEY)//服务端分配
-////                        .addGetParam("test", "1")
-//                        .addGetParam(Common.Constant.CLIENT, WMsApi.CLIENT)
-////                        .addPostParam("client", "")
-//                        .build();
-//                return myRequestHandler;
-                return null;
+                RequestHandler myRequestHandler = new MyRequestHandler.Builder()
+                        .addGetParam("token", "61FB3EC035FD9AC8EA1B18C4EFDEDB0E")
+                        .build();
+                return myRequestHandler;
             }
 
             @Override

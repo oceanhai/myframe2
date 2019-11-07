@@ -25,7 +25,7 @@ public enum OkHttpFactory {
         NetProvider provider = BaseApi.INSTANCE.getProvider();
 
         HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
-        //打印请求Log
+        //OkHttp打印请求Log
         HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor();
         if (provider.configLogEnable()) {
             logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);

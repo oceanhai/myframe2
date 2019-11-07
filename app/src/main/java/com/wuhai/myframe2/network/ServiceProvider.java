@@ -19,7 +19,7 @@ public class ServiceProvider extends APIBaseService implements IServiceProvider 
     public void activityhome(APICallBack<ActivityHomeResult> callback) {
         LogUtil.i(TAG,"<------ make activityhome request ------>");
         ApiParams getApiParams = new ApiParams(ApiParams.Method.GET_PARMS)
-                .with("token", "")
+//                .with("token", "")//TODO 我们试着在拦截器添加token
                 .print();
 
         Call<ActivityHomeResult> call =  api.
