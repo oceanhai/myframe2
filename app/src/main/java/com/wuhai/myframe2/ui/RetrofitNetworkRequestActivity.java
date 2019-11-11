@@ -16,6 +16,10 @@ import com.wuhai.myframe2.presenter.HomePresenter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * android lib retrofitnetworkrequest(捎货帮 网络请求框架 )
+ * 的测试ac
+ */
 public class RetrofitNetworkRequestActivity extends AppCompatActivity implements View.OnClickListener, IHomeContract.View {
 
     @BindView(R.id.btn01)

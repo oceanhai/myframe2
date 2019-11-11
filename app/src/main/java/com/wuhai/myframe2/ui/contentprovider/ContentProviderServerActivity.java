@@ -17,6 +17,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 进程间ContentProvider通信-数据准备 db插入数据
+ */
 public class ContentProviderServerActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.btn01)

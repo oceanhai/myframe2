@@ -19,6 +19,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 进程间ContentProvider通信-子进程（但子进程是可以直接读取数据库）
+ * ※所以也只能作为一个测试ContentProvider的ac
+ *   若想测试ContentProvider跨进程通信，
+ *      请查看myclient工程的ContentProviderClientActivity类 或者
+ */
 public class ContentProviderClientActivity extends AppCompatActivity {
 
     private final static String TAG = "ContentProvider";

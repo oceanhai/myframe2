@@ -13,6 +13,9 @@ import com.wuhai.myframe2.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Intent+bundle实现跨进程通讯 接收方ac
+ */
 public class ActionReceiveActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.tv01)

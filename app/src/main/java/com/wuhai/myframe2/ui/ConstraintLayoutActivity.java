@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
 
+/**
+ * 约束布局
+ */
 public class ConstraintLayoutActivity extends AppCompatActivity {
 
     public static void startActivity(Context context){
