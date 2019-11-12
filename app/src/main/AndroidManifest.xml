@@ -57,6 +57,10 @@
             android:authorities="com.wuhai.myframe2.ui.contentprovider.MyProvider2"
             android:exported="true" />
 
+        <!-- rxjava -->
+        <activity
+            android:name=".ui.rxjava.RxJavaActivity"
+            android:process=":newprocess" />
     </application>
 
 </manifest>

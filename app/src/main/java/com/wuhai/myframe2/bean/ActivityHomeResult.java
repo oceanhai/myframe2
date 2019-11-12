@@ -43,4 +43,14 @@ public class ActivityHomeResult {
     public void setResult(ActivityHomeEntity result) {
         this.result = result;
     }
+
+    @Override
+    public String toString() {
+        return "ActivityHomeResult{" +
+                "code=" + code +
+                ", success=" + success +
+                ", message='" + message + '\'' +
+                ", result=" + result +
+                '}';
+    }
 }

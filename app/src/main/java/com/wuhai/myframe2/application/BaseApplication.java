@@ -58,6 +58,10 @@ public class BaseApplication extends Application {
         initNetRequest();
     }
 
+    public static BaseApplication getApplication() {
+        return application;
+    }
+
     /**
      * 初始化网络请求配置
      */

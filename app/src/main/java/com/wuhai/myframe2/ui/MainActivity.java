@@ -3,12 +3,14 @@ package com.wuhai.myframe2.ui;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
+import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -282,6 +284,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn04://进程间ContentProvider通信-子进程（但子进程是可以直接读取数据库）
                 ContentProviderClientActivity.startActivity(this);
+                break;
+            case R.id.btn05://Intent+bundle实现跨进程通讯：接收方
+                Toast.makeText(this,"请去myclient点击btn02",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn06://rxjava
+                RxJavaActivity.startActivity(this);
                 break;
         }
     }

@@ -55,12 +55,12 @@ dependencies {
     api 'com.squareup.retrofit2:converter-gson:2.1.0'
 
     //适配器 对象的适配器模式  参考JAVA_APP com.example.java_lib.designpattern.adapter AdapterTest
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
 
     //Android 开发者的 RxJava
     //使用了Observable和Schedulers
-    implementation 'io.reactivex:rxjava:1.1.6'
+    api 'io.reactivex:rxjava:1.1.6'
     //使用了AndroidSchedulers
-    implementation 'io.reactivex:rxandroid:1.0.0'
+    api 'io.reactivex:rxandroid:1.0.0'
 
 }

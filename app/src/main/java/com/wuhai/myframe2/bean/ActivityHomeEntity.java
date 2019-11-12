@@ -133,4 +133,23 @@ public class ActivityHomeEntity {
     public void setFeelingsRespList(List<Feelings> feelingsRespList) {
         this.feelingsRespList = feelingsRespList;
     }
+
+    @Override
+    public String toString() {
+        return "ActivityHomeEntity{" +
+                "todayActivity=" + todayActivity +
+                ", tomorrowActivity=" + tomorrowActivity +
+                ", yesterdayActivity=" + yesterdayActivity +
+                ", featureContent1=" + featureContent1 +
+                ", featureContent2=" + featureContent2 +
+                ", featureContent3=" + featureContent3 +
+                ", featureContent4=" + featureContent4 +
+                ", feelingsRespCount=" + feelingsRespCount +
+                ", feelingsRespList=" + feelingsRespList +
+                ", shareContentResp=" + shareContentResp +
+                ", shareContentRespList=" + shareContentRespList +
+                ", endActivityList=" + endActivityList +
+                ", vipLevel=" + vipLevel +
+                '}';
+    }
 }
