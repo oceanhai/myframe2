@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--自定义访问权限 限制外部跳转ActionReceiveActivity2，外部应用需要添加权限才能跳转 myclient btn05(在清单文件申请了权限)-->
+    <permission android:name="com.permission.COME" />
 
     <application
         android:name=".application.BaseApplication"
@@ -22,6 +24,13 @@
                 <data android:scheme="info" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <!--Intent+bundle实现跨进程通讯 接收方2-->
+        <activity
+            android:name=".ui.ActionReceiveActivity2"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:permission="com.permission.COME">
         </activity>
 
         <!--捎货帮网络请求框架-->
@@ -51,7 +60,8 @@
         <provider
             android:name=".ui.contentprovider.MyProvider"
             android:authorities="com.wuhai.myframe2.ui.contentprovider.MyProvider"
-            android:exported="true"/>
+            android:exported="true"
+            />
         <!--myclient项目app 将从MyProvider2获取数据-->
         <provider
             android:name=".ui.contentprovider.MyProvider2"
