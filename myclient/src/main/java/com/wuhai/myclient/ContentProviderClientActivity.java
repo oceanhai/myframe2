@@ -1,4 +1,4 @@
-package com.wuhai.myframe2.ui.contentprovider;
+package com.wuhai.myclient;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -11,20 +11,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.wuhai.myframe2.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 进程间ContentProvider通信-子进程（但子进程是可以直接读取数据库）
- * ※所以也只能作为一个测试ContentProvider的ac
- *   若想测试ContentProvider跨进程通信，
- *      请查看myclient工程的ContentProviderClientActivity类 或者
- */
 public class ContentProviderClientActivity extends AppCompatActivity {
 
     private final static String TAG = "ContentProvider";
@@ -59,7 +51,6 @@ public class ContentProviderClientActivity extends AppCompatActivity {
         while (cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex("name"));
         }
-        cursor.close();
     }
 
     public void click2(View v) {
@@ -79,7 +70,6 @@ public class ContentProviderClientActivity extends AppCompatActivity {
             int age = c.getInt(1);
             tv01.setText("查询结果2：name=" + name + ",age=" + age);
         }
-        c.close();
     }
 
     public void click3(View v) {
@@ -114,8 +104,6 @@ public class ContentProviderClientActivity extends AppCompatActivity {
         }
 
         tv01.setText("查询结果6：\n" + stringBuilder.toString());
-
-        cursor.close();
     }
 
     public void click4(View v) {
@@ -130,8 +118,6 @@ public class ContentProviderClientActivity extends AppCompatActivity {
             String name = cursor.getString(0);
             tv01.setText("查询结果4：name=" + name);
         }
-
-        cursor.close();
     }
 
     public void click5(View v) {
@@ -146,8 +132,6 @@ public class ContentProviderClientActivity extends AppCompatActivity {
             int age = cursor.getInt(0);
             tv01.setText("查询结果5：age=" + age);
         }
-
-        cursor.close();
     }
 
     public void click6(View v) {
@@ -178,8 +162,6 @@ public class ContentProviderClientActivity extends AppCompatActivity {
         }
 
         tv01.setText("查询结果6：\n" + stringBuilder.toString());
-
-        cursor.close();
     }
 
     /**
@@ -187,15 +169,15 @@ public class ContentProviderClientActivity extends AppCompatActivity {
      * @param v
      */
     public void click7(View v) {
-        PersonDAO dao = new PersonDAO(this);
-        List<Person> list = dao.getAllData();
-        StringBuilder stringBuilder = new StringBuilder();
-        if (!list.isEmpty()) {
-            for (int x = 0; x < list.size(); x++) {
-                stringBuilder.append(list.get(x).getName() + "," + list.get(x).getAge() + "\n");
-            }
-        }
-
-        tv01.setText(stringBuilder.toString());
+//        PersonDAO dao = new PersonDAO(this);
+//        List<Person> list = dao.getAllData();
+//        StringBuilder stringBuilder = new StringBuilder();
+//        if (!list.isEmpty()) {
+//            for (int x = 0; x < list.size(); x++) {
+//                stringBuilder.append(list.get(x).getName() + "," + list.get(x).getAge() + "\n");
+//            }
+//        }
+//
+//        tv01.setText(stringBuilder.toString());
     }
 }
