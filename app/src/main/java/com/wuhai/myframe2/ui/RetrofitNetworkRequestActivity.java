@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +25,8 @@ public class RetrofitNetworkRequestActivity extends AppCompatActivity implements
 
     @BindView(R.id.btn01)
     Button btn01;
+    @BindView(R.id.tv01)
+    TextView tv01;
 
     HomePresenter presenter = null;
 
@@ -45,7 +48,7 @@ public class RetrofitNetworkRequestActivity extends AppCompatActivity implements
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn01:
                 presenter.activityhome(0);
                 break;
@@ -54,7 +57,13 @@ public class RetrofitNetworkRequestActivity extends AppCompatActivity implements
 
     @Override
     public void setActivityhome(ActivityHomeEntity result) {
+        if(result == null){
+            return;
+        }
 
+        if(result.getTodayActivity() != null){
+            tv01.setText(""+result.getTodayActivity().getGoodsName());
+        }
     }
 
     @Override
@@ -65,5 +74,13 @@ public class RetrofitNetworkRequestActivity extends AppCompatActivity implements
     @Override
     public void dimssLoading() {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(presenter != null){
+            presenter.onDestroy();
+        }
     }
 }
