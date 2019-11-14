@@ -291,6 +291,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn06://rxjava
                 RxJavaActivity.startActivity(this);
                 break;
+            case R.id.btn07://MVVM
+                MvvmActivity.startActivity(this);
+                break;
         }
     }
 }

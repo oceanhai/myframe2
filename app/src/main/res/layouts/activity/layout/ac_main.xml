@@ -38,7 +38,7 @@
                 android:id="@+id/btn06"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="xxx"
+            <Button android:text="MVVM(网络请求依然走的btn02对应的)"
                 android:id="@+id/btn07"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

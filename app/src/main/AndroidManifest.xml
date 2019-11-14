@@ -72,6 +72,10 @@
         <activity
             android:name=".ui.rxjava.RxJavaActivity"
             android:process=":newprocess" />
+
+        <!--MVVM-->
+        <activity android:name=".ui.MvvmActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
