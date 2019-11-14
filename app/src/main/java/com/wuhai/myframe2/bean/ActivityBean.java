@@ -1,5 +1,10 @@
 package com.wuhai.myframe2.bean;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
+import com.wuhai.myframe2.BR;
+
 /**
  * 作者 wuhai
  * 
@@ -7,7 +12,7 @@ package com.wuhai.myframe2.bean;
  * 
  * 描述：活动(今日、昨日、明日 里的数据体一致)
  */
-public class ActivityBean {
+public class ActivityBean extends BaseObservable {
 
     /**
      * bidStatus : 1
@@ -183,6 +188,7 @@ public class ActivityBean {
 
     public void setGoodsName(String goodsName) {
         this.goodsName = goodsName;
+        notifyPropertyChanged(BR.goodsName);
     }
 
     public int getBidStatus() {
@@ -257,6 +263,7 @@ public class ActivityBean {
         return endTime;
     }
 
+    @Bindable
     public String getGoodsName() {
         return goodsName;
     }

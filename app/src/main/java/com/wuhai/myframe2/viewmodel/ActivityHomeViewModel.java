@@ -52,4 +52,9 @@ public class ActivityHomeViewModel {
         });
     }
 
+    public void change(){
+//        acMvvmBinding.getHome().getTodayActivity().setGoodsName("阿伊呦");
+        entity.getTodayActivity().setGoodsName("阿伊呦");
+    }
+
 }

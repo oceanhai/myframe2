@@ -23,7 +23,8 @@ import com.wuhai.myframe2.viewmodel.ActivityHomeViewModel;
 public class MvvmActivity extends AppCompatActivity implements View.OnClickListener, IHomeContract.View {
 
     private AcMvvmBinding binding;
-    HomePresenter presenter = null;
+    private HomePresenter presenter = null;
+    private ActivityHomeViewModel viewModel;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, MvvmActivity.class);
@@ -38,10 +39,11 @@ public class MvvmActivity extends AppCompatActivity implements View.OnClickListe
         binding = DataBindingUtil.setContentView(this, R.layout.ac_mvvm);
 
         binding.btn01.setOnClickListener(this);
+        binding.btn02.setOnClickListener(this);
 
         presenter = new HomePresenter(this);
 
-        ActivityHomeViewModel viewModel = new ActivityHomeViewModel(this,binding);
+        viewModel = new ActivityHomeViewModel(this,binding);
     }
 
     @Override
@@ -49,6 +51,9 @@ public class MvvmActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btn01:
                 presenter.activityhome(0);
+                break;
+            case R.id.btn02:
+                viewModel.change();
                 break;
         }
     }
