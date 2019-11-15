@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.btn03.setOnClickListener(this);
         binding.btn04.setOnClickListener(this);
         binding.list2.setOnClickListener(this);
+        binding.changUser.setOnClickListener(this);
     }
 
     @Override
@@ -68,6 +69,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Student student = binding.getStu();
                 student.setName(nameStr);
                 student.setAddr(addrStr);
+                break;
+            case R.id.chang_user:
+                String firstNameStr = name.getText().toString().trim();
+                String lastNameStr = addr.getText().toString().trim();
+
+                User user = binding.getUser();
+                user.firstName.set(firstNameStr);
+                user.lastName.set(lastNameStr);
                 break;
             case R.id.btn02:
                 ListActivity.startActivity(this);

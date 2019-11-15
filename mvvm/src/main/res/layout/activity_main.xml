@@ -48,7 +48,12 @@
 
         <Button
             android:id="@+id/btn01"
-            android:text="更新信息"
+            android:text="更新信息student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/chang_user"
+            android:text="更新信息user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
