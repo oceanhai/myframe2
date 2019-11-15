@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -18,12 +19,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText addr;
     private ActivityMainBinding binding;
 
+    private Student mStudent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setStu(new Student("路飞","海贼王","https://www.baidu.com/img/bd_logo1.png"));//model和布局绑定
+        mStudent = new Student("路飞","海贼王","https://www.baidu.com/img/bd_logo1.png");
+        binding.setStu(mStudent);//model和布局绑定
 
         //取布局id 方式1
 //        View view = binding.getRoot();
@@ -38,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btn01.setOnClickListener(this);
         binding.btn02.setOnClickListener(this);
+        binding.btn03.setOnClickListener(this);
+        binding.btn04.setOnClickListener(this);
+        binding.list2.setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +64,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn02:
                 ListActivity.startActivity(this);
+                break;
+            case R.id.list2:
+                List2Activity.startActivity(this);
+                break;
+            case R.id.btn03:
+                binding.nameTv.setText("宋阿呆");
+                Toast.makeText(this, binding.getStu().getName(), Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn04:
+                Toast.makeText(this, binding.getStu().getName(), Toast.LENGTH_SHORT).show();
                 break;
         }
     }

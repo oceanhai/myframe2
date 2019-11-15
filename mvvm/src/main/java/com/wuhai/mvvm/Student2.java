@@ -1,7 +1,12 @@
 package com.wuhai.mvvm;
 
+import android.widget.ImageView;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.BindingAdapter;
+
+import com.squareup.picasso.Picasso;
 
 
 /**
@@ -9,21 +14,21 @@ import androidx.databinding.Bindable;
  * 描述：
  */
 
-public class Student extends BaseObservable {
+public class Student2 extends BaseObservable {
 
     private String name;
     private String addr;
     private String photo;
 
-    public Student() {
+    public Student2() {
     }
 
-    public Student(String name, String addr) {
+    public Student2(String name, String addr) {
         this.name = name;
         this.addr = addr;
     }
 
-    public Student(String name, String addr, String photo) {
+    public Student2(String name, String addr, String photo) {
         this(name,addr);
         this.photo = photo;
     }
@@ -56,4 +61,11 @@ public class Student extends BaseObservable {
         this.photo = photo;
     }
 
+    @BindingAdapter("photo")
+    public static void getInternetImage(ImageView iv, String url) {
+        Picasso.with(iv.getContext()).
+                load(url).
+                error(R.mipmap.weixin).
+                into(iv);
+    }
 }

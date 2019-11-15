@@ -12,12 +12,12 @@ import com.wuhai.mvvm.databinding.ActivityListBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListActivity extends AppCompatActivity {
+public class List2Activity extends AppCompatActivity {
 
-    private StudentAdapter mAdapter;
+    private StudentAdapter2 mAdapter;
 
     public static void startActivity(Context context) {
-        Intent intent = new Intent(context, ListActivity.class);
+        Intent intent = new Intent(context, List2Activity.class);
         context.startActivity(intent);
     }
 
@@ -28,15 +28,15 @@ public class ListActivity extends AppCompatActivity {
 
         ActivityListBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_list);
 
-        mAdapter = new StudentAdapter(this);
+        mAdapter = new StudentAdapter2(this);
         binding.listview.setAdapter(mAdapter);
         initData();
     }
 
     private void initData() {
-        List<Student> datas = new ArrayList<>();
+        List<Student2> datas = new ArrayList<>();
         for(int x=0;x<20;x++){
-            Student student = new Student();
+            Student2 student = new Student2();
             student.setAddr("地址"+x);
             student.setName("名字"+x);
             student.setPhoto("http://www.lecuntao.com/homenew/templates/default/images/hi.jpg?v=09e9caa5d6");
