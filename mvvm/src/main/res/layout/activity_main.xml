@@ -20,6 +20,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{stu.addr}"/>
+        <TextView
+            android:text="我的闲隐跟name长度有关"
+            android:visibility="@{stu.name.length() > 5 ? 0:8}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +44,7 @@
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btn02"
-            android:text="list"
+            android:text="list(老方法viewholder)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
