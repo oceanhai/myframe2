@@ -43,7 +43,7 @@ public class MvvmActivity extends AppCompatActivity implements View.OnClickListe
 
         presenter = new HomePresenter(this);
 
-        viewModel = new ActivityHomeViewModel(this,binding);
+//        viewModel = new ActivityHomeViewModel(this,binding);
     }
 
     @Override

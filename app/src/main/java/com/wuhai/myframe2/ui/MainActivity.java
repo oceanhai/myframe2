@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
+import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
 
 import butterknife.BindView;
@@ -293,6 +294,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn07://MVVM
                 MvvmActivity.startActivity(this);
+                break;
+            case R.id.btn08://自定义view（集合）
+                CustomViewActivity.startActivity(this);
                 break;
         }
     }
