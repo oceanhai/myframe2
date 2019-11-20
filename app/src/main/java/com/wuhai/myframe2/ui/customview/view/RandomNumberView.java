@@ -147,6 +147,12 @@ public class RandomNumberView extends View {
 
     }
 
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        LogUtil.v(Constants.CUSTOM_VIEW_TAG,
+                "changed="+changed+",left="+left+",top="+top+",right="+right+",bottom="+bottom);
+    }
 
     @Override
     protected void onDraw(Canvas canvas){
