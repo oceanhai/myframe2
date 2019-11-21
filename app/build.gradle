@@ -66,4 +66,13 @@ dependencies {
 
     //retrofit 网络请求框架  捎货帮使用
     api project(':retrofitnetworkrequest')
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+//    //glide 复杂的图像变换 需引用下面两个
+//    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+//    // If you want to use the GPU Filters
+//    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
 }
