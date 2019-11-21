@@ -94,6 +94,10 @@
         <activity android:name=".ui.stickyheaderlistview.ui.AboutActivity"
             android:screenOrientation="portrait"/>
 
+        <!--声音-->
+        <activity android:name=".ui.sound.SoundActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
