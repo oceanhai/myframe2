@@ -87,6 +87,13 @@
         <!--glide ac-->
         <activity android:name=".ui.glide.GlideActivity"
             android:screenOrientation="portrait"/>
+
+        <!--StickyHeaderListView-->
+        <activity android:name=".ui.stickyheaderlistview.ui.StickyHeaderListView"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.stickyheaderlistview.ui.AboutActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

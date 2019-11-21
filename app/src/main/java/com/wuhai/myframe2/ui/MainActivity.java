@@ -13,6 +13,7 @@ import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
+import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -301,6 +302,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn09://glide框架
                 GlideActivity.startActivity(this);
+                break;
+            case R.id.btn10://StickyHeaderListView
+                StickyHeaderListView.startActivity(this);
                 break;
         }
     }

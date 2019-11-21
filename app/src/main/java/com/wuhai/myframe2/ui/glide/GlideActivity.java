@@ -148,10 +148,13 @@ public class GlideActivity extends BaseActivity {
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(image21);
 
-//        Glide.with(this)
-//                .load(url)
-//                .transition(new BlurTransformation())
-//                .into(image21);
+        /**
+         * 圆
+         */
+        Glide.with(this)
+                .load(url)
+                .circleCrop()
+                .into(image22);
 
     }
 
