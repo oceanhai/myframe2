@@ -17,7 +17,7 @@
 
     <Button
         android:id="@+id/btn01"
-        android:text="铃声"
+        android:text="播放"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </LinearLayout>
