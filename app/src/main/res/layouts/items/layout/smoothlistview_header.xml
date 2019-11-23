@@ -22,9 +22,8 @@
                 android:id="@+id/smoothlistview_header_hint_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="下拉刷新"
+                android:text="@string/smoothlistview_header_hint_normal"
                 android:textStyle="bold"/>
-            <!--android:text="@string/smoothlistview_header_hint_normal"-->
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -34,9 +33,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="上次更新时间："
+                    android:text="@string/smoothlistview_header_last_time"
                     android:textSize="12sp"/>
-                <!--android:text="@string/smoothlistview_header_last_time"-->
 
                 <TextView
                     android:id="@+id/smoothlistview_header_time"

@@ -86,20 +86,17 @@ public class SmoothListViewHeader extends LinearLayout {
 			if (mState == STATE_REFRESHING) {
 				mArrowImageView.clearAnimation();
 			}
-			mHintTextView.setText("下拉刷新");
-//			mHintTextView.setText(R.string.smoothlistview_header_hint_normal);
+			mHintTextView.setText(R.string.smoothlistview_header_hint_normal);
 			break;
 		case STATE_READY:
 			if (mState != STATE_READY) {
 				mArrowImageView.clearAnimation();
 				mArrowImageView.startAnimation(mRotateUpAnim);
-				mHintTextView.setText("松开刷新数据");
-//				mHintTextView.setText(R.string.smoothlistview_header_hint_ready);
+				mHintTextView.setText(R.string.smoothlistview_header_hint_ready);
 			}
 			break;
 		case STATE_REFRESHING:
-			mHintTextView.setText("正在加载...");
-//			mHintTextView.setText(R.string.smoothlistview_header_hint_loading);
+			mHintTextView.setText(R.string.smoothlistview_header_hint_loading);
 			break;
 			default:
 		}

@@ -38,14 +38,12 @@ public class SmoothListViewFooter extends LinearLayout {
 		mHintView.setVisibility(View.INVISIBLE);
 		if (state == STATE_READY) {
 			mHintView.setVisibility(View.VISIBLE);
-			mHintView.setText("松开载入更多");
-//			mHintView.setText(R.string.smoothlistview_footer_hint_ready);
+			mHintView.setText(R.string.smoothlistview_footer_hint_ready);
 		} else if (state == STATE_LOADING) {
 			mProgressBar.setVisibility(View.VISIBLE);
 		} else {
 			mHintView.setVisibility(View.VISIBLE);
-			mHintView.setText("查看更多");
-//			mHintView.setText(R.string.smoothlistview_footer_hint_normal);
+			mHintView.setText(R.string.smoothlistview_footer_hint_normal);
 		}
 	}
 	
