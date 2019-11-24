@@ -1,1 +1,1 @@
-include ':app', ':retrofitnetworkrequest', ':mvvm', ':java_lib', ':myclient'
+include ':app', ':retrofitnetworkrequest', ':mvvm', ':java_lib', ':myclient', ':myhydemo'
