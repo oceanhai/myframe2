@@ -99,6 +99,13 @@
         <activity android:name=".ui.sound.SoundActivity"
             android:screenOrientation="portrait"/>
 
+        <!--RxBus-->
+        <activity android:name=".ui.rxbus.RxBusAcceptActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.rxbus.RxBusPostActivity"
+            android:screenOrientation="portrait"/>
+
+
     </application>
 
 </manifest>

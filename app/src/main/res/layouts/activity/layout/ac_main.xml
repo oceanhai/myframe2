@@ -58,7 +58,7 @@
                 android:id="@+id/btn11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="RxBus"
                 android:id="@+id/btn12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

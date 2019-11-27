@@ -6,10 +6,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -67,12 +67,14 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
     Button method12;
     @BindView(R.id.method13)
     Button method13;
-    @BindView(R.id.activity_rx_java)
-    LinearLayout activityRxJava;
     @BindView(R.id.method14)
     Button method14;
     @BindView(R.id.method15)
     Button method15;
+    @BindView(R.id.ofType1)
+    Button ofType1;
+    @BindView(R.id.ofType2)
+    Button ofType2;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, RxJavaActivity.class);
@@ -99,6 +101,9 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
         method13.setOnClickListener(this);
         method14.setOnClickListener(this);
         method15.setOnClickListener(this);
+        
+        ofType1.setOnClickListener(this);
+        ofType2.setOnClickListener(this);
 
     }
 
@@ -137,6 +142,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private ServiceProvider serviceProvider;
+
     /**
      * retrofit + rxJava
      */
@@ -353,7 +359,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
         Observable.create(new Observable.OnSubscribe<Drawable>() {
             @Override
             public void call(Subscriber<? super Drawable> subscriber) {
-                LogUtil.e(TAG,"创建observable："+Thread.currentThread().getName());
+                LogUtil.e(TAG, "创建observable：" + Thread.currentThread().getName());
 
                 //耗时操作
                 try {
@@ -372,7 +378,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
                 .subscribe(new Observer<Drawable>() {
                     @Override
                     public void onCompleted() {
-                        LogUtil.e(TAG,"onCompleted():"+Thread.currentThread().getName());
+                        LogUtil.e(TAG, "onCompleted():" + Thread.currentThread().getName());
                     }
 
                     @Override
@@ -382,7 +388,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
 
                     @Override
                     public void onNext(Drawable drawable) {
-                        LogUtil.e(TAG,"onNext():"+Thread.currentThread().getName());
+                        LogUtil.e(TAG, "onNext():" + Thread.currentThread().getName());
                         iv01.setImageDrawable(drawable);
                     }
                 });
@@ -407,7 +413,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
         Observable<Integer> observable = Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
-                LogUtil.e(TAG,"创建observable："+Thread.currentThread().getName());
+                LogUtil.e(TAG, "创建observable：" + Thread.currentThread().getName());
                 subscriber.onNext(1);
                 subscriber.onNext(2);
                 subscriber.onNext(3);
@@ -422,22 +428,22 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onStart() {
                         super.onStart();
-                        LogUtil.e(TAG,"onStart():"+Thread.currentThread().getName());
+                        LogUtil.e(TAG, "onStart():" + Thread.currentThread().getName());
                     }
 
                     @Override
                     public void onCompleted() {
-                        LogUtil.e(TAG,"onCompleted():"+Thread.currentThread().getName());
+                        LogUtil.e(TAG, "onCompleted():" + Thread.currentThread().getName());
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtil.e(TAG,"onError():"+Thread.currentThread().getName());
+                        LogUtil.e(TAG, "onError():" + Thread.currentThread().getName());
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtil.e(TAG,"onNext():"+"integer="+integer+","+Thread.currentThread().getName());
+                        LogUtil.e(TAG, "onNext():" + "integer=" + integer + "," + Thread.currentThread().getName());
                     }
                 });
     }
@@ -522,7 +528,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * 创建Observable的快捷方法
      * 并 实现了  Observable订阅 Observer
-     *
+     * <p>
      * ※
      * 有人可能会注意到， subscribe() 这个方法有点怪：
      * 它看起来是『observalbe 订阅了 observer / subscriber』而不是『observer / subscriber 订阅了 observalbe』，
@@ -564,7 +570,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
          */
         Subscription subscription = observable.subscribe(observer);
         //true:已取消订阅  false：未取消
-        LogUtil.e(TAG,"subscription.isUnsubscribed()="+subscription.isUnsubscribed());
+        LogUtil.e(TAG, "subscription.isUnsubscribed()=" + subscription.isUnsubscribed());
         if (!subscription.isUnsubscribed()) {
             subscription.unsubscribe();
         }
@@ -609,8 +615,8 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
         };
 
         Subscription subscription = observable.subscribe(subscriber);
-        LogUtil.e(TAG, "subscription.isUnsubscribed()="+subscription.isUnsubscribed());
-        if(!subscription.isUnsubscribed()){
+        LogUtil.e(TAG, "subscription.isUnsubscribed()=" + subscription.isUnsubscribed());
+        if (!subscription.isUnsubscribed()) {
             subscription.unsubscribe();
         }
     }
@@ -710,7 +716,41 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.method15:
                 method15();
                 break;
+            case R.id.ofType1:
+                ofType1();
+                break;
+            case R.id.ofType2:
+                ofType2();
+                break;
         }
+    }
+
+    private void ofType2() {
+        Observable.just("first",2,3,"four",5,6,7)
+                .ofType(Integer.class)
+                .filter(new Func1<Integer, Boolean>() {
+                    @Override
+                    public Boolean call(Integer integer) {
+                        return integer>5;
+                    }
+                })
+                .subscribe(new Action1<Integer>() {
+                    @Override
+                    public void call(Integer integer) {
+                        Log.e(TAG, "integer="+integer);
+                    }
+                });
+    }
+
+    private void ofType1() {
+        Observable.just("first",2,3,"four")
+                .ofType(Integer.class)
+                .subscribe(new Action1<Integer>() {
+                    @Override
+                    public void call(Integer integer) {
+                        Log.e(TAG, "integer="+integer);
+                    }
+                });
     }
 
 //    private void method01(){
