@@ -557,7 +557,9 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
         /**
          * subscriber() 做了3件事：
          * 1.调用 Subscriber.onStart() 。这个方法在前面已经介绍过，是一个可选的准备方法。
-         * 2.调用 Observable 中的 OnSubscribe.call(Subscriber) 。在这里，事件发送的逻辑开始运行。从这也可以看出，在 RxJava 中， Observable 并不是在创建的时候就立即开始发送事件，而是在它被订阅的时候，即当 subscribe() 方法执行的时候。
+         * 2.调用 Observable 中的 OnSubscribe.call(Subscriber) 。在这里，事件发送的逻辑开始运行。
+         * 从这也可以看出，在 RxJava 中， Observable 并不是在创建的时候就立即开始发送事件，
+         * 而是在它被订阅的时候，即当 subscribe() 方法执行的时候。
          * 3.将传入的 Subscriber 作为 Subscription 返回。这是为了方便 unsubscribe().
          */
         Subscription subscription = observable.subscribe(observer);
@@ -582,6 +584,35 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
                 subscriber.onCompleted();
             }
         });
+
+        Subscriber<String> subscriber = new Subscriber<String>() {
+            @Override
+            public void onStart() {
+                super.onStart();
+                LogUtil.e(TAG, "onStart");
+            }
+
+            @Override
+            public void onCompleted() {
+                LogUtil.e(TAG, "onCompleted");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                LogUtil.e(TAG, "onError");
+            }
+
+            @Override
+            public void onNext(String s) {
+                LogUtil.e(TAG, "onNext:" + s);
+            }
+        };
+
+        Subscription subscription = observable.subscribe(subscriber);
+        LogUtil.e(TAG, "subscription.isUnsubscribed()="+subscription.isUnsubscribed());
+        if(!subscription.isUnsubscribed()){
+            subscription.unsubscribe();
+        }
     }
 
     /**
@@ -608,6 +639,14 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
 
         Subscriber<String> subscriber = new Subscriber<String>() {
             @Override
+            public void onStart() {
+                super.onStart();
+                /**
+                 * 相较于Observer 多一个onStart  并且 Subscriber是Observer的继承类
+                 */
+            }
+
+            @Override
             public void onCompleted() {
                 LogUtil.e(TAG, "onCompleted");
             }
@@ -621,6 +660,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
             public void onNext(String s) {
                 LogUtil.e(TAG, "onNext:" + s);
             }
+
         };
 
     }
