@@ -3,7 +3,12 @@ package com.example.java_lib.designpattern.singletonpattern;
 public class SingleTonTest {
 
     public static void main(String[] args){
-      method02();
+      method03();
+    }
+
+    public static void method03(){
+        System.out.println("地址1："+DoubleCheckedLocking.getInstance());
+        System.out.println("地址2："+DoubleCheckedLocking.getInstance());
     }
 
     /**

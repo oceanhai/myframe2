@@ -11,6 +11,7 @@ import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
+import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
 import com.wuhai.myframe2.ui.rxbus.RxBusAcceptActivity;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
@@ -316,6 +317,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn12://RxBus
                 RxBusAcceptActivity.startActivity(this);
+                break;
+            case R.id.btn13://enventbus发布/订阅的事件
+                EnventbusActivity.startActivity(this);
                 break;
         }
     }

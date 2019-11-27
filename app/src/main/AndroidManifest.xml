@@ -105,6 +105,20 @@
         <activity android:name=".ui.rxbus.RxBusPostActivity"
             android:screenOrientation="portrait"/>
 
+        <!--EventBus-->
+        <activity android:name=".ui.eventbus.EnventbusActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.eventbus.Enventbus1Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.eventbus.Enventbus2Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.eventbus.Enventbus3Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.eventbus.Enventbus4Activity"
+            android:process=":eventbus"
+            android:screenOrientation="portrait"/>
+
+
 
     </application>
 
