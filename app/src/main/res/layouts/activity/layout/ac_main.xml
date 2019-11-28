@@ -22,6 +22,11 @@
                 android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <Button android:text="Retrofit+RxJava+RxLifecycle"
+                android:id="@+id/btn02_1"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <Button android:text="进程间ContentProvider通信-数据准备 db插入数据"
                 android:id="@+id/btn03"
                 android:layout_width="wrap_content"

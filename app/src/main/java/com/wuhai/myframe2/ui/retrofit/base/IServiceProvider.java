@@ -1,9 +1,12 @@
 package com.wuhai.myframe2.ui.retrofit.base;
 
 
+import com.trello.rxlifecycle.LifecycleTransformer;
+import com.wuhai.myframe2.bean.ActivityHomeEntity;
 import com.wuhai.myframe2.bean.ActivityHomeResult;
 import com.wuhai.myframe2.ui.retrofit.networknormal.APICallBack;
 import com.wuhai.myframe2.ui.retrofit.networknormalrx.RequestNetCallBack;
+import com.wuhai.myframe2.ui.retrofit.networknormalrx.RootResponse;
 
 /**
  * Created by wuhai on 2018/5/14.
@@ -27,6 +30,10 @@ public interface IServiceProvider {
      */
     void activityhomeRx2();
 
+    /**
+     * 首页活动展示信息 retrofit + rxJava + RxLifecycle 捎货帮
+     */
+    void activityhomeRxRl(RequestNetCallBack<RootResponse<ActivityHomeEntity>> callBack, LifecycleTransformer lifecycleTransformer);
 }
 
 

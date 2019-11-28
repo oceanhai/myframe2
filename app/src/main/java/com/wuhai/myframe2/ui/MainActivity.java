@@ -14,6 +14,7 @@ import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
+import com.wuhai.myframe2.ui.retrofit.RetrofitRxJavaRxLifecycleActivity;
 import com.wuhai.myframe2.ui.rxbus.RxBusAcceptActivity;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
 import com.wuhai.myframe2.ui.sound.SoundActivity;
@@ -184,6 +185,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn79;
     @BindView(R.id.btn80)
     Button btn80;
+    @BindView(R.id.btn02_1)
+    Button btn021;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -200,6 +203,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setListener() {
         btn01.setOnClickListener(this);
         btn02.setOnClickListener(this);
+        btn021.setOnClickListener(this);
         btn03.setOnClickListener(this);
         btn04.setOnClickListener(this);
         btn05.setOnClickListener(this);
@@ -282,12 +286,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn01://ConstraintLayout约束布局
                 ConstraintLayoutActivity.startActivity(this);
                 break;
             case R.id.btn02://Retrofit网络请求框架
                 RetrofitNetworkRequestActivity.startActivity(this);
+                break;
+            case R.id.btn02_1://Retrofit+RxJava+RxLifecycle
+                RetrofitRxJavaRxLifecycleActivity.startActivity(this);
                 break;
             case R.id.btn03://进程间ContentProvider通信-数据准备 db插入数据
                 ContentProviderServerActivity.startActivity(this);
@@ -296,7 +303,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ContentProviderClientActivity.startActivity(this);
                 break;
             case R.id.btn05://Intent+bundle实现跨进程通讯：接收方
-                Toast.makeText(this,"请去myclient点击btn02",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "请去myclient点击btn02", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn06://rxjava
                 RxJavaActivity.startActivity(this);

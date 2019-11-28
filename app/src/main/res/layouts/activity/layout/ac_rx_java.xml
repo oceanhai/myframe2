@@ -131,6 +131,36 @@
                 android:text="ofType2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/interval"
+                android:layout_marginLeft="10dp"
+                android:text="rx内存泄漏"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/rxlifecycle1"
+                android:text="rxlifecycle解决内存泄漏"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/rxlifecycle2"
+                android:layout_marginLeft="10dp"
+                android:text="rxlifecycle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--<Button-->
+                <!--android:id="@+id/interval"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:text="rx内存泄漏"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
         </LinearLayout>
 
         <ImageView

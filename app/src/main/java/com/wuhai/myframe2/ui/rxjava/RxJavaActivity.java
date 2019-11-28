@@ -12,14 +12,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.trello.rxlifecycle.android.ActivityEvent;
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.network.ServiceProvider;
 import com.wuhai.retrofit.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,7 +38,7 @@ import rx.schedulers.Schedulers;
  * 参考文章
  * http://gank.io/post/560e15be2dca930e00da1083
  */
-public class RxJavaActivity extends AppCompatActivity implements View.OnClickListener {
+public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickListener {
 
     public static final String TAG = "rxjava";
 
@@ -75,6 +76,12 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
     Button ofType1;
     @BindView(R.id.ofType2)
     Button ofType2;
+    @BindView(R.id.interval)
+    Button interval;
+    @BindView(R.id.rxlifecycle1)
+    Button rxlifecycle1;
+    @BindView(R.id.rxlifecycle2)
+    Button rxlifecycle2;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, RxJavaActivity.class);
@@ -101,9 +108,13 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
         method13.setOnClickListener(this);
         method14.setOnClickListener(this);
         method15.setOnClickListener(this);
-        
+
         ofType1.setOnClickListener(this);
         ofType2.setOnClickListener(this);
+
+        interval.setOnClickListener(this);
+        rxlifecycle1.setOnClickListener(this);
+        rxlifecycle2.setOnClickListener(this);
 
     }
 
@@ -689,7 +700,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.method06:
                 method06();
                 break;
-            case R.id.method07:
+            case R.id.method07://图片
                 method07();
                 break;
             case R.id.method08:
@@ -722,33 +733,87 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.ofType2:
                 ofType2();
                 break;
+            case R.id.interval://rx内存泄漏问题
+                interval();
+                break;
+            case R.id.rxlifecycle1://rxlifecycle 解决rx内存泄漏
+                rxlifecycle1();
+                break;
+            case R.id.rxlifecycle2://rxlifecycle 解决rx内存泄漏
+                rxlifecycle2();
+                break;
         }
     }
 
+    private void rxlifecycle2() {
+        Observable.interval(1, TimeUnit.SECONDS)
+                .compose(this.bindUntilEvent(ActivityEvent.DESTROY))
+                .subscribe(new Action1<Long>() {
+                    @Override
+                    public void call(Long aLong) {
+                        Log.e(TAG, "每一秒就打印一次log");
+                    }
+                });
+    }
+
+    /**
+     * rxlifecycle 解决rx内存泄漏
+     * 1.ac 继承RxAppCompatActivity
+     * 2.compose(this.bindToLifecycle())
+     * <p>
+     * ※ 我并没有在onDestroy里 unsubscribe()
+     */
+    private void rxlifecycle1() {
+        Observable.interval(1, TimeUnit.SECONDS)
+                .compose(this.bindToLifecycle())
+                .subscribe(new Action1<Long>() {
+                    @Override
+                    public void call(Long aLong) {
+                        Log.e(TAG, "每一秒就打印一次log");
+                    }
+                });
+    }
+
+    private Subscription subscription;
+
+    /**
+     * 间隔执行某事，内存泄漏
+     * 如果不在onDestroy 中执行subscription.unsubscribe(); 就会内存泄漏
+     */
+    private void interval() {
+        subscription = Observable.interval(1, TimeUnit.SECONDS)
+                .subscribe(new Action1<Long>() {
+                    @Override
+                    public void call(Long aLong) {
+                        Log.e(TAG, "每一秒就打印一次log");
+                    }
+                });
+    }
+
     private void ofType2() {
-        Observable.just("first",2,3,"four",5,6,7)
+        Observable.just("first", 2, 3, "four", 5, 6, 7)
                 .ofType(Integer.class)
                 .filter(new Func1<Integer, Boolean>() {
                     @Override
                     public Boolean call(Integer integer) {
-                        return integer>5;
+                        return integer > 5;
                     }
                 })
                 .subscribe(new Action1<Integer>() {
                     @Override
                     public void call(Integer integer) {
-                        Log.e(TAG, "integer="+integer);
+                        Log.e(TAG, "integer=" + integer);
                     }
                 });
     }
 
     private void ofType1() {
-        Observable.just("first",2,3,"four")
+        Observable.just("first", 2, 3, "four")
                 .ofType(Integer.class)
                 .subscribe(new Action1<Integer>() {
                     @Override
                     public void call(Integer integer) {
-                        Log.e(TAG, "integer="+integer);
+                        Log.e(TAG, "integer=" + integer);
                     }
                 });
     }
@@ -778,4 +843,14 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
 //                    }
 //                });
 //    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (subscription != null && !subscription.isUnsubscribed()) {
+            subscription.unsubscribe();
+        }
+    }
 }

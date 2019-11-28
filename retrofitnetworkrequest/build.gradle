@@ -63,4 +63,6 @@ dependencies {
     //使用了AndroidSchedulers
     api 'io.reactivex:rxandroid:1.0.0'
 
+    //使用RxLifecycle解决RxJava内存泄漏
+    api 'com.trello:rxlifecycle-components:1.0'
 }

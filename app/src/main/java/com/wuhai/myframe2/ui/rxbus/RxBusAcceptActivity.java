@@ -143,13 +143,13 @@ public class RxBusAcceptActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        if (subscription1 != null && subscription1.isUnsubscribed()) {
+        if (subscription1 != null && !subscription1.isUnsubscribed()) {
             subscription1.unsubscribe();
         }
-        if (subscription2 != null && subscription2.isUnsubscribed()) {
+        if (subscription2 != null && !subscription2.isUnsubscribed()) {
             subscription2.unsubscribe();
         }
-        if (subscription3 != null && subscription3.isUnsubscribed()) {
+        if (subscription3 != null && !subscription3.isUnsubscribed()) {
             subscription3.unsubscribe();
         }
     }

@@ -36,8 +36,11 @@
             android:permission="com.permission.COME">
         </activity>
 
-        <!--捎货帮网络请求框架-->
+        <!--Retrofit网络请求框架  普通到进化成捎货帮用的那样-->
         <activity android:name=".ui.retrofit.RetrofitNetworkRequestActivity"
+            android:screenOrientation="portrait"/>
+        <!--Retrofit+RxJava+RxLifecycle-->
+        <activity android:name=".ui.retrofit.RetrofitRxJavaRxLifecycleActivity"
             android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.MainActivity"

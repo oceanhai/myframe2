@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * android lib retrofitnetworkrequest(捎货帮 网络请求框架 )
+ * android lib retrofitnetworkrequest
  * 的测试ac
  */
 public class RetrofitNetworkRequestActivity extends AppCompatActivity implements View.OnClickListener, IHomeContract.View {
@@ -65,6 +65,7 @@ public class RetrofitNetworkRequestActivity extends AppCompatActivity implements
                 presenter.activityhome(0);
                 break;
             case R.id.btn02:
+                //TODO 这里我并没有 创建p然后再里面实现MVP，这里我直接 创建ServiceProvider进行请求了
                 getRx();
                 break;
         }
