@@ -144,7 +144,7 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
     private ServiceProvider serviceProvider;
 
     /**
-     * retrofit + rxJava
+     * retrofit + rxJava  TODO 这个去查看RetrofitNetworkRequestActivity的 get2 rx
      */
     private void method14() {
 //        networkClient.token() // 返回 Observable<String>，在订阅时请求 token，并在响应后发送 token

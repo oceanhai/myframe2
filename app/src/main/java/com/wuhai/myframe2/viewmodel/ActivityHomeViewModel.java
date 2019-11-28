@@ -5,7 +5,7 @@ import android.app.Activity;
 import com.wuhai.myframe2.bean.ActivityHomeEntity;
 import com.wuhai.myframe2.bean.ActivityHomeResult;
 import com.wuhai.myframe2.databinding.AcMvvmBinding;
-import com.wuhai.myframe2.network.APICallBack;
+import com.wuhai.myframe2.ui.retrofit.networknormal.APICallBack;
 import com.wuhai.myframe2.network.ServiceProvider;
 import com.wuhai.retrofit.utils.LogUtil;
 

@@ -2,7 +2,7 @@ package com.wuhai.myframe2.presenter;
 
 import com.wuhai.myframe2.bean.ActivityHomeResult;
 import com.wuhai.myframe2.contract.IHomeContract;
-import com.wuhai.myframe2.network.APICallBack;
+import com.wuhai.myframe2.ui.retrofit.networknormal.APICallBack;
 import com.wuhai.myframe2.network.ServiceProvider;
 import com.wuhai.myframe2.presenter.base.BasePresenter;
 import com.wuhai.myframe2.utils.GsonUtils;

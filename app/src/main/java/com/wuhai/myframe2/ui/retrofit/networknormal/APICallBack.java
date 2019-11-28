@@ -1,4 +1,4 @@
-package com.wuhai.myframe2.network;
+package com.wuhai.myframe2.ui.retrofit.networknormal;
 
 import retrofit2.Call;
 import retrofit2.Response;

@@ -1,10 +1,9 @@
-package com.wuhai.myframe2.ui.rxjava.network;
+package com.wuhai.myframe2.ui.retrofit.networknormalrx;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
  * 接口数据通用返回格式
- * Created by fanchang on 2016/11/22.
  */
 public class RootResponse<T> {
     @SerializedName("code")

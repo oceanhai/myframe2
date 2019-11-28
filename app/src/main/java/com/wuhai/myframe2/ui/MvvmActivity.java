@@ -43,16 +43,17 @@ public class MvvmActivity extends AppCompatActivity implements View.OnClickListe
 
         presenter = new HomePresenter(this);
 
-//        viewModel = new ActivityHomeViewModel(this,binding);
+        //mvvm直接初始化 请求数据了
+        viewModel = new ActivityHomeViewModel(this,binding);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn01:
+            case R.id.btn01://走以前的网络请求
                 presenter.activityhome(0);
                 break;
-            case R.id.btn02:
+            case R.id.btn02://变更绑定数据体  UI跟着变更
                 viewModel.change();
                 break;
         }

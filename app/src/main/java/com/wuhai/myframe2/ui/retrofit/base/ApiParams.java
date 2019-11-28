@@ -1,6 +1,7 @@
-package com.wuhai.myframe2.network;
+package com.wuhai.myframe2.ui.retrofit.base;
 
 
+import com.wuhai.myframe2.network.ServiceProvider;
 import com.wuhai.retrofit.utils.LogUtil;
 
 import java.util.HashMap;

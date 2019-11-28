@@ -1,6 +1,7 @@
-package com.wuhai.myframe2.network;
+package com.wuhai.myframe2.ui.retrofit.networknormal;
 
 
+import com.wuhai.myframe2.network.ServiceProvider;
 import com.wuhai.retrofit.utils.LogUtil;
 
 import retrofit2.Call;

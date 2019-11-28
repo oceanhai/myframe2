@@ -1,4 +1,4 @@
-package com.wuhai.myframe2.ui.rxjava.network;
+package com.wuhai.myframe2.ui.retrofit.networknormalrx;
 
 
 import com.google.gson.annotations.SerializedName;

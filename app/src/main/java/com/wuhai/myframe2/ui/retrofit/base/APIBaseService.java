@@ -1,4 +1,4 @@
-package com.wuhai.myframe2.network.retrofit;
+package com.wuhai.myframe2.ui.retrofit.base;
 
 
 import com.wuhai.retrofit.retrofit.BaseApi;

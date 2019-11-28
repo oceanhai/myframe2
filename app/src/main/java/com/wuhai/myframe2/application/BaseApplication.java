@@ -12,7 +12,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
-import com.wuhai.myframe2.network.MyRequestHandler;
+import com.wuhai.myframe2.ui.retrofit.base.MyRequestHandler;
 import com.wuhai.retrofit.retrofit.BaseApi;
 import com.wuhai.retrofit.retrofit.NetProvider;
 import com.wuhai.retrofit.retrofit.RequestHandler;
@@ -64,6 +64,8 @@ public class BaseApplication extends Application {
 
     /**
      * 初始化网络请求配置
+     * registerProvider 设置初始化网络配置
+     * 必须在其它BaseApi.INSTANCE.getProvider使用前初始化
      */
     private void initNetRequest() {
         BaseApi.INSTANCE.registerProvider(new NetProvider() {

@@ -1,9 +1,9 @@
-package com.wuhai.myframe2.network.retrofit;
+package com.wuhai.myframe2.ui.retrofit.base;
 
 
 import com.wuhai.myframe2.bean.ActivityHomeEntity;
 import com.wuhai.myframe2.bean.ActivityHomeResult;
-import com.wuhai.myframe2.ui.rxjava.network.RootResponse;
+import com.wuhai.myframe2.ui.retrofit.networknormalrx.RootResponse;
 
 import java.util.Map;
 

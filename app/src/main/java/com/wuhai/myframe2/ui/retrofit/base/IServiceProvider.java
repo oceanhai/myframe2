@@ -1,8 +1,9 @@
-package com.wuhai.myframe2.network;
+package com.wuhai.myframe2.ui.retrofit.base;
 
 
 import com.wuhai.myframe2.bean.ActivityHomeResult;
-import com.wuhai.myframe2.ui.rxjava.network.RequestNetCallBack;
+import com.wuhai.myframe2.ui.retrofit.networknormal.APICallBack;
+import com.wuhai.myframe2.ui.retrofit.networknormalrx.RequestNetCallBack;
 
 /**
  * Created by wuhai on 2018/5/14.

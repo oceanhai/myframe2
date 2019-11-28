@@ -3,11 +3,15 @@ package com.wuhai.myframe2.network;
 
 import com.wuhai.myframe2.bean.ActivityHomeEntity;
 import com.wuhai.myframe2.bean.ActivityHomeResult;
-import com.wuhai.myframe2.network.retrofit.APIBaseService;
+import com.wuhai.myframe2.ui.retrofit.base.APIBaseService;
+import com.wuhai.myframe2.ui.retrofit.base.ApiParams;
+import com.wuhai.myframe2.ui.retrofit.base.IServiceProvider;
+import com.wuhai.myframe2.ui.retrofit.networknormal.APICallBack;
+import com.wuhai.myframe2.ui.retrofit.networknormal.ProxyCallBack;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
-import com.wuhai.myframe2.ui.rxjava.network.RequestNetCallBack;
-import com.wuhai.myframe2.ui.rxjava.network.RootResponse;
-import com.wuhai.myframe2.ui.rxjava.network.RxUtil;
+import com.wuhai.myframe2.ui.retrofit.networknormalrx.RequestNetCallBack;
+import com.wuhai.myframe2.ui.retrofit.networknormalrx.RootResponse;
+import com.wuhai.myframe2.ui.retrofit.networknormalrx.RxUtil;
 import com.wuhai.retrofit.utils.LogUtil;
 
 import retrofit2.Call;

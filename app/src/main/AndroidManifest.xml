@@ -37,7 +37,7 @@
         </activity>
 
         <!--捎货帮网络请求框架-->
-        <activity android:name=".ui.RetrofitNetworkRequestActivity"
+        <activity android:name=".ui.retrofit.RetrofitNetworkRequestActivity"
             android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.MainActivity"

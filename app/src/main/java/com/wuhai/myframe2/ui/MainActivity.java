@@ -13,6 +13,7 @@ import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
+import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
 import com.wuhai.myframe2.ui.rxbus.RxBusAcceptActivity;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
 import com.wuhai.myframe2.ui.sound.SoundActivity;
@@ -285,7 +286,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn01://ConstraintLayout约束布局
                 ConstraintLayoutActivity.startActivity(this);
                 break;
-            case R.id.btn02://捎货帮网络请求框架
+            case R.id.btn02://Retrofit网络请求框架
                 RetrofitNetworkRequestActivity.startActivity(this);
                 break;
             case R.id.btn03://进程间ContentProvider通信-数据准备 db插入数据
