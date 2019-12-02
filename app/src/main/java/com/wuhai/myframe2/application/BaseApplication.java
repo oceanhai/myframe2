@@ -99,12 +99,12 @@ public class BaseApplication extends Application {
 
             @Override
             public long configConnectTimeoutMills() {
-                return 0;
+                return 20;
             }
 
             @Override
             public long configReadTimeoutMills() {
-                return 0;
+                return 30;
             }
 
             @Override

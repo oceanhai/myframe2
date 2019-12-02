@@ -2,6 +2,7 @@ package com.wuhai.myframe2.contract;
 
 
 import com.wuhai.myframe2.bean.ActivityHomeEntity;
+import com.wuhai.myframe2.bean.UserDetailEntity;
 import com.wuhai.myframe2.contract.base.IBasePresenterInterFace;
 import com.wuhai.myframe2.contract.base.INormalRxLifecycleViewInterFace;
 
@@ -23,6 +24,11 @@ public interface IRetrofitRxJavaRxLifecycleContract {
          */
         void setActivityhome(ActivityHomeEntity result);
 
+        /**
+         * 用户详情
+         * @param entity
+         */
+        void setUserDetail(UserDetailEntity entity);
     }
 
     interface Presenter extends IBasePresenterInterFace {
@@ -33,6 +39,11 @@ public interface IRetrofitRxJavaRxLifecycleContract {
          */
         void activityhome(int refresh);
 
+        /**
+         * 获取用户详情
+         * @param token
+         */
+        void detail(String token);
     }
 
 }

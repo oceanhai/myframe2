@@ -3,6 +3,7 @@ package com.wuhai.myframe2.ui.retrofit.base;
 
 import com.wuhai.myframe2.bean.ActivityHomeEntity;
 import com.wuhai.myframe2.bean.ActivityHomeResult;
+import com.wuhai.myframe2.bean.UserDetailEntity;
 import com.wuhai.myframe2.ui.retrofit.networknormalrx.RootResponse;
 
 import java.util.Map;
@@ -30,4 +31,8 @@ public interface QjjAPI {
     //retrofit + rxJava  普通情况
     @GET("activity/activityhome")
     Observable<ActivityHomeResult> activityhomeRx2(@QueryMap Map<String, String> map);
+
+    //获取用户详情
+    @GET("userinfo/detail")
+    Observable<RootResponse<UserDetailEntity>> detail(@QueryMap Map<String,String> map);
 }

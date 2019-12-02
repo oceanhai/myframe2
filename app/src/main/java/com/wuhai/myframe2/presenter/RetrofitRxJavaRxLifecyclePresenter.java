@@ -3,6 +3,7 @@ package com.wuhai.myframe2.presenter;
 import android.app.Dialog;
 
 import com.wuhai.myframe2.bean.ActivityHomeEntity;
+import com.wuhai.myframe2.bean.UserDetailEntity;
 import com.wuhai.myframe2.contract.IRetrofitRxJavaRxLifecycleContract;
 import com.wuhai.myframe2.network.ServiceProvider;
 import com.wuhai.myframe2.presenter.base.BasePresenter;
@@ -59,6 +60,33 @@ public class RetrofitRxJavaRxLifecyclePresenter extends BasePresenter
             }
         },mView.getLifecycleTransformer());
 
+    }
+
+    @Override
+    public void detail(String token) {
+        serviceProvider.detail(new RequestNetCallBack<RootResponse<UserDetailEntity>>() {
+            @Override
+            public void onSuccess(RootResponse<UserDetailEntity> dataResponse) {
+
+                if(dataResponse.getCode() == 1){
+                    if(mView != null){
+                        mView.setUserDetail(dataResponse.getResult());
+                    }
+                }else{
+                    LogUtil.e(TAG, "errorMsg="+dataResponse.getMessage() );
+                }
+            }
+
+            @Override
+            public void onFailure(ResponseError responseError) {
+                //TODO 自行封装 或者重写直接用父类  根据情况吧
+            }
+
+            @Override
+            public Dialog baseGetLoadingDialog() {
+                return null;
+            }
+        },mView.getLifecycleTransformer());
     }
 
 }

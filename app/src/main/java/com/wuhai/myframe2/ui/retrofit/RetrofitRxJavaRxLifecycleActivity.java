@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.bean.ActivityHomeEntity;
+import com.wuhai.myframe2.bean.UserDetailEntity;
 import com.wuhai.myframe2.contract.IRetrofitRxJavaRxLifecycleContract;
 import com.wuhai.myframe2.presenter.RetrofitRxJavaRxLifecyclePresenter;
 import com.wuhai.myframe2.ui.base.BaseRxActivity;
@@ -29,6 +30,10 @@ public class RetrofitRxJavaRxLifecycleActivity extends BaseRxActivity implements
     RetrofitRxJavaRxLifecyclePresenter presenter = null;
 
     private static final String TAG = "retrofitRx";
+    @BindView(R.id.btn02)
+    Button btn02;
+    @BindView(R.id.tv02)
+    TextView tv02;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, RetrofitRxJavaRxLifecycleActivity.class);
@@ -42,6 +47,7 @@ public class RetrofitRxJavaRxLifecycleActivity extends BaseRxActivity implements
         ButterKnife.bind(this);
 
         btn01.setOnClickListener(this);
+        btn02.setOnClickListener(this);
 
         presenter = new RetrofitRxJavaRxLifecyclePresenter(this);
     }
@@ -57,6 +63,9 @@ public class RetrofitRxJavaRxLifecycleActivity extends BaseRxActivity implements
             case R.id.btn01:
                 presenter.activityhome(0);
                 break;
+            case R.id.btn02:
+                presenter.detail(null);
+                break;
         }
     }
 
@@ -69,6 +78,14 @@ public class RetrofitRxJavaRxLifecycleActivity extends BaseRxActivity implements
         if (result.getTodayActivity() != null) {
             tv01.append("" + result.getTodayActivity().getGoodsName());
         }
+    }
+
+    @Override
+    public void setUserDetail(UserDetailEntity entity) {
+        if(entity == null){
+            return;
+        }
+        tv02.append(entity.toString());
     }
 
     @Override

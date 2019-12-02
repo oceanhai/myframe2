@@ -4,6 +4,7 @@ package com.wuhai.myframe2.network;
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.wuhai.myframe2.bean.ActivityHomeEntity;
 import com.wuhai.myframe2.bean.ActivityHomeResult;
+import com.wuhai.myframe2.bean.UserDetailEntity;
 import com.wuhai.myframe2.ui.retrofit.base.APIBaseService;
 import com.wuhai.myframe2.ui.retrofit.base.ApiParams;
 import com.wuhai.myframe2.ui.retrofit.base.IServiceProvider;
@@ -84,6 +85,9 @@ public class ServiceProvider extends APIBaseService implements IServiceProvider 
                 });
     }
 
+    /**
+     * 相较于上面的activityhomeRx  多了个rl
+     */
     @Override
     public void activityhomeRxRl(RequestNetCallBack<RootResponse<ActivityHomeEntity>> callBack, LifecycleTransformer lifecycleTransformer) {
         LogUtil.i(TAG,"<------ make activityhomeRx request ------>");
@@ -93,6 +97,21 @@ public class ServiceProvider extends APIBaseService implements IServiceProvider 
 
         Observable<RootResponse<ActivityHomeEntity>> observable =  api.
                 activityhomeRx(getApiParams);
+
+        observable.compose(RxUtil.<RootResponse>normalSchedulers())
+                .compose(lifecycleTransformer)
+                .subscribe(callBack);
+    }
+
+    @Override
+    public void detail(RequestNetCallBack<RootResponse<UserDetailEntity>> callBack, LifecycleTransformer lifecycleTransformer) {
+        LogUtil.i(TAG,"<------ make detail request ------>");
+        ApiParams getApiParams = new ApiParams(ApiParams.Method.GET_PARMS)
+//                .with("token", "")//TODO 我们试着在拦截器添加token
+                .print();
+
+        Observable<RootResponse<UserDetailEntity>> observable =  api.
+                detail(getApiParams);
 
         observable.compose(RxUtil.<RootResponse>normalSchedulers())
                 .compose(lifecycleTransformer)
