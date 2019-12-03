@@ -3,7 +3,6 @@ package com.wuhai.myframe2.bean;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
-import com.wuhai.myframe2.BR;
 
 /**
  * 作者 wuhai
@@ -188,7 +187,7 @@ public class ActivityBean extends BaseObservable {
 
     public void setGoodsName(String goodsName) {
         this.goodsName = goodsName;
-        notifyPropertyChanged(BR.goodsName);
+        notifyPropertyChanged(com.wuhai.myframe2.BR.goodsName);
     }
 
     public int getBidStatus() {

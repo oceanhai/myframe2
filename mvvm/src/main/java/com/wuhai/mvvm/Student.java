@@ -35,7 +35,7 @@ public class Student extends BaseObservable {
 
     public void setName(String name) {
         this.name = name;
-        notifyPropertyChanged(BR.name);
+        notifyPropertyChanged(com.wuhai.mvvm.BR.name);
     }
 
     @Bindable
@@ -45,7 +45,7 @@ public class Student extends BaseObservable {
 
     public void setAddr(String addr) {
         this.addr = addr;
-        notifyPropertyChanged(BR.addr);
+        notifyPropertyChanged(com.wuhai.mvvm.BR.addr);
     }
 
     public String getPhoto() {
