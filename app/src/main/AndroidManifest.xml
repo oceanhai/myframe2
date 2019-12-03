@@ -121,7 +121,9 @@
             android:process=":eventbus"
             android:screenOrientation="portrait"/>
 
-
+        <!--OkHttpActivity-->
+        <activity android:name=".ui.okhttp3.OkHttpActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

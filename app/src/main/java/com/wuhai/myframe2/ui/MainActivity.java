@@ -13,6 +13,7 @@ import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
+import com.wuhai.myframe2.ui.okhttp3.OkHttpActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitRxJavaRxLifecycleActivity;
 import com.wuhai.myframe2.ui.rxbus.RxBusAcceptActivity;
@@ -187,6 +188,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn80;
     @BindView(R.id.btn02_1)
     Button btn021;
+    @BindView(R.id.btn02_2)
+    Button btn022;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn01.setOnClickListener(this);
         btn02.setOnClickListener(this);
         btn021.setOnClickListener(this);
+        btn022.setOnClickListener(this);
         btn03.setOnClickListener(this);
         btn04.setOnClickListener(this);
         btn05.setOnClickListener(this);
@@ -295,6 +299,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn02_1://Retrofit+RxJava+RxLifecycle
                 RetrofitRxJavaRxLifecycleActivity.startActivity(this);
+                break;
+            case R.id.btn02_2://okhttp3
+                OkHttpActivity.startActivity(this);
                 break;
             case R.id.btn03://进程间ContentProvider通信-数据准备 db插入数据
                 ContentProviderServerActivity.startActivity(this);
