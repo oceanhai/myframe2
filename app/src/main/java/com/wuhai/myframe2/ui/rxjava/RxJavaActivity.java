@@ -745,13 +745,16 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
         }
     }
 
+    /**
+     * 第二个订阅  绑定
+     */
     private void rxlifecycle2() {
-        Observable.interval(1, TimeUnit.SECONDS)
+        Observable.interval(2, TimeUnit.SECONDS)
                 .compose(this.bindUntilEvent(ActivityEvent.DESTROY))
                 .subscribe(new Action1<Long>() {
                     @Override
                     public void call(Long aLong) {
-                        Log.e(TAG, "每一秒就打印一次log");
+                        Log.e(TAG, "每2秒就打印一次log");
                     }
                 });
     }
@@ -769,7 +772,7 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
                 .subscribe(new Action1<Long>() {
                     @Override
                     public void call(Long aLong) {
-                        Log.e(TAG, "每一秒就打印一次log");
+                        Log.e(TAG, "每1秒就打印一次log");
                     }
                 });
     }
