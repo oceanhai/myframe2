@@ -27,5 +27,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="退出登录"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_conversation"
+            android:layout_width="100dp"
+            android:layout_height="40dp">
+
+            <Button
+                android:id="@+id/btn_conversation"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+                android:onClick="onClicked"
+                android:stateListAnimator="@null"
+                android:text="会话"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/unread_msg_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/em_unread_count_bg"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="visible" />
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>
