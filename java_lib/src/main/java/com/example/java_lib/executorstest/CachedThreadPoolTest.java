@@ -20,14 +20,24 @@ public class CachedThreadPoolTest {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         for (int i = 0; i < 10; i++) {
             final int index = i;
-            try {
-                Thread.sleep(index * 1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
+            //TODO 在这里睡 复用第一个线程
+//            try {
+//                Thread.sleep(index * 1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+
             cachedThreadPool.execute(new Runnable() {
                 public void run() {
+                    //TODO 在这里睡 新建线程操作
+                    try {
+                        Thread.sleep(60000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     System.out.println(index);
+                    System.out.println("cur thread name:"+Thread.currentThread().getName());
                 }
             });
         }
