@@ -788,13 +788,13 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                 }
             }
             switch (itemId) {
-            case ITEM_TAKE_PICTURE:
+            case ITEM_TAKE_PICTURE://拍照
                 selectPicFromCamera();
                 break;
-            case ITEM_PICTURE:
+            case ITEM_PICTURE://图片
                 selectPicFromLocal();
                 break;
-            case ITEM_LOCATION:
+            case ITEM_LOCATION://发送定位
                 startActivityForResult(new Intent(getActivity(), EaseBaiduMapActivity.class), REQUEST_CODE_MAP);
                 break;
 
@@ -1017,10 +1017,13 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         cameraFile = new File(PathUtil.getInstance().getImagePath(), EMClient.getInstance().getCurrentUser()
                 + System.currentTimeMillis() + ".jpg");
         //noinspection ResultOfMethodCallIgnored
-        cameraFile.getParentFile().mkdirs();
-        startActivityForResult(
-                new Intent(MediaStore.ACTION_IMAGE_CAPTURE).putExtra(MediaStore.EXTRA_OUTPUT, EaseCompat.getUriForFile(getContext(), cameraFile)),
-                REQUEST_CODE_CAMERA);
+//        cameraFile.getParentFile().mkdirs();
+//        startActivityForResult(
+//                new Intent(MediaStore.ACTION_IMAGE_CAPTURE).putExtra(MediaStore.EXTRA_OUTPUT, EaseCompat.getUriForFile(getContext(), cameraFile)),
+//                REQUEST_CODE_CAMERA);
+        Intent openCameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, EaseCompat.getUriForFile(getContext(), cameraFile));
+        startActivityForResult(openCameraIntent, REQUEST_CODE_CAMERA);
     }
 
     /**

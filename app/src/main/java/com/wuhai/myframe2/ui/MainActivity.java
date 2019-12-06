@@ -336,6 +336,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn13://enventbus发布/订阅的事件
                 EnventbusActivity.startActivity(this);
                 break;
+            case R.id.btn14://TAKE_PICTURE(拍照 测试myhydemo为啥崩溃)
+                TakePictureActivity.startActivity(this);
+                break;
         }
     }
 }

@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<!--    什么鬼 我子module没有引用这个权限啊 为啥添加就拍照不了 报权限重复？！-->
+<!--    <uses-permission android:name="android.permission.CAMERA"/>-->
 
 
     <!--自定义访问权限 限制外部跳转ActionReceiveActivity2，外部应用需要添加权限才能跳转 myclient btn05(在清单文件申请了权限)-->
@@ -18,6 +20,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- 适配Android 7.0  -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
         <!--Intent+bundle实现跨进程通讯 接收方-->
         <activity android:name=".ui.ActionReceiveActivity"
@@ -123,6 +136,10 @@
 
         <!--OkHttpActivity-->
         <activity android:name=".ui.okhttp3.OkHttpActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--TAKE_PICTURE(拍照 测试myhydemo为啥崩溃)-->
+        <activity android:name=".ui.TakePictureActivity"
             android:screenOrientation="portrait"/>
 
     </application>
