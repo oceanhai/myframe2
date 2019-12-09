@@ -38,6 +38,8 @@ public class SlidingFinishActivity extends BaseActivity2 implements View.OnClick
 
         Button mToutiaoAc = (Button) findViewById(R.id.toutiao_activity);
         mToutiaoAc.setOnClickListener(this);
+        Button mButtonAbs2 = (Button) findViewById(R.id.absListview_activity2);
+        mButtonAbs2.setOnClickListener(this);
     }
 
     @Override
@@ -46,21 +48,33 @@ public class SlidingFinishActivity extends BaseActivity2 implements View.OnClick
         switch (v.getId()) {
             case R.id.normal_activity:
                 mIntent = new Intent(SlidingFinishActivity.this, NormalActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.absListview_activity:
                 mIntent = new Intent(SlidingFinishActivity.this, AbsActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.scrollview_activity:
                 mIntent = new Intent(SlidingFinishActivity.this, ScrollActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.viewpager_activity:
                 mIntent = new Intent(SlidingFinishActivity.this, ViewPagerActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.toutiao_activity:
                 mIntent = new Intent(SlidingFinishActivity.this, NormalActivity2.class);
+                startActivity(mIntent);
+                overridePendingTransition(R.anim.swipeback_base_slide_up_in,
+                        R.anim.swipeback_base_slide_remain);
+                break;
+            case R.id.absListview_activity2:
+                mIntent = new Intent(SlidingFinishActivity.this, AbsActivity2.class);
+                startActivity(mIntent);
+                overridePendingTransition(R.anim.swipeback_base_slide_up_in,
+                        R.anim.swipeback_base_slide_remain);
                 break;
         }
 
-        startActivity(mIntent);
     }
 }

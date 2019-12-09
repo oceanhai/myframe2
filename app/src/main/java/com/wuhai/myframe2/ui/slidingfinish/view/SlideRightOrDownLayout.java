@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ListView;
 import android.widget.Scroller;
 
 import androidx.viewpager.widget.ViewPager;
@@ -44,6 +45,7 @@ public class SlideRightOrDownLayout extends FrameLayout {
 	private Drawable mShadowDrawable;//阴影
 	private Activity mActivity;
 	private List<ViewPager> mViewPagers = new LinkedList<ViewPager>();//有viewpager布局时候，viewpager的集合
+	private ListView mListView = null;//有listview时候
 
 	public SlideRightOrDownLayout(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
@@ -112,6 +114,12 @@ public class SlideRightOrDownLayout extends FrameLayout {
 			int moveX = (int) ev.getRawX();
 			int moveY = (int) ev.getRawY();
 			Log.e(TAG,"onInterceptTouchEvent-ACTION_MOVE moveX="+moveX+",moveY="+moveY+",mTouchSlop="+mTouchSlop);
+
+			//处理listview冲突问题
+			if(mListView != null){
+				return false;
+			}
+
 			// 横向	满足此条件屏蔽SlideRightOrDownLayout里面子类的touch事件
 			if (moveX - downX > mTouchSlop
 					&& Math.abs(moveY - downY) < mTouchSlop) {
@@ -120,7 +128,7 @@ public class SlideRightOrDownLayout extends FrameLayout {
 			}
 			// 纵向	满足此条件屏蔽SlideRightOrDownLayout里面子类的touch事件
 			if (moveX - downX < mTouchSlop
-					&& Math.abs(moveY - downY) > mTouchSlop) {
+					&& Math.abs(moveY - downY) > mTouchSlop && moveY - downY>0) {//向下滑:moveY - downY>0
 				Log.e(TAG,"onInterceptTouchEvent-ACTION_MOVE拦截Y---------------------------------");
 				return true;
 			}
@@ -230,6 +238,8 @@ public class SlideRightOrDownLayout extends FrameLayout {
 				mViewPagers.add((ViewPager) child);
 			} else if (child instanceof ViewGroup) {
 				getAlLViewPager(mViewPagers, (ViewGroup) child);
+			} else if (child instanceof ListView){
+				mListView = (ListView) child;
 			}
 		}
 	}

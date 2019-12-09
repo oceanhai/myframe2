@@ -170,6 +170,9 @@
         <activity
             android:name=".ui.slidingfinish.NormalActivity2"
             android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".ui.slidingfinish.AbsActivity2"
+            android:theme="@android:style/Theme.Translucent" />
 
     </application>
 

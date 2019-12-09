@@ -38,6 +38,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="仿头条评论页侧滑下滑退出ac" />
+        <Button
+            android:id="@+id/absListview_activity2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="有AbsListView的Activity2" />
 
     </LinearLayout>
 
