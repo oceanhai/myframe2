@@ -191,6 +191,10 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
 
         extendMenuItemClickListener = new MyItemClickListener();
         inputMenu = (EaseChatInputMenu) getView().findViewById(R.id.input_menu);
+        /**
+         * 注册 扩展菜单  EaseChatFragment：拍照，图片，位置
+         * ChatFragment：视频，文件，语音通话/视频通话（单人会话，多人的先不管）
+         */
         registerExtendMenuItem();
         // init input menu
         inputMenu.init(null);
@@ -207,6 +211,12 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                 sendTextMessage(content);
             }
 
+            /**
+             * 按住说话
+             * @param v
+             * @param event
+             * @return
+             */
             @Override
             public boolean onPressToSpeakBtnTouch(View v, MotionEvent event) {
                 return voiceRecorderView.onPressToSpeakBtnTouch(v, event, new EaseVoiceRecorderCallback() {
@@ -425,7 +435,11 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     
     protected void setListItemClickListener() {
         messageList.setItemClickListener(new EaseChatMessageList.MessageListItemClickListener() {
-            
+
+            /**
+             * 用户头像点击
+             * @param username
+             */
             @Override
             public void onUserAvatarClick(String username) {
                 if(chatFragmentHelper != null){
@@ -433,6 +447,11 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                 }
             }
 
+            /**
+             * 重新发送
+             * @param message
+             * @return
+             */
             @Override
             public boolean onResendClick(final EMMessage message) {
                 EMLog.i(TAG, "onResendClick");
@@ -449,13 +468,21 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                 return true;
             }
 
+            /**
+             * 头像长按
+             * @param username
+             */
             @Override
             public void onUserAvatarLongClick(String username) {
                 if(chatFragmentHelper != null){
                     chatFragmentHelper.onAvatarLongClick(username);
                 }
             }
-            
+
+            /**
+             * 气泡长按
+             * @param message
+             */
             @Override
             public void onBubbleLongClick(EMMessage message) {
                 contextMenuMessage = message;
@@ -463,7 +490,12 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                     chatFragmentHelper.onMessageBubbleLongClick(message);
                 }
             }
-            
+
+            /**
+             * 气泡点击
+             * @param message
+             * @return
+             */
             @Override
             public boolean onBubbleClick(EMMessage message) {
                 if(chatFragmentHelper == null){
@@ -472,6 +504,10 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                 return chatFragmentHelper.onMessageBubbleClick(message);
             }
 
+            /**
+             * 进度
+             * @param message
+             */
             @Override
             public void onMessageInProgress(EMMessage message) {
                 message.setMessageStatusCallback(messageStatusCallback);
