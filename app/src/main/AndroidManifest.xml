@@ -142,6 +142,30 @@
         <activity android:name=".ui.TakePictureActivity"
             android:screenOrientation="portrait"/>
 
+        <!--slidableActivity(右滑退出Activity)-->
+        <activity android:name=".ui.SlidableActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <!--  原myframe的侧滑销毁activity start      -->
+        <activity
+            android:name=".ui.slidingfinish.SlidingFinishActivity"
+            android:screenOrientation="portrait" />
+        <!-- Theme.Translucent 有titlebar -->
+        <activity
+            android:name=".ui.slidingfinish.AbsActivity"
+            android:theme="@android:style/Theme.Translucent" />
+        <!-- Theme.Translucent.NoTitleBar 没有titlebar -->
+        <activity
+            android:name=".ui.slidingfinish.NormalActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".ui.slidingfinish.ScrollActivity"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".ui.slidingfinish.ViewPagerActivity"
+            android:theme="@android:style/Theme.Translucent" />
+        <!--  原myframe的侧滑销毁activity end      -->
+
     </application>
 
 </manifest>

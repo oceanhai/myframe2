@@ -77,4 +77,7 @@ dependencies {
 
     //eventbus
     implementation 'org.greenrobot:eventbus:3.1.1'
+
+    //右滑退出Activity
+    implementation 'com.r0adkll:slidableactivity:2.0.6'
 }

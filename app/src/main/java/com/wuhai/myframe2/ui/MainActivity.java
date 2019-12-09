@@ -18,6 +18,7 @@ import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitRxJavaRxLifecycleActivity;
 import com.wuhai.myframe2.ui.rxbus.RxBusAcceptActivity;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
+import com.wuhai.myframe2.ui.slidingfinish.SlidingFinishActivity;
 import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
 
@@ -338,6 +339,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn14://TAKE_PICTURE(拍照 测试myhydemo为啥崩溃)
                 TakePictureActivity.startActivity(this);
+                break;
+            case R.id.btn15://slidableActivity(右滑退出Activity)
+                SlidableActivity.startActivity(this);
+                break;
+            case R.id.btn16://原myframe的侧滑销毁activity
+                SlidingFinishActivity.startActivity(this);
                 break;
         }
     }
