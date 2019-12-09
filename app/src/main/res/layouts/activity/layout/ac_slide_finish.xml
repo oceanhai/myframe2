@@ -33,6 +33,12 @@
             android:layout_height="wrap_content"
             android:text="有ViewPager的Activity" />
 
+        <Button
+            android:id="@+id/toutiao_activity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="仿头条评论页侧滑下滑退出ac" />
+
     </LinearLayout>
 
 </RelativeLayout>

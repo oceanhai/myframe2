@@ -166,6 +166,11 @@
             android:theme="@android:style/Theme.Translucent" />
         <!--  原myframe的侧滑销毁activity end      -->
 
+        <!--  仿头条评论页侧滑下滑退出ac      -->
+        <activity
+            android:name=".ui.slidingfinish.NormalActivity2"
+            android:theme="@android:style/Theme.Translucent" />
+
     </application>
 
 </manifest>

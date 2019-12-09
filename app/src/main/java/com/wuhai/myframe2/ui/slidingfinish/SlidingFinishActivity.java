@@ -35,6 +35,9 @@ public class SlidingFinishActivity extends BaseActivity2 implements View.OnClick
 
         Button mButtonViewPager = (Button) findViewById(R.id.viewpager_activity);
         mButtonViewPager.setOnClickListener(this);
+
+        Button mToutiaoAc = (Button) findViewById(R.id.toutiao_activity);
+        mToutiaoAc.setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +55,9 @@ public class SlidingFinishActivity extends BaseActivity2 implements View.OnClick
                 break;
             case R.id.viewpager_activity:
                 mIntent = new Intent(SlidingFinishActivity.this, ViewPagerActivity.class);
+                break;
+            case R.id.toutiao_activity:
+                mIntent = new Intent(SlidingFinishActivity.this, NormalActivity2.class);
                 break;
         }
 
