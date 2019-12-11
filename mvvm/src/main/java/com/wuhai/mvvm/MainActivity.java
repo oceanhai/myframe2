@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.ac_main);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         mStudent = new Student("路飞","海贼王","https://www.baidu.com/img/bd_logo1.png");

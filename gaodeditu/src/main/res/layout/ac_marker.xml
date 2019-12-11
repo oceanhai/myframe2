@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+        </com.amap.api.maps.MapView>
+
+        <TextView
+            android:id="@+id/addr"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            tools:text="北京西"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
+
+        <TextView
+            android:id="@+id/distance"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            tools:text="距离10.44km"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/taxi_time"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                tools:text="36分钟"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="25dp"/>
+            <TextView
+                android:id="@+id/bus_time"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                tools:text="36分钟"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="25dp"/>
+            <TextView
+                android:id="@+id/walk_time"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                tools:text="36分钟"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="25dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/navigation"
+            android:layout_gravity="center_horizontal"
+            android:text="导航"
+            android:textSize="12sp"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>
+
