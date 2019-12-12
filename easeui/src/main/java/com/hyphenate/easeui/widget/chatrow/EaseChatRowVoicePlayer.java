@@ -110,7 +110,7 @@ public class EaseChatRowVoicePlayer {
         boolean speakerOn = EaseUI.getInstance().getSettingsProvider().isSpeakerOpened();
         if (speakerOn) {
             audioManager.setMode(AudioManager.MODE_NORMAL);
-            audioManager.setSpeakerphoneOn(true);
+            audioManager.setSpeakerphoneOn(true);//扬声器开
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_RING);
         } else {
             audioManager.setSpeakerphoneOn(false);// 关闭扬声器
