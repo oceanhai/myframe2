@@ -322,7 +322,8 @@ public class OkHttpActivity extends BaseActivity implements View.OnClickListener
         File file = new File(Environment.getExternalStorageDirectory() + "/Huawei/MagazineUnlock/" + "a.jpg");
         Request request = new Request.Builder()
 //                .url("http://192.168.10.213:80/okHttpServer/fileUpload")
-                .url("http://192.168.10.213:80/")
+//                .url("http://192.168.10.213:80/")
+                .url("http://192.168.10.213:8080/file/upload/")//TODO 孙磊jar包
                 .post(RequestBody.create(MEDIA_TYPE_MARKDOWN, file))
                 .build();
 
