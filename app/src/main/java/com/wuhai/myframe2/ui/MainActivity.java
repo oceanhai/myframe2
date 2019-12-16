@@ -346,6 +346,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn16://原myframe的侧滑销毁activity
                 SlidingFinishActivity.startActivity(this);
                 break;
+            case R.id.btn17://现场保护
+                SaveInstanceStateActivity.startActivity(this);
+                break;
         }
     }
 }

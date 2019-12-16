@@ -174,6 +174,9 @@
             android:name=".ui.slidingfinish.AbsActivity2"
             android:theme="@android:style/Theme.Translucent" />
 
+        <!--  现场保护      -->
+        <activity
+            android:name=".ui.SaveInstanceStateActivity"/>
     </application>
 
 </manifest>
