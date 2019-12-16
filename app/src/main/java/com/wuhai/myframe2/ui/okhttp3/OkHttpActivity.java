@@ -323,7 +323,8 @@ public class OkHttpActivity extends BaseActivity implements View.OnClickListener
         Request request = new Request.Builder()
 //                .url("http://192.168.10.213:80/okHttpServer/fileUpload")
 //                .url("http://192.168.10.213:80/")
-                .url("http://192.168.10.213:8080/file/upload/")//TODO 孙磊jar包
+                .url("http://192.168.10.213:8080/file/upload")//TODO 孙磊jar包
+//                .url("http://192.168.10.213:8080/upload?")//TODO 孙磊jar包
                 .post(RequestBody.create(MEDIA_TYPE_MARKDOWN, file))
                 .build();
 
@@ -343,6 +344,7 @@ public class OkHttpActivity extends BaseActivity implements View.OnClickListener
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        Log.e(TAG,"PostFile fail" + resultFail);
                         showInfo.setText("PostFile fail" + resultFail);
                     }
                 });
@@ -355,6 +357,7 @@ public class OkHttpActivity extends BaseActivity implements View.OnClickListener
                     @Override
                     public void run() {
 //                        showInfo.setText("PostFile success" + result);
+                        Log.e(TAG,"result="+result);
                         webView.loadDataWithBaseURL(null, result, "text/html", "utf-8", null);
                     }
                 });
