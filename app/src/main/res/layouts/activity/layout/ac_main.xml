@@ -92,11 +92,11 @@
                 android:id="@+id/btn17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="蓝牙开发"
                 android:id="@+id/btn18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="发送广播"
                 android:id="@+id/btn19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

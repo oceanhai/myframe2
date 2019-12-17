@@ -8,6 +8,10 @@
 <!--    什么鬼 我子module没有引用这个权限啊 为啥添加就拍照不了 报权限重复？！-->
 <!--    <uses-permission android:name="android.permission.CAMERA"/>-->
 
+    <!--  蓝牙所需的两个权限  -->
+    <uses-permission android:name = "android.permission.BLUETOOTH"/>
+    <!--启用应用启动设备发现或者操作蓝牙设备的超级管理员-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <!--自定义访问权限 限制外部跳转ActionReceiveActivity2，外部应用需要添加权限才能跳转 myclient btn05(在清单文件申请了权限)-->
     <permission android:name="com.permission.COME" />
@@ -177,6 +181,30 @@
         <!--  现场保护      -->
         <activity
             android:name=".ui.SaveInstanceStateActivity"/>
+
+        <!--  蓝牙      -->
+        <activity
+            android:name=".ui.blutooth.BluetoothActivity"/>
+        <!--  静态注册 蓝牙状态监听      -->
+        <receiver android:name=".ui.blutooth.BluetoothStateBroadcastReceive">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
+        <!--  发送广播      -->
+        <activity
+            android:name=".ui.broadcast.SendBroadcastActivity"
+            android:screenOrientation="portrait"/>
+        <receiver android:name=".ui.broadcast.MyReveiver" >
+            <!-- priority:优先级 -->
+            <intent-filter android:priority="500" >
+                <action android:name="abc" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

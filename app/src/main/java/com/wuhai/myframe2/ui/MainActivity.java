@@ -8,6 +8,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
+import com.wuhai.myframe2.ui.blutooth.BluetoothActivity;
+import com.wuhai.myframe2.ui.broadcast.SendBroadcastActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
@@ -348,6 +350,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn17://现场保护
                 SaveInstanceStateActivity.startActivity(this);
+                break;
+            case R.id.btn18://蓝牙开发
+                BluetoothActivity.startActivity(this);
+                break;
+            case R.id.btn19://发送广播
+                SendBroadcastActivity.startActivity(this);
                 break;
         }
     }
