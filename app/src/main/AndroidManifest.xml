@@ -186,18 +186,19 @@
         <activity
             android:name=".ui.blutooth.BluetoothActivity"/>
         <!--  静态注册 蓝牙状态监听      -->
-        <receiver android:name=".ui.blutooth.BluetoothStateBroadcastReceive">
-            <intent-filter>
-                <action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
-                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
-                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
-            </intent-filter>
-        </receiver>
+<!--        <receiver android:name=".ui.blutooth.BluetoothStateBroadcastReceive">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>-->
+<!--                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>-->
+<!--                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
 
         <!--  发送广播      -->
         <activity
             android:name=".ui.broadcast.SendBroadcastActivity"
             android:screenOrientation="portrait"/>
+        <!--  自己app内广播接收者      -->
         <receiver android:name=".ui.broadcast.MyReveiver" >
             <!-- priority:优先级 -->
             <intent-filter android:priority="500" >

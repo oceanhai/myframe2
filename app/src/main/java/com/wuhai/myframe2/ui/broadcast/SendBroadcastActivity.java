@@ -15,7 +15,7 @@ import com.wuhai.myframe2.ui.base.BaseActivity;
  *
  * 创建日期 2019/4/3 11:45
  *
- * 描述：发送广播
+ * 描述：发送广播  TODO 继续
  */
 public class SendBroadcastActivity extends BaseActivity {
 
