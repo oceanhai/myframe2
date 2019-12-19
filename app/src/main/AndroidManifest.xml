@@ -206,6 +206,14 @@
             </intent-filter>
         </receiver>
 
+        <!--  动画      -->
+        <activity
+            android:name=".ui.animation.AnimationActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.animation.Animation1Activity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
+import com.wuhai.myframe2.ui.animation.AnimationActivity;
 import com.wuhai.myframe2.ui.blutooth.BluetoothActivity;
 import com.wuhai.myframe2.ui.broadcast.SendBroadcastActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
@@ -356,6 +357,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn19://发送广播
                 SendBroadcastActivity.startActivity(this);
+                break;
+            case R.id.btn20://动画
+                AnimationActivity.startActivity(this);
                 break;
         }
     }

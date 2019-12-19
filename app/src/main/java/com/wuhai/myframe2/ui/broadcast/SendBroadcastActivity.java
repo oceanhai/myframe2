@@ -60,7 +60,7 @@ public class SendBroadcastActivity extends BaseActivity {
     }
 
     /**
-     * 发送无序广播(发给其他app)
+     * 发送无序广播(发给其他app)  moudle的broadcastreceiverdemo这个app
      * @param v
      */
     public void sendNoOrder(View v) {
@@ -82,7 +82,7 @@ public class SendBroadcastActivity extends BaseActivity {
 
 
     /**
-     * 发送无序广播(发给自己)
+     * 发送无序广播(发给自己)     com.wuhai.myframe2.ui.broadcast.MyReveiver这个广播接收者
      * @param v
      */
     public void sendNoOrder2(View v) {
