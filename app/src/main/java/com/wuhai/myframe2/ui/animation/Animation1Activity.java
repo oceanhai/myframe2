@@ -110,8 +110,8 @@ public class Animation1Activity extends BaseActivity implements View.OnClickList
                 break;
             case R.id.frame_start2://开始播放
                 animationDrawable2.setOneShot(false);//循环 "Android 动画总结"文章说的不对，么必要stop再start
-//                frameIv2.setImageDrawable(animationDrawable2);
-                frameIv2.setBackground(animationDrawable2);
+                frameIv2.setImageDrawable(animationDrawable2);//这么用 一点没问题呢，没api限制
+//                frameIv2.setBackground(animationDrawable2);//需要api 16至少
                 animationDrawable2.start();
                 break;
             case R.id.frame_stop2://停止播放

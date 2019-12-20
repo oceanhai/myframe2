@@ -213,6 +213,9 @@
         <activity
             android:name=".ui.animation.Animation1Activity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.animation.Animation2Activity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

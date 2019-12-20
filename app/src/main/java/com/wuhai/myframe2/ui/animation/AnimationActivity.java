@@ -82,6 +82,7 @@ public class AnimationActivity extends BaseActivity implements View.OnClickListe
                 Animation1Activity.startActivity(this);
                 break;
             case R.id.btn02://补间动画（视图动画）
+                Animation2Activity.startActivity(this);
                 break;
             case R.id.btn03://属性动画
                 break;
