@@ -2,6 +2,7 @@ package com.wuhai.myframe2.ui.animation;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,35 +18,29 @@ import butterknife.ButterKnife;
  * <p>
  * 创建日期 2019/4/3 11:45
  * <p>
- * 描述：三大动画
- * 逐帧动画
- * 补间动画（视图动画）
- * 属性动画
+ * SurfaceView 实现动画
  */
-public class AnimationActivity extends BaseActivity implements View.OnClickListener {
+public class SurfaceViewActivity extends BaseActivity implements View.OnClickListener {
 
-    @BindView(R.id.btn01)
-    Button btn01;
-    @BindView(R.id.btn02)
-    Button btn02;
-    @BindView(R.id.btn03)
-    Button btn03;
-    @BindView(R.id.btn04)
-    Button btn04;
+
+    @BindView(R.id.surface_view_show)
+    Button surfaceViewShow;
+    @BindView(R.id.surface_anim_view)
+    SurfaceAnimView surfaceAnimView;
 
     /**
      * @param context
      */
     public static void startActivity(Context context) {
         Intent intent = new Intent();
-        intent.setClass(context, AnimationActivity.class);
+        intent.setClass(context, SurfaceViewActivity.class);
         context.startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_animation);
+        setContentView(R.layout.ac_surface_view);
         ButterKnife.bind(this);
         parseIntent();
         init();
@@ -69,26 +64,17 @@ public class AnimationActivity extends BaseActivity implements View.OnClickListe
     }
 
     private void setListener() {
-        btn01.setOnClickListener(this);
-        btn02.setOnClickListener(this);
-        btn03.setOnClickListener(this);
-        btn04.setOnClickListener(this);
+        surfaceViewShow.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btn01://逐帧动画
-                Animation1Activity.startActivity(this);
-                break;
-            case R.id.btn02://补间动画（视图动画）
-                Animation2Activity.startActivity(this);
-                break;
-            case R.id.btn03://属性动画
-                Animation3Activity.startActivity(this);
-                break;
-            case R.id.btn04://SurfaceView 实现动画
-                SurfaceViewActivity.startActivity(this);
+        switch (v.getId()) {
+            case R.id.surface_view_show:
+                SurfaceBean surfaceBean =
+                        new SurfaceBean(BitmapFactory.decodeResource(getResources(),
+                                R.drawable.xiaoliansmiley40), surfaceAnimView);
+                surfaceAnimView.addBean(surfaceBean);
                 break;
         }
     }
