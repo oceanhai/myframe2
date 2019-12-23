@@ -59,7 +59,7 @@ public class BluetoothActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.ac_bluetooth);
+//        setContentView(R.layouts.ac_bluetooth);
         binding = DataBindingUtil.setContentView(this, R.layout.ac_bluetooth);
         parseIntent();
         init();

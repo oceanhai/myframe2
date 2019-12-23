@@ -49,7 +49,7 @@ public class SaveInstanceStateActivity extends BaseActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         Log.e(TAG,"onCreate savedInstanceState="+savedInstanceState);
 
-//        setContentView(R.layout.ac_save_instance_state);
+//        setContentView(R.layouts.ac_save_instance_state);
         binding = DataBindingUtil.setContentView(this, R.layout.ac_save_instance_state);
 
         parseIntent();

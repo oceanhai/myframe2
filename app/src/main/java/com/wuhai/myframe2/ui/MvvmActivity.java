@@ -34,7 +34,7 @@ public class MvvmActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.ac_mvvm);
+//        setContentView(R.layouts.ac_mvvm);
 
         binding = DataBindingUtil.setContentView(this, R.layout.ac_mvvm);
 

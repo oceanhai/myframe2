@@ -174,7 +174,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         //noinspection ConstantConditions
         voiceRecorderView = (EaseVoiceRecorderView) getView().findViewById(R.id.voice_recorder);
 
-        // message list layout
+        // message list layouts
         messageList = (EaseChatMessageList) getView().findViewById(R.id.message_list);
         if(chatType != EaseConstant.CHATTYPE_SINGLE)
             messageList.setShowUserNick(true);
@@ -711,7 +711,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                         onConversationInit();
                         onMessageListInit();
 
-                        // Dismiss the click-to-rejoin layout.
+                        // Dismiss the click-to-rejoin layouts.
                         kickedForOfflineLayout.setVisibility(View.GONE);
                     }
                 });

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--titlebar-->
+    <RelativeLayout
+        android:id="@+id/base_action_bar_area"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/titlebar_background">
+
+        <TextView
+            android:id="@+id/base_action_left_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:drawableLeft="@drawable/common_title_bar_icon_back_white"
+            android:gravity="center_vertical"
+            android:minWidth="48dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/base_action_right_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:minWidth="48dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            tools:text="保存" />
+
+        <TextView
+            android:id="@+id/base_action_bar_title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxWidth="200dp"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:text="标题" />
+
+    </RelativeLayout>
+
+    <!--实际容器-->
+    <FrameLayout
+        android:id="@+id/base_content_container"
+        android:layout_below="@+id/base_action_bar_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e6e9ed" />
+
+    <!--loading-->
+    <FrameLayout
+        android:id="@+id/base_loading_container_layout"
+        android:layout_below="@+id/base_action_bar_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e6e9ed"
+        android:clickable="false"
+        android:visibility="gone">
+
+        <!--加载loading-->
+        <ImageView
+            android:id="@+id/base_loading_indicator_image_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/anim_loading_one"
+            android:visibility="gone" />
+
+        <!--加载失败-->
+        <TextView
+            android:id="@+id/base_loading_failed_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="20dp"
+            android:drawableTop="@drawable/icon_load_fail_grey"
+            android:gravity="center"
+            android:text="@string/common_loading_failed_owing_to_network"
+            android:textColor="@color/text_color_gray_one"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <!--数据empty-->
+        <TextView
+            android:id="@+id/base_loading_empty_text_view"
+            android:layout_marginTop="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/icon_empty"
+            android:gravity="center"
+            android:textColor="@color/text_color_black_two"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</RelativeLayout>

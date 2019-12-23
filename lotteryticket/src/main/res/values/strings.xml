@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">彩票记账</string>
+
+    <!-- Common -->
+    <string name="common_loading_failed_owing_to_network">点击重新加载</string>
+
+</resources>

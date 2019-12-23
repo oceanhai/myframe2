@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.ac_main);
+//        setContentView(R.layouts.ac_main);
         binding = DataBindingUtil.setContentView(this,R.layout.ac_main);
 
         binding.btn01.setOnClickListener(this);

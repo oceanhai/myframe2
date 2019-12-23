@@ -346,7 +346,7 @@ public class EaseChatInputMenu extends LinearLayout {
     public interface ChatInputMenuListener {
 
         /**
-         * when typing on the edit-text layout.
+         * when typing on the edit-text layouts.
          */
         void onTyping(CharSequence s, int start, int before, int count);
 

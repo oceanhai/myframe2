@@ -320,7 +320,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
         ImageView avatar;
         /** status of last message */
         View msgState;
-        /** layout */
+        /** layouts */
         RelativeLayout list_itease_layout;
         TextView motioned;
     }
