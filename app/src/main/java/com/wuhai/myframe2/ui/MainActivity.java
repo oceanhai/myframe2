@@ -1,6 +1,7 @@
 package com.wuhai.myframe2.ui;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -24,9 +25,13 @@ import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
 import com.wuhai.myframe2.ui.slidingfinish.SlidingFinishActivity;
 import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
+import com.wuhai.share.QddShareCallback;
+import com.wuhai.share.QddShareHelper;
+import com.wuhai.share.QddShareModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.sharesdk.framework.Platform;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -204,6 +209,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.ac_main);
         ButterKnife.bind(this);
 
+        //分享初始化
+        QddShareHelper.initShare(this);
+
         setListener();
     }
 
@@ -360,6 +368,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn20://动画
                 AnimationActivity.startActivity(this);
+                break;
+            case R.id.btn21://shareSDK 分享
+                //在onCreat()方法中调用分享初始化方法。
+                String title = "震惊！4毛5买走了一千元京东购物卡";
+                String contentText = "亲测有效，全免费，赶紧来试试手气。";
+                String imageUrl = "http://static.qujingjia.com/upload/lanhai_qjj/image/qjj.png";
+                String url = "https://www.baidu.com/";
+                QddShareHelper.showShare(this, new QddShareModel(title, contentText,
+                        imageUrl, url), new QddShareCallback() {
+                    @Override
+                    public void onShare(Platform platform, Platform.ShareParams shareParams) {
+                        Log.d("qjj_share", "share platform="+platform.toString()
+                                +",shareParams="+shareParams.toString());
+                    }
+
+                    @Override
+                    public void onComplete(String platformName) {
+                        Log.d("qjj_share", "share onComplete");
+                    }
+
+                    @Override
+                    public void onError(String platformName) {
+                        Log.d("qjj_share", "share onError");
+                    }
+
+                    @Override
+                    public void onCancel(String platformName) {
+                        Log.d("qjj_share", "share onCancel");
+                    }
+                });
+
                 break;
         }
     }

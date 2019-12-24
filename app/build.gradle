@@ -80,4 +80,7 @@ dependencies {
 
     //右滑退出Activity
     implementation 'com.r0adkll:slidableactivity:2.0.6'
+
+    //share 分享
+    api project(':share')
 }

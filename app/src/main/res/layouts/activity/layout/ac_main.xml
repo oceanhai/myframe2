@@ -104,7 +104,7 @@
                 android:id="@+id/btn20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="shareSDK 分享"
                 android:id="@+id/btn21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    api files('libs/MobCommons-2017.0216.1054.jar')
+    api files('libs/MobTools-2017.0216.1054.jar')
+    api files('libs/ShareSDK-Core-2.8.1.jar')
+    api files('libs/ShareSDK-QQ-2.8.1.jar')
+    api files('libs/ShareSDK-QZone-2.8.1.jar')
+    api files('libs/ShareSDK-Wechat-2.8.1.jar')
+    api files('libs/ShareSDK-Wechat-Core-2.8.1.jar')
+    api files('libs/ShareSDK-Wechat-Moments-2.8.1.jar')
+}
