@@ -69,6 +69,12 @@ public class BaseApplication extends Application {
         initNetRequest();
         //个推
         initGeTui();
+
+        //XUpdate 轻量级升级框架 初始化
+        XUpdateInit();
+    }
+
+    private void XUpdateInit() {
     }
 
     private void initGeTui() {

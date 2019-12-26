@@ -8,5 +8,5 @@ public class Constants {
 
     public static final String CUSTOM_VIEW_TAG = "customview";
 
-
+    public static final String TAG_XUPDATE = "XUpdate";
 }

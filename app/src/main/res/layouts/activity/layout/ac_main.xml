@@ -108,11 +108,11 @@
                 android:id="@+id/btn21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="简单通知"
                 android:id="@+id/btn22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="XUpdate轻量级升级框架"
                 android:id="@+id/btn23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

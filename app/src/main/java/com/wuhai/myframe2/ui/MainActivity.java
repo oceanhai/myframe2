@@ -412,6 +412,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn22://简单通知
                 notifySimple();
                 break;
+            case R.id.btn23://XUpdate轻量级升级框架
+
+                break;
         }
     }
 

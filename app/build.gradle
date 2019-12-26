@@ -94,4 +94,7 @@ dependencies {
 
     //个推
     api 'com.getui:sdk:2.13.3.0'
+
+    //XUpdate 轻量级升级框架 build报错 奇怪
+//    implementation 'com.github.xuexiangjys:XUpdate:1.1.1'
 }
