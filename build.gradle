@@ -24,7 +24,10 @@ allprojects {
         maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         google()
         jcenter()
-        
+        //个推
+        maven {
+            url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
+        }
     }
 }
 

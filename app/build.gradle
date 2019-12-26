@@ -11,6 +11,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //个推配置
+        manifestPlaceholders = [
+                GETUI_APP_ID : "9Gew52yCZCAakq9e3Dyt66",
+                GETUI_APP_KEY : "map6QlbYri74g2ufNwqSy1",
+                GETUI_APP_SECRET : "62LiofSDmo61KrXh95JKn"
+        ]
+
     }
     buildTypes {
         release {
@@ -83,4 +91,7 @@ dependencies {
 
     //share 分享
     api project(':share')
+
+    //个推
+    api 'com.getui:sdk:2.13.3.0'
 }

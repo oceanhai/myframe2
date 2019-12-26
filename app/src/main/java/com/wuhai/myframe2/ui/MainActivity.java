@@ -1,5 +1,13 @@
 package com.wuhai.myframe2.ui;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +25,7 @@ import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
+import com.wuhai.myframe2.ui.notificaitons.NotificationService;
 import com.wuhai.myframe2.ui.okhttp3.OkHttpActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitRxJavaRxLifecycleActivity;
@@ -400,6 +409,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
 
                 break;
+            case R.id.btn22://简单通知
+                notifySimple();
+                break;
         }
+    }
+
+    public final static String ACTION_SIMPLE = "com.android.peter.notificationdemo.ACTION_SIMPLE";
+    public final static String ACTION_DELETE = "com.android.peter.notificationdemo.ACTION_DELETE";
+    private void notifySimple() {
+        NotificationManager mNM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        //创建点击通知时发送的广播
+        Intent intent = new Intent(this, NotificationService.class);
+        intent.setAction(ACTION_SIMPLE);
+        PendingIntent pi = PendingIntent.getService(this,0,intent,0);
+        //创建删除通知时发送的广播
+        Intent deleteIntent = new Intent(this,NotificationService.class);
+        deleteIntent.setAction(ACTION_DELETE);
+        PendingIntent deletePendingIntent = PendingIntent.getService(this,0,deleteIntent,0);
+        //创建通知
+        Notification.Builder nb = new Notification.Builder(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel mChannel = new NotificationChannel("channel_01", "我是渠道名字",
+                    NotificationManager.IMPORTANCE_LOW);
+            mNM.createNotificationChannel(mChannel);
+            nb.setChannelId("channel_01");
+        }
+        nb
+        //设置通知左侧的小图标
+        .setSmallIcon(R.mipmap.ic_launcher)
+        //设置通知标题
+        .setContentTitle("通知title")
+        //设置通知内容
+        .setContentText("通知content")
+        //设置点击通知后自动删除通知
+        .setAutoCancel(true)
+        //设置显示通知时间
+        .setShowWhen(true)
+        //设置通知右侧的大图标
+        .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),R.mipmap.ic_launcher))
+        //设置点击通知时的响应事件
+        .setContentIntent(pi)
+        //设置删除通知时的响应事件
+        .setDeleteIntent(deletePendingIntent);
+        //发送通知
+        mNM.notify(0,nb.build());
     }
 }

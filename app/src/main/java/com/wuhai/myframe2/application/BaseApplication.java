@@ -12,6 +12,9 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
+import com.igexin.sdk.PushManager;
+import com.wuhai.myframe2.business.getui.DemoIntentService;
+import com.wuhai.myframe2.business.getui.DemoPushService;
 import com.wuhai.myframe2.ui.retrofit.base.MyRequestHandler;
 import com.wuhai.retrofit.retrofit.BaseApi;
 import com.wuhai.retrofit.retrofit.NetProvider;
@@ -55,7 +58,24 @@ public class BaseApplication extends Application {
         mainThreadLooper = getMainLooper();
         mainThread = Thread.currentThread();
 
+        init();
+    }
+
+    /**
+     * 初始化
+     */
+    private void init() {
+        //网络请求框架初始化
         initNetRequest();
+        //个推
+        initGeTui();
+    }
+
+    private void initGeTui() {
+        // DemoPushService 为【步骤2.6】自定义的推送服务
+        PushManager.getInstance().initialize(getApplicationContext(), DemoPushService.class);
+        // DemoIntentService 为第三方自定义的推送服务事件接收类
+        PushManager.getInstance().registerPushIntentService(getApplicationContext(), DemoIntentService.class);
     }
 
     public static BaseApplication getApplication() {
