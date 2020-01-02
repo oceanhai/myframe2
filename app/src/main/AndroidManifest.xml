@@ -254,6 +254,11 @@
         <service
             android:name=".ui.notificaitons.NotificationService"
             android:exported="false" />
+
+        <!--  日期选择      -->
+        <activity
+            android:name=".ui.DialogChooseDateActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

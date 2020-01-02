@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ly_myinfo_changebirth"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ly_myinfo_changebirth_child"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg_select_date"
+        android:orientation="vertical" >
+
+		<TextView
+			android:layout_marginTop="10dp"
+			android:layout_gravity="center_horizontal"
+			android:text="选择日期"
+			android:textColor="#808080"
+			android:textSize="10sp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+
+		<LinearLayout
+			android:layout_marginTop="10dp"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:gravity="center_vertical">
+	        <com.wuhai.myframe2.widget.wheel.views.WheelView
+	            android:id="@+id/wv_birth_year"
+	            android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:layout_height="match_parent"
+	            android:layout_gravity="center_vertical"
+	            />
+	        <com.wuhai.myframe2.widget.wheel.views.WheelView
+	            android:id="@+id/wv_birth_month"
+	            android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:layout_height="match_parent"
+	            android:layout_gravity="center_vertical"
+	            />
+	        <com.wuhai.myframe2.widget.wheel.views.WheelView
+	            android:id="@+id/wv_birth_day"
+	            android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:layout_height="match_parent"
+	            android:layout_gravity="center_vertical"
+	            />
+	    </LinearLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp"
+			android:layout_marginTop="15dp"
+			android:layout_marginBottom="20dp">
+			<TextView
+				android:id="@+id/btn_myinfo_cancel"
+				android:gravity="center"
+				android:text="取消"
+				android:textColor="@color/white"
+				android:textSize="10sp"
+				android:background="@drawable/global_gray_img_selector"
+				android:layout_width="60dp"
+				android:layout_height="30dp"/>
+			<TextView
+				android:id="@+id/btn_myinfo_sure"
+				android:layout_alignParentRight="true"
+				android:gravity="center"
+				android:text="确认"
+				android:textColor="@color/white"
+				android:textSize="10sp"
+				android:background="@drawable/global_blue_img_selector"
+				android:layout_width="60dp"
+				android:layout_height="30dp"/>
+		</RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

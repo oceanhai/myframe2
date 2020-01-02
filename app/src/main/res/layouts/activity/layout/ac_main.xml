@@ -116,7 +116,7 @@
                 android:id="@+id/btn23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="日期选择"
                 android:id="@+id/btn24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

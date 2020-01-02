@@ -413,7 +413,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 notifySimple();
                 break;
             case R.id.btn23://XUpdate轻量级升级框架
-
+                Toast.makeText(this,"还没加上去呢",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn24://日期选择 联动
+                DialogChooseDateActivity.startActivity(this);
                 break;
         }
     }
