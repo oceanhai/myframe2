@@ -418,6 +418,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn24://日期选择 联动
                 DialogChooseDateActivity.startActivity(this);
                 break;
+            case R.id.btn25://地址选择 联动
+                AddressChooseActivity.startActivity(this);
+                break;
         }
     }
 

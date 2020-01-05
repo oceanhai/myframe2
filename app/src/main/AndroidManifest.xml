@@ -259,6 +259,11 @@
         <activity
             android:name=".ui.DialogChooseDateActivity"
             android:screenOrientation="portrait"/>
+
+        <!--  地址选择      -->
+        <activity
+            android:name=".ui.AddressChooseActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

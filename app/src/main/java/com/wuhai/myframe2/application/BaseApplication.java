@@ -13,6 +13,7 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.igexin.sdk.PushManager;
+import com.lljjcoder.style.citylist.utils.CityListLoader;
 import com.wuhai.myframe2.business.getui.DemoIntentService;
 import com.wuhai.myframe2.business.getui.DemoPushService;
 import com.wuhai.myframe2.ui.retrofit.base.MyRequestHandler;
@@ -72,6 +73,16 @@ public class BaseApplication extends Application {
 
         //XUpdate 轻量级升级框架 初始化
         XUpdateInit();
+
+        //地址选择框架 数据初始化
+        initAddressData();
+    }
+
+    private void initAddressData() {
+        /**
+         * 预先加载三级列表显示省市区的数据
+         */
+        CityListLoader.getInstance().loadProData(this);
     }
 
     private void XUpdateInit() {

@@ -98,4 +98,7 @@ dependencies {
     //XUpdate 轻量级升级框架 build报错 奇怪
 //    implementation 'com.github.xuexiangjys:XUpdate:1.1.1'
     api project(':xupdate-lib')
+
+    //地址选择 https://github.com/outhlen/citypickerview
+    implementation 'liji.library.dev:citypickerview:3.1.13'
 }

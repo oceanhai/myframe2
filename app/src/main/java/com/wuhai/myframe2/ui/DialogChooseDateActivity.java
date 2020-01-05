@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
  * <p>
  * 创建日期 2019/4/3 11:45
  * <p>
- * 描述：空ac
+ * 描述：日期选择
  */
 public class DialogChooseDateActivity extends BaseActivity implements View.OnClickListener {
 
