@@ -1,6 +1,7 @@
 package com.wuhai.lotteryticket.config.network;
 
 import android.app.Dialog;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.facebook.stetho.common.LogUtil;
@@ -20,6 +21,9 @@ import rx.Subscriber;
  * Created by fanchang on 2016/11/25.
  */
 public abstract class RequestNetCallBack<T extends RootResponse> extends Subscriber<T> {
+
+    public static final String TAG = "RequestNetCallBack";
+
     /**
      * 成功状态码
      */
@@ -62,16 +66,19 @@ public abstract class RequestNetCallBack<T extends RootResponse> extends Subscri
     @Override
     public void onStart() {
         super.onStart();
+        Log.e(TAG, "onStart()");
         showLoadingDialog();
     }
 
     @Override
     public void onCompleted() {
+        Log.e(TAG, "onCompleted()");
         disMissLoading();
     }
 
     @Override
     public void onError(Throwable throwable) {
+        Log.e(TAG, "onError");
         ResponseError responseError;
 //        LogInfo configLog = getConfigLog();
 
@@ -124,6 +131,7 @@ public abstract class RequestNetCallBack<T extends RootResponse> extends Subscri
 
     @Override
     public void onNext(T response) {
+        Log.e(TAG, "onNext="+response.toString());
         //返回结果的处理
         onSuccess(response);
     }

@@ -15,8 +15,17 @@ import rx.Observable;
 
 public interface API {
 
+    //彩票开奖结果查询--------------------------------------------------------------------------------
     /**
-     * 彩票开奖结果查询
+     * 支持彩票列表
+     * @param map
+     * @return
+     */
+//    @GET("lottery/types")
+//    Observable<RootResponse<LotteryQueryEntity>> lotteryQuery(@QueryMap Map<String, String> map);
+
+    /**
+     * 开奖结果查询
      * @param map
      * @return
      */
