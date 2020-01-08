@@ -30,12 +30,25 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-<!--    android:background="@drawable/frame_animation"-->
-    <ImageView
-        android:id="@+id/frame_iv1"
-        android:src="@drawable/frame_animation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--    android:background="@drawable/frame_animation"-->
+        <ImageView
+            android:id="@+id/frame_iv1"
+            android:src="@drawable/frame_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/frame_iv3"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/frame_animation2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:orientation="horizontal"

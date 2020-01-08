@@ -38,10 +38,13 @@ public class Animation1Activity extends BaseActivity implements View.OnClickList
     Button frameStop2;
     @BindView(R.id.frame_iv2)
     ImageView frameIv2;
+    @BindView(R.id.frame_iv3)
+    ImageView frameIv3;
 
 
     private AnimationDrawable animationDrawable;
     private AnimationDrawable animationDrawable2;
+    private AnimationDrawable animationDrawable3;
 
     /**
      * @param context
@@ -82,13 +85,14 @@ public class Animation1Activity extends BaseActivity implements View.OnClickList
         //代码设置方式二  对应的布局直接设置android:src="@drawable/frame_animation"
 //        frameIv1.setImageResource(R.drawable.frame_animation);
         animationDrawable = (AnimationDrawable) frameIv1.getDrawable();
+        animationDrawable3 = (AnimationDrawable) frameIv3.getDrawable();
 
         //纯代码实现
         animationDrawable2 = new AnimationDrawable();
-        for (int x=1;x<9;x++){
-            int id = getResources().getIdentifier("icon"+x,"drawable",getPackageName());
+        for (int x = 1; x < 9; x++) {
+            int id = getResources().getIdentifier("icon" + x, "drawable", getPackageName());
             Drawable drawable = getResources().getDrawable(id);
-            animationDrawable2.addFrame(drawable,150);
+            animationDrawable2.addFrame(drawable, 150);
         }
     }
 
@@ -104,9 +108,11 @@ public class Animation1Activity extends BaseActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.frame_start://开始播放
                 animationDrawable.start();
+                animationDrawable3.start();
                 break;
             case R.id.frame_stop://停止播放
                 animationDrawable.stop();
+                animationDrawable3.stop();
                 break;
             case R.id.frame_start2://开始播放
                 animationDrawable2.setOneShot(false);//循环 "Android 动画总结"文章说的不对，么必要stop再start

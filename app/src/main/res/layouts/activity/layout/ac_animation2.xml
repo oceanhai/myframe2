@@ -58,14 +58,30 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-    <Button
-        android:id="@+id/custom_animation"
-        android:text="自定义补间动画"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/custom_animation"
+            android:text="自定义补间动画"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/stop_rotate"
+            android:text="停止旋转"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/image2"
         android:background="@drawable/icon1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/image3"
+        android:background="@drawable/loading_item_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </LinearLayout>

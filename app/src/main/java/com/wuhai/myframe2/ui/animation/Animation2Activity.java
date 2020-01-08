@@ -10,6 +10,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
@@ -51,6 +52,10 @@ public class Animation2Activity extends BaseActivity implements View.OnClickList
     Button tweenStart2;
     @BindView(R.id.custom_animation)
     Button customAnimation;
+    @BindView(R.id.image3)
+    ImageView image3;
+    @BindView(R.id.stop_rotate)
+    Button stopRotate;
 
     /**
      * @param context
@@ -93,6 +98,7 @@ public class Animation2Activity extends BaseActivity implements View.OnClickList
         tweenStart2.setOnClickListener(this);
 
         customAnimation.setOnClickListener(this);
+        stopRotate.setOnClickListener(this);
 
         image2.setOnClickListener(this);
     }
@@ -177,6 +183,12 @@ public class Animation2Activity extends BaseActivity implements View.OnClickList
                 // pivotXType = Animation.RELATIVE_TO_PARENT:旋转轴点的x坐标 = View左上角的原点 在x方向 加上 父控件宽度乘上pivotXValue数值的值 (y方向同理)
                 rotateAnimation.setDuration(3000);
                 image2.startAnimation(rotateAnimation);
+
+                //xml实现 一直旋转
+                Animation operatingAnim = AnimationUtils.loadAnimation(this, R.anim.rotate_anim2);
+                LinearInterpolator lin = new LinearInterpolator();
+                operatingAnim.setInterpolator(lin);
+                image3.startAnimation(operatingAnim);
                 break;
             case R.id.alpha://淡入淡出
                 Animation alphaAnimation = new AlphaAnimation(1, 0);
@@ -235,9 +247,9 @@ public class Animation2Activity extends BaseActivity implements View.OnClickList
                 DisplayMetrics metrics = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(metrics);
                 //屏幕尺寸
-                Log.e(TAG,metrics.toString());
+                Log.e(TAG, metrics.toString());
                 CustomAnimation animation1 =
-                        new CustomAnimation(metrics.xdpi/2,metrics.ydpi/2,3500);
+                        new CustomAnimation(metrics.xdpi / 2, metrics.ydpi / 2, 3500);
                 image2.startAnimation(animation1);
                 break;
             case R.id.image2://image2
@@ -245,6 +257,9 @@ public class Animation2Activity extends BaseActivity implements View.OnClickList
                  * 位移setFillAfter(true)，动画执行完毕后固定在动画结束的那一帧，但点击效果却没有了，不会toast
                  */
                 Toast.makeText(this, "我被点击了", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.stop_rotate://停止旋转
+                image3.clearAnimation();
                 break;
         }
     }
