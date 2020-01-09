@@ -3,6 +3,7 @@ package com.wuhai.lotteryticket.presenter;
 import android.app.Dialog;
 
 import com.wuhai.lotteryticket.config.network.RequestNetCallBack;
+import com.wuhai.lotteryticket.config.network.RequestNetCallBack2;
 import com.wuhai.lotteryticket.config.network.ResponseError;
 import com.wuhai.lotteryticket.config.network.RootResponse;
 import com.wuhai.lotteryticket.config.network.ServiceProvider;
@@ -35,30 +36,40 @@ public class HomePresenter extends BasePresenter
 
     @Override
     public void lotteryQuerySsq(String key, String lottery_id, String lottery_no) {
-        serviceProvider.lotteryQuery(key, lottery_id, lottery_no,
-                new RequestNetCallBack<RootResponse<LotteryQueryEntity>>() {
-            @Override
-            public void onSuccess(RootResponse<LotteryQueryEntity> dataResponse) {
+        serviceProvider.lotteryQuery2(key, lottery_id, lottery_no,
+                new RequestNetCallBack2<RootResponse<LotteryQueryEntity>>() {
 
-                if(dataResponse.getError_code() == 0){
-                    if(mView != null){
-                        mView.setLotteryQuerySsq(dataResponse.getResult());
+                    @Override
+                    public void onSuccess(RootResponse<LotteryQueryEntity> dataResponse) {
+
+                        if(dataResponse.getError_code() == 0){
+                            if(mView != null){
+                                mView.setLotteryQuerySsq(dataResponse.getResult());
+                            }
+                        }else{
+                            LogUtil.e(TAG, "errorMsg="+dataResponse.getReason() );
+                        }
                     }
-                }else{
-                    LogUtil.e(TAG, "errorMsg="+dataResponse.getReason() );
-                }
-            }
 
-            @Override
-            public void onFailure(ResponseError responseError) {
-                //TODO 自行封装 或者重写直接用父类  根据情况吧
-            }
+                    @Override
+                    public void onFailure(ResponseError responseError) {
+                        //TODO 自行封装 或者重写直接用父类  根据情况吧
+                    }
 
-            @Override
-            public Dialog baseGetLoadingDialog() {
-                return null;
-            }
-        },mView.getLifecycleTransformer());
+                    @Override
+                    public void showLoadingDialog() {
+                        if(mView != null){
+                            mView.showLoading();
+                        }
+                    }
+
+                    @Override
+                    public void disMissLoading() {
+                        if(mView != null){
+                            mView.dimssLoading();
+                        }
+                    }
+                },mView.getLifecycleTransformer());
     }
 
     @Override

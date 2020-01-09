@@ -16,4 +16,6 @@
     <!--分割线的color-->
     <color name="line_color_gray_one" >#e9ecef</color>
 
+    <!--背景色-->
+    <color name="bg_color_gray_four" >#33e9ecef</color>
 </resources>

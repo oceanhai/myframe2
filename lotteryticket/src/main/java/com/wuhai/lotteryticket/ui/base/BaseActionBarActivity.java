@@ -204,6 +204,10 @@ public abstract class BaseActionBarActivity extends BaseActivity {
         setContentView(View.inflate(this, layoutResID, null));
     }
 
+    /**
+     * set 实质布局(view)
+     * @param view
+     */
     @Override
     public void setContentView(View view) {
         mContentContainerView.addView(view);

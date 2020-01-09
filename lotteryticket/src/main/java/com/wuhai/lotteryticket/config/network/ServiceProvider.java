@@ -32,4 +32,20 @@ public class ServiceProvider extends APIBaseService implements IServiceProvider 
                 .compose(lifecycleTransformer)
                 .subscribe(callBack);
     }
+
+    @Override
+    public void lotteryQuery2(String key, String lottery_id, String lottery_no, RequestNetCallBack2<RootResponse<LotteryQueryEntity>> callBack, LifecycleTransformer lifecycleTransformer) {
+        Log.i(TAG,"<------ make lotteryQuery request ------>");
+        ApiParams getApiParams = new ApiParams(ApiParams.Method.GET_PARMS)
+                .with("key", key)
+                .with("lottery_id", lottery_id)
+                .with("lottery_no", lottery_no)
+                .print();
+
+        Observable<RootResponse<LotteryQueryEntity>> observable =  api.
+                lotteryQuery(getApiParams);
+        observable.compose(RxUtil.<RootResponse>normalSchedulers())
+                .compose(lifecycleTransformer)
+                .subscribe(callBack);
+    }
 }

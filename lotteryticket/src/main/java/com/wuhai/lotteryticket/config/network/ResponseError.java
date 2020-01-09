@@ -16,7 +16,7 @@ public class ResponseError extends RuntimeException {
      * 原始error
      */
     private Throwable exception;
-    //只有是业务异常的时候才会被赋值  业务code
+    //只有是业务异常的时候才会被赋值  业务code  TODO 毛线啊，这个地方onNext操作里抛异常也是会捕获到的
     private int code = -1000;
 
     @SerializedName("errMsg")
@@ -61,7 +61,7 @@ public class ResponseError extends RuntimeException {
 
     @Override
     public String getMessage() {
-        if (exception != null) return exception.getMessage();
+        if (exception != null) return exception.getCause()+","+exception.getMessage();
         return "";
     }
 
