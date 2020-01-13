@@ -1,0 +1,230 @@
+{
+  "result": true,
+  "homeInfo": {
+    "banner": [
+      {
+        "id": 0,
+        "title": "清凉一夏",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=1CV48VA64E1J2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20190701/9IV594U0H89VK.png",
+        "bannerId": null
+      }
+    ],
+    "quickEntry": [
+      {
+        "id": 0,
+        "title": "好货推荐",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=106U9FQUM4C1Q_12_21",
+        "image": "http://static.qiandaodao.cn/upload/image/20180202/2NFR0H3HMIGJT.png",
+        "bannerId": null
+      },
+      {
+        "id": 1,
+        "title": "商品分类",
+        "titleColor": null,
+        "url": "qiandaodao.classify",
+        "image": "http://static.qiandaodao.cn/upload/image/20170911/EM4H3PPODF91E.png",
+        "bannerId": null
+      },
+      {
+        "id": 2,
+        "title": "手机推荐",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=102QP6CK8A9U5_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20170911/9M1DL35N8MH11.png",
+        "bannerId": null
+      },
+      {
+        "id": 3,
+        "title": "清凉夏日",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=1CV48VA64E1J2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20180124/4MJKN0TOKP4I5.png",
+        "bannerId": null
+      },
+      {
+        "id": 4,
+        "title": "寻求帮助",
+        "titleColor": null,
+        "url": "qiandaodao.help",
+        "image": "http://static.qiandaodao.cn/upload/image/20180124/2T1Q0L6ALCEE9.png",
+        "bannerId": null
+      }
+    ],
+    "quickEntryBackground": [],
+    "recommend": null,
+    "categoryList": null,
+    "advert": [],
+    "news": null,
+    "superImage": [],
+    "commonEntrance": [
+      {
+        "id": 0,
+        "title": "oppo",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=18HA176R388A2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20190605/3J9FKCPGCTGMN.png",
+        "bannerId": null
+      },
+      {
+        "id": 1,
+        "title": "精品包具",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=44D85G1AA5G50_12",
+        "image": "http://static.qiandaodao.cn/upload/image/20181214/1R175DM6MDFRC.png",
+        "bannerId": null
+      },
+      {
+        "id": 2,
+        "title": "淑女衣橱",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=NPIRAF94A6R_12_22",
+        "image": "http://static.qiandaodao.cn/upload/image/20181214/FAC0GB7871OTL.png",
+        "bannerId": null
+      }
+    ],
+    "bigImage": [
+      {
+        "id": 0,
+        "title": "iPhone 8",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_11_21",
+        "image": "http://static.qiandaodao.cn/upload/image/20190605/2TFEUE4DAQKD1.png",
+        "bannerId": null
+      }
+    ],
+    "smallImage": [
+      {
+        "id": 0,
+        "title": "护肤品",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=19JNR2EUNP47_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20181214/A882IQI2VI9OC.png",
+        "bannerId": null
+      },
+      {
+        "id": 1,
+        "title": "旅行箱",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=64BFBREAARO9F_14_22",
+        "image": "http://static.qiandaodao.cn/upload/image/20181214/C8PIOUPMKUFU1.png",
+        "bannerId": null
+      },
+      {
+        "id": 2,
+        "title": "真皮皮带",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=2JJR5R2H391FA_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20181214/DR4RJFRCNOJH8.png",
+        "bannerId": null
+      },
+      {
+        "id": 3,
+        "title": "Zippo",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=18J7HGTO15MU2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20181214/36GLSBSKNCQ85.png",
+        "bannerId": null
+      }
+    ],
+    "soldHot": [
+      {
+        "webviewUrl": "http://m.qiandaodao.com/ecshop/webview/item/detail.do?itemId=18FI19KKL5TQF_14_22",
+        "weight": 130,
+        "icon": "http://static.qiandaodao.cn/upload/image/20180822/419A677SV04MK.png"
+      },
+      {
+        "webviewUrl": "http://m.qiandaodao.com/ecshop/webview/item/detail.do?itemId=3QMRMMOLDTE85_11",
+        "weight": 120,
+        "icon": "http://static.qiandaodao.cn/upload/image/20180122/4SUTOM3AQJG9H.png"
+      },
+      {
+        "webviewUrl": "http://m.qiandaodao.com/ecshop/webview/item/detail.do?itemId=UFSLPJFLDEII_11_21",
+        "weight": 110,
+        "icon": "http://static.qiandaodao.cn/upload/image/20180122/ECHJHTLJ4PPHK.png"
+      },
+      {
+        "webviewUrl": "http://m.qiandaodao.com/ecshop/webview/item/detail.do?itemId=8L8LDAG79J2E4_11_21",
+        "weight": 100,
+        "icon": "http://static.qiandaodao.cn/upload/image/20180122/AR88T76OITNO7.png"
+      },
+      {
+        "webviewUrl": "http://m.qiandaodao.com/ecshop/webview/item/detail.do?itemId=95470FMJVDG5N_11_21",
+        "weight": 90,
+        "icon": "http://static.qiandaodao.cn/upload/image/20180122/7SDKVCB9E35HG.png"
+      }
+    ],
+    "newItem": [
+      {
+        "id": "9DMA80M5MPMTL_13_22",
+        "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+        "price": 7288,
+        "minDownpay": 807.2,
+        "maxSelectMonths": 6,
+        "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+        "description": "移动联通电信4G手机",
+        "monthlyPrincipal": 807.21,
+        "downpayRateText": "40,50",
+        "installmentRateText": "{\"6\":0.36}",
+        "itemType": 0,
+        "productId": "9DMA80M5MPMTL",
+        "categoryId": 1,
+        "cutPrice": 0,
+        "coupon": 0,
+        "activity": null,
+        "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+        "installmentRateData": {
+          "6": 0.36
+        },
+        "downpayRateData": [
+          40,
+          50
+        ]
+      },
+      {
+        "id": "C7JS759MISSUA_11",
+        "name": "Apple iPhone 8 64g",
+        "price": 5988,
+        "minDownpay": 542.91,
+        "maxSelectMonths": 6,
+        "icon": "http://static.qiandaodao.cn/upload/image/20170922/ADU2DC6E46RJ7.jpg",
+        "description": "Apple iPhone 8 金色 移动联通电信4G手机",
+        "monthlyPrincipal": 1105.37,
+        "downpayRateText": "0,10,20,30,40,50",
+        "installmentRateText": "{\"6\":0.36}",
+        "itemType": 0,
+        "productId": "C7JS759MISSUA",
+        "categoryId": 1,
+        "cutPrice": 0,
+        "coupon": 0,
+        "activity": null,
+        "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=C7JS759MISSUA_11",
+        "installmentRateData": {
+          "6": 0.36
+        },
+        "downpayRateData": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      }
+    ],
+    "sku": [],
+    "pager": {
+      "page": 1,
+      "pageCount": 1,
+      "count": 0,
+      "pageSize": 20,
+      "hasNextPage": false,
+      "currentPageOffset": 0,
+      "tail": true,
+      "head": true
+    },
+    "appId": null
+  }
+}

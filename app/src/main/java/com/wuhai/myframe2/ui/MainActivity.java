@@ -25,6 +25,7 @@ import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
+import com.wuhai.myframe2.ui.homepage.HomeActivity;
 import com.wuhai.myframe2.ui.notificaitons.NotificationService;
 import com.wuhai.myframe2.ui.okhttp3.OkHttpActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
@@ -420,6 +421,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn25://地址选择 联动
                 AddressChooseActivity.startActivity(this);
+                break;
+            case R.id.btn26://首页复杂布局实现方案
+                HomeActivity.startActivity(this);
                 break;
         }
     }

@@ -28,7 +28,7 @@ import butterknife.ButterKnife;
  * <p>
  * 描述：地址选择
  * ※本ac 使用的自己电脑下  work/github/citypickerview 这个 详情看readme.txt
- * 此外   work/github/Android-PickerView 本地加载 符合我预期，准备用这个
+ * 此外   TODO work/github/Android-PickerView 本地加载 符合我预期，准备用这个
  */
 public class AddressChooseActivity extends BaseActivity implements View.OnClickListener {
 

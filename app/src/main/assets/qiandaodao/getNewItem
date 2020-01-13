@@ -1,0 +1,14 @@
+{
+  "result": true,
+  "list": [],
+  "pager": {
+    "page": 2,
+    "pageCount": 1,
+    "count": 0,
+    "pageSize": 20,
+    "hasNextPage": false,
+    "head": false,
+    "currentPageOffset": 20,
+    "tail": false
+  }
+}

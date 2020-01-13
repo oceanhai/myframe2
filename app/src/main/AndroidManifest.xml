@@ -266,6 +266,15 @@
         <activity
             android:name=".ui.AddressChooseActivity"
             android:screenOrientation="portrait"/>
+
+        <!--  首页复杂布局实现方案      -->
+        <activity
+            android:name=".ui.homepage.HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.homepage.HomePageActivity1"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
