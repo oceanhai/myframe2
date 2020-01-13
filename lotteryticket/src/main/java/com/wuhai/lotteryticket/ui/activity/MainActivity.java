@@ -67,6 +67,7 @@ public class MainActivity extends NewLoadingBaseActivity implements IHomeContrac
             LotteryQueryEntity ssqEntity = GsonUtils.getInstance().fromJson(result_ssq, LotteryQueryEntity.class);
             setLotteryQuerySsq(ssqEntity);
 
+            //方式一
             JSONObject object2 = new JSONObject(lottery_dlt);
             String result_dlt = object2.getString("result");
             LotteryQueryEntity dltEntity = GsonUtils.getInstance().fromJson(result_dlt, LotteryQueryEntity.class);
