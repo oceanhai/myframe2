@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -30,7 +31,8 @@ public class LotteryView extends View {
     private float radius;//球的半径
 
     private RectF textBounds;//球内 文本区域
-    private String text[] = new String[]{"01","02","03","04","11","16","01"};//球内数字
+//    private String text[] = new String[]{"01","02","03","04","11","16","01"};//球内数字
+    private String text[];//球内数字
 
     public LotteryView(Context context) {
         super(context);
@@ -127,6 +129,10 @@ public class LotteryView extends View {
      * @param canvas
      */
     private void drawText(Canvas canvas) {
+        if(text == null || text.length==0){
+            return;
+        }
+
         paint.setColor(Color.WHITE);
         paint.setTextSize(sp(16));
 
@@ -172,6 +178,18 @@ public class LotteryView extends View {
          * targetRect.centerX() - length / 2  => 开始的位置
          */
         canvas.drawText(target,targetRect.centerX() - length / 2,baseline,paint);
+    }
+
+    /**
+     * 设置数据
+     * @param source
+     */
+    public void setResource(String source){
+        if(!TextUtils.isEmpty(source) && source.length() > 0){
+            String[] arr = source.split(",");
+            text = arr;
+            invalidate();
+        }
     }
 
 }

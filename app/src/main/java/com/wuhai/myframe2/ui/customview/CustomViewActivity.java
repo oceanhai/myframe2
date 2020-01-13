@@ -9,6 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
+import com.wuhai.myframe2.ui.customview.view.LotteryView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,6 +24,8 @@ public class CustomViewActivity extends AppCompatActivity implements View.OnClic
 
     @BindView(R.id.btn01)
     Button btn01;
+    @BindView(R.id.lottery_view)
+    LotteryView lotteryView;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, CustomViewActivity.class);
@@ -36,11 +39,17 @@ public class CustomViewActivity extends AppCompatActivity implements View.OnClic
         ButterKnife.bind(this);
 
         btn01.setOnClickListener(this);
+
+        init();
+    }
+
+    private void init() {
+        lotteryView.setResource("09,17,26,29,30,32,03");
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn01:
                 HeaderTextGridViewActivity.startActivity(this);
                 break;

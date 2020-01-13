@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"/>
 
         <com.wuhai.myframe2.ui.customview.view.LotteryView
+            android:id="@+id/lottery_view"
             android:layout_width="match_parent"
             android:layout_height="40dp"/>
     </LinearLayout>
