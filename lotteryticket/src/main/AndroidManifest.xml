@@ -28,6 +28,12 @@
             android:name="design_height_in_dp"
             android:value="640"/>
 
+        <!--  彩票历史列表      -->
+        <activity
+            android:name=".ui.activity.LotteryHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

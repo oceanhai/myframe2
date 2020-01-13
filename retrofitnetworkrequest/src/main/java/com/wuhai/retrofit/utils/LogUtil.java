@@ -4,7 +4,7 @@ import android.util.Log;
 
 /**
  * Created by wuhai on 2017/1/6
- * 描述: 日志工具类
+ * 描述: 日志工具类  TODO 不太喜欢这样封装，TAG固定了
  */
 public class LogUtil {
 

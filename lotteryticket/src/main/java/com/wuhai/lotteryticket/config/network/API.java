@@ -1,6 +1,7 @@
 package com.wuhai.lotteryticket.config.network;
 
 
+import com.wuhai.lotteryticket.model.bean.LotteryHistoryEntity;
 import com.wuhai.lotteryticket.model.bean.LotteryQueryEntity;
 
 import java.util.Map;
@@ -32,4 +33,12 @@ public interface API {
     @GET("lottery/query")
     Observable<RootResponse<LotteryQueryEntity>> lotteryQuery(@QueryMap Map<String, String> map);
 
+
+    /**
+     * 历史开奖结果查询
+     * @param map
+     * @return
+     */
+    @GET("lottery/history")
+    Observable<RootResponse<LotteryHistoryEntity>> lotteryHistory(@QueryMap Map<String, String> map);
 }

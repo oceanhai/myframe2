@@ -4,6 +4,8 @@ package com.wuhai.lotteryticket.config.network;
 import android.util.Log;
 
 import com.trello.rxlifecycle.LifecycleTransformer;
+import com.wuhai.lotteryticket.config.Constants;
+import com.wuhai.lotteryticket.model.bean.LotteryHistoryEntity;
 import com.wuhai.lotteryticket.model.bean.LotteryQueryEntity;
 import com.wuhai.retrofit.retrofit.RxUtil;
 
@@ -44,6 +46,23 @@ public class ServiceProvider extends APIBaseService implements IServiceProvider 
 
         Observable<RootResponse<LotteryQueryEntity>> observable =  api.
                 lotteryQuery(getApiParams);
+        observable.compose(RxUtil.<RootResponse>normalSchedulers())
+                .compose(lifecycleTransformer)
+                .subscribe(callBack);
+    }
+
+    @Override
+    public void lotteryHistory(String lottery_id, int page, int page_size, RequestNetCallBack2<RootResponse<LotteryHistoryEntity>> callBack, LifecycleTransformer lifecycleTransformer) {
+        Log.i(TAG,"<------ make lotteryQuery request ------>");
+        ApiParams getApiParams = new ApiParams(ApiParams.Method.GET_PARMS)
+                .juhe(Constants.JUHE_LOTTERY_KEY)
+                .with("lottery_id", lottery_id)
+                .with("page", ""+page)
+                .with("page_size", ""+page_size)
+                .print();
+
+        Observable<RootResponse<LotteryHistoryEntity>> observable =  api.
+                lotteryHistory(getApiParams);
         observable.compose(RxUtil.<RootResponse>normalSchedulers())
                 .compose(lifecycleTransformer)
                 .subscribe(callBack);

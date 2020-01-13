@@ -3,18 +3,26 @@ package com.wuhai.myframe2.ui.customview;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * 自定义控件 集合
  *
  * @author wuhai
- *         create at 2016/7/28 9:52
+ * create at 2016/7/28 9:52
  */
-public class CustomViewActivity extends AppCompatActivity {
+public class CustomViewActivity extends AppCompatActivity implements View.OnClickListener {
+
+    @BindView(R.id.btn01)
+    Button btn01;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, CustomViewActivity.class);
@@ -25,5 +33,17 @@ public class CustomViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_custom_view);
+        ButterKnife.bind(this);
+
+        btn01.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn01:
+                HeaderTextGridViewActivity.startActivity(this);
+                break;
+        }
     }
 }

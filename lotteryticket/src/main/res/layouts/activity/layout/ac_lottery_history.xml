@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/global_horizontal_gray_solid_line10"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="开奖提示"
+                    android:textColor="@color/text_color_black_one"
+                    android:textSize="18sp"
+                    android:drawableRight="@drawable/icon_tishi"
+                    android:drawablePadding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:text="每周二、四、日 21:15开奖"
+                    android:textColor="@color/text_color_black_two"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="中奖\n规则"
+                android:textColor="@color/text_color_red_one"
+                android:textSize="18sp"
+                android:drawableRight="@drawable/icon_problem"
+                android:drawablePadding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <include layout="@layout/global_horizontal_gray_solid_line10"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lottery_history_rv"
+            android:visibility="visible"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:nestedScrollingEnabled="false"
+            android:clipToPadding="false">
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <!--投影-->
+        <View
+            android:id="@+id/ac_bid_price_shadow"
+            android:visibility="visible"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@drawable/dock_shadow"/>
+
+        <LinearLayout
+            android:layout_above="@+id/bottom_layout"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="生成工具"
+                    android:textColor="@color/text_color_black_one"
+                    android:textSize="18sp"
+                    android:drawableLeft="@drawable/icon_random_create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+
+            <View
+                android:background="@color/line_color_gray_one"
+                android:layout_width="1dp"
+                android:layout_height="30dp"/>
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="走势图"
+                    android:textColor="@color/text_color_black_one"
+                    android:textSize="18sp"
+                    android:drawableLeft="@drawable/icon_zoushi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+
+            <View
+                android:background="@color/line_color_gray_one"
+                android:layout_width="1dp"
+                android:layout_height="30dp"/>
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="算奖工具"
+                    android:textColor="@color/text_color_black_one"
+                    android:textSize="18sp"
+                    android:drawableLeft="@drawable/icon_jisuanqi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
+

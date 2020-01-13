@@ -16,5 +16,15 @@
             app:titleTextSize="40sp"
             android:layout_width="200dp"
             android:layout_height="100dp" />
+        <Button
+            android:id="@+id/btn01"
+            android:text="自定义表格"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.wuhai.myframe2.ui.customview.view.LotteryView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
     </LinearLayout>
+
 </ScrollView>

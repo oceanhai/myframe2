@@ -119,6 +119,8 @@
         <!--自定义控件-->
         <activity android:name=".ui.customview.CustomViewActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.customview.HeaderTextGridViewActivity"
+            android:screenOrientation="portrait"/>
 
         <!--glide ac-->
         <activity android:name=".ui.glide.GlideActivity"

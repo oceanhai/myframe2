@@ -3,6 +3,8 @@ package com.wuhai.lotteryticket.config.network;
 
 import android.util.Log;
 
+import com.wuhai.lotteryticket.config.Constants;
+
 import java.util.HashMap;
 
 public class ApiParams extends HashMap<String, String> {
@@ -29,14 +31,10 @@ public class ApiParams extends HashMap<String, String> {
     }
 
 
-//    public ApiParams with(String version) {
-//        put(Constants.version_key, version);
-//        put(Constants.source_key, Constants.source_value);
-//        put(Constants.os_key, Constants.os_value);
-//        put(Constants.pro_key, Constants.pro_value);
-//        put(Constants.token_key, (String) SPUtils.get("token",""));
-//        return this;
-//    }
+    public ApiParams juhe(String version) {
+        put(Constants.PARAMS_KEY, version);
+        return this;
+    }
 //
 //
 //    public ApiParams otherWith() {

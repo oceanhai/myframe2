@@ -14,5 +14,7 @@ public class Constants {
     //超级大乐透
     public static final String JUHE_LOTTERY_ID_DLT = "dlt";
 
+    //参数    聚合appkey
+    public static final String PARAMS_KEY = "key";
 
 }

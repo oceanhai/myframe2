@@ -2,6 +2,7 @@ package com.wuhai.lotteryticket.config.network;
 
 
 import com.trello.rxlifecycle.LifecycleTransformer;
+import com.wuhai.lotteryticket.model.bean.LotteryHistoryEntity;
 import com.wuhai.lotteryticket.model.bean.LotteryQueryEntity;
 
 /**
@@ -34,6 +35,18 @@ public interface IServiceProvider {
     void lotteryQuery2(String key, String lottery_id, String lottery_no,
                       RequestNetCallBack2<RootResponse<LotteryQueryEntity>> callBack,
                       LifecycleTransformer lifecycleTransformer);
+
+    /**
+     * 历史开奖结果查询
+     * @param lottery_id               彩票ID
+     * @param page
+     * @param page_size
+     * @param callBack
+     * @param lifecycleTransformer
+     */
+    void lotteryHistory(String lottery_id, int page, int page_size,
+                        RequestNetCallBack2<RootResponse<LotteryHistoryEntity>> callBack,
+                        LifecycleTransformer lifecycleTransformer);
 }
 
 
