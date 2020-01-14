@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <com.wuhai.myframe2.ui.homepage.qddgouwu.view.cyclebanner.ViewFlow
+        android:id="@+id/home_adapter_item_banner_viewflow"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        app:actualImageScaleType="fitCenter"/>
+
+    <!-- 圆形指示器 TODO 也没用到貌似   -->
+    <com.wuhai.myframe2.ui.homepage.qddgouwu.view.cyclebanner.CircleFlowIndicator
+        android:id="@+id/home_adapter_item_banner_viewflow_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="4dp"
+        app:actualImageScaleType="fitCenter"
+        android:visibility="gone"/>
+
+    <com.wuhai.myframe2.ui.homepage.qddgouwu.view.cyclebanner.SimpleLineIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+    </com.wuhai.myframe2.ui.homepage.qddgouwu.view.cyclebanner.SimpleLineIndicator>
+
+<!--    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="#e6e9ed"
+          android:layout_gravity="bottom"/>
+
+    <View
+        android:id="@+id/indicator2"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="#ff6666"
+        android:layout_gravity="bottom"/>-->
+
+</FrameLayout>

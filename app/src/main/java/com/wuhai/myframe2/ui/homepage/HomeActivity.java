@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.ui.base.BaseActivity;
+import com.wuhai.myframe2.ui.homepage.qddgouwu.ShoppingActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,6 +24,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.btn01)
     Button btn01;
+    @BindView(R.id.btn02)
+    Button btn02;
 
     /**
      * @param context
@@ -61,13 +64,17 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     private void setListener() {
         btn01.setOnClickListener(this);
+        btn02.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn01://使用特殊的(自定义)布局管理器
                 HomePageActivity1.startActivity(this);
+                break;
+            case R.id.btn02://使用特殊的(自定义)布局管理器 实战
+                ShoppingActivity.startActivity(this);
                 break;
         }
     }

@@ -29,5 +29,16 @@
         <color name="divider_2">#e6e6e6</color>
     <!-- StickyHeaderListView end-->
 
+    <!--字体颜色-->
+    <color name="text_color_black_one" >#28313d</color>
+    <color name="text_color_white" >#ffffff</color>
+
+
+    <!-- 钱到分期 购物页  -->
+    <color name="pallete_separator_line">#e6e6e6</color>
+    <color name="pallete_separator_line_temp">#e6e9ed</color>
+    <color name="credit_primary_text_color">#28313d</color>
+    <color name="category_price_color_red">#ff3333</color>
+    <color name="credit_secondary_text_color">#656d78</color>
 
 </resources>

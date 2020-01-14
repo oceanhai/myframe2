@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+    <include
+        android:id="@+id/header"
+        layout="@layout/new_item_header"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/pallete_separator_line_temp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/image_1"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="wrap_content"
+            app:actualImageScaleType="fitXY"
+            app:failureImage="@drawable/load_fail"
+            app:failureImageScaleType="fitXY"
+            app:placeholderImage="@drawable/load_fail"
+            app:viewAspectRatio="0.63636"/>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/pallete_separator_line_temp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5.5"
+            android:orientation="vertical">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/image_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewAspectRatio="1"
+                app:actualImageScaleType="fitXY"
+                app:failureImage="@drawable/load_fail"
+                app:failureImageScaleType="fitXY"
+                app:placeholderImage="@drawable/load_fail"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/pallete_separator_line_temp"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/image_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewAspectRatio="1"
+                app:actualImageScaleType="fitXY"
+                app:failureImage="@drawable/load_fail"
+                app:failureImageScaleType="fitXY"
+                app:placeholderImage="@drawable/load_fail"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/pallete_separator_line_temp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5.5"
+            android:orientation="vertical">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/image_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:actualImageScaleType="fitXY"
+                app:viewAspectRatio="1"
+                app:failureImage="@drawable/load_fail"
+                app:failureImageScaleType="fitXY"
+                app:placeholderImage="@drawable/load_fail"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/pallete_separator_line_temp"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/image_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewAspectRatio="1"
+                app:actualImageScaleType="fitXY"
+                app:failureImage="@drawable/load_fail"
+                app:failureImageScaleType="fitXY"
+                app:placeholderImage="@drawable/load_fail"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/pallete_separator_line_temp"/>
+
+</LinearLayout>

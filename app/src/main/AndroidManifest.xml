@@ -274,6 +274,9 @@
         <activity
             android:name=".ui.homepage.HomePageActivity1"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.homepage.qddgouwu.ShoppingActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

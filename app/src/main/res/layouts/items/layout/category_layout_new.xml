@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/pro_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:failureImage="@drawable/load_fail"
+        app:failureImageScaleType="fitXY"
+        app:placeholderImage="@drawable/load_fail"
+        app:actualImageScaleType="fitXY"/>
+
+
+    <com.wuhai.myframe2.ui.homepage.qddgouwu.view.CategoryCutTag
+        android:id="@+id/pro_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/pro_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pro_img"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:lineSpacingExtra="4dp"
+        android:maxLines="2"
+        android:minLines="2"
+        android:ellipsize="end"
+        android:textColor="@color/credit_primary_text_color"
+        android:textSize="11sp"/>
+
+    <TextView
+        android:id="@+id/pro_name_extra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pro_img"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        android:background="@drawable/name_extra_bg"
+        android:textSize="10sp"/>
+
+    <TextView
+        android:id="@+id/pro_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pro_name"
+        android:layout_margin="10dp"
+        android:drawablePadding="7dp"
+        android:textColor="@color/category_price_color_red"
+        android:textSize="11sp"/>
+
+
+    <TextView
+        android:id="@+id/pro_monthly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pro_name"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:textColor="@color/credit_secondary_text_color"
+        android:visibility="gone"
+        android:textSize="11sp"/>
+
+
+</merge>

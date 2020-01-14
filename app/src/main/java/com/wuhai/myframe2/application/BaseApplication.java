@@ -5,6 +5,11 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.facebook.cache.common.CacheErrorLogger;
+import com.facebook.cache.disk.DiskCacheConfig;
+import com.facebook.common.util.ByteConstants;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.stetho.Stetho;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -16,11 +21,14 @@ import com.igexin.sdk.PushManager;
 import com.lljjcoder.style.citylist.utils.CityListLoader;
 import com.wuhai.myframe2.business.getui.DemoIntentService;
 import com.wuhai.myframe2.business.getui.DemoPushService;
+import com.wuhai.myframe2.config.Config;
 import com.wuhai.myframe2.ui.retrofit.base.MyRequestHandler;
+import com.wuhai.myframe2.utils.DeviceUtil;
 import com.wuhai.retrofit.retrofit.BaseApi;
 import com.wuhai.retrofit.retrofit.NetProvider;
 import com.wuhai.retrofit.retrofit.RequestHandler;
 
+import java.io.File;
 import java.lang.reflect.Type;
 
 import okhttp3.CookieJar;
@@ -76,7 +84,43 @@ public class BaseApplication extends Application {
 
         //地址选择框架 数据初始化
         initAddressData();
+
+        //Fresco init 并指定缓存地址
+        initFresco(this);
+        //Fresco init 默认
+//        Fresco.initialize(this);
     }
+
+    /**
+     * Fresco init 并指定缓存地址
+     * @param context
+     */
+    private static void initFresco(Context context) {
+        ImagePipelineConfig config = ImagePipelineConfig.newBuilder(context)
+                .setMainDiskCacheConfig(getMainDiskCacheConfig(context))
+                .setDownsampleEnabled(true)
+                .build();
+
+        Fresco.initialize(context, config);
+    }
+
+    private static DiskCacheConfig getMainDiskCacheConfig(final Context context) {
+        String baseCacheLocation = DeviceUtil.getBaseFilePath(context);
+        File cacheDir = new File(baseCacheLocation + File.separator + Config.IMAGE_CACHE_DIR_NAME);
+        return DiskCacheConfig.newBuilder(null)
+                .setBaseDirectoryPath(cacheDir)
+                .setBaseDirectoryName("images")
+                .setMaxCacheSize(50 * ByteConstants.MB)
+                .setMaxCacheSizeOnLowDiskSpace(15 * ByteConstants.MB)
+                .setMaxCacheSizeOnVeryLowDiskSpace(5 * ByteConstants.MB)
+                .setCacheErrorLogger(new CacheErrorLogger() {
+                    @Override
+                    public void logError(CacheErrorCategory cacheErrorCategory, Class<?> clazz, String message, Throwable throwable) {
+                    }
+                })
+                .build();
+    }
+
 
     private void initAddressData() {
         /**

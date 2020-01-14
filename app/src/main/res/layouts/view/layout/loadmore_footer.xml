@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#e6e9ed"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#e6e9ed"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="7.5dp"
+            android:background="#cbd0d8"/>
+
+        <!--<ProgressBar-->
+        <!--android:id="@+id/loadmore_footer_progressbar"-->
+        <!--style="?android:attr/progressBarStyleSmallInverse"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--android:visibility="visible" />-->
+
+        <ImageView
+            android:id="@+id/load_more_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/load_more_01"/>
+
+        <TextView
+            android:id="@+id/loadmore_footer_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="点击加载更多"
+            android:textColor="#b1b8c3"
+            android:textSize="13sp"/>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="7.5dp"
+            android:background="#cbd0d8"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/space"
+        android:layout_width="1px"
+        android:layout_height="55dp"/>
+
+</LinearLayout>
