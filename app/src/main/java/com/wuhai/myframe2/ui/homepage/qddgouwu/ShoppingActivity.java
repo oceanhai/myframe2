@@ -3,6 +3,7 @@ package com.wuhai.myframe2.ui.homepage.qddgouwu;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -18,7 +19,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.ui.base.BaseActivity;
+import com.wuhai.myframe2.ui.homepage.qddgouwu.model.HomeInfoV2;
+import com.wuhai.myframe2.ui.homepage.qddgouwu.model.ProInfoPager;
 import com.wuhai.myframe2.utils.CommonUtils;
+import com.wuhai.myframe2.utils.GsonUtils;
 
 import java.util.ArrayList;
 
@@ -57,6 +61,7 @@ public class ShoppingActivity extends BaseActivity {
     private Unbinder mUnbinder;
     private int newPage = 1;
     private boolean hasMore = true;
+    private ProInfoPager proInfoPager;//模拟分页数据
 
     /**
      * @param context
@@ -84,6 +89,9 @@ public class ShoppingActivity extends BaseActivity {
 
         HomeInfoV2 homeInfo = new HomeInfoV2();
         homeInfo.set(object.getAsJsonObject("homeInfo"));
+
+        String newDataStr = CommonUtils.getFromAssets("qiandaodao/getNewItem", this);
+        proInfoPager = GsonUtils.getInstance().fromJson(newDataStr, ProInfoPager.class);
 
         if (mAdapter3 == null) {
             return;
@@ -146,7 +154,7 @@ public class ShoppingActivity extends BaseActivity {
 
         RecyclerAdapterWithHF recyclerAdapterWithHF = new RecyclerAdapterWithHF((RecyclerView.Adapter) mAdapter3);
         mHomeRecycleView.setAdapter(recyclerAdapterWithHF);
-        mHomeLoadLayout.setFooterView(new LoadMoreViewFooter(true));
+        mHomeLoadLayout.setFooterView(new LoadMoreViewFooter(false));
         mHomeLoadLayout.setPtrHandler(new com.chanven.lib.cptr.PtrHandler() {
             @Override
             public boolean checkCanDoRefresh(com.chanven.lib.cptr.PtrFrameLayout frame, View content, View header) {
@@ -161,6 +169,20 @@ public class ShoppingActivity extends BaseActivity {
         mHomeLoadLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void loadMore() {
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        newPage++;
+                        if(newPage>3){
+                            mHomeLoadLayout.loadMoreComplete(false);
+                        }else {
+                            mHomeLoadLayout.loadMoreComplete(true);
+                        }
+                        addNewData(proInfoPager.list);
+                    }
+                },3000);
+
                 //上拉加载
 //                APIServiceHome.getNewItem(++newPage, new APICallBack<ProInfoPager>() {
 //                    @Override

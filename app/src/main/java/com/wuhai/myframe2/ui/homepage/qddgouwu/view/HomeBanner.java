@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.wuhai.myframe2.R;
-import com.wuhai.myframe2.ui.homepage.qddgouwu.LinkImage;
+import com.wuhai.myframe2.ui.homepage.qddgouwu.model.LinkImage;
 import com.wuhai.myframe2.ui.homepage.qddgouwu.view.cyclebanner.BannerPagerAdapter;
 import com.wuhai.myframe2.ui.homepage.qddgouwu.view.cyclebanner.CircleFlowIndicator;
 import com.wuhai.myframe2.ui.homepage.qddgouwu.view.cyclebanner.SimpleLineIndicator;

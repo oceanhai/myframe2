@@ -1,6 +1,267 @@
 {
   "result": true,
-  "list": [],
+  "list": [
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    },
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    },
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    },
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    },
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    },
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    },
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    },
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    },
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    },
+    {
+      "id": "9DMA80M5MPMTL_13_22",
+      "name": "Apple iPhone 8 (A1863)  银色,256GB ",
+      "price": 7288,
+      "minDownpay": 807.2,
+      "maxSelectMonths": 6,
+      "icon": "http://img13.360buyimg.com/n1/jfs/t8452/64/1385288243/74327/7f6cc96e/59b857d8N332ec10b.jpg",
+      "description": "移动联通电信4G手机",
+      "monthlyPrincipal": 807.21,
+      "downpayRateText": "40,50",
+      "installmentRateText": "{\"6\":0.36}",
+      "itemType": 0,
+      "productId": "9DMA80M5MPMTL",
+      "categoryId": 1,
+      "cutPrice": 0,
+      "coupon": 0,
+      "activity": null,
+      "webviewUrl": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=9DMA80M5MPMTL_13_22",
+      "installmentRateData": {
+        "6": 0.36
+      },
+      "downpayRateData": [
+        40,
+        50
+      ]
+    }
+  ],
   "pager": {
     "page": 2,
     "pageCount": 1,

@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wuhai.myframe2.R;
+import com.wuhai.myframe2.ui.homepage.qddgouwu.model.HomeInfoV2;
+import com.wuhai.myframe2.ui.homepage.qddgouwu.model.LinkImage;
 import com.wuhai.myframe2.ui.homepage.qddgouwu.view.CategoryCutTag;
 import com.wuhai.myframe2.ui.homepage.qddgouwu.view.HomeBanner;
 

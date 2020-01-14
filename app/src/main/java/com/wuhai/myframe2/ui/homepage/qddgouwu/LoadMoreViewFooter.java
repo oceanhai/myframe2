@@ -18,6 +18,11 @@ public class LoadMoreViewFooter implements ILoadMoreViewFactory {
     private String finish = "V"+ BuildConfig.VERSION_NAME;
     private boolean bottomMargin = false;
 
+    /**
+     * 是否需要垫高
+     * 这是因为钱到分期 底部导航和fr 是叠层关系，所以之前需要这个垫高
+     * @param enable
+     */
     public LoadMoreViewFooter(boolean enable){
         bottomMargin = enable;
     }

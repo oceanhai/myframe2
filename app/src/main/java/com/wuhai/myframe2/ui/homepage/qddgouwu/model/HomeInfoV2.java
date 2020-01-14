@@ -1,10 +1,11 @@
-package com.wuhai.myframe2.ui.homepage.qddgouwu;
+package com.wuhai.myframe2.ui.homepage.qddgouwu.model;
 
 import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.wuhai.myframe2.ui.homepage.qddgouwu.SearchProInfo;
 
 import java.util.ArrayList;
 import java.util.Map;

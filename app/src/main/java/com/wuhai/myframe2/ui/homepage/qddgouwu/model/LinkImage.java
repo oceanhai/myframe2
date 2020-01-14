@@ -1,4 +1,4 @@
-package com.wuhai.myframe2.ui.homepage.qddgouwu;
+package com.wuhai.myframe2.ui.homepage.qddgouwu.model;
 
 /**
  * createby yangzheng
