@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -194,6 +195,7 @@ public class ShoppingActivity extends BaseActivity {
             @Override
             public void onLinkImageClick(String url, String id,String title, String type) {
                 //TODO 点击跳转逻辑
+                Toast.makeText(ShoppingActivity.this,type,Toast.LENGTH_LONG).show();
 //                if (QiandaodaoUri.isQiandaodaoUri(url)) {
 //                    if (getActivity() != null) {
 //                        ((MainActivity) getActivity()).configQiandaodaoUri(url,type);

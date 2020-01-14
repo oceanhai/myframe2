@@ -9,6 +9,30 @@
         "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=1CV48VA64E1J2_11",
         "image": "http://static.qiandaodao.cn/upload/image/20190701/9IV594U0H89VK.png",
         "bannerId": null
+      },
+      {
+        "id": 0,
+        "title": "清凉一夏",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=1CV48VA64E1J2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20190701/9IV594U0H89VK.png",
+        "bannerId": null
+      },
+      {
+        "id": 0,
+        "title": "清凉一夏",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=1CV48VA64E1J2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20190701/9IV594U0H89VK.png",
+        "bannerId": null
+      },
+      {
+        "id": 0,
+        "title": "清凉一夏",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=1CV48VA64E1J2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20190701/9IV594U0H89VK.png",
+        "bannerId": null
       }
     ],
     "quickEntry": [
@@ -58,7 +82,32 @@
     "categoryList": null,
     "advert": [],
     "news": null,
-    "superImage": [],
+    "superImage": [
+      {
+        "id": 0,
+        "title": "oppo",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=18HA176R388A2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20190605/3J9FKCPGCTGMN.png",
+        "bannerId": null
+      },
+      {
+        "id": 0,
+        "title": "oppo",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=18HA176R388A2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20190605/3J9FKCPGCTGMN.png",
+        "bannerId": null
+      },
+      {
+        "id": 0,
+        "title": "oppo",
+        "titleColor": null,
+        "url": "http://api.qiandaodao.com/ecshop/webview/item/detail.do?itemId=18HA176R388A2_11",
+        "image": "http://static.qiandaodao.cn/upload/image/20190605/3J9FKCPGCTGMN.png",
+        "bannerId": null
+      }
+    ],
     "commonEntrance": [
       {
         "id": 0,

@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:orientation="horizontal"
-    android:background="@android:color/white">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:background="@color/pallete_separator_line_temp">
+
+
+    <View
+        android:layout_width="60dp"
+        android:layout_height="1px"
+        android:background="@color/category_hot_color_red"/>
+
 
     <TextView
         android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginLeft="7dp"
         android:layout_marginRight="7dp"
         android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:text="热卖商品"
-        android:background="@drawable/global_bg_white"
-        android:layout_width="200dp"
-        android:layout_height="100dp"/>
+        android:drawableLeft="@drawable/product_hot_icon"
+        android:textColor="@color/category_hot_color_red"
+        android:textSize="15sp"
+        android:text="热卖商品"/>
+
+
+    <View
+        android:layout_width="60dp"
+        android:layout_height="1px"
+        android:background="@color/category_hot_color_red"/>
+
 
 </LinearLayout>

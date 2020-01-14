@@ -154,19 +154,19 @@ public class HomePageAdapter1 extends RecyclerView.Adapter<RecyclerView.ViewHold
         RecyclerView.ViewHolder holder = null;
         switch(viewType){
             case TYPE_SLIDER:
-                holder = new TitleHolder(createView(R.layout.hot_item_header));
+                holder = new TitleHolder(createView(R.layout.item_home_page1));
                 break;
             case TYPE_TYPE2_HEAD:
-                holder = new TitleHolder(createView(R.layout.hot_item_header));
+                holder = new TitleHolder(createView(R.layout.item_home_page1));
                 break;
             case TYPE_TYPE2:
-                holder = new TitleHolder(createView(R.layout.hot_item_header));
+                holder = new TitleHolder(createView(R.layout.item_home_page1));
                 break;
             case TYPE_TYPE3_HEAD:
-                holder = new TitleHolder(createView(R.layout.hot_item_header));
+                holder = new TitleHolder(createView(R.layout.item_home_page1));
                 break;
             case TYPE_TYPE3:
-                holder = new TitleHolder(createView(R.layout.hot_item_header));
+                holder = new TitleHolder(createView(R.layout.item_home_page1));
                 break;
             default:
                 break;

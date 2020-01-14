@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -222,7 +223,9 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         int type = getItemViewType(position);
         switch(type){
-            case HomeInfoV2.TYPE_BANNER:
+            case HomeInfoV2.TYPE_BANNER://首页-Banner
+                Log.e("HomeAdapterV3", "首页-Banner resouce里的位置:"+info.resource.indexOf(HomeInfoV2.BANNER)+
+                        ",position="+position);
                 if(holder instanceof BannerViewHolder){
                     final BannerViewHolder bannerViewHolder = (BannerViewHolder) holder;
                     bannerViewHolder.item.set(info.banner);
@@ -241,7 +244,9 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     });
                 }
                 break;
-            case HomeInfoV2.TYPE_QUICKENTRY:
+            case HomeInfoV2.TYPE_QUICKENTRY://首页-快捷入口
+                Log.e("HomeAdapterV3", "首页-快捷入口 resouce里的位置:"+info.resource.indexOf(HomeInfoV2.QUICKENTRY)+
+                        ",position="+position);
                 QuickEntryHolder quickEntryHolder = (QuickEntryHolder)holder;
                 QuickEntryAdapter qeAdapter = new QuickEntryAdapter();
                 quickEntryHolder.mContainer.setLayoutManager(new GridLayoutManager(mContext, info.quickEntry.size(), GridLayoutManager.VERTICAL, false));
@@ -258,9 +263,11 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     quickEntryHolder.mContainer.setBackgroundColor(Color.WHITE);
                 }
                 break;
-            case HomeInfoV2.TYPE_SUPERIMAGE:
+            case HomeInfoV2.TYPE_SUPERIMAGE://首页-大图推荐 TODO 线上没数据
                 LinkImageHolder superHolder = (LinkImageHolder)holder;
                 int endSu = info.indexs.get(info.resource.indexOf(HomeInfoV2.SUPERIMAGE));
+                Log.e("HomeAdapterV3", "首页-大图推荐 resouce里的位置:"+info.resource.indexOf(HomeInfoV2.SUPERIMAGE)+
+                        ",endSu="+endSu+",position="+position);
                 final LinkImage imageSu = info.superImage.get(position - endSu + info.superImage.size()-1);
                 superHolder.image.setImageURI(Uri.parse(imageSu.image));
                 superHolder.title.setText(imageSu.title);
@@ -273,9 +280,11 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     }
                 });
                 break;
-            case HomeInfoV2.TYPE_COMMONENTRANCE:
+            case HomeInfoV2.TYPE_COMMONENTRANCE://首页-常用入口
                 LinkImageHolder ceHolder = (LinkImageHolder)holder;
                 int endCe = info.indexs.get(info.resource.indexOf(HomeInfoV2.COMMONENTRANCE));
+                Log.e("HomeAdapterV3", "首页-常用入口 resouce里的位置:"+info.resource.indexOf(HomeInfoV2.COMMONENTRANCE)+
+                        ",endCe="+endCe+",position="+position);
                 final LinkImage imageCe = info.commonEntrance.get(position - endCe + info.commonEntrance.size()-1);
                 ceHolder.image.setImageURI(Uri.parse(imageCe.image));
                 ceHolder.container.setOnClickListener(new View.OnClickListener() {
@@ -287,9 +296,11 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     }
                 });
                 break;
-            case HomeInfoV2.TYPE_BIGIMAGE:
+            case HomeInfoV2.TYPE_BIGIMAGE://首页-横图推荐
                 LinkImageHolder bigHolder = (LinkImageHolder)holder;
                 int endBi = info.indexs.get(info.resource.indexOf(HomeInfoV2.BIGIMAGE));
+                Log.e("HomeAdapterV3", "首页-横图推荐 resouce里的位置:"+info.resource.indexOf(HomeInfoV2.BIGIMAGE)+
+                        ",endBi="+endBi+",position="+position);
                 final LinkImage imageBi = info.bigImage.get(position - endBi + info.bigImage.size()-1);
                 bigHolder.container.findViewById(R.id.divider).setVisibility(
                         position - endBi + info.bigImage.size()-1 == 0 ? View.VISIBLE : View.GONE);
@@ -304,9 +315,11 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     }
                 });
                 break;
-            case HomeInfoV2.TYPE_SMALLIMAGE:
+            case HomeInfoV2.TYPE_SMALLIMAGE://首页-小图推荐
                 LinkImageHolder smallHolder = (LinkImageHolder)holder;
                 int endSm = info.indexs.get(info.resource.indexOf(HomeInfoV2.SMALLIMAGE));
+                Log.e("HomeAdapterV3", "首页-小图推荐 resouce里的位置:"+info.resource.indexOf(HomeInfoV2.SMALLIMAGE)+
+                        ",endSm="+endSm+",position="+position);
                 final LinkImage imageSm = info.smallImage.get(position - endSm + info.smallImage.size()-1);
                 smallHolder.image.setImageURI(Uri.parse(imageSm.image));
                 smallHolder.title.setText(imageSm.title);
@@ -319,7 +332,9 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     }
                 });
                 break;
-            case HomeInfoV2.TYPE_HOTITEM:
+            case HomeInfoV2.TYPE_HOTITEM://首页-新品上架
+                Log.e("HomeAdapterV3", "首页-新品上架 resouce里的位置:"+info.resource.indexOf(HomeInfoV2.HOTITEM)+
+                        ",position="+position);
                 HotViewHolderV2 hotViewHolder = (HotViewHolderV2)holder;
                 switch(info.hotItem.size()){
                     default:
@@ -391,10 +406,13 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     }
                 });*/
                 break;
-            case HomeInfoV2.TYPE_NEWITEM:
+            case HomeInfoV2.TYPE_NEWITEM://首页-热卖商品
                 NewViewHolder newViewHolder = (NewViewHolder)holder;
                 int endNe = info.indexs.get(info.resource.indexOf(HomeInfoV2.NEWITEM));
+                Log.e("HomeAdapterV3", "首页-热卖商品 resouce里的位置:"+info.resource.indexOf(HomeInfoV2.NEWITEM)+
+                        ",endNe="+endNe+",position="+position);
                 final SearchProInfo itemNew = info.newItem.get(position - endNe + info.newItem.size()-1);
+                //TODO 以前是item里有头部，现在单独抽出作为一种type来设置头部，所以这里gone
                 newViewHolder.header.setVisibility(/*position - endNe + info.newItem.size() - 1 == 0 ? View.VISIBLE : */View.GONE);
                 newViewHolder.mFlag.setCut((int) itemNew.cutPrice);
                 newViewHolder.mName.setText(itemNew.name);
@@ -413,6 +431,8 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 });
                 break;
             case HomeInfoV2.TYPE_NEWITEMTITLE:
+                Log.e("HomeAdapterV3", "热卖商品-title resouce里的位置:"+info.resource.indexOf(HomeInfoV2.NEWITEMTITLE)+
+                        ",position="+position);
                 TitleHolder titleHolder = (TitleHolder)holder;
                 titleHolder.mText.setText("热卖商品");
                 break;

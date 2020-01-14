@@ -40,5 +40,6 @@
     <color name="credit_primary_text_color">#28313d</color>
     <color name="category_price_color_red">#ff3333</color>
     <color name="credit_secondary_text_color">#656d78</color>
+    <color name="category_hot_color_red">#ff3c3c</color>
 
 </resources>

@@ -36,7 +36,7 @@ public class HomeInfoV2 {
     public static final int TYPE_HOTITEM = 6;
     public static final int TYPE_NEWITEM = 7;
     public static final int TYPE_NEWITEMTITLE = 8;
-    public static final int TYPE_COMMONENTRANCE= 9;
+    public static final int TYPE_COMMONENTRANCE= 9;//TODO 虽然这是9，但解析数据体的时候，是根据json key顺序赋值的
 
     public ArrayList<LinkImage> banner;
     public ArrayList<LinkImage> quickEntry;
@@ -50,8 +50,8 @@ public class HomeInfoV2 {
 
     public ArrayList<LinkImage> advert;
 
-    public ArrayList<String> resource;
-    public ArrayList<Integer> indexs;
+    public ArrayList<String> resource;//类型
+    public ArrayList<Integer> indexs;//TODO 记录每一种类型的最后位置
 
     public HomeInfoV2() {
         banner = new ArrayList<>();
@@ -113,7 +113,7 @@ public class HomeInfoV2 {
         for (Map.Entry<String, JsonElement> elementEntry : json.entrySet()) {
             Log.e("wuhai", "elementEntry.getKey()="+elementEntry.getKey());
             switch (elementEntry.getKey()) {
-                case BANNER:
+                case BANNER://首页-Banner
                     for (JsonElement item : elementEntry.getValue().getAsJsonArray()) {
                         banner.add(gson.fromJson(item, LinkImage.class));
                     }
@@ -122,7 +122,7 @@ public class HomeInfoV2 {
                         indexs.add(0);
                     }
                     break;
-                case QUICKENTRY:
+                case QUICKENTRY://首页-快捷入口
                     for (JsonElement item : elementEntry.getValue().getAsJsonArray()) {
                         quickEntry.add(gson.fromJson(item, LinkImage.class));
                     }
@@ -131,16 +131,16 @@ public class HomeInfoV2 {
                         indexs.add(indexs.get(indexs.size() - 1) + 1);
                     }
                     break;
-                case SUPERIMAGE:
+                case SUPERIMAGE://首页-大图推荐
                     for (JsonElement item : elementEntry.getValue().getAsJsonArray()) {
                         superImage.add(gson.fromJson(item, LinkImage.class));
                     }
                     if (superImage.size() > 0) {
                         resource.add(SUPERIMAGE);
-                        indexs.add(indexs.get(indexs.size() - 1) + superImage.size());
+                        indexs.add(indexs.get(indexs.size() - 1) + superImage.size());//TODO 根据size计算出endSu,即最后的位置所在
                     }
                     break;
-                case SMALLIMAGE:
+                case SMALLIMAGE://首页-小图推荐
                     for (JsonElement item : elementEntry.getValue().getAsJsonArray()) {
                         smallImage.add(gson.fromJson(item, LinkImage.class));
                     }
@@ -149,7 +149,7 @@ public class HomeInfoV2 {
                         indexs.add(indexs.get(indexs.size() - 1) + smallImage.size());
                     }
                     break;
-                case BIGIMAGE:
+                case BIGIMAGE://首页-横图推荐
                     for (JsonElement item : elementEntry.getValue().getAsJsonArray()) {
                         bigImage.add(gson.fromJson(item, LinkImage.class));
                     }
@@ -158,7 +158,7 @@ public class HomeInfoV2 {
                         indexs.add(indexs.get(indexs.size() - 1) + bigImage.size());
                     }
                     break;
-                case HOTITEM:
+                case HOTITEM://首页-新品上架
                     for (JsonElement item : elementEntry.getValue().getAsJsonArray()) {
                         hotItem.add(gson.fromJson(item, SearchProInfo.class));
                     }
@@ -167,7 +167,7 @@ public class HomeInfoV2 {
                         indexs.add(indexs.get(indexs.size() - 1) + 1 /*hotItem.size()*/);
                     }
                     break;
-                case NEWITEM:
+                case NEWITEM://首页-热卖商品
                     for (JsonElement item : elementEntry.getValue().getAsJsonArray()) {
                         newItem.add(gson.fromJson(item, SearchProInfo.class));
                     }
@@ -175,7 +175,7 @@ public class HomeInfoV2 {
                         if(newItem.size() % 2 !=0){
                             newItem.remove(newItem.size()-1);//TODO wuhai 这里remove一个，假数据时候会咋样呢 嘿嘿
                         }
-                        resource.add(NEWITEMTITLE);
+                        resource.add(NEWITEMTITLE);//首页-热卖商品 的头部作为一个单独type
                         indexs.add(indexs.get(indexs.size() - 1)+1);
                         resource.add(NEWITEM);
                         indexs.add(indexs.get(indexs.size() - 1) + newItem.size());
@@ -190,7 +190,7 @@ public class HomeInfoV2 {
                         quickEntryBackground.add(gson.fromJson(item, LinkImage.class));
                     }
                     break;
-                case COMMONENTRANCE:
+                case COMMONENTRANCE://首页-常用入口
                     for (JsonElement item : elementEntry.getValue().getAsJsonArray()) {
                         commonEntrance.add(gson.fromJson(item, LinkImage.class));
                     }
@@ -203,8 +203,14 @@ public class HomeInfoV2 {
                     break;
             }
         }
+
+        Log.e("HomeAdapterV3",resource.toString()+"\n"+indexs.toString());
     }
 
+    /**
+     * 加载多页时候 更新 NEWITEM的indexs里的值
+     * @param newData
+     */
     public void addNew(ArrayList<SearchProInfo> newData) {
         newItem.addAll(newData);
         int old = indexs.get(resource.indexOf(HomeInfoV2.NEWITEM));
