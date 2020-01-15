@@ -64,10 +64,20 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         listener = l;
     }
 
+    /**
+     * GridLayoutManager setSpanSizeLookup
+     * 获取适配器中每个项占用的跨距数
+     * @return
+     */
     public HomeSpanSizeLookup getSpanSizeLookup(){
         return new HomeSpanSizeLookup();
     }
 
+    /**
+     *
+     * 分割线
+     * @return
+     */
     public HomeItemDecoration getHomeItemDecoration(){
         return new HomeItemDecoration();
     }
@@ -127,13 +137,13 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             for (int i = 0; i < count; i++) {
                 child = parent.getChildAt(i);
                 position = parent.getChildAdapterPosition(child);
-                if(getItemViewType(position) == HomeInfoV2.TYPE_SMALLIMAGE){
+                if(getItemViewType(position) == HomeInfoV2.TYPE_SMALLIMAGE){//首页-小图推荐
                     paint.setStrokeWidth(1);
                     paint.setColor(Color.parseColor("#e6e9ed"));
                     int endSm = info.indexs.get(info.resource.indexOf(HomeInfoV2.SMALLIMAGE));
                     drawDivider(position - endSm + info.smallImage.size()-1, 4, child, info.smallImage.size(), c);
                 }
-                if(getItemViewType(position) == HomeInfoV2.TYPE_NEWITEM){
+                if(getItemViewType(position) == HomeInfoV2.TYPE_NEWITEM){//首页-热卖商品
                     paint.setStrokeWidth(1);
                     paint.setColor(Color.parseColor("#e6e9ed"));
                     int endNe = info.indexs.get(info.resource.indexOf(HomeInfoV2.NEWITEM));
@@ -150,18 +160,27 @@ public class HomeAdapterV3 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             }
         }
 
+        /**
+         *
+         * @param i         一屏幕最多的展示的item个数 0-i
+         * @param raw       列
+         * @param child
+         * @param count     数据总个数
+         * @param c
+         */
         public void drawDivider(int i, int raw, View child, int count, Canvas c){
-            if ((i + 1) % raw == 0) {
+            Log.e("HomeAdapterV3", "i="+i+",raw="+raw+",child="+child+",count="+count);
+            if ((i + 1) % raw == 0) {//最后一个
                 c.drawLine(child.getLeft(), child.getBottom(), child.getRight(), child
-                        .getBottom(), paint);
-            } else if (i >= count - count % raw) {
+                        .getBottom(), paint);//横线
+            } else if (i >= count - count % raw) {//TODO 这种情况是不是不会出现？
                 c.drawLine(child.getRight(), child.getTop(), child.getRight(), child
                         .getBottom(), paint);
             } else {
                 c.drawLine(child.getLeft(), child.getBottom(), child.getRight(), child
-                        .getBottom(), paint);
+                        .getBottom(), paint);//横线
                 c.drawLine(child.getRight(), child.getTop(), child.getRight(), child
-                        .getBottom(), paint);
+                        .getBottom(), paint);//竖线
             }
         }
     }

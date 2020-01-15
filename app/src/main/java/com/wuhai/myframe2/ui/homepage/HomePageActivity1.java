@@ -24,6 +24,9 @@ import butterknife.ButterKnife;
  * 描述：使用特殊的(自定义)布局管理器
  * 参考文章 https://blog.csdn.net/liaoinstan/article/details/52671101
  *        方案二：使用特殊的(自定义)布局管理器
+ *
+ *        分割线   参考文章    https://www.jianshu.com/p/b46a4ff7c10a
+ *
  */
 public class HomePageActivity1 extends BaseActivity {
 

@@ -38,6 +38,11 @@ import butterknife.Unbinder;
  * 描述：使用特殊的(自定义)布局管理器
  * 实际应用案例
  *  钱到分期 购物页
+ *
+ * 参考文章 https://blog.csdn.net/liaoinstan/article/details/52671101
+ *        方案二：使用特殊的(自定义)布局管理器
+ *
+ *        分割线   参考文章    https://www.jianshu.com/p/b46a4ff7c10a
  */
 public class ShoppingActivity extends BaseActivity {
 

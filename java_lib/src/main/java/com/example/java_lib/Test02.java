@@ -12,7 +12,27 @@ public class Test02 {
 //        for(int j=0; j<1000; j++)
 //            func();
 
-        method01();
+        method03();
+    }
+
+    private static void method03() {
+        int raw = 2;
+        int count = 12;
+        for(int i=0;i<8;i++){
+            System.out.println("i="+i);
+            System.out.println("(i + 1) % raw="+((i + 1) % raw));
+            System.out.println("count - count % raw="+(count - count % raw));
+        }
+    }
+
+    private static void method02() {
+        int raw = 4;
+        int count = 4;
+        for(int i=0;i<4;i++){
+            System.out.println("i="+i);
+            System.out.println("(i + 1) % raw="+((i + 1) % raw));
+            System.out.println("count - count % raw="+(count - count % raw));
+        }
     }
 
     private static void method01() {
