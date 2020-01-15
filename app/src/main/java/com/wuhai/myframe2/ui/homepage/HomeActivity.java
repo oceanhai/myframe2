@@ -26,6 +26,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     Button btn01;
     @BindView(R.id.btn02)
     Button btn02;
+    @BindView(R.id.btn03)
+    Button btn03;
 
     /**
      * @param context
@@ -65,6 +67,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     private void setListener() {
         btn01.setOnClickListener(this);
         btn02.setOnClickListener(this);
+        btn03.setOnClickListener(this);
     }
 
     @Override
@@ -75,6 +78,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn02://使用特殊的(自定义)布局管理器 实战
                 ShoppingActivity.startActivity(this);
+                break;
+            case R.id.btn03://第三方twowayview
                 break;
         }
     }

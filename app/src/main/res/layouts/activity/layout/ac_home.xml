@@ -18,5 +18,10 @@
         android:text="方案：使用特殊的(自定义)布局管理器-实战"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn03"
+        android:text="方案"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
