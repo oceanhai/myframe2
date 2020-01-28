@@ -1,1 +1,1 @@
-include ':app', ':retrofitnetworkrequest', ':mvvm', ':java_lib', ':myclient', ':myhydemo', ':easeui', ':gesture01', ':gesture02', ':gaodeditu', ':aidlserver', ':aidlclient', ':broadcastreceiverdemo', ':lotteryticket', ':scan', ':share', ':xupdate-lib'
+include ':app', ':retrofitnetworkrequest', ':mvvm', ':java_lib', ':myclient', ':myhydemo', ':easeui', ':gesture01', ':gesture02', ':gaodeditu', ':aidlserver', ':aidlclient', ':broadcastreceiverdemo', ':lotteryticket', ':scan', ':share', ':xupdate-lib', ':recyclerview'
