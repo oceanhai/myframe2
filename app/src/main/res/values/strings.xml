@@ -76,5 +76,8 @@
     <string name="push_transmission_data">收到一条透传测试消息</string>
     <string name="network_invalid">对不起，当前网络不可用!</string>
 
+    <!-- flatview1-->
+    <string name="string_buy_book">立即购买</string>
+    <string name="string_test_read">试读下载</string>
 
 </resources>

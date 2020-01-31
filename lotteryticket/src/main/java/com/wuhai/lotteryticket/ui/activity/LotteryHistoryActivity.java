@@ -32,7 +32,7 @@ import com.wuhai.lotteryticket.utils.GsonUtils;
  *
  * 描述：彩票历史列表
  */
-public class LotteryHistoryActivity extends NewLoadingBaseActivity implements ILotteryHistoryContract.View, LotteryHistoryHeaderAdapter.OnItemClickLitener {
+public class LotteryHistoryActivity extends NewLoadingBaseActivity implements ILotteryHistoryContract.View, LotteryHistoryHeaderAdapter.OnItemClickLitener, View.OnClickListener {
 
     //彩票ID
     private String mLotteryId;
@@ -150,7 +150,9 @@ public class LotteryHistoryActivity extends NewLoadingBaseActivity implements IL
     }
 
     private void setListener() {
-
+        binding.lotteryHistoryCreateRl.setOnClickListener(this);
+        binding.lotteryHistoryTrendChartRl.setOnClickListener(this);
+        binding.lotteryHistoryCountingAwardRl.setOnClickListener(this);
     }
 
     @Override
@@ -174,4 +176,18 @@ public class LotteryHistoryActivity extends NewLoadingBaseActivity implements IL
         Toast.makeText(this,"item 点击位置"+position,Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.lottery_history_create_rl:
+                LotteryCreateActivity.startActivity(this);
+                break;
+            case R.id.lottery_history_trend_chart_rl:
+                Toast.makeText(this,"趋势图暂未开通",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.lottery_history_counting_award_rl:
+                showToast("算奖工具暂未开通");
+                break;
+        }
+    }
 }

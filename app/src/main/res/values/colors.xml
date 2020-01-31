@@ -42,4 +42,9 @@
     <color name="credit_secondary_text_color">#656d78</color>
     <color name="category_hot_color_red">#ff3c3c</color>
 
+    <!-- flatview1-->
+<!--    <color name="white">#ffffff</color>-->
+    <color name="new_green">#2eb6aa</color>
+    <color name="book_store_bt_buy_off">#FF5A55</color>
+
 </resources>

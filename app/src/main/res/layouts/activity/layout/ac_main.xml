@@ -128,7 +128,7 @@
                 android:id="@+id/btn26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="浮动item"
                 android:id="@+id/btn27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
