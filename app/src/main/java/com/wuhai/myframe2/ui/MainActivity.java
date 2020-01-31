@@ -429,6 +429,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn27://浮动item
                 FloatViewActivity.startActivity(this);
                 break;
+            case R.id.btn28://Spinner
+                SpinnerActivity.startActivity(this);
+                break;
         }
     }
 
