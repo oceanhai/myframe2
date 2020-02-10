@@ -29,6 +29,7 @@ import com.wuhai.myframe2.ui.glide.GlideActivity;
 import com.wuhai.myframe2.ui.homepage.HomeActivity;
 import com.wuhai.myframe2.ui.notificaitons.NotificationService;
 import com.wuhai.myframe2.ui.okhttp3.OkHttpActivity;
+import com.wuhai.myframe2.ui.popwindow.PopWindowActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitRxJavaRxLifecycleActivity;
 import com.wuhai.myframe2.ui.rxbus.RxBusAcceptActivity;
@@ -431,6 +432,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn28://Spinner
                 SpinnerActivity.startActivity(this);
+                break;
+            case R.id.btn29://popwindow
+                PopWindowActivity.startActivity(this);
                 break;
         }
     }

@@ -294,6 +294,11 @@
             android:name=".ui.SpinnerActivity"
             android:screenOrientation="portrait"/>
 
+        <!--  PopWindow      -->
+        <activity
+            android:name=".ui.popwindow.PopWindowActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
