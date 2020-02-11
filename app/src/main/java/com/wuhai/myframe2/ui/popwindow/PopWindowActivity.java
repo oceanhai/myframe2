@@ -18,6 +18,9 @@ import butterknife.ButterKnife;
  * 创建日期 2019/4/3 11:45
  * <p>
  * 描述：PopWindow
+ *
+ *  Android Popwindow使用总结  没细看
+ *  https://www.jianshu.com/p/3812ff5ef272
  */
 public class PopWindowActivity extends BaseActivity implements View.OnClickListener {
 
@@ -27,6 +30,7 @@ public class PopWindowActivity extends BaseActivity implements View.OnClickListe
     Button btn02;
 
     private MorePopWindow morePopWindow;
+    private ListPopWindow mListPopWindow;
 
     /**
      * @param context
@@ -84,10 +88,10 @@ public class PopWindowActivity extends BaseActivity implements View.OnClickListe
                 morePopWindow.dismiss();
                 break;
             case R.id.btn02:
-                if (morePopWindow == null) {
-                    morePopWindow = new MorePopWindow(this, this);
+                if (mListPopWindow == null) {
+                    mListPopWindow = new ListPopWindow(this);
                 }
-                morePopWindow.showPopupWindow(v);
+                mListPopWindow.showPopupWindow(v);
                 break;
         }
     }
