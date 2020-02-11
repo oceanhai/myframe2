@@ -10,6 +10,8 @@ import androidx.databinding.DataBindingUtil;
 import com.wuhai.lotteryticket.R;
 import com.wuhai.lotteryticket.databinding.AcLotteryCreateBinding;
 import com.wuhai.lotteryticket.ui.base.NewLoadingBaseActivity;
+import com.wuhai.lotteryticket.utils.MathUtils;
+import com.wuhai.lotteryticket.widget.popupwindow.ListPopWindow;
 
 
 /**
@@ -19,10 +21,13 @@ import com.wuhai.lotteryticket.ui.base.NewLoadingBaseActivity;
  *
  * 描述：彩票生成
  */
-public class LotteryCreateActivity extends NewLoadingBaseActivity {
+public class LotteryCreateActivity extends NewLoadingBaseActivity implements View.OnClickListener, ListPopWindow.OnNumCallBackLitener {
 
     //Binding
     private AcLotteryCreateBinding binding;
+
+    private ListPopWindow mRedListPopWindow;
+    private ListPopWindow mBlueListPopWindow;
 
     /**
      *
@@ -71,7 +76,8 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity {
     }
 
     private void setListener() {
-
+        binding.redTv.setOnClickListener(this);
+        binding.blueTv.setOnClickListener(this);
     }
 
 
@@ -87,5 +93,43 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity {
     protected void onRightActionClicked() {
         super.onRightActionClicked();
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.red_tv:
+                if (mRedListPopWindow == null) {
+                    mRedListPopWindow = new ListPopWindow(this, 0);
+                    mRedListPopWindow.setOnNumCallBackLitener(this);
+                }
+                mRedListPopWindow.showPopupWindow(v);
+                break;
+            case R.id.blue_tv:
+                if (mBlueListPopWindow == null) {
+                    mBlueListPopWindow = new ListPopWindow(this, 1);
+                    mBlueListPopWindow.setOnNumCallBackLitener(this);
+                }
+                mBlueListPopWindow.showPopupWindow(v);
+                break;
+        }
+    }
+
+    @Override
+    public void onNumCallBack(int type, String num) {
+        switch (type){
+            case 0:
+                binding.redTv.setText(num);
+                break;
+            case 1:
+                binding.blueTv.setText(num);
+                break;
+        }
+
+        int redNum = Integer.valueOf(binding.redTv.getText().toString());
+        int blueNum = Integer.valueOf(binding.blueTv.getText().toString());
+        int betNum = MathUtils.getCombinationNum(redNum,6) * blueNum;
+        binding.betNumTv.setText(betNum+" 注");
+        binding.moneyTv.setText("￥"+(betNum*2)+" 元");
     }
 }
