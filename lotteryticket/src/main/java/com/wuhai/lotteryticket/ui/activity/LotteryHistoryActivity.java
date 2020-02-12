@@ -18,6 +18,7 @@ import com.wuhai.lotteryticket.config.Constants;
 import com.wuhai.lotteryticket.contract.ILotteryHistoryContract;
 import com.wuhai.lotteryticket.databinding.AcLotteryHistoryBinding;
 import com.wuhai.lotteryticket.model.bean.LotteryHistoryEntity;
+import com.wuhai.lotteryticket.model.bean.LotteryQueryEntity;
 import com.wuhai.lotteryticket.presenter.LotteryHistoryPresenter;
 import com.wuhai.lotteryticket.ui.adapter.LotteryHistoryHeaderAdapter;
 import com.wuhai.lotteryticket.ui.base.NewLoadingBaseActivity;
@@ -36,6 +37,7 @@ public class LotteryHistoryActivity extends NewLoadingBaseActivity implements IL
 
     //彩票ID
     private String mLotteryId;
+    private LotteryQueryEntity mLotteryEntity;//数据
 
     //Binding
     private AcLotteryHistoryBinding binding;
@@ -50,14 +52,17 @@ public class LotteryHistoryActivity extends NewLoadingBaseActivity implements IL
     private LotteryHistoryEntity lotteryHistoryEntity;
     private int newPage = 1;//最多加载三页
 
+
+
     /**
      *
      * @param context
      * @param lottery_id        ssq,dlt
      */
-    public static void startActivity(Context context, String lottery_id) {
+    public static void startActivity(Context context, String lottery_id, LotteryQueryEntity entity) {
         Intent intent = new Intent();
         intent.putExtra("lottery_id",lottery_id);
+        intent.putExtra("lottery_entity",entity);
         intent.setClass(context, LotteryHistoryActivity.class);
         context.startActivity(intent);
     }
@@ -92,6 +97,7 @@ public class LotteryHistoryActivity extends NewLoadingBaseActivity implements IL
         Intent intent = getIntent();
         if(intent != null){
             mLotteryId = intent.getStringExtra("lottery_id");
+            mLotteryEntity = (LotteryQueryEntity) intent.getSerializableExtra("lottery_entity");
         }
     }
 
@@ -180,7 +186,7 @@ public class LotteryHistoryActivity extends NewLoadingBaseActivity implements IL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.lottery_history_create_rl:
-                LotteryCreateActivity.startActivity(this);
+                LotteryCreateActivity.startActivity(this, mLotteryId, mLotteryEntity);
                 break;
             case R.id.lottery_history_trend_chart_rl:
                 Toast.makeText(this,"趋势图暂未开通",Toast.LENGTH_SHORT).show();

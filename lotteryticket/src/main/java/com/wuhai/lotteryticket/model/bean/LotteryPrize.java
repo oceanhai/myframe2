@@ -1,9 +1,11 @@
 package com.wuhai.lotteryticket.model.bean;
 
+import com.wuhai.lotteryticket.model.BaseBean;
+
 /**
  * 彩票 奖品
  */
-public class LotteryPrize {
+public class LotteryPrize extends BaseBean {
 
     private String prize_name;//奖项名称
     private String prize_num;//中奖数量，公布数据可能延时可能为空或--

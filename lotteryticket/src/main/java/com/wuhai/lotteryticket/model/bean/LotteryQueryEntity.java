@@ -1,8 +1,10 @@
 package com.wuhai.lotteryticket.model.bean;
 
+import com.wuhai.lotteryticket.model.BaseBean;
+
 import java.util.List;
 
-public class LotteryQueryEntity {
+public class LotteryQueryEntity extends BaseBean {
 
     /**
      * lottery_id : ssq

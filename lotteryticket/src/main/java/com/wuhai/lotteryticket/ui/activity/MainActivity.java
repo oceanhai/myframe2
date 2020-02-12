@@ -29,6 +29,9 @@ public class MainActivity extends NewLoadingBaseActivity implements IHomeContrac
 
     private HomePresenter mPresenter;
 
+    private LotteryQueryEntity ssqEntity;//双色球数据
+    private LotteryQueryEntity dltEntity;//大乐透数据
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,13 +67,13 @@ public class MainActivity extends NewLoadingBaseActivity implements IHomeContrac
 //            String result_ssq = object.get("result").getAsString();//TODO 这样是不对的，getAsString所get的字段必须是字符串
             String result_ssq = object.get("result").toString();
 
-            LotteryQueryEntity ssqEntity = GsonUtils.getInstance().fromJson(result_ssq, LotteryQueryEntity.class);
+            ssqEntity = GsonUtils.getInstance().fromJson(result_ssq, LotteryQueryEntity.class);
             setLotteryQuerySsq(ssqEntity);
 
             //方式一
             JSONObject object2 = new JSONObject(lottery_dlt);
             String result_dlt = object2.getString("result");
-            LotteryQueryEntity dltEntity = GsonUtils.getInstance().fromJson(result_dlt, LotteryQueryEntity.class);
+            dltEntity = GsonUtils.getInstance().fromJson(result_dlt, LotteryQueryEntity.class);
             setLotteryQueryDlt(dltEntity);
 
         } catch (Exception e) {
@@ -175,10 +178,10 @@ public class MainActivity extends NewLoadingBaseActivity implements IHomeContrac
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.ac_main_dlt_ll://超级大乐透
-                LotteryHistoryActivity.startActivity(this, Constants.JUHE_LOTTERY_ID_DLT);
+                LotteryHistoryActivity.startActivity(this, Constants.JUHE_LOTTERY_ID_DLT, dltEntity);
                 break;
             case R.id.ac_main_ssq_ll://双色球
-                LotteryHistoryActivity.startActivity(this, Constants.JUHE_LOTTERY_ID_SSQ);
+                LotteryHistoryActivity.startActivity(this, Constants.JUHE_LOTTERY_ID_SSQ, ssqEntity);
                 break;
         }
     }

@@ -214,9 +214,10 @@
                     android:layout_height="match_parent"/>
             </LinearLayout>
 
-            <include layout="@layout/global_horizontal_gray_solid_line1"/>
+<!--            <include layout="@layout/global_horizontal_gray_solid_line1"/>-->
 
             <LinearLayout
+                android:layout_marginTop="1dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:background="@android:color/white"
@@ -253,6 +254,45 @@
                     android:textColor="@color/text_color_red_one"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+                <TextView
+                    android:id="@+id/lottery_no_random_tv"
+                    android:gravity="center"
+                    android:text="随机生成彩票"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/global_bg_red_corners_35"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp" />
+                <CheckBox
+                    android:id="@+id/lottery_factor_cb"
+                    android:layout_marginLeft="20dp"
+                    android:paddingLeft="5dp"
+                    android:checked="true"
+                    android:text="排除上期号码"
+                    android:textColor="@color/text_color_black_one"
+                    android:textSize="16sp"
+                    android:button="@drawable/checkbox_selector"
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lottery_no_random_list_ll"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             </LinearLayout>
 
         </LinearLayout>
