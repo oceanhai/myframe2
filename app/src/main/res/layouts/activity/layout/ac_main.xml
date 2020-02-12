@@ -140,7 +140,7 @@
                 android:id="@+id/btn29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="可根据选项自动换行的单选/多选/排他选"
                 android:id="@+id/btn30"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

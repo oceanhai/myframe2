@@ -299,6 +299,11 @@
             android:name=".ui.popwindow.PopWindowActivity"
             android:screenOrientation="portrait"/>
 
+        <!--  可根据选项自动换行的单选/多选/排他选      -->
+        <activity
+            android:name=".ui.autowrap.AutoWrapActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

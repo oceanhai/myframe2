@@ -47,4 +47,9 @@
     <color name="new_green">#2eb6aa</color>
     <color name="book_store_bt_buy_off">#FF5A55</color>
 
+    <!-- titlebar-->
+    <color name="titlebar_line">#cccccc</color>
+    <color name="titlebar_textview">#333333</color>
+    <color name="titlebar_bg">#f8f8f8</color>
+
 </resources>
