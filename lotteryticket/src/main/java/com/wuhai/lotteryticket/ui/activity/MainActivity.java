@@ -178,7 +178,8 @@ public class MainActivity extends NewLoadingBaseActivity implements IHomeContrac
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.ac_main_dlt_ll://超级大乐透
-                LotteryHistoryActivity.startActivity(this, Constants.JUHE_LOTTERY_ID_DLT, dltEntity);
+//                LotteryHistoryActivity.startActivity(this, Constants.JUHE_LOTTERY_ID_DLT, dltEntity);
+                showToast("客观别急！正在开发中");
                 break;
             case R.id.ac_main_ssq_ll://双色球
                 LotteryHistoryActivity.startActivity(this, Constants.JUHE_LOTTERY_ID_SSQ, ssqEntity);

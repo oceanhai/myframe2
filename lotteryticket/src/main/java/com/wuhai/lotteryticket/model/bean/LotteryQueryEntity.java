@@ -1,7 +1,5 @@
 package com.wuhai.lotteryticket.model.bean;
 
-import com.wuhai.lotteryticket.model.BaseBean;
-
 import java.util.List;
 
 public class LotteryQueryEntity extends BaseBean {

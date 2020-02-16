@@ -11,13 +11,17 @@ import androidx.databinding.DataBindingUtil;
 import com.wuhai.lotteryticket.R;
 import com.wuhai.lotteryticket.config.Constants;
 import com.wuhai.lotteryticket.databinding.AcLotteryCreateBinding;
+import com.wuhai.lotteryticket.model.LotteryModelImpl;
+import com.wuhai.lotteryticket.model.bean.Lottery;
 import com.wuhai.lotteryticket.model.bean.LotteryQueryEntity;
 import com.wuhai.lotteryticket.ui.base.NewLoadingBaseActivity;
 import com.wuhai.lotteryticket.utils.DateUtil;
+import com.wuhai.lotteryticket.utils.DateUtils;
 import com.wuhai.lotteryticket.utils.MatcherUtils;
 import com.wuhai.lotteryticket.utils.MathUtils;
 import com.wuhai.lotteryticket.utils.MonetaryUnitUtil;
 import com.wuhai.lotteryticket.utils.MyLuck;
+import com.wuhai.lotteryticket.utils.StringUtil;
 import com.wuhai.lotteryticket.widget.popupwindow.ListPopWindow;
 
 import java.util.Set;
@@ -46,7 +50,12 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
 
     //红球+蓝球
     private Set<String> mRedNumSet = new TreeSet<>();
-    private String mBlueNum;
+    private Set<String> mBlueNumSet = new TreeSet<>();
+    private int lottery_bet_num=1;//方案注数
+    private int lottery_bet_money=2;//投注金额
+
+    //
+    private LotteryModelImpl mLotteryModelImpl;
 
     /**
      *
@@ -100,6 +109,7 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
     private void init() {
         setTitle("双球球计算器");
         setActionRightText("记录");
+        mLotteryModelImpl = new LotteryModelImpl();
 
         switch (mLotteryId){
             case Constants.JUHE_LOTTERY_ID_SSQ:
@@ -128,7 +138,7 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
         for(int x= 0;x<arr.length-1;x++){
             mRedNumSet.add(arr[x]);
         }
-        mBlueNum = arr[6];
+        mBlueNumSet.add(arr[6]);
 
         /**
          * 上期 UI set
@@ -196,11 +206,51 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
                 mBlueListPopWindow.showPopupWindow(v);
                 break;
             case R.id.lottery_no_random_tv:
+                int redNum = Integer.valueOf(binding.redTv.getText().toString());
+                int blueNum = Integer.valueOf(binding.blueTv.getText().toString());
+                String lottery_red_ball = "";
+                String lottery_blue_ball = "";
                 if(binding.lotteryFactorCb.isChecked()){//排除上期号码
-                    addView(MyLuck.getLotteryRes(mRedNumSet, mBlueNum));
+//                    addView(MyLuck.getLotteryRes(mRedNumSet, mBlueNumSet, redNum, blueNum));
+                    lottery_red_ball = MyLuck.getLotteryResRedBall(mRedNumSet, redNum);
+                    lottery_blue_ball = MyLuck.getLotteryResBlueBall(mBlueNumSet, blueNum);
                 }else{
-                    addView(MyLuck.getLotteryRes());
+//                    addView(MyLuck.getLotteryRes(redNum, blueNum));
+                    lottery_red_ball = MyLuck.getLotteryResRedBall(redNum);
+                    lottery_blue_ball = MyLuck.getLotteryResBlueBall(blueNum);
                 }
+
+                Lottery lottery = new Lottery();
+                lottery.setLottery_id(StringUtil.getUUid());
+                switch (mLotteryId){
+                    case Constants.JUHE_LOTTERY_ID_SSQ:
+                        lottery.setLottery_type(Constants.JUHE_LOTTERY_ID_SSQ);
+                        lottery.setLottery_name("双色球");
+                        break;
+                    case Constants.JUHE_LOTTERY_ID_DLT:
+                        lottery.setLottery_type(Constants.JUHE_LOTTERY_ID_DLT);
+                        lottery.setLottery_name("超级大乐透");
+                        break;
+                }
+                lottery.setLottery_red_ball(lottery_red_ball);
+                lottery.setLottery_blue_ball(lottery_blue_ball);
+                lottery.setLottery_red_ball_count(Integer.valueOf(binding.redTv.getText().toString()));
+                lottery.setLottery_blue_ball_count(Integer.valueOf(binding.blueTv.getText().toString()));
+                lottery.setLottery_bet_num(lottery_bet_num);
+                lottery.setLottery_bet_money(lottery_bet_money);
+                if(binding.lotteryFactorCb.isChecked()){
+                    lottery.setLottery_produce_method(1);
+                }else{
+                    lottery.setLottery_produce_method(0);
+                }
+                lottery.setLottery_no("");//TODO 开奖期数
+                //添加时间,最后修改时间
+                String time = DateUtils.getDateAllString();
+                lottery.setCreate_time(time);
+                lottery.setLast_modified(time);
+
+                mLotteryModelImpl.addLottery(lottery);
+
                 break;
         }
     }
@@ -230,8 +280,9 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
 
         int redNum = Integer.valueOf(binding.redTv.getText().toString());
         int blueNum = Integer.valueOf(binding.blueTv.getText().toString());
-        int betNum = MathUtils.getCombinationNum(redNum,6) * blueNum;
-        binding.betNumTv.setText(betNum+" 注");
-        binding.moneyTv.setText("￥"+(betNum*2)+" 元");
+        lottery_bet_num = MathUtils.getCombinationNum(redNum,6) * blueNum;
+        lottery_bet_money = lottery_bet_num*2;
+        binding.betNumTv.setText(lottery_bet_num+" 注");
+        binding.moneyTv.setText("￥"+lottery_bet_money+" 元");
     }
 }

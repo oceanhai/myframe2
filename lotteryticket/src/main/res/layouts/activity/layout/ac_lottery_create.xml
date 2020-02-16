@@ -294,7 +294,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             </LinearLayout>
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lottery_rv"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false">
+            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
     </com.wuhai.lotteryticket.views.ObservableScrollView>
 </layout>

@@ -12,6 +12,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.wuhai.lotteryticket.BuildConfig;
 import com.wuhai.lotteryticket.config.network.APIConstants;
+import com.wuhai.lotteryticket.utils.LogProxy;
 import com.wuhai.retrofit.retrofit.BaseApi;
 import com.wuhai.retrofit.retrofit.NetProvider;
 import com.wuhai.retrofit.retrofit.RequestHandler;
@@ -49,6 +50,12 @@ public class BaseApplication extends Application {
 
         //初始化网络请求配置
         initNetRequest();
+
+        //用google 翻墙
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(this);
+            LogProxy.e("lottery", "Stetho init");
+        }
     }
 
     private void initNetRequest() {

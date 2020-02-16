@@ -1,4 +1,4 @@
-package com.wuhai.lotteryticket.model;
+package com.wuhai.lotteryticket.model.bean;
 
 import java.io.Serializable;
 
