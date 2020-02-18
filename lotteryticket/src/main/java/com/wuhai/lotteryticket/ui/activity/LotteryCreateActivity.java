@@ -132,10 +132,39 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
                 break;
         }
 
+        /**
+         * 方式一 无法自适应
+         * ?之前是因为嵌套在ScrollView 无法全部展示才造成的不能item自适应高度?rv外加rl处理后，就跟趣竞价竞价页一样
+         * 居然可以自适应高度了
+         */
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         binding.lotteryRv.setLayoutManager(linearLayoutManager);
+
+        /**
+         * 方式二
+         * HORIZONTAL 倒是能自适应高度
+         * VERTICAL     却不能自适应高度
+         * https://www.jianshu.com/p/1d39bcc8fa94
+         */
+//        StaggeredGridLayoutManager horizontalManager =
+//                new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
+//        binding.lotteryRv.setLayoutManager(horizontalManager);
+
+        /**
+         * 方式三
+         * 特么的也不行
+         * 而且还有问题 4个的时候只显示3个
+         * https://blog.csdn.net/singleton1900/article/details/48369635
+         */
+//        SyLinearLayoutManager syLinearLayoutManager =
+//                new SyLinearLayoutManager(this, LinearLayoutManager.VERTICAL,false);
+//        binding.lotteryRv.setLayoutManager(syLinearLayoutManager);
+
         mLotteryCreateAdapter = new LotteryCreateAdapter(this);
         binding.lotteryRv.setAdapter(mLotteryCreateAdapter);
+
+        binding.observableScrollView.setFloatView(binding.layoutIn, binding.viewOutScroll);//设置非浮动View和固定View
+        binding.observableScrollView.setHorizontalFadingEdgeEnabled(false);//删除android ScrollView边界阴影方法方法
     }
 
     /**
@@ -188,6 +217,12 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
         binding.redTv.setOnClickListener(this);
         binding.blueTv.setOnClickListener(this);
         binding.lotteryNoRandomTv.setOnClickListener(this);
+        binding.lotteryFactorCb.setOnClickListener(this);
+
+        binding.redTv2.setOnClickListener(this);
+        binding.blueTv2.setOnClickListener(this);
+        binding.lotteryNoRandomTv2.setOnClickListener(this);
+        binding.lotteryFactorCb2.setOnClickListener(this);
     }
 
 
@@ -209,6 +244,7 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.red_tv:
+            case R.id.red_tv2:
                 if (mRedListPopWindow == null) {
                     mRedListPopWindow = new ListPopWindow(this, 0);
                     mRedListPopWindow.setOnNumCallBackLitener(this);
@@ -216,13 +252,21 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
                 mRedListPopWindow.showPopupWindow(v);
                 break;
             case R.id.blue_tv:
+            case R.id.blue_tv2:
                 if (mBlueListPopWindow == null) {
                     mBlueListPopWindow = new ListPopWindow(this, 1);
                     mBlueListPopWindow.setOnNumCallBackLitener(this);
                 }
                 mBlueListPopWindow.showPopupWindow(v);
                 break;
+            case R.id.lottery_factor_cb://非浮动cb
+                binding.lotteryFactorCb2.setChecked(binding.lotteryFactorCb.isChecked());
+                break;
+            case R.id.lottery_factor_cb2://浮动cb
+                binding.lotteryFactorCb.setChecked(binding.lotteryFactorCb2.isChecked());
+                break;
             case R.id.lottery_no_random_tv:
+            case R.id.lottery_no_random_tv2:
                 int redNum = Integer.valueOf(binding.redTv.getText().toString());
                 int blueNum = Integer.valueOf(binding.blueTv.getText().toString());
                 String lottery_red_ball = "";
@@ -290,9 +334,11 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
         switch (type){
             case 0:
                 binding.redTv.setText(num);
+                binding.redTv2.setText(num);
                 break;
             case 1:
                 binding.blueTv.setText(num);
+                binding.blueTv2.setText(num);
                 break;
         }
 
@@ -301,6 +347,9 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
         lottery_bet_num = MathUtils.getCombinationNum(redNum,6) * blueNum;
         lottery_bet_money = lottery_bet_num*2;
         binding.betNumTv.setText(lottery_bet_num+" 注");
+        binding.betNumTv2.setText(lottery_bet_num+" 注");
         binding.moneyTv.setText("￥"+lottery_bet_money+" 元");
+        binding.moneyTv2.setText("￥"+lottery_bet_money+" 元");
     }
+
 }

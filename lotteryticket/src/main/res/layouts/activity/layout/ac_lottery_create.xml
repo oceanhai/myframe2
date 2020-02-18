@@ -1,306 +1,454 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-    <com.wuhai.lotteryticket.views.ObservableScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <com.wuhai.lotteryticket.views.ObservableScrollView
+            android:id="@+id/observable_scroll_view"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:layout_margin="5dp"
-                    android:orientation="vertical"
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <!--双色球-->
+
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        <ImageView
-                            android:background="@drawable/shuangseqiu"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                        <!--双色球-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:background="@drawable/shuangseqiu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:layout_marginLeft="2dp"
+                                android:text="双色球"
+                                android:textColor="@color/text_color_black_one"
+                                android:textSize="16sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:id="@+id/ssq_lottery_no_and_date_tv"
+                                android:layout_marginLeft="5dp"
+                                tools:text="19146期 12.21(昨天)"
+                                android:textColor="@color/text_color_black_two"
+                                android:textSize="12sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:id="@+id/ssq_lottery_pool_amount_tv"
+                                android:gravity="right"
+                                tools:text="奖池 13.81亿"
+                                android:textColor="@color/text_color_red_one"
+                                android:textSize="12sp"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/double_ball_red1"
+                                android:gravity="center"
+                                tools:text="10"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/public_circle_red"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <TextView
+                                android:id="@+id/double_ball_red2"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                tools:text="11"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/public_circle_red"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <TextView
+                                android:id="@+id/double_ball_red3"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                tools:text="26"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/public_circle_red"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <TextView
+                                android:id="@+id/double_ball_red4"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                tools:text="33"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/public_circle_red"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <TextView
+                                android:id="@+id/double_ball_red5"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                tools:text="34"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/public_circle_red"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <TextView
+                                android:id="@+id/double_ball_red6"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                tools:text="01"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/public_circle_red"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <View
+                                android:layout_marginLeft="5dp"
+                                android:background="@color/line_color_gray_one"
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"/>
+                            <TextView
+                                android:id="@+id/double_ball_blue1"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                tools:text="06"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/public_circle_blue"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"/>
+                            <ImageView
+                                android:background="@drawable/arrow_right_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/layout_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:background="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
                         <TextView
-                            android:layout_marginLeft="2dp"
-                            android:text="双色球"
+                            android:gravity="center"
+                            android:text="红色号码个数"
+                            android:textSize="12sp"
                             android:textColor="@color/text_color_black_one"
-                            android:textSize="16sp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                        <TextView
-                            android:id="@+id/ssq_lottery_no_and_date_tv"
-                            android:layout_marginLeft="5dp"
-                            tools:text="19146期 12.21(昨天)"
-                            android:textColor="@color/text_color_black_two"
-                            android:textSize="12sp"
+                            android:layout_height="match_parent"/>
+                        <Spinner
+                            android:id="@+id/sp_red"
+                            android:visibility="gone"
+                            android:layout_gravity="center_vertical"
+                            android:entries="@array/red_num"
+                            android:dropDownHorizontalOffset="50dp"
+                            android:dropDownVerticalOffset="-50dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
                         <TextView
-                            android:id="@+id/ssq_lottery_pool_amount_tv"
-                            android:gravity="right"
-                            tools:text="奖池 13.81亿"
+                            android:id="@+id/red_tv"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:text="6"
+                            android:textSize="17sp"
                             android:textColor="@color/text_color_red_one"
+                            android:drawableRight="@drawable/icon_triangle_up"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"/>
+                        <TextView
+                            android:layout_marginLeft="20dp"
+                            android:gravity="center"
+                            android:text="蓝色号码个数"
                             android:textSize="12sp"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="@color/text_color_black_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                        <Spinner
+                            android:id="@+id/sp_blue"
+                            android:visibility="gone"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/blue_tv"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textSize="17sp"
+                            android:textColor="@color/text_color_blue_one"
+                            android:drawableRight="@drawable/icon_triangle_up"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"/>
                     </LinearLayout>
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
+                        android:layout_marginTop="1dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:background="@android:color/white"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="50dp">
                         <TextView
-                            android:id="@+id/double_ball_red1"
                             android:gravity="center"
-                            tools:text="10"
-                            android:textColor="@android:color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:background="@drawable/public_circle_red"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp" />
+                            android:text="方案注数："
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color_black_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
                         <TextView
-                            android:id="@+id/double_ball_red2"
-                            android:layout_marginLeft="5dp"
-                            android:gravity="center"
-                            tools:text="11"
-                            android:textColor="@android:color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:background="@drawable/public_circle_red"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp" />
+                            android:id="@+id/bet_num_tv"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="left|center"
+                            android:text="1 注"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color_red_one"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"/>
                         <TextView
-                            android:id="@+id/double_ball_red3"
-                            android:layout_marginLeft="5dp"
                             android:gravity="center"
-                            tools:text="26"
-                            android:textColor="@android:color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:background="@drawable/public_circle_red"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp" />
+                            android:text="投注金额："
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color_black_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
                         <TextView
-                            android:id="@+id/double_ball_red4"
-                            android:layout_marginLeft="5dp"
-                            android:gravity="center"
-                            tools:text="33"
-                            android:textColor="@android:color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:background="@drawable/public_circle_red"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp" />
+                            android:id="@+id/money_tv"
+                            android:gravity="left|center"
+                            android:text="￥2 元"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color_red_one"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:background="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp">
                         <TextView
-                            android:id="@+id/double_ball_red5"
-                            android:layout_marginLeft="5dp"
+                            android:id="@+id/lottery_no_random_tv"
                             android:gravity="center"
-                            tools:text="34"
-                            android:textColor="@android:color/white"
+                            android:text="随机生成彩票"
                             android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:background="@drawable/public_circle_red"
-                            android:layout_width="40dp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/global_bg_red_corners_35"
+                            android:layout_width="140dp"
                             android:layout_height="40dp" />
-                        <TextView
-                            android:id="@+id/double_ball_red6"
-                            android:layout_marginLeft="5dp"
-                            android:gravity="center"
-                            tools:text="01"
-                            android:textColor="@android:color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:background="@drawable/public_circle_red"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp" />
-                        <View
-                            android:layout_marginLeft="5dp"
-                            android:background="@color/line_color_gray_one"
-                            android:layout_width="1dp"
-                            android:layout_height="20dp"/>
-                        <TextView
-                            android:id="@+id/double_ball_blue1"
-                            android:layout_marginLeft="5dp"
-                            android:gravity="center"
-                            tools:text="06"
-                            android:textColor="@android:color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:background="@drawable/public_circle_blue"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp" />
-                        <View
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="1dp"/>
-                        <ImageView
-                            android:background="@drawable/arrow_right_icon"
+                        <CheckBox
+                            android:id="@+id/lottery_factor_cb"
+                            android:layout_marginLeft="20dp"
+                            android:paddingLeft="5dp"
+                            android:checked="true"
+                            android:text="排除上期号码"
+                            android:textColor="@color/text_color_black_one"
+                            android:textSize="16sp"
+                            android:button="@drawable/checkbox_selector"
+                            android:background="@android:color/transparent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+                <!--       旧的添加view用         -->
+                <LinearLayout
+                    android:id="@+id/lottery_no_random_list_ll"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/lottery_rv"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false">
+                    </androidx.recyclerview.widget.RecyclerView>
+                </RelativeLayout>
+
+            </LinearLayout>
+        </com.wuhai.lotteryticket.views.ObservableScrollView>
+
+        <FrameLayout
+            android:id="@+id/view_out_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:visibility="gone" >
 
             <LinearLayout
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:background="@android:color/white"
+                android:id="@+id/layout_out"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
-                <TextView
-                    android:gravity="center"
-                    android:text="红色号码个数"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_color_black_one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
-                <Spinner
-                    android:id="@+id/sp_red"
-                    android:visibility="gone"
-                    android:layout_gravity="center_vertical"
-                    android:entries="@array/red_num"
-                    android:dropDownHorizontalOffset="50dp"
-                    android:dropDownVerticalOffset="-50dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/red_tv"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center"
-                    android:text="6"
-                    android:textSize="17sp"
-                    android:textColor="@color/text_color_red_one"
-                    android:drawableRight="@drawable/icon_triangle_up"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"/>
-                <TextView
-                    android:layout_marginLeft="20dp"
-                    android:gravity="center"
-                    android:text="蓝色号码个数"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_color_black_one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
-                <Spinner
-                    android:id="@+id/sp_blue"
-                    android:visibility="gone"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/blue_tv"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center"
-                    android:text="1"
-                    android:textSize="17sp"
-                    android:textColor="@color/text_color_blue_one"
-                    android:drawableRight="@drawable/icon_triangle_up"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"/>
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-<!--            <include layout="@layout/global_horizontal_gray_solid_line1"/>-->
+                <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:gravity="center"
+                        android:text="红色号码个数"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_black_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/red_tv2"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="6"
+                        android:textSize="17sp"
+                        android:textColor="@color/text_color_red_one"
+                        android:drawableRight="@drawable/icon_triangle_up"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center"
+                        android:text="蓝色号码个数"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_black_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/blue_tv2"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="17sp"
+                        android:textColor="@color/text_color_blue_one"
+                        android:drawableRight="@drawable/icon_triangle_up"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
 
-            <LinearLayout
-                android:layout_marginTop="1dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:background="@android:color/white"
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-                <TextView
-                    android:gravity="center"
-                    android:text="方案注数："
-                    android:textSize="12sp"
-                    android:textColor="@color/text_color_black_one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
-                <TextView
-                    android:id="@+id/bet_num_tv"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="left|center"
-                    android:text="1 注"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_color_red_one"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"/>
-                <TextView
-                    android:gravity="center"
-                    android:text="投注金额："
-                    android:textSize="12sp"
-                    android:textColor="@color/text_color_black_one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
-                <TextView
-                    android:id="@+id/money_tv"
-                    android:gravity="left|center"
-                    android:text="￥2 元"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_color_red_one"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"/>
+                <include layout="@layout/global_horizontal_gray_solid_line1"/>
+
+                <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:gravity="center"
+                        android:text="方案注数："
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_black_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/bet_num_tv2"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="left|center"
+                        android:text="1 注"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_red_one"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:gravity="center"
+                        android:text="投注金额："
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_black_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/money_tv2"
+                        android:gravity="left|center"
+                        android:text="￥2 元"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_red_one"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+
+                <include layout="@layout/global_horizontal_gray_solid_line1"/>
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:background="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+                    <TextView
+                        android:id="@+id/lottery_no_random_tv2"
+                        android:gravity="center"
+                        android:text="随机生成彩票"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/global_bg_red_corners_35"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp" />
+                    <CheckBox
+                        android:id="@+id/lottery_factor_cb2"
+                        android:layout_marginLeft="20dp"
+                        android:paddingLeft="5dp"
+                        android:checked="true"
+                        android:text="排除上期号码"
+                        android:textColor="@color/text_color_black_one"
+                        android:textSize="16sp"
+                        android:button="@drawable/checkbox_selector"
+                        android:background="@android:color/transparent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="1dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:background="@android:color/white"
-                android:layout_width="match_parent"
-                android:layout_height="55dp">
-                <TextView
-                    android:id="@+id/lottery_no_random_tv"
-                    android:gravity="center"
-                    android:text="随机生成彩票"
-                    android:textSize="18sp"
-                    android:textColor="@color/white"
-                    android:background="@drawable/global_bg_red_corners_35"
-                    android:layout_width="140dp"
-                    android:layout_height="40dp" />
-                <CheckBox
-                    android:id="@+id/lottery_factor_cb"
-                    android:layout_marginLeft="20dp"
-                    android:paddingLeft="5dp"
-                    android:checked="true"
-                    android:text="排除上期号码"
-                    android:textColor="@color/text_color_black_one"
-                    android:textSize="16sp"
-                    android:button="@drawable/checkbox_selector"
-                    android:background="@android:color/transparent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/lottery_no_random_list_ll"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </LinearLayout>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/lottery_rv"
-                android:nestedScrollingEnabled="false"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false">
-            </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
-    </com.wuhai.lotteryticket.views.ObservableScrollView>
+        </FrameLayout>
+    </RelativeLayout>
+
 </layout>

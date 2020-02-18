@@ -66,6 +66,12 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
+        <View
+            android:layout_alignParentBottom="true"
+            android:background="@color/line_color_gray_one"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
         <com.wuhai.lotteryticket.views.LotteryView
             android:id="@+id/item_lottery_view"
             android:visibility="gone"
@@ -101,6 +107,6 @@
             android:layout_alignParentBottom="true"
             android:background="@color/line_color_gray_one"
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+            android:layout_height="5dp"/>
     </LinearLayout>
 </layout>

@@ -36,7 +36,7 @@ public class LotteryCreateAdapter extends BaseDataAdapter<Lottery> {
      */
     public void addData(Lottery data){
         if(mData != null){
-            mData.set(0, data);//插入到列表头
+            mData.add(0, data);//插入到列表头
             notifyDataSetChanged();
         }
     }
