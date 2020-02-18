@@ -17,7 +17,7 @@ import com.wuhai.lotteryticket.ui.adapter.base.BaseDataAdapter;
  *
  * 创建日期 2019/4/8 20:50
  *
- * 描述：
+ * 描述：红球数和蓝球数  下拉选择列表
  */
 public class ListNumAdapter extends BaseDataAdapter<String> {
 

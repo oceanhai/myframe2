@@ -3,6 +3,8 @@ package com.wuhai.lotteryticket.model.interfaces;
 
 import com.wuhai.lotteryticket.model.bean.Lottery;
 
+import java.util.List;
+
 /**
  * 作者 wh
  * 
@@ -18,4 +20,9 @@ public interface ILotteryModel extends IBaseModelInterFace   {
      */
     void addLottery(Lottery lottery);
 
+    /**
+     * 查询所有数据
+     * @return
+     */
+    List<Lottery> queryLotteryAll();
 }

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.wuhai.lotteryticket.R;
 import com.wuhai.lotteryticket.config.Constants;
@@ -14,6 +15,7 @@ import com.wuhai.lotteryticket.databinding.AcLotteryCreateBinding;
 import com.wuhai.lotteryticket.model.LotteryModelImpl;
 import com.wuhai.lotteryticket.model.bean.Lottery;
 import com.wuhai.lotteryticket.model.bean.LotteryQueryEntity;
+import com.wuhai.lotteryticket.ui.adapter.LotteryCreateAdapter;
 import com.wuhai.lotteryticket.ui.base.NewLoadingBaseActivity;
 import com.wuhai.lotteryticket.utils.DateUtil;
 import com.wuhai.lotteryticket.utils.DateUtils;
@@ -24,6 +26,7 @@ import com.wuhai.lotteryticket.utils.MyLuck;
 import com.wuhai.lotteryticket.utils.StringUtil;
 import com.wuhai.lotteryticket.widget.popupwindow.ListPopWindow;
 
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -54,8 +57,11 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
     private int lottery_bet_num=1;//方案注数
     private int lottery_bet_money=2;//投注金额
 
-    //
+    //impl
     private LotteryModelImpl mLotteryModelImpl;
+
+    //生成的彩票列表 adapter
+    private LotteryCreateAdapter mLotteryCreateAdapter;
 
     /**
      *
@@ -76,6 +82,12 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
         parseIntent();
         init();
         setListener();
+        initData();
+    }
+
+    private void initData() {
+        List<Lottery> list = mLotteryModelImpl.queryLotteryAll();
+        mLotteryCreateAdapter.setData(list);
     }
 
 
@@ -119,6 +131,11 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
                 //TODO
                 break;
         }
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        binding.lotteryRv.setLayoutManager(linearLayoutManager);
+        mLotteryCreateAdapter = new LotteryCreateAdapter(this);
+        binding.lotteryRv.setAdapter(mLotteryCreateAdapter);
     }
 
     /**
@@ -251,6 +268,7 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
 
                 mLotteryModelImpl.addLottery(lottery);
 
+                mLotteryCreateAdapter.addData(lottery);
                 break;
         }
     }

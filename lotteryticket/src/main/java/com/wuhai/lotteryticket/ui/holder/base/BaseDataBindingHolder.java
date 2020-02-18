@@ -27,6 +27,10 @@ public abstract class BaseDataBindingHolder<T extends Object> extends RecyclerVi
     public BaseDataBindingHolder(ViewDataBinding binding) {
         super(binding.getRoot());
     }
+    public BaseDataBindingHolder(ViewDataBinding binding, Context context) {
+        super(binding.getRoot());
+        mContext = context;
+    }
 
     public BaseDataBindingHolder(View itemView, Context context) {
         super(itemView);
