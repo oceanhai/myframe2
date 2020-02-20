@@ -99,5 +99,7 @@ public class LotteryCreateHolder extends BaseDataBindingHolder<Lottery> {
 //                return true;
 //            }
 //        });
+
+        binding.selectCb.setChecked(mData.isSelected());
     }
 }

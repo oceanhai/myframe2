@@ -9,99 +9,111 @@
         android:background="@android:color/white"
         android:orientation="vertical" >
         <LinearLayout
-            android:layout_marginTop="1dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:background="@android:color/white"
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
-            <TextView
-                android:gravity="center"
-                android:text="方案注数："
-                android:textSize="12sp"
-                android:textColor="@color/text_color_black_one"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
-            <TextView
-                android:id="@+id/bet_num_tv"
-                android:layout_marginLeft="10dp"
-                android:gravity="left|center"
-                android:text="1 注"
-                android:textSize="12sp"
-                android:textColor="@color/text_color_red_one"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:text="投注金额："
-                android:textSize="12sp"
-                android:textColor="@color/text_color_black_one"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
-            <TextView
-                android:id="@+id/money_tv"
-                android:gravity="left|center"
-                android:text="￥2 元"
-                android:textSize="12sp"
-                android:textColor="@color/text_color_red_one"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
-            <TextView
-                android:id="@+id/lottery_no_tv"
-                android:layout_marginLeft="10dp"
-                tools:text="19146期"
-                android:textColor="@color/text_color_black_two"
-                android:textSize="12sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/lottery_multiple_tv"
-                android:gravity="right"
-                tools:text="复式"
-                android:textColor="@color/text_color_black_two"
-                android:textSize="12sp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-        <View
-            android:layout_alignParentBottom="true"
-            android:background="@color/line_color_gray_one"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-
-        <com.wuhai.lotteryticket.views.LotteryView
-            android:id="@+id/item_lottery_view"
-            android:visibility="gone"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"/>
-
-        <LinearLayout
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <com.wuhai.lotteryticket.widget.tagflowlayout.TagFlowLayout
-                android:id="@+id/red_ball_list"
-                android:layout_weight="5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-            <View
+            <CheckBox
+                android:id="@+id/select_cb"
                 android:layout_gravity="center"
-                android:background="@color/line_color_gray_one"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"/>
-            <com.wuhai.lotteryticket.widget.tagflowlayout.TagFlowLayout
-                android:id="@+id/blue_ball_list"
-                android:layout_weight="2"
-                android:layout_width="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:button="@drawable/return_goods_ready_selector"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginTop="1dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+                    <TextView
+                        android:gravity="center"
+                        android:text="方案注数："
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_black_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/bet_num_tv"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="left|center"
+                        android:text="1 注"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_red_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="投注金额："
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_black_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/money_tv"
+                        android:gravity="left|center"
+                        android:text="￥2 元"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_red_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/lottery_no_tv"
+                        android:layout_marginLeft="10dp"
+                        tools:text="19146期"
+                        android:textColor="@color/text_color_black_two"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/lottery_multiple_tv"
+                        android:gravity="right"
+                        tools:text="复式"
+                        android:textColor="@color/text_color_black_two"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line_color_gray_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.wuhai.lotteryticket.widget.tagflowlayout.TagFlowLayout
+                        android:id="@+id/red_ball_list"
+                        android:layout_weight="5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                    <View
+                        android:layout_gravity="center"
+                        android:background="@color/line_color_gray_one"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+                    <com.wuhai.lotteryticket.widget.tagflowlayout.TagFlowLayout
+                        android:id="@+id/blue_ball_list"
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
+
         <View
             android:id="@+id/item_line"
             android:layout_alignParentBottom="true"

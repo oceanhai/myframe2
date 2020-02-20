@@ -1,10 +1,11 @@
 package com.wuhai.lotteryticket.model.bean;
 
 import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.NotNull;
 import org.greenrobot.greendao.annotation.Property;
-import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.Transient;
 
 /**
  * 作者 wh
@@ -45,6 +46,13 @@ public class Lottery extends BaseBean{
     @Property(nameInDb = "last_modified")
     @NotNull
     private String last_modified;//最后修改时间
+
+    /**
+     * 不保存进 数据库
+     */
+    @Transient
+    private boolean isSelected = false;//是否是选中
+
     @Generated(hash = 836306236)
     public Lottery(String lottery_id, String lottery_type, String lottery_name,
             String lottery_red_ball, String lottery_blue_ball,
@@ -147,5 +155,12 @@ public class Lottery extends BaseBean{
     public void setLast_modified(String last_modified) {
         this.last_modified = last_modified;
     }
-    
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
 }

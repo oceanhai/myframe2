@@ -33,6 +33,7 @@ import com.wuhai.lotteryticket.widget.popupwindow.ListPopWindow;
 import com.wuhai.lotteryticket.widget.popupwindow.PositionCanChangePopupWindow;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -291,14 +292,39 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
                 int blueNum = Integer.valueOf(binding.blueTv.getText().toString());
                 String lottery_red_ball = "";
                 String lottery_blue_ball = "";
+
+                /**
+                 * 获取列表中 需要排除的 红球和蓝球
+                 */
+                Map<String, Set<String>> map = null;
+                Set<String> redNumSet = null;
+                Set<String> blueNumSet = null;
+                if(mLotteryCreateAdapter != null){
+                    map = mLotteryCreateAdapter.getFactorSet();
+                    if(map!=null && !map.isEmpty()){
+                        redNumSet = map.get("red");
+                        blueNumSet = map.get("blue");
+                    }
+                }
+
                 if(binding.lotteryFactorCb.isChecked()){//排除上期号码
-//                    addView(MyLuck.getLotteryRes(mRedNumSet, mBlueNumSet, redNum, blueNum));
-                    lottery_red_ball = MyLuck.getLotteryResRedBall(mRedNumSet, redNum);
-                    lottery_blue_ball = MyLuck.getLotteryResBlueBall(mBlueNumSet, blueNum);
+                    if(redNumSet != null && !redNumSet.isEmpty()) {//排除列表选中的红蓝球+上期红蓝球
+                        redNumSet.addAll(mRedNumSet);
+                        blueNumSet.addAll(mBlueNumSet);
+                        lottery_red_ball = MyLuck.getLotteryResRedBall(redNumSet, redNum);
+                        lottery_blue_ball = MyLuck.getLotteryResBlueBall(blueNumSet, blueNum);
+                    }else{//只排除上期红蓝球
+                        lottery_red_ball = MyLuck.getLotteryResRedBall(mRedNumSet, redNum);
+                        lottery_blue_ball = MyLuck.getLotteryResBlueBall(mBlueNumSet, blueNum);
+                    }
                 }else{
-//                    addView(MyLuck.getLotteryRes(redNum, blueNum));
-                    lottery_red_ball = MyLuck.getLotteryResRedBall(redNum);
-                    lottery_blue_ball = MyLuck.getLotteryResBlueBall(blueNum);
+                    if(redNumSet != null && !redNumSet.isEmpty()){//排除列表选中的红蓝球
+                        lottery_red_ball = MyLuck.getLotteryResRedBall(redNumSet, redNum);
+                        lottery_blue_ball = MyLuck.getLotteryResBlueBall(blueNumSet, blueNum);
+                    }else{//无任何排除，只随机
+                        lottery_red_ball = MyLuck.getLotteryResRedBall(redNum);
+                        lottery_blue_ball = MyLuck.getLotteryResBlueBall(blueNum);
+                    }
                 }
 
                 Lottery lottery = new Lottery();
@@ -427,5 +453,11 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
         if(positionCanChangePopupWindow != null && positionCanChangePopupWindow.isShowing()){
             positionCanChangePopupWindow.hide();
         }
+
+        /**
+         * 选择 我们这里如果选中的，生成彩票时候，进行排除这些集合内的红球和蓝球
+         */
+        mLotteryCreateAdapter.getDataItem(position).setSelected(!mLotteryCreateAdapter.getDataItem(position).isSelected());
+        mLotteryCreateAdapter.notifyDataSetChanged();
     }
 }

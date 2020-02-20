@@ -163,6 +163,7 @@
 
                 <LinearLayout
                     android:id="@+id/layout_in"
+                    android:background="@android:color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -292,6 +293,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
+                    <TextView
+                        android:layout_marginBottom="2dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="※长按列表可编辑删除保存操作,\n单击选择列表随机生成彩票时候排除选中的红蓝球"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_color_black_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <include layout="@layout/global_horizontal_gray_solid_line1"/>
                 </LinearLayout>
 
                 <!--       旧的添加view用         -->
@@ -330,6 +340,7 @@
             <LinearLayout
                 android:id="@+id/layout_out"
                 android:clickable="true"
+                android:background="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -449,6 +460,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
+                <TextView
+                    android:layout_marginBottom="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="※长按列表可编辑删除保存操作,\n单击选择列表随机生成彩票时候排除选中的红蓝球"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_color_black_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <include layout="@layout/global_horizontal_gray_solid_line1"/>
             </LinearLayout>
         </FrameLayout>
     </RelativeLayout>

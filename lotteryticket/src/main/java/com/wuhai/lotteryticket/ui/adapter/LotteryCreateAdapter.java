@@ -14,6 +14,11 @@ import com.wuhai.lotteryticket.model.bean.Lottery;
 import com.wuhai.lotteryticket.ui.adapter.base.BaseDataAdapter;
 import com.wuhai.lotteryticket.ui.holder.LotteryCreateHolder;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * 作者 wuhai
  *
@@ -50,6 +55,42 @@ public class LotteryCreateAdapter extends BaseDataAdapter<Lottery> {
             mData.remove(data);
             notifyDataSetChanged();
         }
+    }
+
+    /**
+     * 获得要排除的红球和蓝球集合
+     * @return
+     */
+    public Map<String, Set<String>> getFactorSet(){
+
+        if(mData == null){
+            return null;
+        }
+
+        Map<String,Set<String>> map = new HashMap<>();
+        Set<String> mRedNumSet = new TreeSet<>();
+        Set<String> mBlueNumSet = new TreeSet<>();
+        for(int x=0;x<mData.size();x++){
+            Lottery lottery = mData.get(x);
+            if(lottery.isSelected()){
+                String[] redBalls = lottery.getLottery_red_ball().split(",");
+                String[] blueBalls = lottery.getLottery_blue_ball().split(",");
+                for(int y= 0;y<redBalls.length;y++){
+                    mRedNumSet.add(redBalls[y]);
+                }
+                for(int y= 0;y<blueBalls.length;y++){
+                    mBlueNumSet.add(blueBalls[y]);
+                }
+            }
+        }
+
+        if(!mRedNumSet.isEmpty() && (!mBlueNumSet.isEmpty())){
+            map.put("red", mRedNumSet);
+            map.put("blue", mBlueNumSet);
+            return map;
+        }
+
+        return null;
     }
 
     @Override
