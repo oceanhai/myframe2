@@ -64,6 +64,15 @@ public class LotteryCreateAdapter extends BaseDataAdapter<Lottery> {
                 }
             }
         });
+        holder1.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if(mOnItemLongClickListener != null){
+                    mOnItemLongClickListener.onItemLongClick(holder1.itemView,position);
+                }
+                return true;
+            }
+        });
         holder1.refreshView();//对viewholder进行操作
     }
 

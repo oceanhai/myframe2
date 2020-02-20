@@ -15,6 +15,7 @@ public abstract class BaseDataAdapter<T> extends RecyclerView.Adapter {
     protected Context mContext;
     protected List<T> mData;
     public OnItemClickLitener mOnItemClickLitener;
+    public OnItemLongClickListener mOnItemLongClickListener;
 
     public List<T> getData(){
         return mData;
@@ -44,6 +45,14 @@ public abstract class BaseDataAdapter<T> extends RecyclerView.Adapter {
      */
     public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener){
         this.mOnItemClickLitener = mOnItemClickLitener;
+    }
+
+    /**
+     * 设置长按监听
+     * @param mOnItemLongClickListener
+     */
+    public void setOnItemLongClickListener(OnItemLongClickListener mOnItemLongClickListener){
+        this.mOnItemLongClickListener = mOnItemLongClickListener;
     }
 
     /**
@@ -96,6 +105,13 @@ public abstract class BaseDataAdapter<T> extends RecyclerView.Adapter {
      */
     public interface OnItemClickLitener{
         void onItemClick(View view, int position);
+    }
+
+    /**
+     * 长按监听
+     */
+    public interface OnItemLongClickListener{
+        void onItemLongClick(View view, int position);
     }
 
 }

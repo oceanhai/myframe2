@@ -3,6 +3,8 @@ package com.wuhai.lotteryticket.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,6 +18,7 @@ import com.wuhai.lotteryticket.model.LotteryModelImpl;
 import com.wuhai.lotteryticket.model.bean.Lottery;
 import com.wuhai.lotteryticket.model.bean.LotteryQueryEntity;
 import com.wuhai.lotteryticket.ui.adapter.LotteryCreateAdapter;
+import com.wuhai.lotteryticket.ui.adapter.base.BaseDataAdapter;
 import com.wuhai.lotteryticket.ui.base.NewLoadingBaseActivity;
 import com.wuhai.lotteryticket.utils.DateUtil;
 import com.wuhai.lotteryticket.utils.DateUtils;
@@ -25,10 +28,13 @@ import com.wuhai.lotteryticket.utils.MonetaryUnitUtil;
 import com.wuhai.lotteryticket.utils.MyLuck;
 import com.wuhai.lotteryticket.utils.StringUtil;
 import com.wuhai.lotteryticket.widget.popupwindow.ListPopWindow;
+import com.wuhai.lotteryticket.widget.popupwindow.PositionCanChangePopupWindow;
 
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+
+import me.jessyan.autosize.utils.ScreenUtils;
 
 
 /**
@@ -38,7 +44,7 @@ import java.util.TreeSet;
  *
  * 描述：彩票生成
  */
-public class LotteryCreateActivity extends NewLoadingBaseActivity implements View.OnClickListener, ListPopWindow.OnNumCallBackLitener {
+public class LotteryCreateActivity extends NewLoadingBaseActivity implements View.OnClickListener, ListPopWindow.OnNumCallBackLitener, BaseDataAdapter.OnItemLongClickListener, View.OnTouchListener, BaseDataAdapter.OnItemClickLitener {
 
     //Binding
     private AcLotteryCreateBinding binding;
@@ -62,6 +68,9 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
 
     //生成的彩票列表 adapter
     private LotteryCreateAdapter mLotteryCreateAdapter;
+
+    //
+    private PositionCanChangePopupWindow positionCanChangePopupWindow;
 
     /**
      *
@@ -161,6 +170,8 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
 //        binding.lotteryRv.setLayoutManager(syLinearLayoutManager);
 
         mLotteryCreateAdapter = new LotteryCreateAdapter(this);
+        mLotteryCreateAdapter.setOnItemLongClickListener(this);
+        mLotteryCreateAdapter.setOnItemClickLitener(this);
         binding.lotteryRv.setAdapter(mLotteryCreateAdapter);
 
         binding.observableScrollView.setFloatView(binding.layoutIn, binding.viewOutScroll);//设置非浮动View和固定View
@@ -223,6 +234,11 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
         binding.blueTv2.setOnClickListener(this);
         binding.lotteryNoRandomTv2.setOnClickListener(this);
         binding.lotteryFactorCb2.setOnClickListener(this);
+
+        //碰到了就 弹窗存在的时候 让弹窗消失
+        binding.layoutOut.setOnTouchListener(this);
+        binding.observableScrollView.setOnTouchListener(this);
+        binding.lotteryRv.setOnTouchListener(this);
     }
 
 
@@ -352,4 +368,45 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
         binding.moneyTv2.setText("￥"+lottery_bet_money+" 元");
     }
 
+    @Override
+    public void onItemLongClick(View v, int position) {
+//        showToast("长按了"+position);
+        positionCanChangePopupWindow =
+                new PositionCanChangePopupWindow(this, v, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+
+        /**
+         * 这样并不能获得 在屏幕内的坐标
+         */
+//        Log.e(TAG, "v.getX()="+v.getX()+", v.getY()="+v.getY());
+//        Log.e(TAG, "v.getLeft()="+v.getLeft()+", v.getTop()="+v.getTop()+
+//                ",v.getRight()="+v.getRight()+",v.getBottom()="+v.getBottom());
+//        positionCanChangePopupWindow.
+//                showPopupWindow((v.getRight()+v.getLeft())/2,(v.getBottom()+v.getTop())/2);
+
+        int[] location = new int[2];
+        v.getLocationOnScreen(location);
+        Log.e(TAG, "location[0]="+location[0]+", location[1]="+location[1]);
+        positionCanChangePopupWindow.
+                showPopupWindow(ScreenUtils.getScreenSize(this)[0]/2,location[1]);
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if(positionCanChangePopupWindow != null && positionCanChangePopupWindow.isShowing()){
+            positionCanChangePopupWindow.hide();
+        }
+        return false;
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        if(positionCanChangePopupWindow != null && positionCanChangePopupWindow.isShowing()){
+            positionCanChangePopupWindow.hide();
+        }
+    }
 }

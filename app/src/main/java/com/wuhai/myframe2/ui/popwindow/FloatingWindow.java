@@ -1,6 +1,7 @@
 package com.wuhai.myframe2.ui.popwindow;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -47,7 +48,15 @@ public class FloatingWindow {
 	 */
 	public void show(int x, int y, boolean direction){
 		setBackground(direction);
-		mWindow.showAtLocation(mParent, Gravity.NO_GRAVITY, location[0], location[1]-mWindow.getHeight());
+
+		/**
+		 * location[0]=45,location[1]=372,mWindow.getHeight()=-2
+		 * 这样定x,y不太科学
+		 */
+		Log.e(PopWindowActivity.TAG, "location[0]="+location[0]+
+				",location[1]="+location[1]+",mWindow.getHeight()="+mWindow.getHeight());
+		mWindow.showAtLocation(mParent, Gravity.NO_GRAVITY,
+				location[0], location[1]-mWindow.getHeight());
 	}
 	
 	private void setBackground(boolean direction) {

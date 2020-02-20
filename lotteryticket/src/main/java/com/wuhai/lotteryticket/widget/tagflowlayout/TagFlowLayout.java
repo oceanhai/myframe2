@@ -29,12 +29,12 @@ public class TagFlowLayout extends FlowLayout implements TagAdapter.OnDataChange
 
     public TagFlowLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        mAutoSelectEffect = true;
+//        mAutoSelectEffect = true;//TODO 注释掉 不然父布局长按被拦截
         mSelectedMax = 1;
 
-        if (mAutoSelectEffect) {
-            setClickable(true);
-        }
+//        if (mAutoSelectEffect) {//TODO 注释掉 不然父布局长按被拦截
+//            setClickable(true);
+//        }
     }
 
     public TagFlowLayout(Context context, AttributeSet attrs) {

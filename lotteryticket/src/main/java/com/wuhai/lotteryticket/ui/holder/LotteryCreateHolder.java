@@ -12,10 +12,8 @@ import com.wuhai.lotteryticket.R;
 import com.wuhai.lotteryticket.databinding.ItemLotteryBinding;
 import com.wuhai.lotteryticket.model.bean.Lottery;
 import com.wuhai.lotteryticket.ui.holder.base.BaseDataBindingHolder;
-import com.wuhai.lotteryticket.utils.LogProxy;
 import com.wuhai.lotteryticket.widget.tagflowlayout.FlowLayout;
 import com.wuhai.lotteryticket.widget.tagflowlayout.TagAdapter;
-import com.wuhai.lotteryticket.widget.tagflowlayout.TagFlowLayout;
 
 import java.util.Arrays;
 import java.util.List;
@@ -74,13 +72,14 @@ public class LotteryCreateHolder extends BaseDataBindingHolder<Lottery> {
             }
         };
         binding.redBallList.setAdapter(redAdapter);
-        binding.redBallList.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
-            @Override
-            public boolean onTagClick(View view, int position, FlowLayout parent) {
-                LogProxy.e(TAG, redBalls.get(position));
-                return true;
-            }
-        });
+        //TODO 注释掉 不然父布局长按被拦截
+//        binding.redBallList.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
+//            @Override
+//            public boolean onTagClick(View view, int position, FlowLayout parent) {
+//                LogProxy.e(TAG, redBalls.get(position));
+//                return true;
+//            }
+//        });
 
         blueAdapter = new TagAdapter<String>(blueBalls) {
             @Override
@@ -92,12 +91,13 @@ public class LotteryCreateHolder extends BaseDataBindingHolder<Lottery> {
             }
         };
         binding.blueBallList.setAdapter(blueAdapter);
-        binding.blueBallList.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
-            @Override
-            public boolean onTagClick(View view, int position, FlowLayout parent) {
-                LogProxy.e(TAG, blueBalls.get(position));
-                return true;
-            }
-        });
+        //TODO 注释掉 不然父布局长按被拦截
+//        binding.blueBallList.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
+//            @Override
+//            public boolean onTagClick(View view, int position, FlowLayout parent) {
+//                LogProxy.e(TAG, blueBalls.get(position));
+//                return true;
+//            }
+//        });
     }
 }
