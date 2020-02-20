@@ -6,8 +6,6 @@ import android.view.View;
 
 import androidx.databinding.DataBindingUtil;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.wuhai.lotteryticket.R;
 import com.wuhai.lotteryticket.config.Constants;
 import com.wuhai.lotteryticket.contract.IHomeContract;
@@ -15,13 +13,9 @@ import com.wuhai.lotteryticket.databinding.AcMainBinding;
 import com.wuhai.lotteryticket.model.bean.LotteryQueryEntity;
 import com.wuhai.lotteryticket.presenter.HomePresenter;
 import com.wuhai.lotteryticket.ui.base.NewLoadingBaseActivity;
-import com.wuhai.lotteryticket.utils.CommonUtils;
 import com.wuhai.lotteryticket.utils.DateUtil;
-import com.wuhai.lotteryticket.utils.GsonUtils;
 import com.wuhai.lotteryticket.utils.MatcherUtils;
 import com.wuhai.lotteryticket.utils.MonetaryUnitUtil;
-
-import org.json.JSONObject;
 
 public class MainActivity extends NewLoadingBaseActivity implements IHomeContract.View, View.OnClickListener {
 
@@ -51,34 +45,37 @@ public class MainActivity extends NewLoadingBaseActivity implements IHomeContrac
 
     private void getData() {
         //TODO Sring 空不能传NULL 只能""  菜鸡接口
-//        mPresenter.lotteryQuerySsq(Constants.JUHE_LOTTERY_KEY, Constants.JUHE_LOTTERY_ID_SSQ,"");
+        mPresenter.lotteryQuerySsq(Constants.JUHE_LOTTERY_KEY, Constants.JUHE_LOTTERY_ID_SSQ,"");
 //        mPresenter.lotteryQueryDlt(Constants.JUHE_LOTTERY_KEY, Constants.JUHE_LOTTERY_ID_DLT,"");
 
-        String lottery_ssq = CommonUtils.getFromAssets("lottery_ssq", this);
-        String lottery_dlt = CommonUtils.getFromAssets("lottery_dlt", this);
-
-        try {
-            //方式一
-//            JSONObject object = new JSONObject(lottery_ssq);
-//            String result_ssq = object.getString("result");
-
-            //方式二
-            JsonObject object = new JsonParser().parse(lottery_ssq).getAsJsonObject();
-//            String result_ssq = object.get("result").getAsString();//TODO 这样是不对的，getAsString所get的字段必须是字符串
-            String result_ssq = object.get("result").toString();
-
-            ssqEntity = GsonUtils.getInstance().fromJson(result_ssq, LotteryQueryEntity.class);
-            setLotteryQuerySsq(ssqEntity);
-
-            //方式一
-            JSONObject object2 = new JSONObject(lottery_dlt);
-            String result_dlt = object2.getString("result");
-            dltEntity = GsonUtils.getInstance().fromJson(result_dlt, LotteryQueryEntity.class);
-            setLotteryQueryDlt(dltEntity);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        /**
+         * assets里的假数据
+         */
+//        String lottery_ssq = CommonUtils.getFromAssets("lottery_ssq", this);
+//        String lottery_dlt = CommonUtils.getFromAssets("lottery_dlt", this);
+//
+//        try {
+//            //方式一
+////            JSONObject object = new JSONObject(lottery_ssq);
+////            String result_ssq = object.getString("result");
+//
+//            //方式二
+//            JsonObject object = new JsonParser().parse(lottery_ssq).getAsJsonObject();
+////            String result_ssq = object.get("result").getAsString();//TODO 这样是不对的，getAsString所get的字段必须是字符串
+//            String result_ssq = object.get("result").toString();
+//
+//            ssqEntity = GsonUtils.getInstance().fromJson(result_ssq, LotteryQueryEntity.class);
+//            setLotteryQuerySsq(ssqEntity);
+//
+//            //方式一
+//            JSONObject object2 = new JSONObject(lottery_dlt);
+//            String result_dlt = object2.getString("result");
+//            dltEntity = GsonUtils.getInstance().fromJson(result_dlt, LotteryQueryEntity.class);
+//            setLotteryQueryDlt(dltEntity);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
     }
 
@@ -112,6 +109,8 @@ public class MainActivity extends NewLoadingBaseActivity implements IHomeContrac
         if(entity == null){
             return;
         }
+        ssqEntity = entity;
+
         binding.ssqLotteryNoAndDateTv.setText(entity.getLottery_no()+"期  "+entity.getLottery_date().substring(5)+
                 "  ("+ DateUtil.getCustomStr(entity.getLottery_date())+")");
 

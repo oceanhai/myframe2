@@ -63,7 +63,11 @@ public class LotteryRecordActivity extends NewLoadingBaseActivity {
 
     private void initData() {
         List<LotteryRecord> list = mLotteryRecordModelImpl.queryLotteryRecord(mCurPage,10);
-        mLotteryRecordAdapter.setData(list);
+        if(list.size()>0){
+            mLotteryRecordAdapter.setData(list);
+        }else{
+            binding.lotteryRv.setVisibility(View.GONE);
+        }
     }
 
 
