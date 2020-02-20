@@ -3,6 +3,8 @@ package com.wuhai.lotteryticket.ui.adapter.base;
 import android.content.Context;
 import android.view.View;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.diycoder.library.adapter.BaseAdapter;
 
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
  * Created by wuhai on 2017/2/8 17:28.
  * 描述：BaseAdapter基类 2  module 上拉加载框架recyclerview
  */
-public abstract class BaseDataAdapter2<T> extends BaseAdapter {
+public abstract class BaseDataAdapter2<T, IVH extends RecyclerView.ViewHolder> extends BaseAdapter<T,IVH> {
     public OnItemClickLitener mOnItemClickLitener;
 
     public List<T> getData(){

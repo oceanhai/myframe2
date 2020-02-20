@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public abstract class ScrollListener extends HidingScrollListener {
     public ScrollListener(RecyclerView.LayoutManager layoutManager) {
         super(layoutManager);
-        loadMore = true;
+//        loadMore = true;
     }
 
     @Override
@@ -23,5 +23,5 @@ public abstract class ScrollListener extends HidingScrollListener {
     }
 
     //加载更多
-    public abstract void onLoadMore();
+//    public abstract void onLoadMore();
 }

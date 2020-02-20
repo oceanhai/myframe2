@@ -13,8 +13,8 @@ import org.greenrobot.greendao.annotation.Generated;
  *
  * 描述：彩票
  */
-@Entity(nameInDb = "Lottery")
-public class Lottery extends BaseBean{
+@Entity(nameInDb = "lottery_record")
+public class LotteryRecord {
 
     @Id
     @Property(nameInDb = "lottery_id")
@@ -45,9 +45,30 @@ public class Lottery extends BaseBean{
     @Property(nameInDb = "last_modified")
     @NotNull
     private String last_modified;//最后修改时间
-    @Generated(hash = 836306236)
-    public Lottery(String lottery_id, String lottery_type, String lottery_name,
-            String lottery_red_ball, String lottery_blue_ball,
+
+    /**
+     * 转换
+     * @param lottery
+     */
+    public LotteryRecord(Lottery lottery){
+        lottery_id = lottery.getLottery_id();
+        lottery_type = lottery.getLottery_type();
+        lottery_name = lottery.getLottery_name();
+        lottery_red_ball = lottery.getLottery_red_ball();
+        lottery_blue_ball = lottery.getLottery_blue_ball();
+        lottery_red_ball_count = lottery.getLottery_red_ball_count();
+        lottery_blue_ball_count = lottery.getLottery_blue_ball_count();
+        lottery_bet_num = lottery.getLottery_bet_num();
+        lottery_bet_money = lottery.getLottery_bet_money();
+        lottery_produce_method = lottery.getLottery_produce_method();
+        lottery_no = lottery.getLottery_no();
+        create_time = lottery.getCreate_time();
+        last_modified = lottery.getLast_modified();
+    }
+
+    @Generated(hash = 1085174894)
+    public LotteryRecord(String lottery_id, String lottery_type,
+            String lottery_name, String lottery_red_ball, String lottery_blue_ball,
             int lottery_red_ball_count, int lottery_blue_ball_count,
             int lottery_bet_num, int lottery_bet_money, int lottery_produce_method,
             String lottery_no, @NotNull String create_time,
@@ -66,8 +87,8 @@ public class Lottery extends BaseBean{
         this.create_time = create_time;
         this.last_modified = last_modified;
     }
-    @Generated(hash = 63235763)
-    public Lottery() {
+    @Generated(hash = 1839488281)
+    public LotteryRecord() {
     }
     public String getLottery_id() {
         return this.lottery_id;

@@ -25,4 +25,10 @@ public interface ILotteryModel extends IBaseModelInterFace   {
      * @return
      */
     List<Lottery> queryLotteryAll();
+
+    /**
+     * 删除
+     * @param lottery
+     */
+    void deleteLottery(Lottery lottery);
 }

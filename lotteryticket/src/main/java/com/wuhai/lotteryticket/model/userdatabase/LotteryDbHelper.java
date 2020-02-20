@@ -7,8 +7,9 @@ package com.wuhai.lotteryticket.model.userdatabase;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.wuhai.lotteryticket.model.bean.Lottery;
 import com.wuhai.lotteryticket.model.dao.DaoMaster;
+import com.wuhai.lotteryticket.model.dao.LotteryDao;
+import com.wuhai.lotteryticket.model.dao.LotteryRecordDao;
 import com.wuhai.lotteryticket.utils.DateUtils;
 import com.wuhai.lotteryticket.utils.LogProxy;
 
@@ -41,7 +42,8 @@ public class LotteryDbHelper extends DaoMaster.OpenHelper {
         LogProxy.e(TAG, "开始升级数据库 " + DateUtils.getDateAllString());
         LogProxy.e(TAG, "Upgrading schema from version " + oldVersion + " to " + newVersion + " by dropping all tables");
         MigrationHelper.migrate(db,
-                Lottery.class
+                LotteryDao.class,
+                LotteryRecordDao.class
         );
         LogProxy.e(TAG, " 结束升级数据库 " + DateUtils.getDateAllString());
 

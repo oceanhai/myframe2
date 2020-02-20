@@ -15,8 +15,10 @@ import com.wuhai.lotteryticket.R;
 import com.wuhai.lotteryticket.config.Constants;
 import com.wuhai.lotteryticket.databinding.AcLotteryCreateBinding;
 import com.wuhai.lotteryticket.model.LotteryModelImpl;
+import com.wuhai.lotteryticket.model.LotteryRecordModelImpl;
 import com.wuhai.lotteryticket.model.bean.Lottery;
 import com.wuhai.lotteryticket.model.bean.LotteryQueryEntity;
+import com.wuhai.lotteryticket.model.bean.LotteryRecord;
 import com.wuhai.lotteryticket.ui.adapter.LotteryCreateAdapter;
 import com.wuhai.lotteryticket.ui.adapter.base.BaseDataAdapter;
 import com.wuhai.lotteryticket.ui.base.NewLoadingBaseActivity;
@@ -65,6 +67,7 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
 
     //impl
     private LotteryModelImpl mLotteryModelImpl;
+    private LotteryRecordModelImpl mLotteryRecordModelImpl;
 
     //生成的彩票列表 adapter
     private LotteryCreateAdapter mLotteryCreateAdapter;
@@ -131,6 +134,7 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
         setTitle("双球球计算器");
         setActionRightText("记录");
         mLotteryModelImpl = new LotteryModelImpl();
+        mLotteryRecordModelImpl = new LotteryRecordModelImpl();
 
         switch (mLotteryId){
             case Constants.JUHE_LOTTERY_ID_SSQ:
@@ -253,7 +257,7 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
     @Override
     protected void onRightActionClicked() {
         super.onRightActionClicked();
-
+        LotteryRecordActivity.startActivity(this);
     }
 
     @Override
@@ -369,15 +373,30 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
     }
 
     @Override
-    public void onItemLongClick(View v, int position) {
+    public void onItemLongClick(View v, final int position) {
 //        showToast("长按了"+position);
-        positionCanChangePopupWindow =
-                new PositionCanChangePopupWindow(this, v, new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+        positionCanChangePopupWindow = new PositionCanChangePopupWindow(this,v);
+        positionCanChangePopupWindow.setFloatingOperation(new PositionCanChangePopupWindow.IFloatingOperation() {
+            @Override
+            public void onEdit() {
+                showToast("还未开发！");
+            }
 
-                    }
-                });
+            @Override
+            public void onDelete() {
+                Lottery lottery = mLotteryCreateAdapter.getDataItem(position);
+                mLotteryModelImpl.deleteLottery(lottery);
+                mLotteryCreateAdapter.deleteData(lottery);
+            }
+
+            @Override
+            public void onSave() {
+                Lottery lottery = mLotteryCreateAdapter.getDataItem(position);
+                mLotteryModelImpl.deleteLottery(lottery);
+                mLotteryCreateAdapter.deleteData(lottery);
+                mLotteryRecordModelImpl.addLotteryRecord(new LotteryRecord(lottery));
+            }
+        });
 
         /**
          * 这样并不能获得 在屏幕内的坐标

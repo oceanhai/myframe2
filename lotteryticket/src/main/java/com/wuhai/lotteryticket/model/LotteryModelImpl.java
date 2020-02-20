@@ -53,4 +53,22 @@ public class LotteryModelImpl extends BaseModel implements ILotteryModel {
         }
         return list;
     }
+
+    @Override
+    public void deleteLottery(Lottery lottery) {
+        if (mLotteryDao == null) {
+            mLotteryDao = LotteryDbManager.getInstance().getSession().getLotteryDao();
+        }
+        mLotteryDao.detachAll();//TODO get时候不取缓存的数据
+        try {
+            if (lottery != null) {
+                mLotteryDao.delete(lottery);
+                LogProxy.e(mClassName, "删除成功 deleteLottery");
+            }
+        } catch (Exception e) {
+            //TODO 异常情况
+        } finally {
+            //TODO 异常情况数据处理，eg:信息插入db
+        }
+    }
 }

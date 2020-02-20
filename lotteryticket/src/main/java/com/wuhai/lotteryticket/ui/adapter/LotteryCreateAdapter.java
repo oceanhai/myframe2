@@ -41,6 +41,17 @@ public class LotteryCreateAdapter extends BaseDataAdapter<Lottery> {
         }
     }
 
+    /**
+     * 删除
+     * @param data
+     */
+    public void deleteData(Lottery data){
+        if(mData != null){
+            mData.remove(data);
+            notifyDataSetChanged();
+        }
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //DataBinding

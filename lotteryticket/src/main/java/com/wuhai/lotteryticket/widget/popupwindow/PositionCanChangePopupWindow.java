@@ -25,24 +25,23 @@ public class PositionCanChangePopupWindow {
 	private View mParent;
 	private View mContentView;
 	private PopupWindow mWindow;
-	private OnClickListener mClickListener;
-	private View mDelete;
+	private View mDelete,mEditTv,mSaveTv;
 
-	public PositionCanChangePopupWindow(Context context, View parent, final OnClickListener onClickListener) {
+	private IFloatingOperation mOperCallback;
+
+	public PositionCanChangePopupWindow(Context context, View parent) {
 		mContext = context;
 		mContentView = View.inflate(mContext, R.layout.popwindow_position, null);
 		mWindow = new PopupWindow(mContentView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		mWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mParent = parent;
-		mClickListener = new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mWindow.dismiss();
-				onClickListener.onClick(v);
-			}
-		};
-		mDelete = mContentView.findViewById(R.id.read_fw_delete);
+		mDelete = mContentView.findViewById(R.id.delete_tv);
+		mEditTv = mContentView.findViewById(R.id.edit_tv);
+		mSaveTv = mContentView.findViewById(R.id.save_tv);
+
 		mDelete.setOnClickListener(mClickListener);
+		mEditTv.setOnClickListener(mClickListener);
+		mSaveTv.setOnClickListener(mClickListener);
 	}
 
 	private void setRelativeLayoutBackGround(boolean topOf) {
@@ -111,5 +110,43 @@ public class PositionCanChangePopupWindow {
 			return false;
 		}
 		return mWindow.isShowing();
+	}
+
+
+	/**
+	 * 回调接口
+	 * @param l
+	 */
+	public void setFloatingOperation(IFloatingOperation l){
+		mOperCallback = l;
+	}
+
+	final OnClickListener mClickListener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			if(mOperCallback == null){
+				return;
+			}
+			switch (v.getId()) {
+				case R.id.edit_tv:
+					mOperCallback.onEdit();
+					break;
+				case R.id.delete_tv:
+					mOperCallback.onDelete();
+					break;
+				case R.id.save_tv:
+					mOperCallback.onSave();
+					break;
+				default:
+					break;
+			}
+			hide();
+		}
+	};
+
+	public interface IFloatingOperation {
+		void onEdit();
+		void onDelete();
+		void onSave();
 	}
 }
