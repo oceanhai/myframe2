@@ -25,6 +25,7 @@ import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
+import com.wuhai.myframe2.ui.eventtransmit.EventTransmitActivity;
 import com.wuhai.myframe2.ui.floatview.FloatViewActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
 import com.wuhai.myframe2.ui.homepage.HomeActivity;
@@ -439,6 +440,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn30://可根据选项自动换行的单选/多选/排他选
                 AutoWrapActivity.startActivity(this);
+                break;
+            case R.id.btn31://事件传递机制
+                EventTransmitActivity.startActivity(this);
                 break;
         }
     }

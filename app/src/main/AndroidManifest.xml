@@ -304,6 +304,11 @@
             android:name=".ui.autowrap.AutoWrapActivity"
             android:screenOrientation="portrait"/>
 
+        <!--  事件传递机制      -->
+        <activity
+            android:name=".ui.eventtransmit.EventTransmitActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

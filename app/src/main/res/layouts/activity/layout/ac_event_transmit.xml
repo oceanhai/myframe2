@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.wuhai.myframe2.ui.eventtransmit.MyLayout
+        android:background="#FF0"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <com.wuhai.myframe2.ui.eventtransmit.MyView
+            android:id="@+id/myview01"
+            android:gravity="center"
+            android:visibility="visible"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#F00"
+            android:text="onTouchEvent return false" />
+        <com.wuhai.myframe2.ui.eventtransmit.MyButton
+            android:id="@+id/button02"
+            android:onClick="myviw02"
+            android:layout_toRightOf="@+id/myview01"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#FFF"
+            android:text="onTouchEvent return super.onTouchEvent(event)" />
+        <com.wuhai.myframe2.ui.eventtransmit.MyButton
+            android:id="@+id/mybutton"
+            android:layout_toRightOf="@+id/button02"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#F0F"
+            android:text="没有点击事件" />
+    </com.wuhai.myframe2.ui.eventtransmit.MyLayout>
+        
+
+
+</LinearLayout>
