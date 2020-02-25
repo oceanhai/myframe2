@@ -148,7 +148,7 @@
                 android:id="@+id/btn31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="asynctask 测试"
                 android:id="@+id/btn32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

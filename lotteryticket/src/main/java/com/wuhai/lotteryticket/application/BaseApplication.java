@@ -2,6 +2,10 @@ package com.wuhai.lotteryticket.application;
 
 import android.app.Activity;
 import android.app.Application;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.facebook.stetho.Stetho;
 import com.google.gson.Gson;
@@ -31,6 +35,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BaseApplication extends Application {
 
+    public static final String TAG = "BaseApplication";
+
     private static BaseApplication instance;
 
     @Override
@@ -45,6 +51,7 @@ public class BaseApplication extends Application {
     }
 
     private void init() {
+
         //屏幕适配方案
         initScreenAdaptation();
 
@@ -56,6 +63,48 @@ public class BaseApplication extends Application {
             Stetho.initializeWithDefaults(this);
             LogProxy.e("lottery", "Stetho init");
         }
+
+        //register  Application 生命周期  头条屏幕适配方案用到相关知识点
+        registerLife();
+    }
+
+    private void registerLife() {
+        this.registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+            @Override
+            public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
+                LogProxy.e(TAG, "onActivityCreated");
+            }
+
+            @Override
+            public void onActivityStarted(@NonNull Activity activity) {
+                LogProxy.e(TAG, "onActivityStarted");
+            }
+
+            @Override
+            public void onActivityResumed(@NonNull Activity activity) {
+                LogProxy.e(TAG, "onActivityResumed");
+            }
+
+            @Override
+            public void onActivityPaused(@NonNull Activity activity) {
+                LogProxy.e(TAG, "onActivityPaused");
+            }
+
+            @Override
+            public void onActivityStopped(@NonNull Activity activity) {
+                LogProxy.e(TAG, "onActivityStopped");
+            }
+
+            @Override
+            public void onActivitySaveInstanceState(@NonNull Activity activity, @NonNull Bundle outState) {
+                LogProxy.e(TAG, "onActivitySaveInstanceState");
+            }
+
+            @Override
+            public void onActivityDestroyed(@NonNull Activity activity) {
+                LogProxy.e(TAG, "onActivityDestroyed");
+            }
+        });
     }
 
     private void initNetRequest() {
@@ -171,7 +220,7 @@ public class BaseApplication extends Application {
 
                 //是否屏蔽系统字体大小对 AndroidAutoSize 的影响, 如果为 true, App 内的字体的大小将不会跟随系统设置中字体大小的改变
                 //如果为 false, 则会跟随系统设置中字体大小的改变, 默认为 false
-//                .setExcludeFontScale(true)
+                .setExcludeFontScale(true)
 
                 //屏幕适配监听器
                 .setOnAdaptListener(new onAdaptListener() {

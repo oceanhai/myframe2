@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.ui.animation.AnimationActivity;
+import com.wuhai.myframe2.ui.asynctask.AsyncTaskActivity;
 import com.wuhai.myframe2.ui.autowrap.AutoWrapActivity;
 import com.wuhai.myframe2.ui.blutooth.BluetoothActivity;
 import com.wuhai.myframe2.ui.broadcast.SendBroadcastActivity;
@@ -443,6 +444,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn31://事件传递机制
                 EventTransmitActivity.startActivity(this);
+                break;
+            case R.id.btn32://asynctask 测试
+                AsyncTaskActivity.startActivity(this);
                 break;
         }
     }

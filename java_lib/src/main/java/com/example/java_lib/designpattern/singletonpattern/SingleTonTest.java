@@ -3,7 +3,7 @@ package com.example.java_lib.designpattern.singletonpattern;
 public class SingleTonTest {
 
     public static void main(String[] args){
-      method03();
+      method01();
     }
 
     public static void method03(){
