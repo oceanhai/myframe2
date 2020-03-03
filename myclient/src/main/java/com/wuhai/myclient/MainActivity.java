@@ -295,7 +295,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent2 = new Intent();
                 intent2.setClassName("com.wuhai.myframe2",
                         "com.wuhai.myframe2.ui.ActionReceiveActivity2");
-//                intent2.putExtra("value", "我难道也能调用成功");//TODO 真传递不过去数据呢
+                intent2.putExtra("value", "我难道也能调用成功");//TODO 真传递不过去数据呢
                 startActivity(intent2);
                 break;
         }

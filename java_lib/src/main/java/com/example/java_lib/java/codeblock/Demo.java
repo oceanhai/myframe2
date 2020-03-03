@@ -3,16 +3,16 @@ package com.example.java_lib.java.codeblock;
 /**
  * 父类静态代码块执行！
  * 子类静态代码块执行！
- * 父类普通代码块执行!
+ * 父类构造块执行!
  * 父类构造函数执行!
- * 子类普通代码块执行!
+ * 子类构造块执行!
  * 子类构造函数执行!
  * 普通方法执行!
  */
 public class Demo {
 
     {
-        System.out.println("父类普通代码块执行!");
+        System.out.println("父类构造块执行!");
     }
 
     static{
@@ -32,7 +32,7 @@ public class Demo {
 class Demo1 extends Demo{
 
     {
-        System.out.println("子类普通代码块执行!");
+        System.out.println("子类构造块执行!");
     }
 
     static{

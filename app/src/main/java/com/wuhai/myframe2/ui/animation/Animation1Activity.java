@@ -22,6 +22,9 @@ import butterknife.ButterKnife;
  * <p>
  * 描述：三大动画
  * 逐帧动画
+ *
+ * 参考的文章好像是这篇
+ * https://www.jianshu.com/p/609b6d88798d
  */
 public class Animation1Activity extends BaseActivity implements View.OnClickListener {
 

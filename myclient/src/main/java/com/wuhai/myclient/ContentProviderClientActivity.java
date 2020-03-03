@@ -164,20 +164,4 @@ public class ContentProviderClientActivity extends AppCompatActivity {
         tv01.setText("查询结果6：\n" + stringBuilder.toString());
     }
 
-    /**
-     * 草 既然能直接查询 我为啥还要用内容提供者？
-     * @param v
-     */
-    public void click7(View v) {
-//        PersonDAO dao = new PersonDAO(this);
-//        List<Person> list = dao.getAllData();
-//        StringBuilder stringBuilder = new StringBuilder();
-//        if (!list.isEmpty()) {
-//            for (int x = 0; x < list.size(); x++) {
-//                stringBuilder.append(list.get(x).getName() + "," + list.get(x).getAge() + "\n");
-//            }
-//        }
-//
-//        tv01.setText(stringBuilder.toString());
-    }
 }
