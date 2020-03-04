@@ -27,6 +27,7 @@ import com.wuhai.myframe2.utils.DeviceUtil;
 import com.wuhai.retrofit.retrofit.BaseApi;
 import com.wuhai.retrofit.retrofit.NetProvider;
 import com.wuhai.retrofit.retrofit.RequestHandler;
+import com.xywy.component.datarequest.network.RequestManager;
 
 import java.io.File;
 import java.lang.reflect.Type;
@@ -89,6 +90,16 @@ public class BaseApplication extends Application {
         initFresco(this);
         //Fresco init 默认
 //        Fresco.initialize(this);
+
+        //寻医问药 网络请求框架 初始化 网络请求框架要初始化
+        initDataRequest();
+    }
+
+    private void initDataRequest() {
+        /**
+         * volley 初始化
+         */
+        RequestManager.init(this);
     }
 
     /**

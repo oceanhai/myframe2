@@ -29,4 +29,30 @@
         <item name="android:windowExitAnimation">@anim/fade_out</item>
     </style>
 
+    <!-- xywy   InputWidget -->
+    <declare-styleable name="InputWidget">
+        <attr name="inputbackground" format="reference|color"/>
+        <attr name="clearbuttonenable" format="boolean"/>
+        <attr name="imageviewleft" format="reference"/>
+        <attr name="imageviewright" format="reference"/>
+        <attr name="passwordtype" format="boolean"/>
+        <attr name="identifyingcodeenable" format="boolean"/>
+        <attr name="imageviewrightopen" format="reference"/>
+        <attr name="imageviewrightclose" format="reference"/>
+        <attr name="edithintstr" format="string"/>
+        <attr name="righttextstr" format="string"/>
+        <attr name="editlength" format="integer"/>
+        <attr name="imeOptions">
+            <enum name="actionNext" value="0" />
+            <enum name="actionDone" value="1" />
+        </attr>
+        <attr name="digits" format="string"/>
+    </declare-styleable>
+    <style name="edit_text">
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textColorHint">#bbbbbb</item>
+    </style>
+
+
 </resources>

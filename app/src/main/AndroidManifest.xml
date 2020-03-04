@@ -314,6 +314,11 @@
             android:name=".ui.asynctask.AsyncTaskActivity"
             android:screenOrientation="portrait"/>
 
+        <!--  寻医问药 登录控件+网络请求      -->
+        <activity
+            android:name=".ui.xywy.InputWidgetActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

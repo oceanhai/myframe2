@@ -152,7 +152,7 @@
                 android:id="@+id/btn32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="寻医问药 登录控件+网络请求"
                 android:id="@+id/btn33"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

@@ -40,6 +40,7 @@ import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
 import com.wuhai.myframe2.ui.slidingfinish.SlidingFinishActivity;
 import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
+import com.wuhai.myframe2.ui.xywy.InputWidgetActivity;
 import com.wuhai.share.QddShareCallback;
 import com.wuhai.share.QddShareHelper;
 import com.wuhai.share.QddShareModel;
@@ -447,6 +448,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn32://asynctask 测试
                 AsyncTaskActivity.startActivity(this);
+                break;
+            case R.id.btn33://寻医问药 登录控件+网络请求
+                InputWidgetActivity.startActivity(this);
                 break;
         }
     }

@@ -52,4 +52,13 @@
     <color name="titlebar_textview">#333333</color>
     <color name="titlebar_bg">#f8f8f8</color>
 
+    <!-- xywy   InputWidget -->
+    <color name="turquoise">#3ac0b9</color><!-- 宝石绿 -->
+    <color name="login_line_grey01">#e1e1e1</color>
+    <color name="public_main_text_black">#090909</color>
+    <color name="login_textview_grey01">#bfbfbf</color>
+    <color name="common_tv_color">#32b4c2</color>
+    <color name="famous_black">#333333</color>
+    <color name="c_bbbbbb">#bbbbbb</color>
+
 </resources>
