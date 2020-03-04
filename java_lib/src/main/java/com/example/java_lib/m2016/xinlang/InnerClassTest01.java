@@ -51,6 +51,7 @@ public class InnerClassTest01 {
 
     public static class B{  //静态内部类
         int y;
+        public static int z;
         public void bMethod(){
             int y;
             y=3;            // y为bMethod方法的局部变量y
@@ -58,6 +59,12 @@ public class InnerClassTest01 {
             InnerClassTest01.y=5;  // y为外部类Test的静态成员变量y  因为静态（内部类/匿名内部类）只能调用外部类的静态属性，所以内部类没有持有外部引用
             System.out.println("B bMethod() y="+y);
             System.out.println("B y="+this.y);
+        }
+
+        public static void bMethod2(){
+//            this.y = 4;//错误 static方法里不能有this
+//            y = 4;//错误 static方法里不能引用非静态属性
+            z = 4;//ok static方法里只能引用静态属性
         }
     }
 
