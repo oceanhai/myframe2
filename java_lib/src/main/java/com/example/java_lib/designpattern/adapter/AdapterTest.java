@@ -1,5 +1,7 @@
 package com.example.java_lib.designpattern.adapter;
 
+import org.junit.Test;
+
 /**
  * Created by wuhai on 2017/10/24 14:44.
  * 描述：
@@ -13,7 +15,7 @@ public class AdapterTest {
 
 
     public static void main(String[] args) {
-        method03();
+        method01();
     }
 
     /**
@@ -24,6 +26,9 @@ public class AdapterTest {
         Targetable target = new Adapter();
         target.method1();
         target.method2();
+
+//        Source source = new Source();
+//        source.method1();
     }
 
     /**
@@ -31,7 +36,8 @@ public class AdapterTest {
      * 基本思路和类的适配器模式相同，只是将Adapter类作修改，
      * 这次不继承Source类，而是持有Source类的实例，以达到解决兼容性的问题。
      */
-    private static void method02() {
+    @Test
+    public void method02() {
         Targetable target = new Wrapper(new Source());
         target.method1();
         target.method2();
@@ -44,7 +50,8 @@ public class AdapterTest {
      * 借助于一个抽象类，该抽象类实现了该接口，实现了所有的方法，而我们不和原始的接口打交道，只和该抽象类取得联系，
      * 所以我们写一个类，继承该抽象类，重写我们需要的方法就行
      */
-    private static void method03() {
+    @Test
+    public void method03() {
         Sourceable sourceable1 = new SourceSub1();
         sourceable1.method1();
         sourceable1.method2();
