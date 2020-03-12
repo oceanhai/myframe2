@@ -11,44 +11,54 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <TextView
                 android:id="@+id/method02"
-                android:text="method02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Button
+                android:gravity="center"
+                android:text="observer\nsubscriber"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+            <TextView
                 android:id="@+id/method03"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:text="method03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Button
+                android:text="创建\nObservable"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+            <TextView
                 android:id="@+id/method04"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:text="method04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:text="just\nfrom"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <TextView
                 android:id="@+id/method05"
-                android:text="method05"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Button
+                android:gravity="center"
+                android:text="不完整定义的回调"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+            <TextView
                 android:id="@+id/method06"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:text="method06"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:text="打印字符串"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
             <Button
                 android:id="@+id/method07"
                 android:layout_marginLeft="10dp"
-                android:text="method07"
+                android:text="同步\n加载资源图片"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -57,57 +67,154 @@
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <TextView
                 android:id="@+id/method08"
-                android:text="method08"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:gravity="center"
+                android:text="Scheduler"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
             <Button
                 android:id="@+id/method09"
                 android:layout_marginLeft="10dp"
-                android:text="method09"
+                android:text="异步\n加载资源图片"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button
+            <TextView
                 android:id="@+id/method10"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:text="method10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:text="map()"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <TextView
                 android:id="@+id/method11"
-                android:text="method11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:gravity="center"
+                android:text="map()\n一对一的转化"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
             <Button
                 android:id="@+id/method12"
                 android:layout_marginLeft="10dp"
-                android:text="method12"
+                android:text="打印Student数组\n学生的课程表"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button
+            <TextView
                 android:id="@+id/method13"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:text="method13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:text="flatMap()"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <TextView
+                android:id="@+id/throttle_first"
+                android:gravity="center"
+                android:text="throttleFirst()"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/lift"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="lift()"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/compose"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="compose"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/scheduler2"
+                android:gravity="center"
+                android:text="scheduler2"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/doOnSubscribe"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="doOnSubscribe"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/retrofit"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="Retrofit 的结合"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/doOnNext"
+                android:gravity="center"
+                android:text="doOnNext()"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+<!--            <TextView-->
+<!--                android:id="@+id/doOnSubscribe"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:gravity="center"-->
+<!--                android:text="doOnSubscribe"-->
+<!--                android:background="@drawable/global_blue_img_selector"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="50dp" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/retrofit"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Retrofit 的结合"-->
+<!--                android:background="@drawable/global_blue_img_selector"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="50dp" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
                 android:id="@+id/method14"
-                android:text="method14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:gravity="center"
+                android:text="retrofit + rxJava"
+                android:background="@drawable/global_blue_img_selector"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
             <Button
                 android:id="@+id/method15"
                 android:layout_marginLeft="10dp"
@@ -167,6 +274,13 @@
             android:id="@+id/iv01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/iv02"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 </ScrollView>

@@ -163,7 +163,8 @@ public class BaseApplication extends Application {
         BaseApi.INSTANCE.registerProvider(new NetProvider() {
             @Override
             public String configBaseUrl() {
-                return "http://qjj.test01.qiandaodao.com/";
+//                return "http://qjj.test01.qiandaodao.com/";//趣竞价 原测试线 服务器到期了
+                return "https://api.qujingjia.com/";
             }
 
             @Override
@@ -234,7 +235,7 @@ public class BaseApplication extends Application {
         @Override
         public Integer deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
                 throws JsonParseException {
-            Integer jsonVal = -1;
+            Integer jsonVal = 0;
             try {
                 jsonVal = json.getAsInt();
             } catch (Exception e) {
