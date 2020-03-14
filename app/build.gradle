@@ -110,4 +110,10 @@ dependencies {
 
     //xywy 的网络请求框架
     api project(':datarequest')
+
+    //countdownview
+    // 1.ColorPicker 颜色选择
+    // 2.familiarrecyclerview 应该可以被rv直接替换吧，反正第三方的，懒得改了
+    implementation 'com.github.iwgang:familiarrecyclerview:1.3.0'
+    implementation 'cn.qqtheme.framework:ColorPicker:1.1.3'
 }

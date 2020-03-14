@@ -24,6 +24,7 @@ import com.wuhai.myframe2.ui.blutooth.BluetoothActivity;
 import com.wuhai.myframe2.ui.broadcast.SendBroadcastActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
+import com.wuhai.myframe2.ui.countdownview.CountdownViewActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.eventtransmit.EventTransmitActivity;
@@ -451,6 +452,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn33://寻医问药 登录控件+网络请求
                 InputWidgetActivity.startActivity(this);
+                break;
+            case R.id.btn34://CountdownView
+                CountdownViewActivity.startActivity(this);
                 break;
         }
     }
