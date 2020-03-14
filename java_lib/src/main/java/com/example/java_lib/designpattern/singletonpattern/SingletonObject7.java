@@ -9,6 +9,7 @@ package com.example.java_lib.designpattern.singletonpattern;
  */
 public class SingletonObject7 {
 
+    public int num = 8;//TODO 这里我们只是用来调用用
 
     private SingletonObject7(){
 
@@ -22,7 +23,7 @@ public class SingletonObject7 {
 
         private final SingletonObject7 instance;
 
-        Singleton(){
+        private Singleton(){
             instance = new SingletonObject7();
         }
 

@@ -78,7 +78,7 @@ public abstract class RequestNetCallBack2<T extends RootResponse> extends Subscr
 
     @Override
     public void onError(Throwable throwable) {
-        Log.e(TAG, "onError");
+        Log.e(TAG, "onError:"+throwable.getMessage());
         ResponseError responseError;
 //        LogInfo configLog = getConfigLog();
 

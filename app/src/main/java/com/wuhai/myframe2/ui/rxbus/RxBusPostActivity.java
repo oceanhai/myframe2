@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * <p>
  * 创建日期 2019/4/3 11:45
  * <p>
- * 描述：RxBus 接收界面
+ * 描述：RxBus 发送界面
  */
 public class RxBusPostActivity extends BaseActivity {
 

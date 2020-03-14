@@ -39,7 +39,7 @@ public class RxBusAcceptActivity extends BaseActivity {
     @BindView(R.id.tv03)
     TextView tv03;
     @BindView(R.id.btn03)
-    Button btn03;//没用到
+    Button btn03;//TODO 没用到
 
     private Subscription subscription1;
     private Subscription subscription2;
