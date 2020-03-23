@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView android:text="寻医问药使用的自定义控件ScrollerTabView"
+        android:id="@+id/btn01"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/global_blue_img_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="药品指南自定义SegmentedRadioGroup"
+        android:id="@+id/btn02"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/global_blue_img_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="谷歌TabLayout+ViewPager"
+        android:id="@+id/btn03"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/global_blue_img_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

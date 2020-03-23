@@ -329,6 +329,21 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.countdownview.RecyclerViewActivity"
             android:screenOrientation="portrait"/>
+
+        <!--   导航     -->
+        <activity
+            android:name=".ui.navigation.NavigationMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.navigation.navigationmenu1.NavigationMenu1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.navigation.navigationmenu2.NavigationMenu2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.navigation.navigationmenu3.NavigationMenu3Activity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
