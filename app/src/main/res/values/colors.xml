@@ -61,4 +61,12 @@
     <color name="famous_black">#333333</color>
     <color name="c_bbbbbb">#bbbbbb</color>
 
+    <!-- 材料设计 start-->
+    <!-- NavigationView-->
+    <color name="PrimaryColor">#2196F3</color>
+    <color name="PrimaryDarkColor">#1976D2</color>
+    <!-- CollapsingtToolbarlayout -->
+    <color name="window_background">#FFF5F5F5</color>
+    <!-- 材料设计 end-->
+
 </resources>

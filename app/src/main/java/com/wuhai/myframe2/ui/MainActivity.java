@@ -31,6 +31,7 @@ import com.wuhai.myframe2.ui.eventtransmit.EventTransmitActivity;
 import com.wuhai.myframe2.ui.floatview.FloatViewActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
 import com.wuhai.myframe2.ui.homepage.HomeActivity;
+import com.wuhai.myframe2.ui.materialdesign.MaterialDesignActivity;
 import com.wuhai.myframe2.ui.navigation.NavigationMenuActivity;
 import com.wuhai.myframe2.ui.notificaitons.NotificationService;
 import com.wuhai.myframe2.ui.okhttp3.OkHttpActivity;
@@ -459,6 +460,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn35://导航菜单
                 NavigationMenuActivity.startActivity(this);
+                break;
+            case R.id.btn36://材料设计
+                MaterialDesignActivity.startActivity(this);
                 break;
         }
     }

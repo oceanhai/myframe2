@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/navigation_view"
+        android:text="NavigationView"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/global_blue_img_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/coordinator_layout"
+        android:text="CoordinatorLayout"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/global_blue_img_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/collapsing_toolbar_layout"
+        android:text="CollapsingToolbarLayout"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/global_blue_img_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

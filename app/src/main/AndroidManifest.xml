@@ -344,6 +344,22 @@
             android:name=".ui.navigation.navigationmenu3.NavigationMenu3Activity"
             android:screenOrientation="portrait" />
 
+        <!--   材料设计     -->
+        <activity
+            android:name=".ui.materialdesign.MaterialDesignActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.materialdesign.NavigationViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.materialdesign.yxt.RetailSalerBrandPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.materialdesign.CollapsingtToolbarlayoutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.DesignDemo" />
+
     </application>
 
 </manifest>
