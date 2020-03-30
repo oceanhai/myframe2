@@ -47,6 +47,13 @@ android {
     dataBinding {
         enabled = true
     }
+
+    repositories {
+        //导入aar
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -59,7 +66,22 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //retrofit 网络请求框架
-    api project(':retrofitnetworkrequest')
+//    api project(':retrofitnetworkrequest')
+    //retrofit 网络请求框架 aar形式导入
+//    implementation(name: 'retrofitnetworkrequest-release', ext: 'aar')//注意这里加入的名字没有后缀名
+    //aar里并不包含引用，所以要自己引用，或者aar把引用添加自己的lib里一起打包
+    implementation 'com.squareup.okhttp3:okhttp:3.5.0'
+    implementation 'com.zhy:okhttputils:2.6.2'
+    implementation 'com.facebook.stetho:stetho:1.4.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.4.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    implementation 'io.reactivex:rxjava:1.1.6'
+    implementation 'io.reactivex:rxandroid:1.0.0'
+    implementation 'com.trello:rxlifecycle-components:1.0'
+    //jar包形式
+    implementation files('libs/retrofitnetworkrequest_1.0.0.jar')
 
     //今日头条适配方案
     implementation 'me.jessyan:autosize:1.1.2'

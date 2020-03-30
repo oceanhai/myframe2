@@ -22,6 +22,11 @@ android {
         }
     }
 
+    lintOptions{
+//        checkReleaseBuilds false
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -66,3 +71,40 @@ dependencies {
     //使用RxLifecycle解决RxJava内存泄漏
     api 'com.trello:rxlifecycle-components:1.0'
 }
+
+
+def SDK_BASENAME = "retrofitnetworkrequest"  /* 生成jar包的名字*/
+def SDK_VERSION = "_1.0.0"
+def sdkDestinationPath = "build"  /*设置生成的jar包输出的路径*/
+def zipFile = file('build/intermediates/packaged-classes/release/classes.jar')
+
+//生成一个新的包时候调用这个方法删除原来的包
+task deleteBuild(type: Delete) {
+    delete sdkDestinationPath + SDK_BASENAME + SDK_VERSION + ".jar"
+}
+//打包脚本
+task makeJar(type: Jar) {
+    from zipTree(zipFile)
+    from fileTree(dir: 'src/main', includes: ['res/**'])
+    baseName = SDK_BASENAME + SDK_VERSION
+    destinationDir = file(sdkDestinationPath)
+}
+
+makeJar.dependsOn(deleteBuild, build)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
