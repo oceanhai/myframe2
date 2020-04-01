@@ -360,6 +360,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/Base.Theme.DesignDemo" />
 
+        <!--   热门标签的流式布局FlowLayout     -->
+        <activity
+            android:name=".ui.flowlayout.FlowLayoutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.DesignDemo" />
+
     </application>
 
 </manifest>

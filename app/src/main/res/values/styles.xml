@@ -73,4 +73,10 @@
         <item name="android:windowBackground">@color/window_background</item>
     </style>
     <!-- 材料设计 end-->
+
+    <style name="TextView1">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/global_blue_img_selector</item>
+    </style>
 </resources>
