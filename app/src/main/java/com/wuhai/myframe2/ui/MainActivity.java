@@ -28,6 +28,7 @@ import com.wuhai.myframe2.ui.countdownview.CountdownViewActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.eventtransmit.EventTransmitActivity;
+import com.wuhai.myframe2.ui.flexboxlayout.FlexboxLayoutActivity;
 import com.wuhai.myframe2.ui.floatview.FloatViewActivity;
 import com.wuhai.myframe2.ui.flowlayout.FlowLayoutActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
@@ -465,8 +466,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn36://材料设计
                 MaterialDesignActivity.startActivity(this);
                 break;
-            case R.id.btn37://热门标签的流式布局FlowLayout
+            case R.id.btn37://热门标签的流式布局FlowLayout (自定义)
                 FlowLayoutActivity.startActivity(this);
+                break;
+            case R.id.btn38://谷歌FlexboxLayout
+                FlexboxLayoutActivity.startActivity(this);
                 break;
         }
     }

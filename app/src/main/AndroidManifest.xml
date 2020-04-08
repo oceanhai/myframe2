@@ -363,8 +363,39 @@
         <!--   热门标签的流式布局FlowLayout     -->
         <activity
             android:name=".ui.flowlayout.FlowLayoutActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Base.Theme.DesignDemo" />
+            android:screenOrientation="portrait"/>
+
+        <!--   谷歌FlexboxLayout     -->
+        <activity
+            android:name=".ui.flexboxlayout.FlexboxLayoutActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.flexboxlayout.FlexboxLayout01Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.flexboxlayout.FlexboxLayout02Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.flexboxlayout.FlexboxLayout03Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.flexboxlayout.FlexboxLayout04Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.flexboxlayout.FlexboxLayout05Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.flexboxlayout.FlexboxLayout06Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.flexboxlayout.FlexboxLayout07Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.flexboxlayout.FlexboxLayout08Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.flexboxlayout.RecyclerViewActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

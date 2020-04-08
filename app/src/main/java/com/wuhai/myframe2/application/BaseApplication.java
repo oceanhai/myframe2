@@ -1,9 +1,10 @@
 package com.wuhai.myframe2.application;
 
-import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+
+import androidx.multidex.MultiDexApplication;
 
 import com.facebook.cache.common.CacheErrorLogger;
 import com.facebook.cache.disk.DiskCacheConfig;
@@ -41,7 +42,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * 应用application
  * Created by fanchang on 2017/2/14.
  */
-public class BaseApplication extends Application {
+public class BaseApplication extends MultiDexApplication {
 
     //上下文环境
     public static BaseApplication application;

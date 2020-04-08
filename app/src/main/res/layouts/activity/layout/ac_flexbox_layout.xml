@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView android:text="FlexboxLayout01"
+        android:id="@+id/tv01"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="flexDirection属性"
+        android:id="@+id/tv02"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="flexWrap属性"
+        android:id="@+id/tv03"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="justifyContent属性"
+        android:id="@+id/tv04"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="alignItems属性"
+        android:id="@+id/tv05"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="alignContent属性"
+        android:id="@+id/tv06"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="FlexboxLayout实现tag"
+        android:id="@+id/tv07"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="layout_flexBasisPercent 属性(控件内view)"
+        android:id="@+id/tv08"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:text="FlexboxLayout+RecyclerView"
+        android:id="@+id/tv09"
+        style="@style/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
