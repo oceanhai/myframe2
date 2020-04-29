@@ -472,6 +472,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn38://谷歌FlexboxLayout
                 FlexboxLayoutActivity.startActivity(this);
                 break;
+            case R.id.btn39://横屏生命周期
+                HorizontalScreenActivity.startActivity(this);
+                break;
         }
     }
 

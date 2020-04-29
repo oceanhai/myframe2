@@ -397,6 +397,10 @@
             android:name=".ui.flexboxlayout.RecyclerViewActivity"
             android:screenOrientation="portrait"/>
 
+        <!--   横屏生命周期     -->
+        <activity
+            android:name=".ui.HorizontalScreenActivity"/>
+
     </application>
 
 </manifest>
