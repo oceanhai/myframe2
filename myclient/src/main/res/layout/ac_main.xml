@@ -34,7 +34,7 @@
                 android:id="@+id/btn05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button android:text="XXX"
+            <Button android:text="Intent+bundle实现跨进程通讯：发送方 跳到接收方2号ac"
                 android:id="@+id/btn06"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

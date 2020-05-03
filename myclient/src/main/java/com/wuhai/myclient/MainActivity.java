@@ -291,12 +291,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn04://StartActivity
                 StandardActivity.startActivity(this);
                 break;
-            case R.id.btn05:
+            case R.id.btn05://Intent+bundle实现跨进程通讯：发送方 跳到接收方2号ac
                 Intent intent2 = new Intent();
                 intent2.setClassName("com.wuhai.myframe2",
                         "com.wuhai.myframe2.ui.ActionReceiveActivity2");
-                intent2.putExtra("value", "我难道也能调用成功");//TODO 真传递不过去数据呢
+                intent2.putExtra("value", "我难道也能调用成功");//TODO 可以传递过去
                 startActivity(intent2);
+                break;
+            case R.id.btn06://Intent+bundle实现跨进程通讯：发送方 跳到接收方2号ac
+                Intent intent3 = new Intent();
+                intent3.setClassName("com.wuhai.myframe2",
+                        "com.wuhai.myframe2.ui.ActionReceiveActivity2");
+                Bundle bundle = new Bundle();
+                bundle.putString("value", "你好 我是从myclient过来的");
+                intent3.putExtras(bundle);
+                startActivity(intent3);
                 break;
         }
     }
