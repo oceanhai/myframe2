@@ -42,6 +42,7 @@ import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitRxJavaRxLifecycleActivity;
 import com.wuhai.myframe2.ui.rxbus.RxBusAcceptActivity;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
+import com.wuhai.myframe2.ui.service.ServiceActivity;
 import com.wuhai.myframe2.ui.slidingfinish.SlidingFinishActivity;
 import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
@@ -474,6 +475,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn39://横屏生命周期
                 HorizontalScreenActivity.startActivity(this);
+                break;
+            case R.id.btn40://Service
+                ServiceActivity.startActivity(this);
                 break;
         }
     }

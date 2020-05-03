@@ -401,6 +401,21 @@
         <activity
             android:name=".ui.HorizontalScreenActivity"/>
 
+        <!--   service     -->
+        <activity
+            android:name=".ui.service.ServiceActivity"/>
+        <service android:name=".ui.service.MyService"></service>
+        <service android:name=".ui.service.MyService2"></service>
+        <receiver android:name=".ui.service.MyReceiver">
+            <intent-filter >
+                <!--    滑动解锁 监听,静态注册受限制了，google调整了，只可以动态注册    -->
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".ui.service.MyService3"></service>
+        <service android:name=".ui.service.BindService"></service>
+        <service android:name=".ui.service.MyIntentService"></service>
+
     </application>
 
 </manifest>

@@ -3,7 +3,11 @@ package com.wuhai.myframe2.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.databinding.DataBindingUtil;
+
 import com.wuhai.myframe2.R;
+import com.wuhai.myframe2.databinding.AcNullBinding;
 import com.wuhai.myframe2.ui.base.BaseActivity;
 
 /**
@@ -14,6 +18,8 @@ import com.wuhai.myframe2.ui.base.BaseActivity;
  * 描述：空ac
  */
 public class NullActivity extends BaseActivity {
+
+    private AcNullBinding binding;
 
     /**
      * @param context
@@ -27,7 +33,7 @@ public class NullActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_null);
+//        setContentView(R.layout.ac_null);
         parseIntent();
         init();
         setListener();
@@ -46,10 +52,9 @@ public class NullActivity extends BaseActivity {
     }
 
     private void init() {
-
+        binding = DataBindingUtil.setContentView(this, R.layout.ac_null);
     }
 
     private void setListener() {
-
     }
 }

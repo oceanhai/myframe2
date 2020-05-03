@@ -69,4 +69,9 @@
     <color name="window_background">#FFF5F5F5</color>
     <!-- 材料设计 end-->
 
+    <!--分割线的color-->
+<!--    <color name="line_color_gray_one" >#e9ecef</color>-->
+    <color name="line_color_gray_two" >#dfe3e8</color>
+
+
 </resources>
