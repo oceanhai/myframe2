@@ -1,5 +1,6 @@
 package com.wuhai.myframe2.ui;
 
+import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -46,6 +47,7 @@ import com.wuhai.myframe2.ui.service.ServiceActivity;
 import com.wuhai.myframe2.ui.slidingfinish.SlidingFinishActivity;
 import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
+import com.wuhai.myframe2.ui.thread.ThreadActivity;
 import com.wuhai.myframe2.ui.xywy.InputWidgetActivity;
 import com.wuhai.share.QddShareCallback;
 import com.wuhai.share.QddShareHelper;
@@ -222,6 +224,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.btn02_2)
     TextView btn022;
 
+
+    public static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -231,10 +236,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.ac_main);
         ButterKnife.bind(this);
 
+        init();
+        
         //分享初始化
         QddShareHelper.initShare(this);
 
         setListener();
+    }
+
+    private void init() {
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        int mMaxMemory = activityManager.getMemoryClass();
+        Log.e(TAG, "mMaxMemory = " +mMaxMemory);
     }
 
     private void setListener() {
@@ -478,6 +491,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn40://Service
                 ServiceActivity.startActivity(this);
+                break;
+            case R.id.btn41://线程
+                ThreadActivity.startActivity(this);
                 break;
         }
     }

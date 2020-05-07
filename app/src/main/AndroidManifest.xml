@@ -416,6 +416,14 @@
         <service android:name=".ui.service.BindService"></service>
         <service android:name=".ui.service.MyIntentService"></service>
 
+        <!--   线程     -->
+        <activity
+            android:name=".ui.thread.ThreadActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.thread.HandlerThreadActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
