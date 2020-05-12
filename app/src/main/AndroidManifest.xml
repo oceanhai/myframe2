@@ -424,6 +424,21 @@
             android:name=".ui.thread.HandlerThreadActivity"
             android:screenOrientation="portrait"/>
 
+        <!--   Activity切换动画     -->
+        <activity
+            android:name=".ui.acswitch.AcSwitchMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.acswitch.AcSwitchActivity1"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.acswitch.AcSwitchActivity2"
+            android:theme="@style/AppTheme2"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.acswitch.AcSwitchActivity3"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

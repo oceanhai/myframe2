@@ -18,6 +18,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
+import com.wuhai.myframe2.ui.acswitch.AcSwitchMainActivity;
 import com.wuhai.myframe2.ui.animation.AnimationActivity;
 import com.wuhai.myframe2.ui.asynctask.AsyncTaskActivity;
 import com.wuhai.myframe2.ui.autowrap.AutoWrapActivity;
@@ -494,6 +495,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn41://线程
                 ThreadActivity.startActivity(this);
+                break;
+            case R.id.btn42://Activity切换动画
+                AcSwitchMainActivity.startActivity(this);
                 break;
         }
     }

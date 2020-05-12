@@ -79,4 +79,30 @@
         <item name="android:padding">10dp</item>
         <item name="android:background">@drawable/global_blue_img_selector</item>
     </style>
+
+    <!--Activity进场。出场动画-->
+    <style name="AppTheme2" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+<!--        &lt;!&ndash;用于设置打开新的Activity并进入新的Activity展示的动画&ndash;&gt;-->
+<!--        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>-->
+<!--        &lt;!&ndash;用于设置打开新的Activity并销毁之前的Activity展示的动画&ndash;&gt;-->
+<!--        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>-->
+<!--        &lt;!&ndash;用于设置关闭当前Activity进入上一个Activity展示的动画&ndash;&gt;-->
+<!--        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>-->
+<!--        &lt;!&ndash;用于设置关闭当前Activity时展示的动画&ndash;&gt;-->
+<!--        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>-->
+
+        <!--    TODO 好像并不起作用    -->
+        <!--用于设置打开新的Activity并进入新的Activity展示的动画-->
+        <item name="android:activityOpenEnterAnimation">@anim/swipeback_base_slide_up_in</item>
+        <!--用于设置打开新的Activity并销毁之前的Activity展示的动画-->
+        <item name="android:activityOpenExitAnimation">@anim/swipeback_base_slide_remain</item>
+        <!--用于设置关闭当前Activity进入上一个Activity展示的动画-->
+<!--        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>-->
+        <!--用于设置关闭当前Activity时展示的动画-->
+        <item name="android:activityCloseExitAnimation">@anim/swipeback_base_slide_down_out</item>
+    </style>
+
 </resources>

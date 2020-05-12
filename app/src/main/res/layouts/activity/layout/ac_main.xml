@@ -245,7 +245,7 @@
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView android:text="XXX"
+            <TextView android:text="Activity切换动画"
                 android:id="@+id/btn42"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
