@@ -109,7 +109,7 @@ public class GlideActivity extends BaseActivity {
     //550x611
     private String url3 = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574318416026&di=3a55a90f0119c6e7db08c32ba1da79eb&imgtype=0&src=http%3A%2F%2Fi1.sinaimg.cn%2Fent%2Fd%2F2008-06-04%2FU105P28T3D2048907F326DT20080604225106.jpg";
     private String url4;
-    private String url_gif = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574308383861&di=16ed8cbb52305ae0a4a73217678cfa43&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F329eb23b64cd203e89c90864f9fba9d146106c5827401-LZuMlx_fw658";
+    private String url_gif = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591179176330&di=f1ba185206fce2a4670cfac246a11799&imgtype=0&src=http%3A%2F%2Fhiphotos.baidu.com%2Ffeed%2Fpic%2Fitem%2F79f0f736afc3793166ed31a5e0c4b74542a911b0.jpg";
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, GlideActivity.class);

@@ -105,11 +105,14 @@ dependencies {
     //地址选择 https://github.com/outhlen/citypickerview
     implementation 'liji.library.dev:citypickerview:3.1.13'
 
+    //钱到到 商品页
     //上拉加载      https://github.com/Chanven/CommonPullToRefresh
     implementation 'com.chanven.lib:cptr:1.1.0'
     //图片加载
     implementation "com.facebook.fresco:fresco:2.0.0"
 //    implementation "com.facebook.fresco:fresco:0.9.0"
+    //fresco 加载gif动图  FrescoActivity用
+    implementation 'com.facebook.fresco:animated-gif:2.0.0'
 
     //xywy 的网络请求框架
     api project(':datarequest')

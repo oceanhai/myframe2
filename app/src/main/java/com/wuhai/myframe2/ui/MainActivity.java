@@ -60,6 +60,8 @@ import cn.sharesdk.framework.Platform;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String TAG = "MainActivity";
+
     @BindView(R.id.btn01)
     TextView btn01;
     @BindView(R.id.btn02)
@@ -224,9 +226,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView btn021;
     @BindView(R.id.btn02_2)
     TextView btn022;
-
-
-    public static final String TAG = "MainActivity";
+    @BindView(R.id.btn09_1)
+    TextView btn091;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -238,7 +239,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         init();
-        
+
         //分享初始化
         QddShareHelper.initShare(this);
 
@@ -248,7 +249,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void init() {
         ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         int mMaxMemory = activityManager.getMemoryClass();
-        Log.e(TAG, "mMaxMemory = " +mMaxMemory);
+        Log.e(TAG, "mMaxMemory = " + mMaxMemory);
     }
 
     private void setListener() {
@@ -263,6 +264,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn07.setOnClickListener(this);
         btn08.setOnClickListener(this);
         btn09.setOnClickListener(this);
+        btn091.setOnClickListener(this);
         btn10.setOnClickListener(this);
         btn11.setOnClickListener(this);
         btn12.setOnClickListener(this);
@@ -372,6 +374,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn09://glide框架
                 GlideActivity.startActivity(this);
                 break;
+            case R.id.btn09_1://fresco框架
+                FrescoActivity.startActivity(this);
+                break;
             case R.id.btn10://StickyHeaderListView
                 StickyHeaderListView.startActivity(this);
                 break;
@@ -415,8 +420,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         imageUrl, url), new QddShareCallback() {
                     @Override
                     public void onShare(Platform platform, Platform.ShareParams shareParams) {
-                        Log.d("qjj_share", "share platform="+platform.toString()
-                                +",shareParams="+shareParams.toString());
+                        Log.d("qjj_share", "share platform=" + platform.toString()
+                                + ",shareParams=" + shareParams.toString());
                     }
 
                     @Override
@@ -440,7 +445,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 notifySimple();
                 break;
             case R.id.btn23://XUpdate轻量级升级框架
-                Toast.makeText(this,"还没加上去呢",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "还没加上去呢", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn24://日期选择 联动
                 DialogChooseDateActivity.startActivity(this);
@@ -504,16 +509,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public final static String ACTION_SIMPLE = "com.android.peter.notificationdemo.ACTION_SIMPLE";
     public final static String ACTION_DELETE = "com.android.peter.notificationdemo.ACTION_DELETE";
+
     private void notifySimple() {
         NotificationManager mNM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         //创建点击通知时发送的广播
         Intent intent = new Intent(this, NotificationService.class);
         intent.setAction(ACTION_SIMPLE);
-        PendingIntent pi = PendingIntent.getService(this,0,intent,0);
+        PendingIntent pi = PendingIntent.getService(this, 0, intent, 0);
         //创建删除通知时发送的广播
-        Intent deleteIntent = new Intent(this,NotificationService.class);
+        Intent deleteIntent = new Intent(this, NotificationService.class);
         deleteIntent.setAction(ACTION_DELETE);
-        PendingIntent deletePendingIntent = PendingIntent.getService(this,0,deleteIntent,0);
+        PendingIntent deletePendingIntent = PendingIntent.getService(this, 0, deleteIntent, 0);
         //创建通知
         Notification.Builder nb = new Notification.Builder(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -523,23 +529,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             nb.setChannelId("channel_01");
         }
         nb
-        //设置通知左侧的小图标
-        .setSmallIcon(R.mipmap.ic_launcher)
-        //设置通知标题
-        .setContentTitle("通知title")
-        //设置通知内容
-        .setContentText("通知content")
-        //设置点击通知后自动删除通知
-        .setAutoCancel(true)
-        //设置显示通知时间
-        .setShowWhen(true)
-        //设置通知右侧的大图标
-        .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),R.mipmap.ic_launcher))
-        //设置点击通知时的响应事件
-        .setContentIntent(pi)
-        //设置删除通知时的响应事件
-        .setDeleteIntent(deletePendingIntent);
+                //设置通知左侧的小图标
+                .setSmallIcon(R.mipmap.ic_launcher)
+                //设置通知标题
+                .setContentTitle("通知title")
+                //设置通知内容
+                .setContentText("通知content")
+                //设置点击通知后自动删除通知
+                .setAutoCancel(true)
+                //设置显示通知时间
+                .setShowWhen(true)
+                //设置通知右侧的大图标
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.mipmap.ic_launcher))
+                //设置点击通知时的响应事件
+                .setContentIntent(pi)
+                //设置删除通知时的响应事件
+                .setDeleteIntent(deletePendingIntent);
         //发送通知
-        mNM.notify(0,nb.build());
+        mNM.notify(0, nb.build());
     }
 }

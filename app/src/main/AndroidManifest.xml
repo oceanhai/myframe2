@@ -126,6 +126,10 @@
         <activity android:name=".ui.glide.GlideActivity"
             android:screenOrientation="portrait"/>
 
+        <!--fresco ac-->
+        <activity android:name=".ui.FrescoActivity"
+            android:screenOrientation="portrait"/>
+
         <!--StickyHeaderListView-->
         <activity android:name=".ui.stickyheaderlistview.ui.StickyHeaderListView"
             android:screenOrientation="portrait"/>
