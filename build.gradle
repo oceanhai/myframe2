@@ -31,6 +31,9 @@ allprojects {
         maven {
             url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
         }
+
+        //PictureSelector 引用implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.3.7'
+        maven { url 'https://jitpack.io' }
     }
 }
 
