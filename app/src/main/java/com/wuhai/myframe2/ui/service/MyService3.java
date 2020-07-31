@@ -6,6 +6,9 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
 
+/**
+ * 起一个常驻服务，服务里进行广播监听
+ */
 public class MyService3 extends Service {
 
 	public static final String TAG = "MyService3";

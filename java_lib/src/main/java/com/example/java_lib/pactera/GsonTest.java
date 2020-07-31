@@ -4,12 +4,17 @@ import com.google.gson.Gson;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class GsonTest {
 
+    /**
+     * TreeMap 有序  生成str不会变化
+     */
     @Test
     public void method01(){
         Map<String, Object> params = new HashMap<>();
@@ -32,5 +37,25 @@ public class GsonTest {
         params3.put("currVersion", "1.2.0");
         String json3 = new Gson().toJson(params3);
         System.out.println("json3 = "+json3);
+    }
+
+
+    @Test
+    public void method02(){
+        ExtParm extParm1 = new ExtParm();
+        extParm1.setExtKey("version");
+        extParm1.setExtOperator(0);
+        extParm1.setExtValue("2");
+
+        String str1 = GsonUtils.getInstance().toJson(null);
+        System.out.println(str1);
+
+        String str2 = GsonUtils.getInstance().toJson(new ArrayList<ExtParm>());
+        System.out.println(str2);
+
+        List<ExtParm> list = new ArrayList<>();
+        list.add(extParm1);
+        String str3 = GsonUtils.getInstance().toJson(list);
+        System.out.println(str3);
     }
 }

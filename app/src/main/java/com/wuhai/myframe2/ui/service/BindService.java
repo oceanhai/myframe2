@@ -6,6 +6,9 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+/**
+ * 绑定服务
+ */
 public class BindService extends Service {
 
 	public static final String TAG = "BindService";

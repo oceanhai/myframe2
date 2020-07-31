@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
+/**
+ * startService  内部调用stopSelf 自己结束
+ */
 public class MyService2 extends Service {
 
 	public static final String TAG = "MyService2";
