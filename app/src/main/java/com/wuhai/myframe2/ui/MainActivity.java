@@ -508,6 +508,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn43://Hook学习
                 HookActivity.startActivity(this);
                 break;
+            case R.id.btn44://Chronometer
+                ChronometerActivity.startActivity(this);
+                break;
         }
     }
 

@@ -447,6 +447,11 @@
         <activity
             android:name=".ui.hook.HookActivity"
             android:screenOrientation="portrait"/>
+
+        <!--   Chronometer     -->
+        <activity
+            android:name=".ui.ChronometerActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
