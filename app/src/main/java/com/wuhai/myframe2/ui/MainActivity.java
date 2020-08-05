@@ -460,7 +460,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn27://浮动item
                 FloatViewActivity.startActivity(this);
                 break;
-            case R.id.btn28://Spinner
+            case R.id.btn28://Spinner  xml 省市区联动
                 SpinnerActivity.startActivity(this);
                 break;
             case R.id.btn29://popwindow
