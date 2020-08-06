@@ -30,6 +30,7 @@ import com.wuhai.myframe2.ui.countdownview.CountdownViewActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.eventtransmit.EventTransmitActivity;
+import com.wuhai.myframe2.ui.face.FaceDetectorActivity;
 import com.wuhai.myframe2.ui.flexboxlayout.FlexboxLayoutActivity;
 import com.wuhai.myframe2.ui.floatview.FloatViewActivity;
 import com.wuhai.myframe2.ui.flowlayout.FlowLayoutActivity;
@@ -508,8 +509,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn43://Hook学习
                 HookActivity.startActivity(this);
                 break;
-            case R.id.btn44://Chronometer
+            case R.id.btn44://Chronometer 计时器
                 ChronometerActivity.startActivity(this);
+                break;
+            case R.id.btn45://FaceDetector人脸识别
+                FaceDetectorActivity.startActivity(this);
                 break;
         }
     }

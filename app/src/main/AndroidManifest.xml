@@ -452,6 +452,12 @@
         <activity
             android:name=".ui.ChronometerActivity"
             android:screenOrientation="portrait"/>
+
+        <!--   Chronometer     -->
+        <activity
+            android:name=".ui.face.FaceDetectorActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
