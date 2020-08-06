@@ -86,8 +86,11 @@ public class FaceDetectorActivity extends BaseActivity {
         public myView(Context context) {
             super(context);
             BitmapFactory.Options BitmapFactoryOptionsbfo = new BitmapFactory.Options();
+            //输入图片必须为Bitmap RGB565格式
             BitmapFactoryOptionsbfo.inPreferredConfig = Bitmap.Config.RGB_565;
+            //单个头像图片，鞠婧祎小美女的头像哦
 //            myBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.face01, BitmapFactoryOptionsbfo);
+            //多个头像图片
             myBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.faces, BitmapFactoryOptionsbfo);
             imageWidth = myBitmap.getWidth();
             imageHeight = myBitmap.getHeight();
@@ -109,8 +112,10 @@ public class FaceDetectorActivity extends BaseActivity {
             for(int i=0; i < numberOfFaceDetected; i++)
             {
                 FaceDetector.Face face = myFace[i];
+                //脸的中点
                 PointF myMidPoint = new PointF();
                 face.getMidPoint(myMidPoint);
+                //返回眼睛之间的距离
                 myEyesDistance = face.eyesDistance();
                 canvas.drawRect(
                         (int)(myMidPoint.x - myEyesDistance),
