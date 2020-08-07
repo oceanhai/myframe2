@@ -22,6 +22,7 @@ import com.wuhai.myframe2.ui.acswitch.AcSwitchMainActivity;
 import com.wuhai.myframe2.ui.animation.AnimationActivity;
 import com.wuhai.myframe2.ui.asynctask.AsyncTaskActivity;
 import com.wuhai.myframe2.ui.autowrap.AutoWrapActivity;
+import com.wuhai.myframe2.ui.bitmap.BitmapActivity;
 import com.wuhai.myframe2.ui.blutooth.BluetoothActivity;
 import com.wuhai.myframe2.ui.broadcast.SendBroadcastActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
@@ -491,7 +492,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn37://热门标签的流式布局FlowLayout (自定义)
                 FlowLayoutActivity.startActivity(this);
                 break;
-            case R.id.btn38://谷歌FlexboxLayout
+            case R.id.btn38://谷歌FlexboxLayout 实现热门标签
                 FlexboxLayoutActivity.startActivity(this);
                 break;
             case R.id.btn39://横屏生命周期
@@ -514,6 +515,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn45://FaceDetector人脸识别
                 FaceDetectorActivity.startActivity(this);
+                break;
+            case R.id.btn46://bitmap
+                BitmapActivity.startActivity(this);
                 break;
         }
     }
