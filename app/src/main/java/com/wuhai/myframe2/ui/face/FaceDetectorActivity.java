@@ -23,7 +23,7 @@ import com.wuhai.myframe2.ui.base.BaseActivity;
  *
  * 创建日期 2019/4/3 11:45
  *
- * 描述：FaceDetector
+ * 描述：android FaceDetector
  * 输入图片必须为Bitmap RGB565格式
  * 人脸的检测方法是用双眼来检测人脸的位置，也就是说无法检测到嘴、侧脸等，双眼必须同时可见，并且眼镜会影响检测的效果
  * 检测到的人脸存放到FaceDetector.Face类中，该类无法再扩展。从该类可以获取到人眼的中心位置和双眼之间的具体。
