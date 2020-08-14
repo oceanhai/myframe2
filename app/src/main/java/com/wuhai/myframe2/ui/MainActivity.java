@@ -519,6 +519,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn46://bitmap
                 BitmapActivity.startActivity(this);
                 break;
+            case R.id.btn47://Lottie动画
+                LottieActivity.startActivity(this);
+                break;
         }
     }
 

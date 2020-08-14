@@ -463,6 +463,11 @@
             android:name=".ui.bitmap.BitmapActivity"
             android:screenOrientation="portrait"/>
 
+        <!--   Lottie动画     -->
+        <activity
+            android:name=".ui.LottieActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
