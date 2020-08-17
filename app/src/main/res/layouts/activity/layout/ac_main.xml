@@ -280,7 +280,7 @@
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView android:text="XXX"
+            <TextView android:text="自定义公告控件"
                 android:id="@+id/btn48"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"

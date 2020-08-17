@@ -25,6 +25,7 @@ import com.wuhai.myframe2.ui.autowrap.AutoWrapActivity;
 import com.wuhai.myframe2.ui.bitmap.BitmapActivity;
 import com.wuhai.myframe2.ui.blutooth.BluetoothActivity;
 import com.wuhai.myframe2.ui.broadcast.SendBroadcastActivity;
+import com.wuhai.myframe2.ui.bulletin.BulletinActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.countdownview.CountdownViewActivity;
@@ -521,6 +522,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn47://Lottie动画
                 LottieActivity.startActivity(this);
+                break;
+            case R.id.btn48://自定义公告控件
+                BulletinActivity.startActivity(this);
                 break;
         }
     }
