@@ -56,9 +56,9 @@ public class BulletinActivity extends BaseActivity implements RollingBulletinVie
     private void init() {
         binding = DataBindingUtil.setContentView(this, R.layout.ac_bulletin);
 
-//        String[] arr = new String[]{"我是公告1","我是公告2","我是公告3",
-//                "我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告"};
-        String[] arr = new String[]{"我是公告1"};
+        String[] arr = new String[]{"我是公告1","我是公告2","我是公告3",
+                "我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告"};
+//        String[] arr = new String[]{"我是公告1"};
 
         binding.rollingBulletin.setTextArraysAndClickListener(arr,this);
     }
