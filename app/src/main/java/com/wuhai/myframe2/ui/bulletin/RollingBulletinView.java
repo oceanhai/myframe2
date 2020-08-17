@@ -54,7 +54,6 @@ public class RollingBulletinView extends LinearLayout {
         viewFlipper.setInAnimation(AnimationUtils.loadAnimation(mContext, R.anim.slide_in_bottom));
         viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(mContext, R.anim.slide_out_top));
         viewFlipper.setFlipInterval(3000);//默认值3000
-        viewFlipper.startFlipping();
     }
 
     public void initMarqueeTextView(String[] textArrays, final OnPositionClickListener mClickListener) {
@@ -80,6 +79,10 @@ public class RollingBulletinView extends LinearLayout {
             LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
             viewFlipper.addView(textView, lp);
             i++;
+        }
+
+        if(textArrays.length != 1){
+            viewFlipper.startFlipping();
         }
     }
 
