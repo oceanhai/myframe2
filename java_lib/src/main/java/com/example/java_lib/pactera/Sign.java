@@ -52,4 +52,16 @@ public class Sign {
         String signStr = Md5Utils.md5(pinStr);
         System.out.println("UpdateManager build signStr="+signStr);
     }
+
+    /**
+     * list1  列表1
+     */
+    @Test
+    public void sign3(){
+        String bodyJSON = "{\"appId\":\"app049cf6aaa1a246788be8cd28e2a09700\",\"currCity\":\"北京\",\"currProvince\":\"北京\",\"currVersion\":\"1.0.0.0\",\"devType\":\"1\",\"deviceId\":\"123\",\"presentID\":\"list1\",\"userId\":\"wuhai\"}";
+        //签名操作
+        String pinStr = bodyJSON+ "6a3541ba9fbe4264a8b5275efa50e4b5";
+        String signStr = Md5Utils.md5(pinStr);
+        System.out.println("UpdateManager build signStr="+signStr);
+    }
 }
