@@ -285,7 +285,7 @@
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView android:text="XXX"
+            <TextView android:text="webview"
                 android:id="@+id/btn49"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"

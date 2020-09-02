@@ -53,6 +53,7 @@ import com.wuhai.myframe2.ui.slidingfinish.SlidingFinishActivity;
 import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
 import com.wuhai.myframe2.ui.thread.ThreadActivity;
+import com.wuhai.myframe2.ui.webview.WebViewActivity;
 import com.wuhai.myframe2.ui.xywy.InputWidgetActivity;
 import com.wuhai.share.QddShareCallback;
 import com.wuhai.share.QddShareHelper;
@@ -525,6 +526,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn48://自定义公告控件
                 BulletinActivity.startActivity(this);
+                break;
+            case R.id.btn49://webview
+                WebViewActivity.startActivity(this);
                 break;
         }
     }
