@@ -28,6 +28,11 @@ public class BuilderPatternTest {
                 .buildFoot("建造脚")
                 .build();
         System.out.println(buildMan.toString());
+        BuildMan buildMan1 = new BuildMan.Builder()
+                .buildHead("龙头")
+                .buildBody("龙身")
+                .buildFoot("龙尾")
+                .build();
     }
 
 }
