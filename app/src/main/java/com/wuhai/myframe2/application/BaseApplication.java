@@ -3,6 +3,7 @@ package com.wuhai.myframe2.application;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import androidx.multidex.MultiDexApplication;
 
@@ -20,6 +21,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.igexin.sdk.PushManager;
 import com.lljjcoder.style.citylist.utils.CityListLoader;
+import com.wuhai.myframe2.business.AppFrontBackHelper;
 import com.wuhai.myframe2.business.getui.DemoIntentService;
 import com.wuhai.myframe2.business.getui.DemoPushService;
 import com.wuhai.myframe2.config.Config;
@@ -94,6 +96,26 @@ public class BaseApplication extends MultiDexApplication {
 
         //寻医问药 网络请求框架 初始化 网络请求框架要初始化
         initDataRequest();
+
+        initLifecycle();
+    }
+
+    private void initLifecycle() {
+        AppFrontBackHelper helper = new AppFrontBackHelper();
+        helper.register(this, new AppFrontBackHelper.OnAppStatusListener() {
+            @Override
+            public void onFront() {
+                //应用切到前台处理
+                Log.e(AppFrontBackHelper.TAG, "onFront");
+            }
+
+            @Override
+            public void onBack() {
+                //应用切到后台处理
+                Log.e(AppFrontBackHelper.TAG, "onBack");
+            }
+        });
+
     }
 
     private void initDataRequest() {

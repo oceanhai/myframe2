@@ -530,6 +530,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn49://webview
                 WebViewActivity.startActivity(this);
                 break;
+            case R.id.btn50://横竖屏可切换的页面  portrait and landscape
+                OrientationActivity.startActivity(this);
+                break;
         }
     }
 

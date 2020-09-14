@@ -478,6 +478,12 @@
             android:name=".ui.webview.WebViewActivity"
             android:screenOrientation="portrait"/>
 
+        <!--   横竖屏可切换的页面     -->
+        <activity
+            android:name=".ui.OrientationActivity"
+            android:screenOrientation="portrait"/>
+<!--            android:configChanges="orientation|screenSize"/>-->
+
     </application>
 
 </manifest>
