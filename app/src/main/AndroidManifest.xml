@@ -484,6 +484,15 @@
             android:screenOrientation="portrait"/>
 <!--            android:configChanges="orientation|screenSize"/>-->
 
+        <!--   测试页面跳转和回退，页面间生命周期的执行顺序     -->
+        <activity
+            android:name=".ui.lifecycle.ThreadStartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.lifecycle.TargetActivity"
+            android:screenOrientation="portrait" />
+
+
     </application>
 
 </manifest>

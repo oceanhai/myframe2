@@ -160,6 +160,11 @@ public class OkHttpActivity extends BaseActivity implements View.OnClickListener
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 final String resutlt = response.body().string();
+
+                //TODO 这里返回流，k4等一下图片或者文件下载流量需要计费，所以要走下载接口监测流
+                // 说实话，这种不能直接通过服务器监测反而走接口方式降低了效率
+//                response.body().byteStream()
+
                 Log.v(TAG, "response.body():" + resutlt);
                 Message message = new Message();
                 message.obj = resutlt;

@@ -295,7 +295,7 @@
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView android:text="XXX"
+            <TextView android:text="测试页面跳转和回退，页面间生命周期的执行顺序"
                 android:id="@+id/btn51"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"

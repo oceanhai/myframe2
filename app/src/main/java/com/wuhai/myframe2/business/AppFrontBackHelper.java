@@ -6,6 +6,8 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.wuhai.myframe2.ui.lifecycle.ThreadStartActivity;
+
 /**
  * 应用前后台状态监听帮助类，仅在Application中使用
  * https://blog.csdn.net/bzlj2912009596/article/details/80073396
@@ -64,11 +66,13 @@ public class AppFrontBackHelper {
         @Override
         public void onActivityResumed(Activity activity) {
             Log.e(TAG,"onActivityResumed "+activity.getClass().getName());
+            Log.e(ThreadStartActivity.TAG,"onActivityResumed "+activity.getClass().getName());
         }
 
         @Override
         public void onActivityPaused(Activity activity) {
             Log.e(TAG,"onActivityPaused "+activity.getClass().getName());
+            Log.e(ThreadStartActivity.TAG,"onActivityPaused "+activity.getClass().getName());
         }
 
         @Override

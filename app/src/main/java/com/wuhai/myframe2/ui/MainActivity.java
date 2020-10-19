@@ -39,6 +39,7 @@ import com.wuhai.myframe2.ui.flowlayout.FlowLayoutActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
 import com.wuhai.myframe2.ui.homepage.HomeActivity;
 import com.wuhai.myframe2.ui.hook.HookActivity;
+import com.wuhai.myframe2.ui.lifecycle.ThreadStartActivity;
 import com.wuhai.myframe2.ui.materialdesign.MaterialDesignActivity;
 import com.wuhai.myframe2.ui.navigation.NavigationMenuActivity;
 import com.wuhai.myframe2.ui.notificaitons.NotificationService;
@@ -532,6 +533,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn50://横竖屏可切换的页面  portrait and landscape
                 OrientationActivity.startActivity(this);
+                break;
+            case R.id.btn51://测试页面跳转和回退，页面间生命周期的执行顺序
+                ThreadStartActivity.startActivity(this);
                 break;
         }
     }

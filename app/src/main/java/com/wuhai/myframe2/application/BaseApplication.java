@@ -25,6 +25,7 @@ import com.wuhai.myframe2.business.AppFrontBackHelper;
 import com.wuhai.myframe2.business.getui.DemoIntentService;
 import com.wuhai.myframe2.business.getui.DemoPushService;
 import com.wuhai.myframe2.config.Config;
+import com.wuhai.myframe2.ui.lifecycle.ThreadStartActivity;
 import com.wuhai.myframe2.ui.retrofit.base.MyRequestHandler;
 import com.wuhai.myframe2.utils.DeviceUtil;
 import com.wuhai.retrofit.retrofit.BaseApi;
@@ -97,6 +98,7 @@ public class BaseApplication extends MultiDexApplication {
         //寻医问药 网络请求框架 初始化 网络请求框架要初始化
         initDataRequest();
 
+        //生命周期监听
         initLifecycle();
     }
 
@@ -107,12 +109,14 @@ public class BaseApplication extends MultiDexApplication {
             public void onFront() {
                 //应用切到前台处理
                 Log.e(AppFrontBackHelper.TAG, "onFront");
+                Log.e(ThreadStartActivity.TAG, "onActivityStarted onFront");
             }
 
             @Override
             public void onBack() {
                 //应用切到后台处理
                 Log.e(AppFrontBackHelper.TAG, "onBack");
+                Log.e(ThreadStartActivity.TAG, "onActivityStopped onBack");
             }
         });
 
