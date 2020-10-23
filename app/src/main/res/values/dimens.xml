@@ -1,0 +1,6 @@
+<resources>
+
+    <!--  titlebar 实现侵入式  -->
+    <dimen name="common_titlebar_height">0dp</dimen>
+
+</resources>

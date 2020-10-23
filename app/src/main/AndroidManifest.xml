@@ -492,6 +492,10 @@
             android:name=".ui.lifecycle.TargetActivity"
             android:screenOrientation="portrait" />
 
+        <!--     xywy TitleBar 演示 并且实现侵入式       -->
+        <activity
+            android:name=".ui.TitleBarActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

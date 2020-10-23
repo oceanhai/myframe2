@@ -537,6 +537,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn51://测试页面跳转和回退，页面间生命周期的执行顺序
                 ThreadStartActivity.startActivity(this);
                 break;
+            case R.id.btn52://xywy TitleBar 演示 并且实现侵入式
+                TitleBarActivity.startActivity(this);
+                break;
         }
     }
 
