@@ -497,6 +497,11 @@
             android:name=".ui.TitleBarActivity"
             android:screenOrientation="portrait" />
 
+        <!--     ioc       -->
+        <activity
+            android:name=".ui.ioc.IOCActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
