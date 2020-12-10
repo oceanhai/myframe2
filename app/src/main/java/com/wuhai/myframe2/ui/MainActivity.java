@@ -54,6 +54,7 @@ import com.wuhai.myframe2.ui.service.ServiceActivity;
 import com.wuhai.myframe2.ui.slidingfinish.SlidingFinishActivity;
 import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
+import com.wuhai.myframe2.ui.study.SnackBarActivity;
 import com.wuhai.myframe2.ui.thread.ThreadActivity;
 import com.wuhai.myframe2.ui.webview.WebViewActivity;
 import com.wuhai.myframe2.ui.xywy.InputWidgetActivity;
@@ -543,6 +544,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn53://ioc
                 IOCActivity.startActivity(this);
+                break;
+            case R.id.btn54://SnackBar
+                SnackBarActivity.startActivity(this);
                 break;
         }
     }

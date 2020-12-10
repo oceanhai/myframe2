@@ -501,6 +501,10 @@
         <activity
             android:name=".ui.ioc.IOCActivity"
             android:screenOrientation="portrait"/>
+        <!--     SnackBar       -->
+        <activity
+            android:name=".ui.study.SnackBarActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 
