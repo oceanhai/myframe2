@@ -505,6 +505,10 @@
         <activity
             android:name=".ui.study.SnackBarActivity"
             android:screenOrientation="portrait"/>
+        <!--     TextInputLayout       -->
+        <activity
+            android:name=".ui.study.LoginActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 
