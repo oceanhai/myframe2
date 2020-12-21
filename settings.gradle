@@ -1,3 +1,4 @@
+include ':plugin'
 include ':ocr'
 include ':myhttp'
 include ':app', ':retrofitnetworkrequest', ':mvvm', ':java_lib', ':myclient', ':myhydemo',

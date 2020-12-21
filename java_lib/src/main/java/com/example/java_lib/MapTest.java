@@ -1,6 +1,10 @@
 package com.example.java_lib;
 
+import com.example.java_lib.pactera.GsonUtils;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MapTest {
@@ -30,5 +34,26 @@ public class MapTest {
 
         map2.remove("1");
         System.out.println("remove 后再次get 1 :"+map2.get("1"));
+
+        System.out.println("----------------------gson解析map");
+        //{"name":"wuhai","age":18}
+        Map<String,Object> map3 = new HashMap<>();
+        map3.put("age",18);
+        map3.put("name","wuhai");
+        map3.put("sex","男");
+        System.out.println(GsonUtils.getInstance().mapToJson(map3));
+        //[{aaa:"xxx"},{bbb:xxx}]
+        //
+        List<Student> list = new ArrayList<>();
+        Student student = new Student();
+        student.setName("吴海");
+        student.setAge(18);
+        Student student2 = new Student();
+        student2.setName("冠华");
+        student2.setAge(18);
+        list.add(student);
+        list.add(student2);
+        System.out.println(GsonUtils.getInstance().toJson(list));
+
     }
 }

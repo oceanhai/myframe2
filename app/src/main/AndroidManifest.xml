@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wuhai.myframe2">
+    package="com.wuhai.myframe2"
+    android:sharedUserId="com.android.plugin">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -508,6 +509,11 @@
         <!--     TextInputLayout       -->
         <activity
             android:name=".ui.study.LoginActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--     插件       -->
+        <activity
+            android:name=".ui.plugin.PluginActivity"
             android:screenOrientation="portrait"/>
 
     </application>
