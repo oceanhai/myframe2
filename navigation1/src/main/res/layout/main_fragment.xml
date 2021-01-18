@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/main_fragment_container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:id="@+id/main_loading_container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e6e9ed"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/main_loading_indicator_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@drawable/credit_loading_dialog_background"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/main_loading_indicator_image_view"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:src="@drawable/anim_loading_credit"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/main_loading_failed_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="20dp"
+            android:drawableTop="@drawable/icon_load_fail_grey"
+            android:gravity="center"
+            android:text="点击重新加载"
+            android:textColor="#777777"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+</FrameLayout>

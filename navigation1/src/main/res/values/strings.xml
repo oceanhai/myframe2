@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Navigation1</string>
+
+    <!-- Main -->
+    <string-array name="main_tab_logout_titles">
+        <item>借钱</item>
+        <item>购物</item>
+        <item>贷款超市</item>
+        <item>登录</item>
+    </string-array>
+    <string-array name="main_tab_login_titles">
+        <item>借钱</item>
+        <item>购物</item>
+        <item>贷款超市</item>
+        <item>我的</item>
+    </string-array>
+
+</resources>

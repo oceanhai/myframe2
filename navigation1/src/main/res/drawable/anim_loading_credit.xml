@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+                android:oneshot="false" >
+    <item android:drawable="@drawable/credit_loading_item_01" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_02" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_03" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_04" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_05" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_06" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_07" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_08" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_09" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_10" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_11" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_12" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_13" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_14" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_15" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_16" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_17" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_18" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_19" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_20" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_21" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_22" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_23" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_24" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_25" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_26" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_27" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_28" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_29" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_30" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_31" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_32" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_33" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_34" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_35" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_36" android:duration="50"/>-->
+    <item android:drawable="@drawable/credit_loading_item_37" android:duration="50"/>
+    <!--<item android:drawable="@drawable/credit_loading_item_38" android:duration="50"/>-->
+
+
+
+</animation-list>

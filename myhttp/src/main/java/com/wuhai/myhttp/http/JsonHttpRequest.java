@@ -1,7 +1,5 @@
 package com.wuhai.myhttp.http;
 
-import android.util.Log;
-
 import java.io.BufferedWriter;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
@@ -63,8 +61,8 @@ public class JsonHttpRequest implements IHttpRequest{
             int responseCode = connection.getResponseCode();
             if(responseCode == HttpURLConnection.HTTP_OK){
                 InputStream inputStream = connection.getInputStream();
-                String result = is2String(inputStream);//将流转换为字符串。
-                Log.d("kwwl","result============="+result);
+//                String result = is2String(inputStream);//将流转换为字符串。
+//                Log.d("kwwl","result============="+result);
             }
         } catch (Exception e) {
             e.printStackTrace();

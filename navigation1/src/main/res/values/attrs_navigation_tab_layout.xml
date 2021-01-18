@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NavigationTabLayout">
+        <attr name="tabTextSize" format="dimension"/>
+        <attr name="tabTextNormalColor" format="color"/>
+        <attr name="tabTextSelectedColor" format="color"/>
+        <attr name="tabItemPadding" format="dimension"/>
+    </declare-styleable>
+</resources>

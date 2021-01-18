@@ -1,3 +1,6 @@
+include ':navigation2'
+include ':k4bottomnavigation'
+include ':navigation1'
 include ':aop'
 include ':plugin'
 include ':ocr'

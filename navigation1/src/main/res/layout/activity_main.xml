@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.wuhai.navigation1.HomeViewPager
+            android:id="@+id/main_content_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+
+    <com.wuhai.navigation1.NavigationTabLayout
+        android:id="@+id/main_tab_layout"
+        android:layout_alignParentBottom="true"
+        app:tabItemPadding="4dp"
+        app:tabTextNormalColor="#b1b8c3"
+        app:tabTextSelectedColor="#00cc99"
+        app:tabTextSize="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"/>
+</RelativeLayout>
