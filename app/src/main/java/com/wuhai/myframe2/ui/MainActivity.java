@@ -424,7 +424,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //在onCreat()方法中调用分享初始化方法。
                 String title = "震惊！4毛5买走了一千元京东购物卡";
                 String contentText = "亲测有效，全免费，赶紧来试试手气。";
-                String imageUrl = "http://static.qujingjia.com/upload/lanhai_qjj/image/qjj.png";
+                String imageUrl = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png";
                 String url = "https://www.baidu.com/";
                 QddShareHelper.showShare(this, new QddShareModel(title, contentText,
                         imageUrl, url), new QddShareCallback() {
