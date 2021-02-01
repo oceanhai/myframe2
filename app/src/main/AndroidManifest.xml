@@ -516,6 +516,11 @@
             android:name=".ui.plugin.PluginActivity"
             android:screenOrientation="portrait"/>
 
+        <!--     Pactera       -->
+        <activity
+            android:name=".ui.pactera.PacteraActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

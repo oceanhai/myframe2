@@ -45,6 +45,7 @@ import com.wuhai.myframe2.ui.materialdesign.MaterialDesignActivity;
 import com.wuhai.myframe2.ui.navigation.NavigationMenuActivity;
 import com.wuhai.myframe2.ui.notificaitons.NotificationService;
 import com.wuhai.myframe2.ui.okhttp3.OkHttpActivity;
+import com.wuhai.myframe2.ui.pactera.PacteraActivity;
 import com.wuhai.myframe2.ui.plugin.PluginActivity;
 import com.wuhai.myframe2.ui.popwindow.PopWindowActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
@@ -555,6 +556,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn56://插件
                 PluginActivity.startActivity(this);
+                break;
+            case R.id.btn57://Pactera
+                PacteraActivity.startActivity(this);
                 break;
         }
     }
