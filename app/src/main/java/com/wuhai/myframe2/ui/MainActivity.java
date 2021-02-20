@@ -58,6 +58,7 @@ import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
 import com.wuhai.myframe2.ui.study.LoginActivity;
 import com.wuhai.myframe2.ui.study.SnackBarActivity;
+import com.wuhai.myframe2.ui.theme.ThemeMainActivity;
 import com.wuhai.myframe2.ui.thread.ThreadActivity;
 import com.wuhai.myframe2.ui.webview.WebViewActivity;
 import com.wuhai.myframe2.ui.xywy.InputWidgetActivity;
@@ -559,6 +560,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn57://Pactera
                 PacteraActivity.startActivity(this);
+                break;
+            case R.id.btn58://主题研究
+                ThemeMainActivity.startActivity(this);
                 break;
         }
     }

@@ -521,6 +521,15 @@
             android:name=".ui.pactera.PacteraActivity"
             android:screenOrientation="portrait"/>
 
+        <!--     主题研究       -->
+        <activity
+            android:name=".ui.theme.ThemeMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.theme.ThemeActivity"
+            android:screenOrientation="portrait"/>
+
+
     </application>
 
 </manifest>

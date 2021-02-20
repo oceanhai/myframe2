@@ -330,7 +330,7 @@
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView android:text="XXX"
+            <TextView android:text="主题研究"
                 android:id="@+id/btn58"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
