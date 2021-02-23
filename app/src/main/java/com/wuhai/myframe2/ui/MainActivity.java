@@ -564,6 +564,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn58://主题研究
                 ThemeMainActivity.startActivity(this);
                 break;
+            case R.id.btn59://桌面图标添加数字角标
+                BadgeNumberActivity.startActivity(this);
+                break;
+            case R.id.btn60://test
+                TestActivity.startActivity(this);
+                break;
         }
     }
 
