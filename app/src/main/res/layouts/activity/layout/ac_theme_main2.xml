@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <View
+                android:id="@+id/top_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/transparent" />
+            <com.youth.banner.Banner
+                xmlns:banner="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                banner:banner_indicator_normal_color="@android:color/white"
+                banner:banner_indicator_selected_color="@color/colorPrimary" />
+            <TextView
+                android:text="123111111111111111"
+                android:background="#ffff00"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

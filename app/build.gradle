@@ -139,4 +139,7 @@ dependencies {
 
     //Lottie 动画
     implementation "com.airbnb.android:lottie:3.4.1"
+
+    //轮播图
+    implementation 'com.youth.banner:banner:2.1.0'
 }

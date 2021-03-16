@@ -29,6 +29,8 @@
     <!-- 桌面图标添加数字角标 华为用权限   -->
     <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
 
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 
     <!--个推 在Android 9.0以上默认不支持http通信，为保证SDK正常使用，maven库中已添加如下属性    -->
@@ -529,6 +531,16 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.theme.ThemeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.theme.ThemeMain2Activity"
+            android:theme="@style/AppTheme3"
+            android:screenOrientation="portrait"/>
+<!--        android:theme="@style/AppTheme4"-->
+<!--        android:theme="@style/AppTheme5"-->
+        <activity
+            android:name=".ui.theme.ThemeMain3Activity"
+            android:theme="@style/AppTheme5"
             android:screenOrientation="portrait"/>
 
         <!--     桌面图标添加数字角标       -->

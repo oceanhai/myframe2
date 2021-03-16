@@ -335,6 +335,16 @@
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <TextView android:text="theme2"
+                android:id="@+id/btn58_1"
+                style="@style/TextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView android:text="theme3"
+                android:id="@+id/btn58_2"
+                style="@style/TextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <TextView android:text="桌面图标添加数字角标"
                 android:id="@+id/btn59"
                 style="@style/TextView1"

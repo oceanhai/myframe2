@@ -111,6 +111,8 @@ public class GlideActivity extends BaseActivity {
     private String url4;
     private String url_gif = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591179176330&di=f1ba185206fce2a4670cfac246a11799&imgtype=0&src=http%3A%2F%2Fhiphotos.baidu.com%2Ffeed%2Fpic%2Fitem%2F79f0f736afc3793166ed31a5e0c4b74542a911b0.jpg";
 
+    private String url5 = "http://10.114.10.32:8499/group1/M00/00/0A/CnIKIGASdV2AJaxgAAAGSVN2bnI788.png";
+
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, GlideActivity.class);
         context.startActivity(intent);
@@ -416,7 +418,8 @@ public class GlideActivity extends BaseActivity {
      */
     private void showIv01() {
         Glide.with(this)
-                .load(url)
+//                .load(url)
+                .load(url5)
                 .into(image01);
     }
 

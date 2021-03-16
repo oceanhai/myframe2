@@ -58,6 +58,8 @@ import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
 import com.wuhai.myframe2.ui.study.LoginActivity;
 import com.wuhai.myframe2.ui.study.SnackBarActivity;
+import com.wuhai.myframe2.ui.theme.ThemeMain2Activity;
+import com.wuhai.myframe2.ui.theme.ThemeMain3Activity;
 import com.wuhai.myframe2.ui.theme.ThemeMainActivity;
 import com.wuhai.myframe2.ui.thread.ThreadActivity;
 import com.wuhai.myframe2.ui.webview.WebViewActivity;
@@ -240,6 +242,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView btn022;
     @BindView(R.id.btn09_1)
     TextView btn091;
+    @BindView(R.id.btn58_1)
+    TextView btn581;
+    @BindView(R.id.btn58_2)
+    TextView btn582;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -326,6 +332,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn56.setOnClickListener(this);
         btn57.setOnClickListener(this);
         btn58.setOnClickListener(this);
+        btn581.setOnClickListener(this);
+        btn582.setOnClickListener(this);
         btn59.setOnClickListener(this);
         btn60.setOnClickListener(this);
         btn61.setOnClickListener(this);
@@ -563,6 +571,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn58://主题研究
                 ThemeMainActivity.startActivity(this);
+                break;
+            case R.id.btn58_1://theme2
+                ThemeMain2Activity.startActivity(this);
+                break;
+            case R.id.btn58_2://theme3
+                ThemeMain3Activity.startActivity(this);
                 break;
             case R.id.btn59://桌面图标添加数字角标
                 BadgeNumberActivity.startActivity(this);
