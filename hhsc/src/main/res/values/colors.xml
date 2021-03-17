@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="c8">#FFFFFF</color>
+    <color name="c9">#777777</color>
+
+    <color name="color_bottom_bar_background">#222B48</color>
+    <color name="colorPrimaryDark">#21a3f5</color>
+    <color name="colorAccent">#0accac</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorActivityBackground">#F3F3F3</color>
+    <color name="colorTransparentGray">#88ffffff</color>
+    <color name="colorDarkTransparentGray">#a4000000</color>
+    <color name="colorLightTransparentGray">#22ffffff</color>
+    <color name="color_input_dialog_background">#b4ffffff</color>
+
+    <color name="colorTransparentBlack">#44777777</color>
+
+    <color name="colorDanmuMsg">#30e7d5</color>
+
+    <color name="color_f3f3f3">#f3f3f3</color>
+    <color name="color_DDDDDD">#DDDDDD</color>
+    <color name="text_gray1">#777777</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <!--蒙版-->
+
+    <!--app主色调，背景色-->
+    <color name="colorPrimary">#ED2853</color>
+    <!--背景色-->
+    <color name="colorBackground">#F5F5F5</color>
+    <!--app主题色，应用于导航，按钮-->
+    <!--主题色激活态，如按钮高亮-->
+    <!--红色标签/提示-->
+    <!--红色标签/提示高亮-->
+    <!--黄色色标签/提示-->
+    <!--黄色色标签/提示高亮-->
+    <!--黄色蒙版-->
+    <!--红色-->
+    <color name="colorRed">#FF3333</color>
+
+    <!--文字白色-->
+    <color name="colorTextWhite">#FFFFFF</color>
+    <!--文字Gray-->
+    <color name="colorTextGray1">#A0A0A0</color>
+    <color name="colorTextG2">#999999</color>
+    <color name="colorTextG3">#666666</color>
+    <color name="colorTextG4">#333333</color>
+    <!--文字black-->
+    <color name="colorTextBlack">#000000</color>
+    <color name="colorTextBlack2">#010000</color>
+    <!--文字red-->
+    <color name="colorTextRed1">#FF004E</color>
+    <color name="colorTextRed2">#FE1D2D</color>
+
+
+    <!--gray1-->
+    <color name="colorGray1">#F0F0F0</color>
+    <!--light gray-->
+    <!--gray2-->
+    <color name="colorGray2">#DCDCDC</color>
+    <!--gray3-->
+    <color name="colorGray3">#C8C8C8</color>
+    <!--gray4-->
+    <color name="colorGray4">#787878</color>
+    <!--gray5-->
+    <!--gray6-->
+    <color name="colorGray6">#141414</color>
+    <!--gray7-->
+    <color name="colorGray7">#D8D8D8</color>
+    <!--gray8-->
+    <!--green-->
+    <color name="colorGreen">#0accac</color>
+
+
+    <color name="colorSendName">#9966cc</color>
+    <color name="colorSendName1">#F12B5B</color>
+    <color name="colorSendName2">#2B7DE2</color>
+    <color name="colorSendName3">#006599</color>
+    <color name="colorSendName4">#FF7906</color>
+    <color name="colorSendName5">#1FBCB6</color>
+    <color name="colorSendName6">#FFAE1F</color>
+    <color name="colorSendName7">#FF437D</color>
+    <!--蒙版-->
+
+    <color name="camera_video_grid_bg_color">#F3F4F6</color>
+    <color name="pink">#f90051</color>
+    <!--透明度所对应的值-->
+    <!--100  %	00-->
+    <!--95   %	0D-->
+    <!--90   %	1A-->
+    <!--85   %	26-->
+    <!--80   %	33-->
+    <!--75   %	40-->
+    <!--70   %	4D-->
+    <!--65   %	59-->
+    <!--60   %	66-->
+    <!--55   %	73-->
+    <!--50   %	80-->
+    <!--45   %	8C-->
+    <!--40   %	99-->
+    <!--35   %	A6-->
+    <!--30   %	B3-->
+    <!--25   %	BF-->
+    <!--20   %	CC-->
+    <!--15   %	D9-->
+    <!--10   %	E6-->
+    <!--5    %	F2-->
+    <!--0    %	FF-->
+    <color name="color_4d000000">#4d000000</color>
+    <color name="color_ff004e">#ff004e</color>
+    <color name="color_ffd200">#ffd200</color>
+    <color name="color_e6e6e6">#e6e6e6</color>
+    <color name="color_808080">#808080</color>
+    <color name="color_fb0049">#fb0049</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+    <color name="color_4dfb0049">#4dfb0049</color>
+    <color name="color_00000000">#00000000</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_d92f38">#d92f38</color>
+    <color name="color_a6a6a6">#a6a6a6</color>
+    <color name="color_e94952">#e94952</color>
+    <color name="color_ee2653">#ee2653</color>
+    <color name="color_e10019">#e10019</color>
+    <color name="color_f8f8f8">#f8f8f8</color>
+    <color name="color_a0a0a0">#a0a0a0</color>
+    <color name="color_c2082d">#c2082d</color>
+    <color name="color_f6b36c">#f6b36c</color>
+    <color name="color_fc707d">#fc707d</color>
+    <color name="color_fcdedb">#fcdedb</color>
+
+    <!--color-->
+    <color name="color_white">#ffffff</color>
+
+    <!--titlebar-->
+    <color name="titlebar_background">#c2082d</color>
+
+    <!--分割线的color-->
+    <color name="line_color_gray_one">#e9ecef</color>
+
+    <!--背景色-->
+    <color name="bg_color_yell_one">#FFFADD</color>
+</resources>
