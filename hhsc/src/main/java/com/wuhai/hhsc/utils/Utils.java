@@ -107,10 +107,10 @@ public class Utils {
      * @param imageView      控件
      * @param roundTransform 圆角值
      */
-//    public static void cornerImageViewDisplayByUrl(Context context, String imgUrl, ImageView imageView, int roundTransform) {
-//        RequestOptions options = new RequestOptions().centerCrop().transform(new GlideRoundTransform(roundTransform)).error(R.drawable.ic_error);
-//        Glide.with(context).asDrawable().load(imgUrl).apply(options).into(imageView);
-//    }
+    public static void cornerImageViewDisplayByUrl(Context context, String imgUrl, ImageView imageView, int roundTransform) {
+        RequestOptions options = new RequestOptions().centerCrop().transform(new GlideRoundTransform(roundTransform)).error(R.drawable.ic_error);
+        Glide.with(context).asDrawable().load(imgUrl).apply(options).into(imageView);
+    }
 
     /**
      * 动态图片显示
