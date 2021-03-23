@@ -1,3 +1,4 @@
+include ':xiangxue'
 include ':hhsc'
 include ':alipaydemo'
 include ':navigation2'
