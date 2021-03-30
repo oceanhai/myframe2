@@ -1,3 +1,4 @@
+include ':kotlin_lib'
 include ':xiangxue'
 include ':hhsc'
 include ':alipaydemo'

@@ -106,10 +106,10 @@ public class GlideActivity extends BaseActivity {
     private String url = "https://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg";
     //1024x768
     private String url2 = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574317078503&di=568c2051ddf3f4b81dae4f094c0667dc&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201312%2F04%2F20131204184148_hhXUT.jpeg";
-    //550x611
-    private String url3 = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574318416026&di=3a55a90f0119c6e7db08c32ba1da79eb&imgtype=0&src=http%3A%2F%2Fi1.sinaimg.cn%2Fent%2Fd%2F2008-06-04%2FU105P28T3D2048907F326DT20080604225106.jpg";
+    //
+    private String url3 = "https://10.114.10.31:9999/group1/M00/00/0B/CnIKIGAc7BCAQEo3AADQ_hUDzNY679.jpg";
     private String url4;
-    private String url_gif = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591179176330&di=f1ba185206fce2a4670cfac246a11799&imgtype=0&src=http%3A%2F%2Fhiphotos.baidu.com%2Ffeed%2Fpic%2Fitem%2F79f0f736afc3793166ed31a5e0c4b74542a911b0.jpg";
+    private String url_gif = "http://39.99.156.40:8499/group1/M00/00/00/J2OcKGAXrOeAQ0uYAADYez4Aowo818.gif";
 
     private String url5 = "http://10.114.10.32:8499/group1/M00/00/0A/CnIKIGASdV2AJaxgAAAGSVN2bnI788.png";
 
@@ -231,6 +231,10 @@ public class GlideActivity extends BaseActivity {
     }
 
     public void downloadImage() {
+
+        /**
+         * 旧方案
+         */
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -246,6 +250,32 @@ public class GlideActivity extends BaseActivity {
                         public void run() {
                             Toast.makeText(context, imageFile.getPath(), Toast.LENGTH_LONG).show();
                             LogUtil.e(TAG, "path=" + imageFile.getPath());
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+        /**
+         * 新方案
+         */
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    String url = "http://www.guolin.tech/book.png";
+                    final Context context = getApplicationContext();
+                    FutureTarget<File> target = Glide.with(context)
+                            .asFile()
+                            .load(url)
+                            .submit();
+                    final File imageFile = target.get();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(context, imageFile.getPath(), Toast.LENGTH_LONG).show();
                         }
                     });
                 } catch (Exception e) {
@@ -322,7 +352,7 @@ public class GlideActivity extends BaseActivity {
          * 加载指定格式的图片--指定为静止图片
          */
         Glide.with(this)
-                .asBitmap()//只加载静态图片，如果是git图片则只加载第一帧。
+                .asBitmap()//只加载静态图片，如果是gif图片则只加载第一帧。
                 .load(url_gif)
                 .placeholder(R.color.font_black_6)
                 .error(R.color.font_black_6)
