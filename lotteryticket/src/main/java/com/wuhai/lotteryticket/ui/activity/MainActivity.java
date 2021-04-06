@@ -94,6 +94,16 @@ public class MainActivity extends NewLoadingBaseActivity implements IHomeContrac
     private void setListener() {
         binding.acMainDltLl.setOnClickListener(this);
         binding.acMainSsqLl.setOnClickListener(this);
+
+//        LotteryModelImpl mLotteryModelImpl = new LotteryModelImpl();
+//        List<Lottery> list = mLotteryModelImpl.queryLotteryAll();
+//        for (int x=0;x<list.size();x++){
+//            Log.e("wh", "第"+x+":"+list.get(x).toString());
+//            if(TextUtils.isEmpty(list.get(x).getLottery_red_ball())){
+//                mLotteryModelImpl.deleteLottery(list.get(x));
+//            }
+//
+//        }
     }
 
     /**

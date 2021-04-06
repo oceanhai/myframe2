@@ -18,6 +18,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wuhai.myframe2.R;
+import com.wuhai.myframe2.application.BaseApplication;
 import com.wuhai.myframe2.ui.acswitch.AcSwitchMainActivity;
 import com.wuhai.myframe2.ui.animation.AnimationActivity;
 import com.wuhai.myframe2.ui.asynctask.AsyncTaskActivity;
@@ -268,6 +269,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         int mMaxMemory = activityManager.getMemoryClass();
         Log.e(TAG, "mMaxMemory = " + mMaxMemory);
+
+        BaseApplication baseApplication1 = new BaseApplication();
+        BaseApplication baseApplication2 = new BaseApplication();
+        BaseApplication baseApplication3 = new BaseApplication();
+        Log.e(TAG, "baseApplication1="+baseApplication1+",baseApplication2="+baseApplication2+
+                ",baseApplication3="+baseApplication3);
     }
 
     private void setListener() {

@@ -163,4 +163,24 @@ public class Lottery extends BaseBean{
     public void setSelected(boolean selected) {
         isSelected = selected;
     }
+
+    @Override
+    public String toString() {
+        return "Lottery{" +
+                "lottery_id='" + lottery_id + '\'' +
+                ", lottery_type='" + lottery_type + '\'' +
+                ", lottery_name='" + lottery_name + '\'' +
+                ", lottery_red_ball='" + lottery_red_ball + '\'' +
+                ", lottery_blue_ball='" + lottery_blue_ball + '\'' +
+                ", lottery_red_ball_count=" + lottery_red_ball_count +
+                ", lottery_blue_ball_count=" + lottery_blue_ball_count +
+                ", lottery_bet_num=" + lottery_bet_num +
+                ", lottery_bet_money=" + lottery_bet_money +
+                ", lottery_produce_method=" + lottery_produce_method +
+                ", lottery_no='" + lottery_no + '\'' +
+                ", create_time='" + create_time + '\'' +
+                ", last_modified='" + last_modified + '\'' +
+                ", isSelected=" + isSelected +
+                '}';
+    }
 }

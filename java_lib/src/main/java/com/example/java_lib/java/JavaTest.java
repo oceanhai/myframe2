@@ -16,4 +16,10 @@ public class JavaTest {
 
     }
 
+    @Test
+    public void method02(){
+        String str = "getinfo://equipmentID";
+        System.out.println(str.substring(10));
+    }
+
 }

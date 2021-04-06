@@ -9,7 +9,48 @@ import kotlin.collections.ArrayList
  */
 fun main() {
 
-    method03()
+    method04()
+
+}
+
+/**
+ * “不安全的” 类型转换操作符
+ * 如果类型转换不成功，类型转换操作符通常会抛出一个异常。因此，我们称之为 不安全的(unsafe)。在 Kotlin 中，
+ * 不安全的类型转换使用中缀操作符 as
+ *
+ */
+fun method04(){
+//    val y = null
+//    val x: String = y as String
+// 输出
+
+    /**
+     * 注意 null 不能被转换为 String，因为这个类型不是 可为 null 的(nullable)，也就是说，如果 y 为 null，
+     * 上例中的代码将抛出一个异常。为了实现与 Java 相同的类型转换，我们需要在类型转换操作符的右侧使用可为 null 的类型，
+     * 比如：
+     */
+//    val y = null
+//    val x: String? = y as String?
+//    println("x = $x")   // x = null
+
+    /**
+     * 上述代码，表示允许 String 可空，这样当 y = null 时，不会抛异常；但是，当类型转换失败时，还是会崩溃，如下：
+     */
+//    val y = 66
+//    val x: String? = y as String?
+
+    /**
+     * 二、“安全的” (nullable) 类型转换操作
+     * 为了避免抛出异常，你可以使用 安全的 类型转换操作符 as?，当类型转换失败时，它会返回 null，但不会抛出异常崩溃：
+     */
+    val y = 66
+    val x: String? = y as? String
+    println("x = $x")   // x = null
+
+    val a = null
+    val b: String? = a as? String
+    println("b = $b")   // b = null
+
 
 }
 

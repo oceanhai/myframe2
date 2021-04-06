@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lottery_history_rv"
+            android:layout_above="@+id/bottom_layout"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="false"
+            android:clipToPadding="false">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <!--投影-->
+        <View
+            android:visibility="visible"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@drawable/dock_shadow"/>
+
+        <LinearLayout
+            android:id="@+id/bottom_layout"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <RelativeLayout
+                android:id="@+id/lottery_history_create_rl"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="生成工具"
+                    android:textColor="@color/text_color_black_one"
+                    android:textSize="18sp"
+                    android:drawableLeft="@drawable/icon_random_create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+
+            <View
+                android:background="@color/line_color_gray_one"
+                android:layout_width="1dp"
+                android:layout_height="30dp"/>
+
+            <RelativeLayout
+                android:id="@+id/lottery_history_trend_chart_rl"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="走势图"
+                    android:textColor="@color/text_color_black_one"
+                    android:textSize="18sp"
+                    android:drawableLeft="@drawable/icon_zoushi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+
+            <View
+                android:background="@color/line_color_gray_one"
+                android:layout_width="1dp"
+                android:layout_height="30dp"/>
+
+            <RelativeLayout
+                android:id="@+id/lottery_history_counting_award_rl"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="算奖工具"
+                    android:textColor="@color/text_color_black_one"
+                    android:textSize="18sp"
+                    android:drawableLeft="@drawable/icon_jisuanqi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
+

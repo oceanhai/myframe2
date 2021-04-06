@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#28313e</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--titlebar-->
+    <color name="titlebar_background">#28313e</color>
+
+    <!--字体颜色-->
+    <color name="text_color_black_one">#000000</color>
+    <color name="text_color_black_two">#5f666d</color>
+    <color name="text_color_red_one">#f10215</color>
+    <color name="text_color_gray_one">#5a666d</color>
+    <color name="text_color_blue_one">#1296db</color>
+
+    <!--分割线的color-->
+    <color name="line_color_gray_one" >#e9ecef</color>
+
+    <!--背景色-->
+    <color name="bg_color_gray_four" >#33e9ecef</color>
+</resources>

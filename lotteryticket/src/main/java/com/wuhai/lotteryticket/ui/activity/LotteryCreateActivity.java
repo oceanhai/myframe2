@@ -3,6 +3,7 @@ package com.wuhai.lotteryticket.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -325,6 +326,15 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
                         lottery_red_ball = MyLuck.getLotteryResRedBall(redNum);
                         lottery_blue_ball = MyLuck.getLotteryResBlueBall(blueNum);
                     }
+                }
+
+                if(TextUtils.isEmpty(lottery_red_ball)){
+                    showToast("排他生成，红球已经不够生成6个");
+                    return;
+                }
+                if(TextUtils.isEmpty(lottery_blue_ball)){
+                    showToast("排他生成，蓝球已经不够生成");
+                    return;
                 }
 
                 Lottery lottery = new Lottery();
