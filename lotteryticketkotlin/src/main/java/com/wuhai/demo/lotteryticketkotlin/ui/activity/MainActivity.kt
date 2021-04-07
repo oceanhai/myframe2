@@ -29,13 +29,13 @@ class MainActivity : NewLoadingBaseActivity(), View.OnClickListener, IHomeContra
     }
 
     private fun getData() {
-//        mPresenter?.lotteryQuerySsq(Constants.JUHE_LOTTERY_KEY, Constants.JUHE_LOTTERY_ID_SSQ,"");
+        mPresenter?.lotteryQuerySsq(Constants.JUHE_LOTTERY_KEY, Constants.JUHE_LOTTERY_ID_SSQ,"");
 
-        val lottery_ssq = CommonUtils.getFromAssets("lottery_ssq", this)
-        val `object` = JsonParser().parse(lottery_ssq).asJsonObject
-        val result_ssq = `object`["result"].toString()
-        val lotteryQueryEntity = GsonUtils.instance.fromJson(result_ssq, LotteryQueryEntity::class.java)
-        setLotteryQuerySsq(lotteryQueryEntity)
+//        val lottery_ssq = CommonUtils.getFromAssets("lottery_ssq", this)
+//        val `object` = JsonParser().parse(lottery_ssq).asJsonObject
+//        val result_ssq = `object`["result"].toString()
+//        val lotteryQueryEntity = GsonUtils.instance.fromJson(result_ssq, LotteryQueryEntity::class.java)
+//        setLotteryQuerySsq(lotteryQueryEntity)
     }
 
     override fun setStatistical() {
