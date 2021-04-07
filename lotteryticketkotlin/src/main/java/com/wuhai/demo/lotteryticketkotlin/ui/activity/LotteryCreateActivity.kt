@@ -210,7 +210,7 @@ class LotteryCreateActivity : NewLoadingBaseActivity(), View.OnClickListener, Li
      */
     override fun onRightActionClicked() {
         super.onRightActionClicked()
-        //        LotteryRecordActivity.startActivity(this);
+                LotteryRecordActivity.startActivity(this);
     }
 
     override fun onClick(v: View) {
