@@ -148,6 +148,7 @@ class LotteryHistoryActivity : NewLoadingBaseActivity(), ILotteryHistoryContract
     override fun onClick(v: View) {
         when (v.id) {
             R.id.lottery_history_create_rl -> {
+                LotteryCreateActivity.startActivity(this, mLotteryId, mLotteryEntity)
             }
             R.id.lottery_history_trend_chart_rl -> Toast.makeText(this, "趋势图暂未开通", Toast.LENGTH_SHORT).show()
             R.id.lottery_history_counting_award_rl -> showToast("算奖工具暂未开通")

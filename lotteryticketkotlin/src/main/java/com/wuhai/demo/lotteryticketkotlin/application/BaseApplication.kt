@@ -17,7 +17,7 @@ import java.lang.reflect.Type
 class BaseApplication : Application() {
 
     companion object{
-        var context: Context?=null
+        lateinit var context: Context
 
         val cacheData: Map<String, Any> = HashMap()//缓存的数据，暂时保存，随着app的关闭而消失（保存用户信息，token，头像昵称等等）
         val transferData: Map<String,Any> = HashMap()////传递的数据，activity、fragment数据的传递，传递后记得清空

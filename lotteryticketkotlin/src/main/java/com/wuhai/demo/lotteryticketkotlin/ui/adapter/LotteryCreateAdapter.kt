@@ -48,28 +48,28 @@ class LotteryCreateAdapter(context: Context?) : BaseDataAdapter<Lottery?>(contex
      * 获得要排除的红球和蓝球集合
      * @return
      */
-    val factorSet: Map<String, Set<String>>?
+    val factorSet: Map<String?, MutableSet<String?>?>?
         get() {
             if (mData == null) {
                 return null
             }
-            val map: MutableMap<String, Set<String>> = HashMap()
-            val mRedNumSet: MutableSet<String> = TreeSet()
-            val mBlueNumSet: MutableSet<String> = TreeSet()
+            val map: MutableMap<String?, MutableSet<String?>?> = HashMap()
+            val mRedNumSet: MutableSet<String?>? = TreeSet()
+            val mBlueNumSet: MutableSet<String?>? = TreeSet()
             for (x in mData!!.indices) {
                 val lottery = mData!![x]!!
                 if (lottery.isSelected) {
                     val redBalls = lottery.lottery_red_ball!!.split(",".toRegex()).toTypedArray()
                     val blueBalls = lottery.lottery_blue_ball!!.split(",".toRegex()).toTypedArray()
                     for (y in redBalls.indices) {
-                        mRedNumSet.add(redBalls[y])
+                        mRedNumSet?.add(redBalls[y])
                     }
                     for (y in blueBalls.indices) {
-                        mBlueNumSet.add(blueBalls[y])
+                        mBlueNumSet?.add(blueBalls[y])
                     }
                 }
             }
-            if (!mRedNumSet.isEmpty() && !mBlueNumSet.isEmpty()) {
+            if (!mRedNumSet!!.isEmpty() && !mBlueNumSet!!.isEmpty()) {
                 map["red"] = mRedNumSet
                 map["blue"] = mBlueNumSet
                 return map
