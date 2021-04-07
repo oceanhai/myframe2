@@ -3,15 +3,15 @@ package com.wuhai.demo.lotteryticketkotlin.ui.activity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import com.google.gson.JsonParser
 import com.wuhai.demo.lotteryticketkotlin.R
 import com.wuhai.demo.lotteryticketkotlin.config.Constants
 import com.wuhai.demo.lotteryticketkotlin.contract.IHomeContract
+import com.wuhai.demo.lotteryticketkotlin.model.bean.LotteryHistoryEntity
 import com.wuhai.demo.lotteryticketkotlin.model.bean.LotteryQueryEntity
 import com.wuhai.demo.lotteryticketkotlin.presenter.HomePresenter
 import com.wuhai.demo.lotteryticketkotlin.ui.base.NewLoadingBaseActivity
-import com.wuhai.demo.lotteryticketkotlin.utils.DateUtil
-import com.wuhai.demo.lotteryticketkotlin.utils.MatcherUtils
-import com.wuhai.demo.lotteryticketkotlin.utils.MonetaryUnitUtil
+import com.wuhai.demo.lotteryticketkotlin.utils.*
 import kotlinx.android.synthetic.main.ac_main.*
 
 class MainActivity : NewLoadingBaseActivity(), View.OnClickListener, IHomeContract.View {
@@ -29,7 +29,13 @@ class MainActivity : NewLoadingBaseActivity(), View.OnClickListener, IHomeContra
     }
 
     private fun getData() {
-        mPresenter?.lotteryQuerySsq(Constants.JUHE_LOTTERY_KEY, Constants.JUHE_LOTTERY_ID_SSQ,"");
+//        mPresenter?.lotteryQuerySsq(Constants.JUHE_LOTTERY_KEY, Constants.JUHE_LOTTERY_ID_SSQ,"");
+
+        val lottery_ssq = CommonUtils.getFromAssets("lottery_ssq", this)
+        val `object` = JsonParser().parse(lottery_ssq).asJsonObject
+        val result_ssq = `object`["result"].toString()
+        val lotteryQueryEntity = GsonUtils.instance.fromJson(result_ssq, LotteryQueryEntity::class.java)
+        setLotteryQuerySsq(lotteryQueryEntity)
     }
 
     override fun setStatistical() {
@@ -51,8 +57,9 @@ class MainActivity : NewLoadingBaseActivity(), View.OnClickListener, IHomeContra
             R.id.ac_main_dlt_ll ->
                 //                LotteryHistoryActivity.startActivity(this, Constants.JUHE_LOTTERY_ID_DLT, dltEntity);
                 showToast("客观别急！正在开发中")
-            R.id.ac_main_ssq_ll ->{}
-//                LotteryHistoryActivity.startActivity(this, com.wuhai.lotteryticket.config.Constants.JUHE_LOTTERY_ID_SSQ, ssqEntity)
+            R.id.ac_main_ssq_ll -> {
+                LotteryHistoryActivity.startActivity(this, Constants.JUHE_LOTTERY_ID_SSQ, ssqEntity)
+            }
         }
     }
 

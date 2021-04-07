@@ -76,4 +76,10 @@ dependencies {
 
     //retrofit 网络请求框架
     api project(':retrofitnetworkrequest')
+
+    //上拉加载  趣竞价 小波后来要的那种效果
+    api project(':recyclerview')
+
+    //greenDao 数据库框架
+    implementation 'org.greenrobot:greendao:3.2.2' // add library
 }

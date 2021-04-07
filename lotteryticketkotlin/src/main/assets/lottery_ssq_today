@@ -1,0 +1,52 @@
+{
+  "reason": "查询成功",
+  "result": {
+    "lottery_id": "ssq",
+    "lottery_name": "双色球",
+    "lottery_res": "02,15,17,27,32,33,03",
+    "lottery_no": "20004",
+    "lottery_date": "2020-01-09",
+    "lottery_exdate": "2020-03-08",
+    "lottery_sale_amount": "--",
+    "lottery_pool_amount": "--",
+    "lottery_prize": [
+      {
+        "prize_name": "一等奖",
+        "prize_num": "--",
+        "prize_amount": "--",
+        "prize_require": "6+1"
+      },
+      {
+        "prize_name": "二等奖",
+        "prize_num": "--",
+        "prize_amount": "--",
+        "prize_require": "6+0"
+      },
+      {
+        "prize_name": "三等奖",
+        "prize_num": "--",
+        "prize_amount": "3,000",
+        "prize_require": "5+1"
+      },
+      {
+        "prize_name": "四等奖",
+        "prize_num": "--",
+        "prize_amount": "200",
+        "prize_require": "5+0,4+1"
+      },
+      {
+        "prize_name": "五等奖",
+        "prize_num": "--",
+        "prize_amount": "10",
+        "prize_require": "4+0,3+1"
+      },
+      {
+        "prize_name": "六等奖",
+        "prize_num": "--",
+        "prize_amount": "5",
+        "prize_require": "2+1,1+1,0+1"
+      }
+    ]
+  },
+  "error_code": 0
+}
