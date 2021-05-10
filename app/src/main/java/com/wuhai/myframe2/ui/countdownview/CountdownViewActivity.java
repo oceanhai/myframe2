@@ -12,7 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.ui.countdownview.view.CountdownView;
 
-
+/**
+ * github上 一个 倒计时 view 样式比较多
+ */
 public class CountdownViewActivity extends AppCompatActivity implements CountdownView.OnCountdownEndListener {
 
     public static void startActivity(Context context) {

@@ -63,6 +63,7 @@ import com.wuhai.myframe2.ui.theme.ThemeMain2Activity;
 import com.wuhai.myframe2.ui.theme.ThemeMain3Activity;
 import com.wuhai.myframe2.ui.theme.ThemeMainActivity;
 import com.wuhai.myframe2.ui.thread.ThreadActivity;
+import com.wuhai.myframe2.ui.timer.CountDownTimeActivity;
 import com.wuhai.myframe2.ui.webview.WebViewActivity;
 import com.wuhai.myframe2.ui.xywy.InputWidgetActivity;
 import com.wuhai.share.QddShareCallback;
@@ -504,7 +505,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn33://寻医问药 登录控件+网络请求
                 InputWidgetActivity.startActivity(this);
                 break;
-            case R.id.btn34://CountdownView
+            case R.id.btn34://CountdownView github 倒计时样式
                 CountdownViewActivity.startActivity(this);
                 break;
             case R.id.btn35://导航菜单
@@ -591,7 +592,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn60://test
                 TestActivity.startActivity(this);
                 break;
+            case R.id.btn61://倒计时 可暂停的
+                CountDownTimeActivity.startActivity(this);
+                break;
         }
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     public final static String ACTION_SIMPLE = "com.android.peter.notificationdemo.ACTION_SIMPLE";

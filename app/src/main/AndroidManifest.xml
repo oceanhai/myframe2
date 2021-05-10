@@ -126,6 +126,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.customview.HeaderTextGridViewActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.customview.MatrixActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.customview.ClipImageActivity"
+            android:screenOrientation="portrait"/>
 
         <!--glide ac-->
         <activity android:name=".ui.glide.GlideActivity"
@@ -553,6 +557,10 @@
             android:name=".ui.TestActivity"
             android:screenOrientation="portrait"/>
 
+        <!--     倒计时       -->
+        <activity
+            android:name=".ui.timer.CountDownTimeActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

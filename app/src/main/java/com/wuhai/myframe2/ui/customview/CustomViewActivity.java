@@ -53,6 +53,12 @@ public class CustomViewActivity extends AppCompatActivity implements View.OnClic
             case R.id.btn01:
                 HeaderTextGridViewActivity.startActivity(this);
                 break;
+            case R.id.ac_matrix:
+                MatrixActivity.startActivity(this);
+                break;
+            case R.id.ClipImageView:
+                ClipImageActivity.startActivity(this);
+                break;
         }
     }
 }

@@ -26,6 +26,33 @@
             android:id="@+id/lottery_view"
             android:layout_width="match_parent"
             android:layout_height="40dp"/>
+
+        <com.wuhai.myframe2.ui.customview.view.DrawBitmapView
+            android:id="@+id/draw_bitmap_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+        <com.wuhai.myframe2.ui.customview.view.MyView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/ac_matrix"
+            android:text="matrix缩放"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/ClipImageView"
+            android:text="ClipImageView测试页"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </ScrollView>
