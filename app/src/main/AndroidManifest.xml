@@ -91,8 +91,19 @@
         </activity>
 
         <!--约束布局-->
+        <!--  又追加了一个小测试，scheme和雄安智慧社保相同，h5跳转是会去选择是跳哪一个      -->
         <activity android:name=".ui.ConstraintLayoutActivity"
-            android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="com.bfxasi"
+                    android:scheme="xasi" />
+            </intent-filter>
+        </activity>
         <!-- 内容提供者 创建db插入数据 -->
         <activity android:name=".ui.contentprovider.ContentProviderServerActivity"
             android:screenOrientation="portrait"/>

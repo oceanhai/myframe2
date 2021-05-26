@@ -9,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.wuhai.myframe2.R;
 
 /**
- * 约束布局
+ * 1、约束布局
+ * 2、清单文件，又追加了一个小测试，scheme和雄安智慧社保相同，h5跳转是会去选择是跳哪一个
  */
 public class ConstraintLayoutActivity extends AppCompatActivity {
 

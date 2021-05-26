@@ -3,6 +3,7 @@ package com.wuhai.aidlserver;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.os.Parcel;
 import android.os.RemoteException;
 
 public class RemoteService extends Service {
@@ -37,6 +38,20 @@ public class RemoteService extends Service {
         @Override
         public String callRemote() throws RemoteException {
             return "成功调用远程服务！";
+        }
+
+        /**
+         * 检测权限
+         * @param code
+         * @param data
+         * @param reply
+         * @param flags
+         * @return
+         * @throws RemoteException
+         */
+        @Override
+        public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
+            return super.onTransact(code, data, reply, flags);
         }
     }
 

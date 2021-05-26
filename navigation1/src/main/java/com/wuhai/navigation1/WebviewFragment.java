@@ -1,6 +1,7 @@
 package com.wuhai.navigation1;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -127,4 +128,21 @@ public class WebviewFragment extends MainBaseFragment implements BaseWebviewList
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.e("wh", "onResume() " + mURL);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.e("wh", "onPause() " + mURL);
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        Log.e("wh", "onHiddenChanged hidden="+hidden+", " + mURL);
+    }
 }
