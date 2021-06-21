@@ -8,8 +8,10 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -65,7 +67,9 @@ import com.wuhai.myframe2.ui.theme.ThemeMainActivity;
 import com.wuhai.myframe2.ui.thread.ThreadActivity;
 import com.wuhai.myframe2.ui.timer.CountDownTimeActivity;
 import com.wuhai.myframe2.ui.webview.WebViewActivity;
+import com.wuhai.myframe2.ui.xingneng.XingNingMainActivity;
 import com.wuhai.myframe2.ui.xywy.InputWidgetActivity;
+import com.wuhai.myframe2.utils.PermissionUtils;
 import com.wuhai.share.QddShareCallback;
 import com.wuhai.share.QddShareHelper;
 import com.wuhai.share.QddShareModel;
@@ -595,9 +599,62 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn61://倒计时 可暂停的
                 CountDownTimeActivity.startActivity(this);
                 break;
+            case R.id.btn62://性能优化
+                XingNingMainActivity.startActivity(this);
+                break;
+            case R.id.btn63://应用通知设置
+                gotoSet();
+                break;
+            case R.id.btn64://权限设置
+                gotoPermission();
+                break;
         }
     }
 
+    /**
+     * 设置权限
+     */
+    private void gotoPermission() {
+        String sdk = android.os.Build.VERSION.SDK; // SDK号
+
+        String model = android.os.Build.MODEL; // 手机型号
+
+        String release = android.os.Build.VERSION.RELEASE; // android系统版本号
+        String brand = Build.BRAND;//手机厂商
+        if (TextUtils.equals(brand.toLowerCase(), "redmi") || TextUtils.equals(brand.toLowerCase(), "xiaomi")) {
+            PermissionUtils.gotoMiuiPermission(this);//小米
+        } else if (TextUtils.equals(brand.toLowerCase(), "meizu")) {
+            PermissionUtils.gotoMeizuPermission(this);
+        } else if (TextUtils.equals(brand.toLowerCase(), "huawei") || TextUtils.equals(brand.toLowerCase(), "honor")) {
+            PermissionUtils.gotoHuaweiPermission(this);
+        } else {
+            startActivity(PermissionUtils.getAppDetailSettingIntent(this));
+        }
+    }
+
+    /**
+     * 去设置推送开关
+     */
+    private void gotoSet() {
+        Intent intent = new Intent();
+        if (Build.VERSION.SDK_INT >= 26) {
+            // android 8.0引导
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
+        } else if (Build.VERSION.SDK_INT >= 21) {
+            // android 5.0-7.0
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("app_package", getPackageName());
+            intent.putExtra("app_uid", getApplicationInfo().uid);
+        } else {
+            // 其他
+            intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.fromParts("package", getPackageName(), null));
+        }
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
+    }
 
 
     @Override

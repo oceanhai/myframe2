@@ -572,6 +572,16 @@
         <activity
             android:name=".ui.timer.CountDownTimeActivity"
             android:screenOrientation="portrait"/>
+
+        <!--     性能优化  main     -->
+        <activity
+            android:name=".ui.xingneng.XingNingMainActivity"
+            android:screenOrientation="portrait"/>
+        <!--     UI View的OverDraw     -->
+        <activity
+            android:name=".ui.xingneng.UiOverDrawActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
