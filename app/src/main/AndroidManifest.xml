@@ -283,7 +283,7 @@
 
         <!--  日期选择      -->
         <activity
-            android:name=".ui.DialogChooseDateActivity"
+            android:name=".ui.dialog.DialogChooseDateActivity"
             android:screenOrientation="portrait"/>
 
         <!--  地址选择      -->
@@ -580,6 +580,11 @@
         <!--     UI View的OverDraw     -->
         <activity
             android:name=".ui.xingneng.UiOverDrawActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--    DatePickerDialog     -->
+        <activity
+            android:name=".ui.dialog.DatePickerDialogActivity"
             android:screenOrientation="portrait"/>
 
     </application>

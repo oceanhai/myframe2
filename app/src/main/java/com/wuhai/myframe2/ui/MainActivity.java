@@ -33,6 +33,8 @@ import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.countdownview.CountdownViewActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
+import com.wuhai.myframe2.ui.dialog.DatePickerDialogActivity;
+import com.wuhai.myframe2.ui.dialog.DialogChooseDateActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.eventtransmit.EventTransmitActivity;
 import com.wuhai.myframe2.ui.face.FaceDetectorActivity;
@@ -607,6 +609,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn64://权限设置
                 gotoPermission();
+                break;
+            case R.id.btn65://DatePickerDialog
+                DatePickerDialogActivity.startActivity(this);
                 break;
         }
     }

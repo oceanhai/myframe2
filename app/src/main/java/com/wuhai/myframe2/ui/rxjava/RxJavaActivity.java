@@ -28,7 +28,9 @@ import com.wuhai.myframe2.utils.BitmpUtils;
 import com.wuhai.retrofit.utils.LogUtil;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -485,15 +487,16 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
             }
         })
                 .subscribeOn(Schedulers.io())
-//                .doOnSubscribe(new Action0() {//TODO doOnSubscribe 不知道有何作用
-//                    @Override
-//                    public void call() {
-//                        Log.e(TAG,"doOnSubscribe 所在线程"+Thread.currentThread().getName());
-//                        iv01.setVisibility(View.VISIBLE); // 需要在主线程执行
-//                    }
-//                })
-//                .subscribeOn(AndroidSchedulers.mainThread()) // 指定主线程  TODO subscribeOn 不是说只有第一个有效吗
-                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Action0() {//TODO doOnSubscribe 不知道有何作用
+                    @Override
+                    public void call() {
+                        Log.e(TAG,"doOnSubscribe 所在线程"+Thread.currentThread().getName());
+                        iv01.setVisibility(View.VISIBLE); // 需要在主线程执行
+                    }
+                })
+                .subscribeOn(AndroidSchedulers.mainThread()) // 指定主线程  TODO subscribeOn 不是说只有第一个有效吗
+//                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(Schedulers.io())
                 .subscribe(new Subscriber<Drawable>() {
                     @Override
                     public void onStart() {//TODO 多此一举 本身就在main线程啊  不知道doOnSubscribe有啥用
@@ -518,6 +521,52 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
                         Log.e(TAG, "onCompleted 所在线程" + Thread.currentThread().getName());
                     }
                 });
+
+        /**
+         * 自己鼓捣了半天，确实，不理解，正如上面的 TODO 描述的，onStart 本身就是在主线程
+         * 为啥还要用doOnSubscribe
+         */
+        Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                Log.e(TAG, "1---call 执行所在线程 " + Thread.currentThread().getName());
+                subscriber.onNext("我在测试所在线程-完毕");
+                subscriber.onCompleted();
+            }
+        }).subscribeOn(Schedulers.io())
+          .observeOn(Schedulers.newThread())
+          .map(new Func1<String, String>() {
+              @Override
+              public String call(String s) {
+                  Log.e(TAG, "1---map 执行所在线程 " + Thread.currentThread().getName());
+                  return "起一个新线程执行耗时操作";
+              }
+          })
+          .observeOn(AndroidSchedulers.mainThread())
+          .subscribe(new Subscriber<String>() {
+
+            @Override
+            public void onStart() {
+                super.onStart();
+                Log.e(TAG, "1---onStart 所在线程 " + Thread.currentThread().getName());
+            }
+
+            @Override
+            public void onCompleted() {
+                Log.e(TAG, "1---onCompleted 所在线程 " + Thread.currentThread().getName());
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+                Log.e(TAG, "1---onNext 回调所在线程 " + Thread.currentThread().getName());
+                Log.e(TAG, "1---onNext 结果：" + s);
+            }
+        });
     }
 
     /**
@@ -611,6 +660,7 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
                 Log.e(TAG, "compose 最终结果是 =" + s);
             }
         });
+
         Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
@@ -622,6 +672,33 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
                 Log.e(TAG, "compose 最终结果是 =" + s);
             }
         });
+
+        /**
+         * 拆分的，没有建造者模式 一路下去
+         */
+        Observable<Integer> observable3 = Observable.create(new Observable.OnSubscribe<Integer>() {
+            @Override
+            public void call(Subscriber<? super Integer> subscriber) {
+                subscriber.onNext(3);
+            }
+        });
+        Subscriber<String> subscriber3 = new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+                Log.e(TAG, "compose 最终结果是 =" + s);
+            }
+        };
+        observable3.compose(liftAllTransformer).subscribe(subscriber3);
     }
 
     public class LiftAllTransformer implements Observable.Transformer<Integer, String> {
@@ -732,7 +809,7 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
                         return new Subscriber<Integer>() {
                             @Override
                             public void onNext(Integer integer) {
-                                subscriber.onNext("" + integer);
+                                subscriber.onNext("字符串" + integer);
                             }
 
                             @Override
@@ -851,9 +928,18 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
      * 其实就是跟我之前的防快速点击utils 是一样的用途
      */
     private void throttleFirst() {
-//        RxView.clickEvents(button) // RxBinding 代码，后面的文章有解释
+//        RxView.clickEvents(button) // RxBinding 代码，后面的文章有解释  TODO RxBinding
 //            .throttleFirst(500, TimeUnit.MILLISECONDS) // 设置防抖间隔为 500ms
 //            .subscribe(subscriber);
+
+        RxView.setOnClickListener(throttleFirst, view -> {
+            //设置日期格式精确到毫秒 SSS代表毫秒
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+            // new Date()为获取当前系统时间
+            String date= df.format(new Date());
+            Log.e(TAG,"当前时间:"+date);
+
+        });
     }
 
     /**
