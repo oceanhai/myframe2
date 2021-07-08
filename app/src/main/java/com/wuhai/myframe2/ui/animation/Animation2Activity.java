@@ -16,6 +16,7 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wuhai.myframe2.R;
@@ -56,6 +57,10 @@ public class Animation2Activity extends BaseActivity implements View.OnClickList
     ImageView image3;
     @BindView(R.id.stop_rotate)
     Button stopRotate;
+    @BindView(R.id.shake)
+    Button shake;
+    @BindView(R.id.shake_tv)
+    TextView shake_tv;
 
     /**
      * @param context
@@ -101,6 +106,8 @@ public class Animation2Activity extends BaseActivity implements View.OnClickList
         stopRotate.setOnClickListener(this);
 
         image2.setOnClickListener(this);
+
+        shake.setOnClickListener(this);
     }
 
     private void setListener() {
@@ -260,6 +267,10 @@ public class Animation2Activity extends BaseActivity implements View.OnClickList
                 break;
             case R.id.stop_rotate://停止旋转
                 image3.clearAnimation();
+                break;
+            case R.id.shake://抖动效果
+                Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.translate_checkbox_shake);
+                shake_tv.startAnimation(animation2);
                 break;
         }
     }
