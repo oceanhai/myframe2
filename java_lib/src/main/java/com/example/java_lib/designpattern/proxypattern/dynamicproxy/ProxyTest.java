@@ -42,6 +42,9 @@ public class ProxyTest {
 
         //代理执行上交班费的方法
         stuProxy.giveMoney();
+
+        //交作业  TODO 我自己追加的
+        stuProxy.handInHomework();
     }
 
     private static void look() {
