@@ -1,3 +1,4 @@
+include ':rxhttpdemo'
 include ':lotteryticketkotlin'
 include ':kotlinapp'
 include ':kotlin_lib'

@@ -40,7 +40,9 @@ allprojects {
         }
 
         //PictureSelector 引用implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.3.7'
+        //注：RxHttp 2.6.0版本起，已全面从JCenter迁移至jitpack
         maven { url 'https://jitpack.io' }
+
     }
 }
 
