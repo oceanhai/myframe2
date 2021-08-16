@@ -587,6 +587,11 @@
             android:name=".ui.dialog.DatePickerDialogActivity"
             android:screenOrientation="portrait"/>
 
+        <!--    db     -->
+        <activity
+            android:name=".ui.db.DBActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
