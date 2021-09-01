@@ -39,6 +39,9 @@ public class RetrofitNetworkRequestActivity extends AppCompatActivity implements
     @BindView(R.id.tv02)
     TextView tv02;
 
+    @BindView(R.id.btn03)
+    Button btn03;
+
     private static final String TAG = "retrofitRx";
 
     public static void startActivity(Context context) {
@@ -54,6 +57,7 @@ public class RetrofitNetworkRequestActivity extends AppCompatActivity implements
 
         btn01.setOnClickListener(this);
         btn02.setOnClickListener(this);
+        btn03.setOnClickListener(this);
 
         presenter = new HomePresenter(this);
     }
@@ -67,6 +71,9 @@ public class RetrofitNetworkRequestActivity extends AppCompatActivity implements
             case R.id.btn02:
                 //TODO 这里我并没有 创建p然后再里面实现MVP，这里我直接 创建ServiceProvider进行请求了
                 getRx();
+                break;
+            case R.id.btn03:
+
                 break;
         }
     }

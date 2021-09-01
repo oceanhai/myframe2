@@ -22,4 +22,23 @@ public class JavaTest {
         System.out.println(str.substring(10));
     }
 
+    @Test
+    public void method03(){
+        double a = 0.0;
+        if(a==0){
+            System.out.println("等于0");
+        }else{
+            System.out.println("不等于0");
+        }
+    }
+
+    @Test
+    public void method04(){
+        String mDrUrl = "https://service.neuqsoft.com/ggfwH5/#/third-party?state=<state>&code=<code>&target=shbz/cx/yang-lao";
+        String newUrl = mDrUrl
+                .replace("<state>","123")
+                .replace("<code>","456");
+        System.out.println("newUrl="+newUrl);
+    }
+
 }

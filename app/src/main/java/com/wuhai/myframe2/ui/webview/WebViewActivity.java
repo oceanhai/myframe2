@@ -102,7 +102,8 @@ public class WebViewActivity extends BaseActivity {
 //            }
 //        });
 
-        binding.myWebView.loadUrl("https://www.baidu.com/");
+//        binding.myWebView.loadUrl("https://www.baidu.com/");
+        binding.myWebView.loadUrl("file:///android_asset/perm");
     }
 
     private void setListener() {

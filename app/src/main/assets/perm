@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考勤系统</title>
+</head>
+<body>
+<a href="xasi://com.bfxasi">打开智慧雄安</a><br><br>
+<a href="weixin://dl/scan">扫一扫</a><br><br>
+<a href="weixin://dl/business/?ticket=taae8c9ab56ca318b0b6d35ed5d44145c">ticket</a><br><br>
+<a href="weixin://dl/officialaccounts">公众号</a>
+<p>定位信息：<button type="button" onclick="getlocation()">获取定位</button></p>
+<p id="location_info"></p>
+<p>地图信息：<button type="button" onclick="openMap()">打开地图</button></p>
+<p id="map_info"></p>
+<p>人脸打卡信息：<button type="button" onclick="faceclock()">人脸打卡</button></p>
+<p id="faceclock_info"></p>
+<img id="faceclock_img" src="" height="100" width="100" />
+<p>OCR信息：<button type="button" onclick="openocr()">打开OCR</button></p>
+<p id="ocr_info"></p>
+<img id="ocr_img" src="" height="100" width="100" />
+<img id="ocr_img_head" src="" height="100" width="70" />
+<p>绑定UserId：<button type="button" onclick="bindUser()">绑定UserId</button></p>
+<p id="bind_user"></p>
+<p>解邦UserId：<button type="button" onclick="unBindUser()">解邦UserId</button></p>
+<p id="un_bind_user"></p>
+<p>发送消息：<button type="button" onclick="sendmsg()">发送消息</button></p>
+<p id="send_msg"></p>
+
+<script>
+        function getlocation() {
+            window.location.href = "getlocation://";
+        }
+        function openMap() {
+            var parameter = {
+                "latitude":40.051284,
+                "longitude":116.290587,
+                "distance": 100
+            };
+            window.location.href = 'openmap://' + JSON.stringify(parameter);
+        }
+        function faceclock() {
+            window.location.href = 'faceclock://';
+        }
+        function openocr() {
+            window.location.href = 'openocr://';
+        }
+        function bindUser() {
+            var parameter = {
+                "userId":1001
+            };
+            window.location.href = 'binduser://' + JSON.stringify(parameter);
+        }
+        function unBindUser() {
+            var parameter = {
+                "userId":1001
+            };
+            window.location.href = 'unbinduser://' + JSON.stringify(parameter);
+        }
+        function sendmsg() {
+            var parameter = {
+                "userId":52,
+                "subject":"11111111",
+                "content":"我是内容"
+            };
+            window.location.href = 'sendmsg://' + JSON.stringify(parameter);
+        }
+        // 这里是定位后的回传结果
+        function locationFunction(longitude, latitude, adress) {
+            console.log(latitude);
+            console.log(longitude);
+            console.log(adress);
+            document.getElementById("location_info").innerHTML = JSON.stringify(adress);
+        }
+        // 这里处理打卡考勤逻辑
+        function clockinFunction(obj) {
+            console.log(obj);
+            document.getElementById("map_info").innerHTML = JSON.stringify(obj);
+        }
+        // 这里处理人脸打卡
+        function faceclockFunction(obj) {
+            console.log(obj);
+         // document.getElementById("faceclock_info").innerHTML = JSON.stringify(obj.parameter);
+            document.getElementById("faceclock_img").setAttribute("src", 'data:image/png;base64,' + obj.image);
+        }
+        // 这里处理OCR的识别
+        function ocrFunction(obj) {
+            console.log(obj);
+            document.getElementById("ocr_info").innerHTML = JSON.stringify(obj);
+            document.getElementById("ocr_img").setAttribute("src", 'data:image/png;base64,' + obj.image);
+            document.getElementById("ocr_img_head").setAttribute("src", 'data:image/png;base64,' + obj.avatar);
+        }
+        // 获取绑定userId结果
+        function bindUserFunction(obj) {
+            alert("1111");
+            console.log(obj);
+            document.getElementById("bind_user").innerHTML = JSON.stringify(obj);
+        }
+        // 获取解绑userId结果
+        function unBindUserFunction(obj) {
+            console.log(obj);
+            document.getElementById("un_bind_user").innerHTML = JSON.stringify(obj);
+        }
+        // 针对用户发送消息结果
+        function sendMsgFunction(obj) {
+            console.log(obj);
+            document.getElementById("send_msg").innerHTML = JSON.stringify(obj);
+        }
+    </script>
+</body>
+</html>
