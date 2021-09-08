@@ -53,6 +53,10 @@
             android:onClick="onClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+        <com.wuhai.myframe2.ui.customview.view.JCCLoadingView
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
     </LinearLayout>
 
 </ScrollView>
