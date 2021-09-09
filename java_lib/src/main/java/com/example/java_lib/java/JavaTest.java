@@ -2,6 +2,8 @@ package com.example.java_lib.java;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+
 public class JavaTest {
 
     @Test
@@ -41,4 +43,22 @@ public class JavaTest {
         System.out.println("newUrl="+newUrl);
     }
 
+    @Test
+    public void method05(){
+//        String str = "https://he.12333.gov.cn/ggfw-h5-funcs-heb.html#/third-party?state=TECH_ICBC_XASI&code=<code>&target=shbz/cx/gong-shang";
+        String str = "https://he.12333.gov.cn/ggfw-h5-funcs-heb.html#/third-party?state=TECH_ICBC_XASI&code=<code>&target";
+        String str1 = str.substring(str.indexOf("?")+1);
+        System.out.println("str1:"+str1);
+        String[] str2 = str1.split("&");
+        HashMap<String,String> params = new HashMap<>();
+        for (int x=0;x<str2.length;x++){
+            System.out.println(x+":"+str2[x]);
+            String[] str3 = str2[x].split("=");
+            if(str3.length == 2){
+                params.put(str3[0], str3[1]);
+            }
+        }
+        System.out.println("params:"+params);
+        System.out.println("state:"+params.get("state"));
+    }
 }
