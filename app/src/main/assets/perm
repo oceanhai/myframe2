@@ -11,6 +11,11 @@
 <a href="weixin://dl/scan">扫一扫</a><br><br>
 <a href="weixin://dl/business/?ticket=taae8c9ab56ca318b0b6d35ed5d44145c">ticket</a><br><br>
 <a href="weixin://dl/officialaccounts">公众号</a>
+
+<p><button type="button" onclick="myframe2.changeWindowFlag(true)">防止截屏</button></p>
+<p><button type="button" onclick="myframe2.changeWindowFlag(false)">防止截屏撤销</button></p>
+
+
 <p>定位信息：<button type="button" onclick="getlocation()">获取定位</button></p>
 <p id="location_info"></p>
 <p>地图信息：<button type="button" onclick="openMap()">打开地图</button></p>

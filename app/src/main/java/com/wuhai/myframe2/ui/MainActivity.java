@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -183,6 +184,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView btn48;
     @BindView(R.id.btn49)
     TextView btn49;
+    @BindView(R.id.btn49_1)
+    TextView btn49_1;
     @BindView(R.id.btn50)
     TextView btn50;
     @BindView(R.id.btn51)
@@ -338,6 +341,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn47.setOnClickListener(this);
         btn48.setOnClickListener(this);
         btn49.setOnClickListener(this);
+        btn49_1.setOnClickListener(this);
         btn50.setOnClickListener(this);
         btn51.setOnClickListener(this);
         btn52.setOnClickListener(this);
@@ -391,7 +395,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn03://进程间ContentProvider通信-数据准备 db插入数据
                 ContentProviderServerActivity.startActivity(this);
                 break;
-            case R.id.btn04://进程间ContentProvider通信-子进程（但子进程是可以直接读取数据库）
+            case R.id.btn04://进程间ContentProvider通信-子进程(但子进程是可以直接读取数据库)
                 ContentProviderClientActivity.startActivity(this);
                 break;
             case R.id.btn05://Intent+bundle实现跨进程通讯：接收方
@@ -403,7 +407,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn07://MVVM
                 MvvmActivity.startActivity(this);
                 break;
-            case R.id.btn08://自定义view（集合）
+            case R.id.btn08://自定义view(集合)
                 CustomViewActivity.startActivity(this);
                 break;
             case R.id.btn09://glide框架
@@ -447,7 +451,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn21://shareSDK 分享
                 //在onCreat()方法中调用分享初始化方法。
-                String title = "震惊！4毛5买走了一千元京东购物卡";
+                String title = "震惊!4毛5买走了一千元京东购物卡";
                 String contentText = "亲测有效，全免费，赶紧来试试手气。";
                 String imageUrl = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png";
                 String url = "https://www.baidu.com/";
@@ -559,6 +563,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn49://webview
                 WebViewActivity.startActivity(this);
+                break;
+            case R.id.btn49_1://webview 清缓存
+                clearWebViewCache();
                 break;
             case R.id.btn50://横竖屏可切换的页面  portrait and landscape
                 OrientationActivity.startActivity(this);
@@ -716,5 +723,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setDeleteIntent(deletePendingIntent);
         //发送通知
         mNM.notify(0, nb.build());
+    }
+
+
+    /**
+     * 清除WebView缓存 在onDestroy调用这个方法就可以了
+     */
+    public void clearWebViewCache() {
+        //返回null 而且是废弃的方法
+//        File file = CacheManager.getCacheFileBaseDir();
+//        Log.e(TAG, "clearWebViewCache file 路径="+file.getAbsolutePath());
+//        if (file != null && file.exists() && file.isDirectory()) {
+//            for (File item : file.listFiles()) {
+//                Log.e(TAG, "clearWebViewCache delete 的file ="+item.getAbsolutePath());
+//                item.delete();
+//            }
+//            file.delete();
+//        }
+
+        //false false 因为都没有生成对应的db TODO 所以这个也是有问题的
+        boolean result1 = deleteDatabase("webview.db");
+        boolean result2 = deleteDatabase("webviewCache.db");
+        Log.e(TAG, "clearWebViewCache result1="+result1+",result2="+result2);
+
+        WebView webView = new WebView(this);
+        webView.clearCache(true);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
     }
 }
