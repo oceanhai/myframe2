@@ -48,6 +48,7 @@ import com.wuhai.myframe2.ui.homepage.HomeActivity;
 import com.wuhai.myframe2.ui.hook.HookActivity;
 import com.wuhai.myframe2.ui.ioc.IOCActivity;
 import com.wuhai.myframe2.ui.lifecycle.ThreadStartActivity;
+import com.wuhai.myframe2.ui.livedata.LiveDataMainActivity;
 import com.wuhai.myframe2.ui.materialdesign.MaterialDesignActivity;
 import com.wuhai.myframe2.ui.navigation.NavigationMenuActivity;
 import com.wuhai.myframe2.ui.notificaitons.NotificationService;
@@ -623,6 +624,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn66://db
                 DBActivity.startActivity(this);
+                break;
+            case R.id.btn67://LiveData
+                LiveDataMainActivity.startActivity(this);
                 break;
         }
     }

@@ -385,12 +385,12 @@
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView android:text="XXX"
+            <TextView android:text="db"
                 android:id="@+id/btn66"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView android:text="XXX"
+            <TextView android:text="LiveData"
                 android:id="@+id/btn67"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"

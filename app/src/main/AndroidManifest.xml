@@ -592,6 +592,17 @@
             android:name=".ui.db.DBActivity"
             android:screenOrientation="portrait"/>
 
+        <!--    livedata 测试     -->
+        <activity
+            android:name=".ui.livedata.LiveDataMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.livedata.LiveDataActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.livedata.MutableLiveDataActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
