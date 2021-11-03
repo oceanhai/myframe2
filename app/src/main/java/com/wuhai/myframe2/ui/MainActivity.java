@@ -34,6 +34,7 @@ import com.wuhai.myframe2.ui.contentprovider.ContentProviderClientActivity;
 import com.wuhai.myframe2.ui.contentprovider.ContentProviderServerActivity;
 import com.wuhai.myframe2.ui.countdownview.CountdownViewActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
+import com.wuhai.myframe2.ui.dagger2.Dagger2Activity;
 import com.wuhai.myframe2.ui.db.DBActivity;
 import com.wuhai.myframe2.ui.dialog.DatePickerDialogActivity;
 import com.wuhai.myframe2.ui.dialog.DialogChooseDateActivity;
@@ -627,6 +628,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn67://LiveData
                 LiveDataMainActivity.startActivity(this);
+                break;
+            case R.id.btn68://Dagger2
+                Dagger2Activity.startActivity(this);
                 break;
         }
     }

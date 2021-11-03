@@ -13,7 +13,13 @@ import java.util.Arrays;
 public class JavaTest02 {
 
     public static void main(String[] args) {
+        boolean isSafe = false;
+        assert isSafe;
+        System.out.println("断言通过!");
 
+//        boolean isSafe = true;
+//        assert isSafe;
+//        System.out.println("断言通过!");
     }
 
     /**

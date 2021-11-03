@@ -61,4 +61,11 @@ public class JavaTest {
         System.out.println("params:"+params);
         System.out.println("state:"+params.get("state"));
     }
+
+    @Test
+    public void method06(){
+        boolean isSafe = false;
+        assert isSafe;
+        System.out.println("断言通过!");
+    }
 }

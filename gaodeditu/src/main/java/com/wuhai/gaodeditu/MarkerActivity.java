@@ -109,7 +109,11 @@ public class MarkerActivity extends AppCompatActivity {
      * 根据目标地址返回 经纬度
      */
     private void search(String addr) {
-        geocoderSearch = new GeocodeSearch(this);
+        try {
+            geocoderSearch = new GeocodeSearch(this);
+        } catch (AMapException e) {
+            e.printStackTrace();
+        }
         geocoderSearch.setOnGeocodeSearchListener(new GeocodeSearch.OnGeocodeSearchListener() {
             @Override
             public void onRegeocodeSearched(RegeocodeResult regeocodeResult, int i) {
@@ -254,7 +258,11 @@ public class MarkerActivity extends AppCompatActivity {
             return;
         }
 
-        routeSearch = new RouteSearch(this);
+        try {
+            routeSearch = new RouteSearch(this);
+        } catch (AMapException e) {
+            e.printStackTrace();
+        }
         routeSearch.setRouteSearchListener(new RouteSearch.OnRouteSearchListener() {
             @Override
             public void onBusRouteSearched(BusRouteResult busRouteResult, int errorCode) {

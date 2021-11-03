@@ -148,4 +148,10 @@ dependencies {
 
     //轮播图
     implementation 'com.youth.banner:banner:2.1.0'
+
+    //-----dagger2 start
+    implementation 'com.google.dagger:dagger:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    //    apt 'com.google.dagger:dagger-compiler:2.9'//添加这里
+    //-----dagger2 end
 }
