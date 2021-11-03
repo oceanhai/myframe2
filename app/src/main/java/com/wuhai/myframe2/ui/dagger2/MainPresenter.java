@@ -18,13 +18,21 @@ public class MainPresenter implements MainContract.Presenter{
 
     @Override
     public void getData() {
-        try {
-            Thread.sleep(3000);
-            if(mView != null){
-                mView.updateUI();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(3000);
+                    if(mView != null){
+                        mView.updateUI();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        }).start();
+
+
     }
 }

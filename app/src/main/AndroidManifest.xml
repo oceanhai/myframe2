@@ -603,6 +603,7 @@
             android:name=".ui.livedata.MutableLiveDataActivity"
             android:screenOrientation="portrait"/>
 
+        <!--    dagger2    -->
         <activity
             android:name=".ui.dagger2.Dagger2Activity"
             android:exported="false" />
