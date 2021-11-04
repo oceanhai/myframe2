@@ -38,6 +38,7 @@ import com.wuhai.myframe2.ui.dagger2.Dagger2Activity;
 import com.wuhai.myframe2.ui.db.DBActivity;
 import com.wuhai.myframe2.ui.dialog.DatePickerDialogActivity;
 import com.wuhai.myframe2.ui.dialog.DialogChooseDateActivity;
+import com.wuhai.myframe2.ui.dkplayer.DkplayerActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.eventtransmit.EventTransmitActivity;
 import com.wuhai.myframe2.ui.face.FaceDetectorActivity;
@@ -631,6 +632,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn68://Dagger2
                 Dagger2Activity.startActivity(this);
+                break;
+            case R.id.btn69://Dkplayer
+                DkplayerActivity.startActivity(this);
                 break;
         }
     }

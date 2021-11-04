@@ -154,4 +154,10 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     //    apt 'com.google.dagger:dagger-compiler:2.9'//添加这里
     //-----dagger2 end
+
+    //播放器
+    //必选，内部默认使用系统mediaplayer进行解码
+    implementation 'xyz.doikki.android.dkplayer:dkplayer-java:3.3.5'
+    //可选，包含StandardVideoController的实现   TODO 控制器
+    implementation 'xyz.doikki.android.dkplayer:dkplayer-ui:3.3.5'
 }
