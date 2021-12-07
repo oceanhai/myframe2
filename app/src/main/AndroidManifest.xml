@@ -622,6 +622,11 @@
             </intent-filter>
         </activity>
 
+        <!--    页面接口返回数据的一种本地缓存策略    -->
+        <activity
+            android:name=".ui.CacheActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

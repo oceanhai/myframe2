@@ -636,6 +636,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn69://Dkplayer
                 DkplayerActivity.startActivity(this);
                 break;
+            case R.id.btn70://页面接口返回数据的一种本地缓存策略
+                CacheActivity.startActivity(this);
+                break;
         }
     }
 

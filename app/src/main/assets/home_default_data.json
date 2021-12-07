@@ -1,0 +1,717 @@
+{
+    "bannerList": [
+      {
+        "color": "#52ba33",
+        "imgUrl": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/11/04/20211104001057780n.png",
+        "itemId": "b60b99345a0552739e3e6a992956abc4",
+        "subTitle": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": null,
+            "title": null,
+            "url": null,
+            "urlType": "jumpType:1"
+          }
+        }
+      },
+      {
+        "color": "#ef4444",
+        "imgUrl": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/10/10/20211010205643701q.png",
+        "itemId": "e3007df42be5e6aea76062592ce60968",
+        "subTitle": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": null,
+            "title": null,
+            "url": null,
+            "urlType": "jumpType:1"
+          }
+        }
+      }
+    ],
+    "station": {
+      "takepiecestationId": "8999879616cf42a7e10a5723bbe468d5",
+      "expressCompanyId": "3333333,5555555555,1aebc7048cd33685c40b54b4b411a56c,90ef12ad72154bb8524c5d547df4550a,a8459e6bec4d4fa979c3e858cb47aff6,67e685a1b30fe219a648bbe19bdd0454,40a7d050aae504077a77fc7930331bb1,c1a8793563c80b549bb239d38bb5dd29,dbcffa4401fa1afa59d3e906f743ab61,a46d0910faec750e0a24ab272647d5c7,80f759f471708259ae9cc6d9fbb1b1c5,52d155457bceef04f9196e37027b1e15,b5796716c7c043b5439f4b41c746b56e,4afa6384ab15bf5bd996a24f9569c8c3,0cd1f0ec7e4c18df0a6986649ee8a079,e6b4f883312b7b4227690bef0d7f0b02,38595e11ea9a16c9fad79a42c539409e,0d9cc93065df91a2335e7f767018a3ec,f3293158aaf5cd569963708527906210,9101a66ea09e0cf61f16fc940df4da85",
+      "takepieceName": "黄骅市滕庄子供销社",
+      "money": "0.00",
+      "headportrait": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/10/29/20211029095945656g.jpg",
+      "province": "13267",
+      "takepieceTelephone": "13343278177",
+      "city": "52018",
+      "area": "57238",
+      "longitude": "117.184054",
+      "latitude": "38.368438",
+      "township": "796298",
+      "village": "800099",
+      "villageaddress": "黄骅市滕庄子乡后滕村",
+      "state": "1",
+      "addTime": "2021-10-29 10:04:53",
+      "delTime": "0",
+      "editTime": "2021-10-29 10:04:53",
+      "provincename": "河北省",
+      "cityname": "沧州市",
+      "areaname": "黄骅市",
+      "villagename": "滕庄子乡后滕庄",
+      "userHeadportrait": null,
+      "color": null,
+      "id": null,
+      "title": "黄骅市滕庄子供销社",
+      "subTitle": "滕庄子乡后滕庄供销合作中心",
+      "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/home/gongxiaoshe.png",
+      "data": null,
+      "personNumber": null,
+      "shareUrl": null,
+      "router": {
+        "pattern": "wap",
+        "params": {
+          "isLogin": "0",
+          "parasId": "",
+          "title": null,
+          "url": "http://121.36.77.1:8090/#/pages/index/change",
+          "urlType": "1"
+        }
+      },
+      "zidentityCard": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/10/29/20211029095952976w.jpg",
+      "fidentityCard": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/10/29/20211029095958608n.jpg"
+    },
+    "hotServiceList": [
+      {
+        "color": null,
+        "id": null,
+        "title": "公共服务",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/fuwu1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "service",
+          "params": {
+            "isLogin": "1",
+            "parasId": "",
+            "title": null,
+            "url": "",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "供销大厅",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/gongxiao1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "0",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/index/shangchang",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "智慧农业",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/fupin1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/zhny/pages/home",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "农技推广",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/tuiguang1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "0",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/njtg/pages/njtghome",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "土地托管",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/tuoguan1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "0",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/giao/tdtg",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "农机租赁",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/nongji-1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "0",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/njzl/pages/mall/home",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "金融服务",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/jrfw1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/giao/financingService",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "乡村振兴",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/zuwu.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/rural/pages/index/index",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "物流服务",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/wuliu1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/li/wlfw",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "生活缴费",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/shjf1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "ePay",
+          "params": {
+            "isLogin": "0",
+            "parasId": "",
+            "title": null,
+            "url": "",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "政务平台",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/tudi1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/li/zwpt",
+            "urlType": "1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "id": null,
+        "title": "产权交易",
+        "subTitle": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/main/chanquan1.png",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/li/cqjy",
+            "urlType": "1"
+          }
+        }
+      }
+    ],
+    "share": {
+      "webUrl": "http://mobile.umeng.com/social",
+      "title": "冀贡服务",
+      "desc": "服务农村的服务",
+      "imageUrl": "https://img.alicdn.com/tfs/TB1RDFDurr1gK0jSZFDXXb9yVXa-1120-460.jpg"
+    },
+    "hnzc": {
+      "iconUrl": "https://spfauat.dccnet.com.cn:8080/static/img/home/zhengce.png",
+      "list": [
+        {
+          "color": null,
+          "id": "91",
+          "title": "【央视新闻直播间】关注农资供应：多措并举平抑价格，保障生产",
+          "subTitle": null,
+          "imgUrl": "",
+          "date": "2021-11-09",
+          "personNumber": "105",
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "1",
+              "parasId": "",
+              "title": "",
+              "url": "http://121.36.77.1:8090/#/rural/pages/index/contents?id=91",
+              "urlType": "1"
+            }
+          }
+        },
+        {
+          "color": null,
+          "id": "89",
+          "title": "河北出台15方面政策措施集中支持乡村振兴重点帮扶县",
+          "subTitle": null,
+          "imgUrl": "",
+          "date": "2021-11-08",
+          "personNumber": "70",
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "1",
+              "parasId": "",
+              "title": "",
+              "url": "http://121.36.77.1:8090/#/rural/pages/index/contents?id=89",
+              "urlType": "1"
+            }
+          }
+        }
+      ]
+    },
+    "video": {
+      "coverImage": "https://cms-bucket.nosdn.127.net/eb411c2810f04ffa8aaafc42052b233820180418095416.jpeg",
+      "path": "http://img.hbszgxpt.com/video1.mp4"
+    },
+    "bannerList2": [
+      {
+        "color": "",
+        "imgUrl": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/10/11/20211011132826734f.png",
+        "itemId": "1b4d6a472a68f402c49a0d14b6934e9c",
+        "subTitle": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": null,
+            "title": null,
+            "url": null,
+            "urlType": "jumpType:1"
+          }
+        }
+      },
+      {
+        "color": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/banner/jrfw.png",
+        "itemId": null,
+        "subTitle": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": null,
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/giao/financingService",
+            "urlType": "2"
+          }
+        }
+      },
+      {
+        "color": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/banner/jrfw.png",
+        "itemId": null,
+        "subTitle": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": null,
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/giao/financingService",
+            "urlType": "0"
+          }
+        }
+      },
+      {
+        "color": null,
+        "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/banner/jrfw.png",
+        "itemId": null,
+        "subTitle": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": null,
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/giao/financingService",
+            "urlType": "0"
+          }
+        }
+      }
+    ],
+    "xczx": {
+      "all": {
+        "color": null,
+        "id": null,
+        "title": "",
+        "subTitle": "",
+        "imgUrl": "",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/rural/pages/index/index",
+            "urlType": "1"
+          }
+        }
+      },
+      "list": [
+        {
+          "color": null,
+          "id": "37",
+          "title": "河北：调整农业种植结构 大力发展节水灌溉",
+          "subTitle": null,
+          "imgUrl": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/10/30/20211030235413847w.jpg",
+          "date": "2021-11-08",
+          "personNumber": "98",
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "1",
+              "parasId": "",
+              "title": "",
+              "url": "http://121.36.77.1:8090/#/rural/pages/index/contents?id=37",
+              "urlType": "1"
+            }
+          }
+        },
+        {
+          "color": null,
+          "id": "34",
+          "title": "河北衡水桃城区：12800亩中药材种出“致富良方”",
+          "subTitle": null,
+          "imgUrl": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/10/30/20211030234656665u.jpg",
+          "date": "2021-11-08",
+          "personNumber": "73",
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "1",
+              "parasId": "",
+              "title": "",
+              "url": "http://121.36.77.1:8090/#/rural/pages/index/contents?id=34",
+              "urlType": "1"
+            }
+          }
+        }
+      ]
+    },
+    "xffp": {
+      "all": {
+        "color": null,
+        "id": null,
+        "title": "",
+        "subTitle": "",
+        "imgUrl": "",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "0",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/pages/giao/xxfq",
+            "urlType": "1"
+          }
+        }
+      },
+      "newsList": [
+        {
+          "color": null,
+          "id": "94",
+          "title": "省社召开“百日攻坚行动”动员部署暨浅埋滴灌节水农业项目推进视频会议",
+          "subTitle": null,
+          "imgUrl": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/11/06/20211106084309625y.png",
+          "date": "2021-11-06",
+          "personNumber": "121",
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "1",
+              "parasId": "",
+              "title": "",
+              "url": "http://121.36.77.1:8090/#/rural/pages/index/contents?id=94",
+              "urlType": "1"
+            }
+          }
+        },
+        {
+          "color": null,
+          "id": "69",
+          "title": "​河北省委党史学习教育第六巡回指导组到河北省供销合作社检查指导",
+          "subTitle": null,
+          "imgUrl": "https://kdbq.hbszgxpt.com//public/uploads/imgs/2021/11/04/20211104153325441e.png",
+          "date": "2021-11-05",
+          "personNumber": "69",
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "1",
+              "parasId": "",
+              "title": "",
+              "url": "http://121.36.77.1:8090/#/rural/pages/index/contents?id=69",
+              "urlType": "1"
+            }
+          }
+        }
+      ],
+      "iconList": [
+        {
+          "color": null,
+          "id": null,
+          "title": "",
+          "subTitle": "",
+          "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/home/gongying.png",
+          "date": null,
+          "personNumber": null,
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "0",
+              "parasId": "",
+              "title": null,
+              "url": "http://121.36.77.1:8090/#/pages/index/shangchang",
+              "urlType": "1"
+            }
+          }
+        },
+        {
+          "color": null,
+          "id": null,
+          "title": "",
+          "subTitle": "",
+          "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/home/tuoguan.png",
+          "date": null,
+          "personNumber": null,
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "1",
+              "parasId": "",
+              "title": null,
+              "url": "",
+              "urlType": "1"
+            }
+          }
+        },
+        {
+          "color": null,
+          "id": null,
+          "title": "",
+          "subTitle": "",
+          "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/home/jiaoyi.png",
+          "date": null,
+          "personNumber": null,
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "1",
+              "parasId": "",
+              "title": null,
+              "url": "http://121.36.77.1:8090/#/pages/li/cqjy",
+              "urlType": "1"
+            }
+          }
+        }
+      ]
+    },
+    "njtg": {
+      "askUrl": {
+        "color": null,
+        "id": null,
+        "title": "",
+        "subTitle": "",
+        "imgUrl": "",
+        "date": null,
+        "personNumber": null,
+        "shareUrl": null,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "0",
+            "parasId": "",
+            "title": null,
+            "url": "http://121.36.77.1:8090/#/njtg/pages/njtghome",
+            "urlType": "1"
+          }
+        }
+      },
+      "iconList": [
+        {
+          "color": null,
+          "id": null,
+          "title": "农技视频",
+          "subTitle": "看视频涨知识",
+          "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/njtg/njtg_card_1%402x.png",
+          "date": null,
+          "personNumber": null,
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "0",
+              "parasId": "",
+              "title": null,
+              "url": "http://121.36.77.1:8090/#/njtg/pages/njtgvideos",
+              "urlType": "1"
+            }
+          }
+        },
+        {
+          "color": null,
+          "id": null,
+          "title": "专家问答",
+          "subTitle": "按分类看答案",
+          "imgUrl": "https://spfauat.dccnet.com.cn:8080/static/img/njtg/njtg_card_2%402x.png",
+          "date": null,
+          "personNumber": null,
+          "shareUrl": null,
+          "router": {
+            "pattern": "wap",
+            "params": {
+              "isLogin": "0",
+              "parasId": "",
+              "title": null,
+              "url": "http://121.36.77.1:8090/#/njtg/pages/putQue",
+              "urlType": "1"
+            }
+          }
+        }
+      ],
+      "qa": {
+        "question": "大棚蔬菜如何防治病虫害？",
+        "labels": [
+          "葡萄",
+          "水果种植"
+        ],
+        "answer": "选择无污染、环境适宜的蔬菜生产基地，是无公害蔬菜生长的基本要求。选用适合当地种植的抗病品种，在种植前对土壤进行微量化验，土壤中可能含有一些线虫、虫卵、病菌等，化验后需针对性进行防治。由于大棚内特殊环境影响，其一年四季都有可能出现“虫害”现象。要培育出优质无公害的绿色蔬菜，就必须科学、有效地使用农药或利用物理、生物、生态等多种方法控制病虫害。",
+        "answerNumber": 3,
+        "router": {
+          "pattern": "wap",
+          "params": {
+            "isLogin": "1",
+            "parasId": "",
+            "title": "",
+            "url": "http://121.36.77.1:8090/#/njtg/pages/njtgmine",
+            "urlType": "1"
+          }
+        }
+      }
+    }
+  }

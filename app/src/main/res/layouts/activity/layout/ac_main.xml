@@ -405,7 +405,7 @@
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView android:text="XXX"
+            <TextView android:text="页面接口返回数据的一种本地缓存策略"
                 android:id="@+id/btn70"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
