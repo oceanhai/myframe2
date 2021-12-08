@@ -627,6 +627,11 @@
             android:name=".ui.CacheActivity"
             android:screenOrientation="portrait"/>
 
+        <!--    七牛播放器    -->
+        <activity
+            android:name=".ui.pldroid.PldroidPlayerActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

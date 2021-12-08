@@ -160,4 +160,7 @@ dependencies {
     implementation 'xyz.doikki.android.dkplayer:dkplayer-java:3.3.5'
     //可选，包含StandardVideoController的实现   TODO 控制器
     implementation 'xyz.doikki.android.dkplayer:dkplayer-ui:3.3.5'
+
+    //七牛
+    implementation files('libs\\pldroid-player-2.0.3.jar')
 }

@@ -56,6 +56,7 @@ import com.wuhai.myframe2.ui.navigation.NavigationMenuActivity;
 import com.wuhai.myframe2.ui.notificaitons.NotificationService;
 import com.wuhai.myframe2.ui.okhttp3.OkHttpActivity;
 import com.wuhai.myframe2.ui.pactera.PacteraActivity;
+import com.wuhai.myframe2.ui.pldroid.PldroidPlayerActivity;
 import com.wuhai.myframe2.ui.plugin.PluginActivity;
 import com.wuhai.myframe2.ui.popwindow.PopWindowActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
@@ -638,6 +639,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn70://页面接口返回数据的一种本地缓存策略
                 CacheActivity.startActivity(this);
+                break;
+            case R.id.btn71://七牛播放器 TODO 废弃，这个播放器不好
+                PldroidPlayerActivity.startActivity(this);
                 break;
         }
     }
