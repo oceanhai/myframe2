@@ -21,11 +21,16 @@ import xyz.doikki.videoplayer.player.AbstractPlayer;
 import xyz.doikki.videoplayer.util.L;
 
 /**
- * 使用阿里播放器 作为核心
+ * 作者 wh
+ *
+ * 创建日期 2021/12/15 11:54
+ *
+ * 描述：v1.0 阿里播放器 作为核心
  */
 public class DkAliPlayer extends AbstractPlayer implements
         IPlayer.OnErrorListener, IPlayer.OnCompletionListener, IPlayer.OnInfoListener,
-        IPlayer.OnPreparedListener, IPlayer.OnVideoSizeChangedListener, IPlayer.OnStateChangedListener {
+        IPlayer.OnPreparedListener, IPlayer.OnVideoSizeChangedListener, IPlayer.OnStateChangedListener,
+        IPlayer.OnLoadingStatusListener {
 
     protected AliPlayer mMediaPlayer;
     private final Context mAppContext;
@@ -59,6 +64,8 @@ public class DkAliPlayer extends AbstractPlayer implements
         //※阿里播放器的一些值 需要监听获得并处理成自己想要的
         //状态改变监听
         mMediaPlayer.setOnStateChangedListener(this);
+        //播放器加载状态监听
+        mMediaPlayer.setOnLoadingStatusListener(this);
     }
 
 
@@ -160,6 +167,13 @@ public class DkAliPlayer extends AbstractPlayer implements
 //        mMediaPlayer.setOnBufferingUpdateListener(null);
         mMediaPlayer.setOnPreparedListener(null);
         mMediaPlayer.setOnVideoSizeChangedListener(null);
+
+        //※阿里播放器的一些值 需要监听获得并处理成自己想要的
+        //状态改变监听
+        mMediaPlayer.setOnStateChangedListener(null);
+        //播放器加载状态监听
+        mMediaPlayer.setOnLoadingStatusListener(null);
+
         new Thread() {
             @Override
             public void run() {
@@ -377,5 +391,31 @@ public class DkAliPlayer extends AbstractPlayer implements
         }
 
         L.e("DkAliPlayer onStateChanged mPlayerState="+mPlayerState);
+    }
+
+    /**
+     * 开始加载。
+     */
+    @Override
+    public void onLoadingBegin() {
+        mPlayerEventListener.onInfo(AbstractPlayer.MEDIA_INFO_BUFFERING_START, 0);
+    }
+
+    /**
+     * 加载进度
+     * @param percent               百分数
+     * @param netSpeed              网络速度
+     */
+    @Override
+    public void onLoadingProgress(int percent, float netSpeed) {
+
+    }
+
+    /**
+     * 加载结束
+     */
+    @Override
+    public void onLoadingEnd() {
+        mPlayerEventListener.onInfo(AbstractPlayer.MEDIA_INFO_BUFFERING_END, 0);
     }
 }
