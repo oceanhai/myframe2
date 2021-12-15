@@ -25,6 +25,7 @@ import com.wuhai.myframe2.business.AppFrontBackHelper;
 import com.wuhai.myframe2.business.getui.DemoIntentService;
 import com.wuhai.myframe2.business.getui.DemoPushService;
 import com.wuhai.myframe2.config.Config;
+import com.wuhai.myframe2.ui.dkplayer.DkAliPlayerFactory;
 import com.wuhai.myframe2.ui.lifecycle.ThreadStartActivity;
 import com.wuhai.myframe2.ui.retrofit.base.MyRequestHandler;
 import com.wuhai.myframe2.utils.DeviceUtil;
@@ -40,6 +41,8 @@ import okhttp3.CookieJar;
 import okhttp3.Interceptor;
 import retrofit2.Converter;
 import retrofit2.converter.gson.GsonConverterFactory;
+import xyz.doikki.videoplayer.player.VideoViewConfig;
+import xyz.doikki.videoplayer.player.VideoViewManager;
 
 /**
  * 应用application
@@ -100,6 +103,18 @@ public class BaseApplication extends MultiDexApplication {
 
         //生命周期监听
         initLifecycle();
+
+        initPlayer();
+    }
+
+    /**
+     * dkPlayer 用阿里播放器核心
+     */
+    private void initPlayer() {
+        VideoViewManager.setConfig(VideoViewConfig.newBuilder()
+                .setPlayerFactory(DkAliPlayerFactory.create())
+                .setLogEnabled(true)
+                .build());
     }
 
     private void initLifecycle() {

@@ -643,6 +643,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn71://七牛播放器 TODO 废弃，这个播放器不好
                 PldroidPlayerActivity.startActivity(this);
                 break;
+            case R.id.btn72://阿里播放器
+                AliPlayerActivity.startActivity(this);
+                break;
         }
     }
 

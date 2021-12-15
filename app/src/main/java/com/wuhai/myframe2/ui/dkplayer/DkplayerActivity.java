@@ -17,6 +17,7 @@ import xyz.doikki.videocontroller.component.GestureView;
 import xyz.doikki.videocontroller.component.PrepareView;
 import xyz.doikki.videocontroller.component.TitleView;
 import xyz.doikki.videocontroller.component.VodControlView;
+import xyz.doikki.videoplayer.player.AndroidMediaPlayerFactory;
 import xyz.doikki.videoplayer.player.VideoView;
 import xyz.doikki.videoplayer.util.L;
 
@@ -102,13 +103,14 @@ public class DkplayerActivity extends AppCompatActivity {
 
         //在控制器上显示调试信息
 //        controller.addControlComponent(new DebugInfoView(this));
-        //在LogCat显示调试信息
-//        controller.addControlComponent(new PlayerMonitor());
+        //TODO 在LogCat显示调试信息
+        controller.addControlComponent(new PlayerMonitor());
 
         //如果你不想要UI，不要设置控制器即可
         mVideoView.setVideoController(controller);
 
         String url = "http://vfx.mtime.cn/Video/2019/03/14/mp4/190314223540373995.mp4";
+//        String url = "http://img.xiongzhangh.com/xuan.mp4";
 
         mVideoView.setUrl(url);
 
@@ -132,6 +134,15 @@ public class DkplayerActivity extends AppCompatActivity {
 //            mVideoView.skipPositionWhenPlay(10000);
 
 //        mVideoView.start();
+
+
+        //检测当前是用的哪个播放器
+        Object factory = Utils.getCurrentPlayerFactory();
+        if (factory instanceof AndroidMediaPlayerFactory) {
+            L.d("播放器核心  (MediaPlayer)");
+        } else if(factory instanceof DkAliPlayerFactory){
+            L.d("播放器核心  (DkAliPlayerFactory)");
+        }
     }
 
     private VideoView.OnStateChangeListener mOnStateChangeListener = new VideoView.SimpleOnStateChangeListener() {

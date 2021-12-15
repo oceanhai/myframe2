@@ -17,3 +17,7 @@ include ':app', ':retrofitnetworkrequest', ':mvvm', ':java_lib', ':myclient', ':
         ':broadcastreceiverdemo', ':lotteryticket', ':scan', ':share', ':xupdate-lib',
         ':recyclerview', ':datarequest'
 include ':ardemo'
+include ':AliyunVideoCommon'
+include ':AliyunPlayerBase'
+include ':AlivcPlayerTools'
+include ':aliplayer'

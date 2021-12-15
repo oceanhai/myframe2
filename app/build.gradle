@@ -6,7 +6,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.wuhai.myframe2"
-        minSdkVersion 16
+        minSdkVersion 18
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -163,4 +163,7 @@ dependencies {
 
     //七牛
     implementation files('libs\\pldroid-player-2.0.3.jar')
+
+    //阿里播放器
+    implementation 'com.aliyun.sdk.android:AliyunPlayer:5.4.2.0-full'
 }

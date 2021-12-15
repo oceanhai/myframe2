@@ -2,6 +2,7 @@ package com.example.java_lib.java;
 
 import org.junit.Test;
 
+import java.text.NumberFormat;
 import java.util.HashMap;
 
 public class JavaTest {
@@ -67,5 +68,26 @@ public class JavaTest {
         boolean isSafe = false;
         assert isSafe;
         System.out.println("断言通过!");
+    }
+
+    public static void method07(){
+        long mBufferedPosition = 55495;
+        long getDuration = 150025;
+        double num1 = mBufferedPosition/getDuration;
+        System.out.println("num1 = " +num1);
+
+        // 创建一个数值格式化对象
+        NumberFormat numberFormat = NumberFormat.getInstance();
+        // 设置精确到小数点后2位
+        numberFormat.setMaximumFractionDigits(2);
+        String result = numberFormat.format((float) mBufferedPosition / (float) getDuration * 100);
+        System.out.println("result = " +result);
+
+        int percent = (int) ((float)mBufferedPosition/(float)getDuration*100);
+        System.out.println("percent = " + percent);
+    }
+
+    public static void  main(String[] args){
+        method07();
     }
 }

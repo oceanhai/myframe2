@@ -9,8 +9,12 @@ buildscript {
         maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         google()
         jcenter()
+
+        //阿里播放器
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
         
     }
+    apply from: 'thirdparty-lib/config.gradle'
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
 
@@ -46,6 +50,8 @@ allprojects {
         //注：RxHttp 2.6.0版本起，已全面从JCenter迁移至jitpack
         maven { url 'https://jitpack.io' }
 
+        //阿里播放器
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
     }
 }
 
