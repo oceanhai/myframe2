@@ -15,6 +15,9 @@ import com.aliyun.player.nativeclass.PlayerConfig;
 import com.aliyun.player.source.UrlSource;
 import com.aliyun.svideo.common.utils.FileUtils;
 
+/**
+ * 编译器 (1.8.0_221) 中出现异常错误。
+ */
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "aliplayer";
