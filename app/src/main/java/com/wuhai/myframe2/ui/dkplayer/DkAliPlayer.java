@@ -197,6 +197,11 @@ public class DkAliPlayer extends AbstractPlayer implements
         return mMediaPlayer.getDuration();
     }
 
+    /**
+     * 缓冲的百分比
+     * ※注意，这个是 100最大，而在seekbar那边 max=1000，所以那里设置才需要*10
+     * @return
+     */
     @Override
     public int getBufferedPercentage() {
         //TODO 缓冲的百分比   这里我们通过onInfo(InfoBean infoBean) 判断code来获取值缓冲位置，并计算得到
@@ -231,6 +236,10 @@ public class DkAliPlayer extends AbstractPlayer implements
         mMediaPlayer.setSpeed(speed);
     }
 
+    /**
+     * 获取倍数播放值
+     * @return      倍数播放值。范围[0.5,2]
+     */
     @Override
     public float getSpeed() {
         return mMediaPlayer.getSpeed();
