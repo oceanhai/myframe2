@@ -21,3 +21,5 @@ include ':AliyunVideoCommon'
 include ':AliyunPlayerBase'
 include ':AlivcPlayerTools'
 include ':aliplayer'
+//设计模式
+include ':patterns'
