@@ -646,6 +646,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn72://阿里播放器
                 AliPlayerActivity.startActivity(this);
                 break;
+            case R.id.btn73://水印照片
+                WaterMarkActivity.startActivity(this);
+                break;
+            case R.id.btn74://水印照片2
+                //在KT的companion object中做的任何声明，在Java中不能直接调用，而是利用【Companion】实体调用出来的，
+                //这就相当于new个类，调用实例方法了，而非静态方法。
+//                WaterMark2Activity.Companion.startActivity(this);
+
+                //TODO 参考文章 kotlin
+                //TODO https://blog.csdn.net/qq_27489007/article/details/121106425
+                //正确的做法是在派生类中 + @JvmStatic
+                WaterMark2Activity.startActivity(this);
+                break;
         }
     }
 
