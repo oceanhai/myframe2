@@ -10,7 +10,6 @@ include ':k4bottomnavigation'
 include ':navigation1'
 include ':aop'
 include ':plugin'
-include ':ocr'
 include ':myhttp'
 include ':app', ':retrofitnetworkrequest', ':mvvm', ':java_lib', ':myclient', ':myhydemo',
         ':easeui', ':gesture01', ':gesture02', ':gaodeditu', ':aidlserver', ':aidlclient',
