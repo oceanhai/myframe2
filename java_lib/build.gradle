@@ -3,6 +3,7 @@ apply plugin: 'java-library'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation files('libs\\gson-2.8.5.jar')
+    implementation files('libs\\fastjson-1.2.58.jar')
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
     }
