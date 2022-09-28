@@ -19,9 +19,13 @@ import javax.inject.Inject;
  * 
  * 描述：mvp 结合dagger
  *
+ * 参考的文章是
+ * Dagger2使用解析
+ * https://blog.csdn.net/study_zhxu/article/details/52169090
+ *
+ *
  *  https://www.jianshu.com/p/2cd491f0da01      可以去了解，但最后设计mvp没有太过多讲解
  *
- *  TODO 忘记了 这个类结合mvp 是参考哪个文章的了 还是自己根据 dagger试着用在mvp所写的研究
  */
 public class Dagger2Activity extends AppCompatActivity implements MainContract.View {
 
