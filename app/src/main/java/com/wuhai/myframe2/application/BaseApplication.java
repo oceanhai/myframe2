@@ -50,6 +50,8 @@ import xyz.doikki.videoplayer.player.VideoViewManager;
  */
 public class BaseApplication extends MultiDexApplication {
 
+    public static String TAG = "BaseApplication";
+
     //上下文环境
     public static BaseApplication application;
     public static Context context;
@@ -66,6 +68,9 @@ public class BaseApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        Log.e(TAG, "BaseApplication onCreate");
+
         application = this;
         context = this;
         handler = new Handler();

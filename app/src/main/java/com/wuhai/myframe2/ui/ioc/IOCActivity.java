@@ -33,7 +33,7 @@ public class IOCActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ioc);
 
-        ViewUtils.inject(this);
+//        ViewUtils.inject(this);
 //        mIconIv.setImageResource(R.drawable.cat_1);
     }
 

@@ -14,3 +14,6 @@
 .idea/
 gradle/
 AlivcPlayerTools/build/
+AliyunPlayerBase/build/
+AliyunVideoCommon/build/
+java_lib/out/

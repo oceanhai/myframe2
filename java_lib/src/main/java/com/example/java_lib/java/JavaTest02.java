@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * new String()传入字节数组生成String后，通过getBytes（）得到的结果和原来不同
@@ -13,13 +14,20 @@ import java.util.Arrays;
 public class JavaTest02 {
 
     public static void main(String[] args) {
-        boolean isSafe = false;
-        assert isSafe;
-        System.out.println("断言通过!");
+//        boolean isSafe = false;
+//        assert isSafe;
+//        System.out.println("断言通过!");
 
 //        boolean isSafe = true;
 //        assert isSafe;
 //        System.out.println("断言通过!");
+
+        method03();
+    }
+
+    public static void method03(){
+        HashMap<String, String> resultMap = new HashMap<>();
+        System.out.println(resultMap.get("certNo"));
     }
 
     /**

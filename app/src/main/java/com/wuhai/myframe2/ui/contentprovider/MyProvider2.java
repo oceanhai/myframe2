@@ -6,6 +6,9 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.util.Log;
+
+import com.wuhai.myframe2.application.BaseApplication;
 
 /**
  * 含路径
@@ -34,6 +37,9 @@ public class MyProvider2 extends ContentProvider {
 
 	@Override
 	public boolean onCreate() {
+
+		Log.e(BaseApplication.TAG, "MyProvider2 onCreate");
+
 		MyHelper helper = new MyHelper(getContext());
 		db = helper.getWritableDatabase();
 		return true;
