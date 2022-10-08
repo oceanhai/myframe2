@@ -9,12 +9,20 @@
 
     <Button
         android:id="@+id/btn01"
+        android:textAllCaps="false"
         android:text="get请求 Retrofit+RxJava+RxLifecycle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn02"
+        android:textAllCaps="false"
         android:text="get请求 qjj userDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn03"
+        android:textAllCaps="false"
+        android:text="get请求 玩android banner接口"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

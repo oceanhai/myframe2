@@ -211,7 +211,8 @@ public class BaseApplication extends MultiDexApplication {
             @Override
             public String configBaseUrl() {
 //                return "http://qjj.test01.qiandaodao.com/";//趣竞价 原测试线 服务器到期了
-                return "https://api.qujingjia.com/";
+//                return "https://api.qujingjia.com/";//趣竞价 线上 服务器到期了
+                return "http://www.wanandroid.com/";
             }
 
             @Override

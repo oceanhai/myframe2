@@ -8,6 +8,7 @@ import com.wuhai.myframe2.bean.UserDetailEntity;
 import com.wuhai.myframe2.ui.retrofit.base.APIBaseService;
 import com.wuhai.myframe2.ui.retrofit.base.ApiParams;
 import com.wuhai.myframe2.ui.retrofit.base.IServiceProvider;
+import com.wuhai.myframe2.ui.retrofit.bean.BannerResult;
 import com.wuhai.myframe2.ui.retrofit.networknormal.APICallBack;
 import com.wuhai.myframe2.ui.retrofit.networknormal.ProxyCallBack;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
@@ -19,6 +20,7 @@ import com.wuhai.retrofit.utils.LogUtil;
 import retrofit2.Call;
 import rx.Observable;
 import rx.Observer;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -116,6 +118,15 @@ public class ServiceProvider extends APIBaseService implements IServiceProvider 
         observable.compose(RxUtil.<RootResponse>normalSchedulers())
                 .compose(lifecycleTransformer)
                 .subscribe(callBack);
+    }
+
+    @Override
+    public void getBanners(Subscriber subscriber, LifecycleTransformer lifecycleTransformer) {
+        Observable<BannerResult> observable = api.getBanners();
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .compose(lifecycleTransformer)
+                .subscribe(subscriber);
     }
 
 }

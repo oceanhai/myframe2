@@ -4,6 +4,7 @@ package com.wuhai.myframe2.ui.retrofit.base;
 import com.wuhai.myframe2.bean.ActivityHomeEntity;
 import com.wuhai.myframe2.bean.ActivityHomeResult;
 import com.wuhai.myframe2.bean.UserDetailEntity;
+import com.wuhai.myframe2.ui.retrofit.bean.BannerResult;
 import com.wuhai.myframe2.ui.retrofit.networknormalrx.RootResponse;
 
 import java.util.Map;
@@ -35,4 +36,12 @@ public interface QjjAPI {
     //获取用户详情
     @GET("userinfo/detail")
     Observable<RootResponse<UserDetailEntity>> detail(@QueryMap Map<String,String> map);
+
+    /**
+     * 玩Android 轮波图
+     * https://www.wanandroid.com/banner/json
+     * @return
+     */
+    @GET("banner/json")
+    Observable<BannerResult> getBanners();
 }
