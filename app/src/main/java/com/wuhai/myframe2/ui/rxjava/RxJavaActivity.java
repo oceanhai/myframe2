@@ -49,6 +49,8 @@ import rx.schedulers.Schedulers;
 /**
  * 参考文章
  * http://gank.io/post/560e15be2dca930e00da1083
+ *
+ * 注意 TODO 这个ac所在进程  android:process=":newprocess"
  */
 public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickListener {
 
@@ -261,6 +263,7 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
                     public void call(Subscriber<? super Person> subscriber) {
                         Log.e(TAG, "create call 所在线程"+Thread.currentThread().getName());
                         Person person = new Person("wh",201);
+                        Log.e(TAG, "create call person="+person.toString());
                         subscriber.onNext(person);
                     }
                 })
@@ -271,16 +274,35 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
                     public void call(Person person) {
                         Log.e(TAG, "doOnNext call 所在线程"+Thread.currentThread().getName());
                         person.setAge(100);
+                        Log.e(TAG, "doOnNext call person="+person.toString());
                     }
                 })
 //                .observeOn(AndroidSchedulers.mainThread())//③ 通②
 //                .subscribeOn(AndroidSchedulers.mainThread())//④ 如果①存在，④无效
-                .subscribe(new Action1<Person>() {
-                @Override
-                public void call(Person person) {
-                    Log.d(TAG, "call: " + person.getAge()+",所在线程"+Thread.currentThread().getName());//输出100
-                }
+                //TODO  这个 onNext person=Person{id=0, name='wh', age=100} 打印结果
+                .subscribe(new Subscriber<Person>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.e(TAG, "onCompleted ");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e(TAG, "onError "+e.toString());
+                    }
+
+                    @Override
+                    public void onNext(Person person) {
+                        Log.e(TAG, "onNext person="+person.toString());
+                    }
                 });
+                //TODO 这个不知道为啥不打印结果了
+//                .subscribe(new Action1<Person>() {
+//                    @Override
+//                    public void call(Person person) {
+//                        Log.d(TAG, "call: " + person.getAge()+",所在线程"+Thread.currentThread().getName());//输出100
+//                    }
+//                });
 
 
     }
@@ -1469,34 +1491,37 @@ public class RxJavaActivity extends RxAppCompatActivity implements View.OnClickL
             @Override
             public void onStart() {//subscriber 有onStart()， 这是和observer 的区别之一
                 super.onStart();
-                LogUtil.e(TAG, "onStart");
+                LogUtil.e(TAG, "onStart"+"---isUnsubscribed="+isUnsubscribed());
             }
 
             @Override
             public void onCompleted() {
-                LogUtil.e(TAG, "onCompleted");
+                LogUtil.e(TAG, "onCompleted"+"---isUnsubscribed="+isUnsubscribed());
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtil.e(TAG, "onError");
+                LogUtil.e(TAG, "onError"+"---isUnsubscribed="+isUnsubscribed());
             }
 
             @Override
             public void onNext(String s) {
-                LogUtil.e(TAG, "onNext:" + s);
+                LogUtil.e(TAG, "onNext:" + s+"---isUnsubscribed="+isUnsubscribed());
             }
         };
 
         Subscription subscription = observable.subscribe(subscriber);
+        //TODO rxjava是自动取消订阅
         LogUtil.e(TAG, "subscription.isUnsubscribed()=" + subscription.isUnsubscribed());
         if (!subscription.isUnsubscribed()) {
             subscription.unsubscribe();
+            LogUtil.e(TAG, "subscription.isUnsubscribed()222=" + subscription.isUnsubscribed());
         }
         //subscriber 可以直接调用unsubscribe， 这是和observer 的区别之二
         LogUtil.e(TAG, "subscriber.isUnsubscribed()=" + subscriber.isUnsubscribed());
         if (!subscriber.isUnsubscribed()) {
             subscriber.unsubscribe();
+            LogUtil.e(TAG, "subscriber.isUnsubscribed()222=" + subscriber.isUnsubscribed());
         }
 
         //-----------------------------------------------------------------------------------

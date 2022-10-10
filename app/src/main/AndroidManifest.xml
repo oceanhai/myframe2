@@ -518,10 +518,6 @@
             android:name=".ui.TitleBarActivity"
             android:screenOrientation="portrait" />
 
-        <!--     ioc       -->
-        <activity
-            android:name=".ui.ioc.IOCActivity"
-            android:screenOrientation="portrait"/>
         <!--     SnackBar       -->
         <activity
             android:name=".ui.study.SnackBarActivity"

@@ -48,7 +48,6 @@ import com.wuhai.myframe2.ui.flowlayout.FlowLayoutActivity;
 import com.wuhai.myframe2.ui.glide.GlideActivity;
 import com.wuhai.myframe2.ui.homepage.HomeActivity;
 import com.wuhai.myframe2.ui.hook.HookActivity;
-import com.wuhai.myframe2.ui.ioc.IOCActivity;
 import com.wuhai.myframe2.ui.lifecycle.ThreadStartActivity;
 import com.wuhai.myframe2.ui.livedata.LiveDataMainActivity;
 import com.wuhai.myframe2.ui.materialdesign.MaterialDesignActivity;
@@ -580,8 +579,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn52://xywy TitleBar 演示 并且实现侵入式
                 TitleBarActivity.startActivity(this);
                 break;
-            case R.id.btn53://ioc
-                IOCActivity.startActivity(this);
+            case R.id.btn53://XXXX
                 break;
             case R.id.btn54://SnackBar
                 SnackBarActivity.startActivity(this);
