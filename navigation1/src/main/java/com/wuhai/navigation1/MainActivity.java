@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.wuhai.navigation1.utils.BankLog;
+import com.wuhai.navigation1.utils.StatusBarUtils;
 
 /**
  * TODO
@@ -24,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //沉浸式
+        StatusBarUtils.setRootViewFitsSystemWindows(this, false);
+        StatusBarUtils.setTransparentForWindow(this);
+
         setContentView(R.layout.activity_main);
 
         mContentViewPager = findViewById(R.id.main_content_view_pager);
@@ -45,6 +52,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean handleTabItemClick(int position) {
                 BankLog.e("position="+position);
+                switch (position){
+                    case 0:
+                        //设置状态栏纯色 不加半透明效果 字体为白色
+                        StatusBarUtils.setColorDartMode(MainActivity.this,
+                                ContextCompat.getColor(MainActivity.this, R.color.transparent));
+                        break;
+                    case 1:
+                    case 2:
+                    case 3:
+                        //设置状态栏纯色 不加半透明效果 字体为黑色
+                        StatusBarUtils.setColorLightMode(MainActivity.this,
+                                ContextCompat.getColor(MainActivity.this, R.color.transparent));
+                        break;
+                }
                 return false;
             }
         });

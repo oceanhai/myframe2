@@ -64,16 +64,16 @@ public class MainAdapter extends FragmentPagerAdapter implements NavigationTabLa
         MainBaseFragment fragment = null;
         switch (position) {
             case 0:
-                fragment = WebviewFragment.newInstance("https://www.baidu.com/");
+                fragment = WebviewFragment.newInstance("https://www.baidu.com/", "#ff00ff");
                 break;
             case 1:
-                fragment = WebviewFragment.newInstance("bbbbbbbbbbbbbbbb");
+                fragment = WebviewFragment.newInstance("bbbbbbbbbbbbbbbb", "#ffff00");
                 break;
             case 2:
-                fragment = WebviewFragment.newInstance("cccccccccccccccccc");
+                fragment = WebviewFragment.newInstance("cccccccccccccccccc", "#00ffff");
                 break;
             case 3:
-                fragment = WebviewFragment.newInstance("dddddddddddddddddddd");
+                fragment = WebviewFragment.newInstance("dddddddddddddddddddd", "#ffffff");
                 break;
         }
 

@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 拿着第一个接口的返回值作为第二个接口的入参使用。
      * TODO 说实话 感觉这是啥玩意啊
+     *  https://blog.csdn.net/qq_34723470/article/details/80102863
      * @param view
      */
     public void method050(View view){
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void method05(View view){
 
-        //https://www.wanandroid.com/tree/json  TODO 单独一个接口使用
+        //https://www.wanandroid.com/tree/json  TODO 接口1 单独一个接口使用
 //        Observable.create(new ObservableOnSubscribe<String>() {
 //            @Override
 //            public void subscribe(ObservableEmitter<String> e) throws Exception {
@@ -145,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                });
 
-        //https://www.wanandroid.com/article/list/0/json?cid=60 TODO 单独一个接口使用
+        //https://www.wanandroid.com/article/list/0/json?cid=60 TODO 接口2 单独一个接口使用
 //        Observable.create(new ObservableOnSubscribe<String>() {
 //                    @Override
 //                    public void subscribe(ObservableEmitter<String> e) throws Exception {
@@ -201,9 +202,9 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                });
 
-        //TODO 用okhttp网络请求 实现
+        //TODO 用okhttp网络请求 实现 第一个接口的结果作为第二个接口的入参
         // 参考https://www.jianshu.com/p/6bcda635bb82 这篇文章网络请求用的retrofit框架
-        //https://www.wanandroid.com/tree/json  TODO 第一个接口的结果作为第二个接口的入参
+        //https://www.wanandroid.com/tree/json
         //https://www.wanandroid.com/article/list/0/json?cid=60
         Observable.create(new ObservableOnSubscribe<String>() {
                     @Override

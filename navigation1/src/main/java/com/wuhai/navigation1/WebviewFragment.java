@@ -1,11 +1,13 @@
 package com.wuhai.navigation1;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.JavascriptInterface;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.wuhai.navigation1.utils.BankLog;
@@ -25,20 +27,24 @@ import com.wuhai.navigation1.webview.WebviewStatus;
 public class WebviewFragment extends MainBaseFragment implements BaseWebviewListerner {
 
     public static final String EXTRA_URL = "url";
+    public static final String EXTRA_COLOR = "color";
 
     private String mURL;
+    private String mColor;
 
     private BaseWebview mBaseWebview;
 
+    private FrameLayout fr_bg;
     /**
      *
      * @param url
      * @return
      */
-    public static WebviewFragment newInstance(String url){
+    public static WebviewFragment newInstance(String url, String color){
         WebviewFragment fragment = new WebviewFragment();
         Bundle bubdle = new Bundle();
         bubdle.putString(EXTRA_URL, url);
+        bubdle.putString(EXTRA_COLOR, color);
         fragment.setArguments(bubdle);
         return fragment;
     }
@@ -55,6 +61,7 @@ public class WebviewFragment extends MainBaseFragment implements BaseWebviewList
         Bundle bundle = getArguments();
         if(bundle != null){
             mURL = bundle.getString(EXTRA_URL);
+            mColor = bundle.getString(EXTRA_COLOR);
         }
 
     }
@@ -67,6 +74,9 @@ public class WebviewFragment extends MainBaseFragment implements BaseWebviewList
 //        if(!TextUtils.isEmpty(mURL)){
 //            mBaseWebview.loadUrl(mURL);
 //        }
+
+        fr_bg = view.findViewById(R.id.fr_bg);
+        fr_bg.setBackgroundColor(Color.parseColor(mColor));
 
         TextView textView = view.findViewById(R.id.tv01);
         textView.setText(mURL);

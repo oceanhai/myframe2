@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <item name="banner_inner" type="id" />-->
+    <!--adapter-->
+<!--    <item name="BaseQuickAdapter_viewholder_support" type="id" />-->
+<!--    <item name="BaseQuickAdapter_swiping_support" type="id" />-->
+<!--    <item name="BaseQuickAdapter_dragging_support" type="id" />-->
+<!--    <item name="BaseQuickAdapter_databinding_support" type="id" />-->
+    <!--fragmentation-->
+<!--    <item name="hierarchy" type="id"></item>-->
+<!--    <item name="isexpand" type="id"></item>-->
+    <!--statusbarutil-->
+    <item name="statusbarutil_fake_status_bar_view" type="id" />
+    <item name="statusbarutil_translucent_view" type="id" />
+</resources>
