@@ -296,6 +296,71 @@ public class MainActivity extends AppCompatActivity {
                         Log.e(TAG, "onComplete");
                     }
                 });
+                //TODO map 无法做到嵌套请求
+                //  https://blog.csdn.net/qq_41904106/article/details/118733377
+                //  1.map可以将一类型A转化为另外一任意类型B，而flatmap只能转化为发送事件序列的Observable对象。
+                //  2.map直接将数据类型A转为数据类型B，而flatmap转换为Observable对象后会发送相应的事件，所以map在下游中接收到的就是数据类型B，
+                //  而flatmap在下游中 接收到的是转化后的Observable对象发送的事件序列。
+//                .map(new Function<String, String>() {
+//                    @Override
+//                    public String apply(String cid) throws Exception {
+//                        Log.e(TAG, "flatMap apply cid="+cid);
+//                        Observable.create(new ObservableOnSubscribe<String>() {
+//                            @Override
+//                            public void subscribe(ObservableEmitter<String> e) throws Exception {
+//                                Request.Builder builder = new Request.Builder()
+//                                        .url("https://www.wanandroid.com/article/list/0/json?cid="+cid)
+//                                        .get();
+//                                Request request = builder.build();
+//                                Call call = new OkHttpClient().newCall(request);
+//                                Response response = call.execute();
+//                                if (response.isSuccessful()) {
+//                                    ResponseBody body = response.body();
+//                                    if (body != null) {
+//                                        JsonObject jsonObject = (JsonObject) new JsonParser().parse(body.string());
+//                                        String data = "";
+//                                        if(jsonObject.get("errorCode").getAsInt() == 0){
+//                                            data = jsonObject.get("data").toString();
+//
+//                                            ArticleResponseBody articleResponseBody =
+//                                                    new Gson().fromJson(data, ArticleResponseBody.class);
+//                                            //我们取第一个的id
+//                                            List<Article> list = articleResponseBody.getDatas();
+//                                            String chapterName = list.get(0).getChapterName();
+//                                            String link = list.get(0).getLink();
+//                                           return "chapterName="+chapterName+", link="+link;
+//                                        }
+//                                    }
+//                                }else{
+//                                    e.onError(new Throwable("接口请求失败"));
+//                                }
+//                            }
+//                        });
+//                    }
+//                })
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Observer<ObservableSource<String>>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//                        Log.e(TAG, "onSubscribe d="+d.toString());
+//                    }
+//
+//                    @Override
+//                    public void onNext(ObservableSource<String> stringObservableSource) {
+//                        Log.e(TAG, "onNext s="+s);
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        Log.e(TAG, "onError e="+e.toString());
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//                        Log.e(TAG, "onComplete");
+//                    }
+//                });
 
     }
 
