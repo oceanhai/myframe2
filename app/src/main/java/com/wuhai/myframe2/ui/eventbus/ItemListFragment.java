@@ -47,6 +47,11 @@ public class ItemListFragment extends ListFragment
                     Thread.sleep(2000); // 模拟延时
                     // 发布事件，在后台线程发的事件
                     EventBus.getDefault().post(new Event.ItemListEvent(Item.ITEMS));
+
+                    //TODO eventInheritance默认是true 注册了这个事件父类的方法也会收到通知
+                    //  所以如果我们不想父类收到通知，需要设置成false，需要如下操作
+                    //  但这样就不是像getDefault 创建的是单例，所以估计需要自己在进行一下封装成单例
+                    EventBus.builder().eventInheritance(false).build();
                 } catch (InterruptedException e)
                 {
                     e.printStackTrace();
