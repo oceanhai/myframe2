@@ -13,31 +13,37 @@
             android:layout_height="match_parent">
             <Button
                 android:id="@+id/get"
+                android:textAllCaps="false"
                 android:text="get"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/post_string"
+                android:textAllCaps="false"
                 android:text="post_string"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/post_json"
+                android:textAllCaps="false"
                 android:text="post_json"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/post_file"
+                android:textAllCaps="false"
                 android:text="post_file"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/post_form_parameters"
+                android:textAllCaps="false"
                 android:text="post_form_parameters(表单参数)"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/multipart"
+                android:textAllCaps="false"
                 android:text="multipart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
