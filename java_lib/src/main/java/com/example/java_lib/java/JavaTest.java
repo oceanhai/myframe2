@@ -1,5 +1,8 @@
 package com.example.java_lib.java;
 
+
+import com.example.java_lib.java.bean.Person;
+
 import org.junit.Test;
 
 import java.text.NumberFormat;
@@ -98,7 +101,28 @@ public class JavaTest {
         System.out.println(Math.round(-11.5));
     }
 
+    public static void metho09(int num){
+        num++;
+        System.out.println("调用metho09(num)时 num="+num);
+    }
+
+    public static void method10(Person person){
+        person.setAge(18);
+    }
+
     public static void  main(String[] args){
-        method08();
+//        method08();
+
+//        int num = 100;
+//        System.out.println("调用metho09(num)前 num="+num);
+//        metho09(num);
+//        System.out.println("调用metho09(num)后 num="+num);
+
+        Person person = new Person();
+        person.setName("wuhai");
+        person.setAge(36);
+        System.out.println("调用metho10前 person="+person);
+        method10(person);
+        System.out.println("调用metho10后 person="+person);
     }
 }
