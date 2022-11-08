@@ -3,6 +3,8 @@ package com.wuhai.myframe2.ui.thread;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 
 import androidx.databinding.DataBindingUtil;
@@ -38,6 +40,17 @@ public class ThreadActivity extends BaseActivity implements View.OnClickListener
         parseIntent();
         init();
         setListener();
+
+//        new Handler().post(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        });
+        Log.e(TAG, "当前线程:"+Thread.currentThread().getName());
+        new Handler().post(()->{
+            Log.e(TAG, "Handler Runnable里线程:"+Thread.currentThread().getName());
+        });
     }
 
     private void parseIntent() {
