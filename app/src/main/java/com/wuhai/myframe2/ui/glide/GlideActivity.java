@@ -2,6 +2,7 @@ package com.wuhai.myframe2.ui.glide;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
@@ -140,6 +141,20 @@ public class GlideActivity extends BaseActivity {
         showIv07();
         showIv08();
         showIv09();//※效果可以
+        showIv10();
+    }
+
+    private void showIv10() {
+        Glide.with(this)
+                .asBitmap()
+                .load(url)
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(@NonNull Bitmap bitmap,
+                                                @Nullable Transition<? super Bitmap> transition) {
+                        image23.setImageBitmap(bitmap);
+                    }
+                });
     }
 
     private void showIv09() {
