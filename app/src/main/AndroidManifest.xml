@@ -641,6 +641,18 @@
             android:name=".ui.WaterMark2Activity"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.widget.WidgetActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.widget.ViewSwitcherActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".widget.calendar.CalendarActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

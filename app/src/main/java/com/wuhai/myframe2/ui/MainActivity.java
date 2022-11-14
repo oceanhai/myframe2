@@ -74,6 +74,7 @@ import com.wuhai.myframe2.ui.theme.ThemeMainActivity;
 import com.wuhai.myframe2.ui.thread.ThreadActivity;
 import com.wuhai.myframe2.ui.timer.CountDownTimeActivity;
 import com.wuhai.myframe2.ui.webview.WebViewActivity;
+import com.wuhai.myframe2.ui.widget.WidgetActivity;
 import com.wuhai.myframe2.ui.xingneng.XingNingMainActivity;
 import com.wuhai.myframe2.ui.xywy.InputWidgetActivity;
 import com.wuhai.myframe2.utils.PermissionUtils;
@@ -656,6 +657,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //TODO https://blog.csdn.net/qq_27489007/article/details/121106425
                 //正确的做法是在派生类中 + @JvmStatic
                 WaterMark2Activity.startActivity(this);
+                break;
+            case R.id.btn75://一些控件
+                WidgetActivity.startActivity(this);
                 break;
         }
     }

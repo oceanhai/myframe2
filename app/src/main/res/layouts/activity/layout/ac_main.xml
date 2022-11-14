@@ -430,7 +430,7 @@
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView android:text="XXX"
+            <TextView android:text="一些控件"
                 android:id="@+id/btn75"
                 style="@style/TextView1"
                 android:layout_width="wrap_content"
