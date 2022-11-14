@@ -13,6 +13,7 @@ package com.example.java_lib.designpattern.proxypattern;
 public class ProxyPatternTest {
 
     public static void main(String[] args){
+        //静态代理
         Sourceable proxy = new Proxy();
         proxy.method();
     }

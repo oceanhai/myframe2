@@ -22,7 +22,7 @@ public class StaticProxyTest {
      */
     public static void main(String[] args) {
 
-        proxy1();
+//        proxy1();
         proxy2();
 
     }
