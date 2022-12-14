@@ -78,6 +78,7 @@ import com.wuhai.myframe2.ui.widget.WidgetActivity;
 import com.wuhai.myframe2.ui.xingneng.XingNingMainActivity;
 import com.wuhai.myframe2.ui.xywy.InputWidgetActivity;
 import com.wuhai.myframe2.utils.PermissionUtils;
+import com.wuhai.myframe2.utils.ScreenUtils;
 import com.wuhai.share.QddShareCallback;
 import com.wuhai.share.QddShareHelper;
 import com.wuhai.share.QddShareModel;
@@ -278,6 +279,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         QddShareHelper.initShare(this);
 
         setListener();
+
+        Log.e("wuhai", "屏幕宽度："+ScreenUtils.getScreenWidth(this)+
+                ",屏幕高度:"+ScreenUtils.getScreenHeight(this));
+
     }
 
     private void init() {
