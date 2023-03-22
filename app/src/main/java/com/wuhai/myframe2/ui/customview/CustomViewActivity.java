@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +28,9 @@ public class CustomViewActivity extends AppCompatActivity implements View.OnClic
     @BindView(R.id.lottery_view)
     LotteryView lotteryView;
 
+    @BindView(R.id.notice_container_tv)
+    TextView noticeContaineTv;
+
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, CustomViewActivity.class);
         context.startActivity(intent);
@@ -45,6 +49,9 @@ public class CustomViewActivity extends AppCompatActivity implements View.OnClic
 
     private void init() {
         lotteryView.setResource("09,17,26,29,30,32,03");
+
+        //TODO 200dp 宽度如果够宽，textview的跑马灯就不在跑马了
+        // notice_container_tv match_parent 或 权重剩余部分宽度空间，都不再跑马了
     }
 
     @Override

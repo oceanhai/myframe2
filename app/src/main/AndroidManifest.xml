@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 <!--    什么鬼 我子module没有引用这个权限啊 为啥添加就拍照不了 报权限重复？！-->
 <!--    <uses-permission android:name="android.permission.CAMERA"/>-->
 
@@ -117,6 +118,7 @@
             android:name=".ui.contentprovider.MyProvider"
             android:authorities="com.wuhai.myframe2.ui.contentprovider.MyProvider"
             android:exported="true"
+            android:grantUriPermissions="true"
             />
         <!--myclient项目app 将从MyProvider2获取数据-->
         <provider
@@ -651,6 +653,26 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".widget.calendar.CalendarActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!--    okdownload框架    -->
+        <activity
+            android:name=".ui.OkDownloadActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!--    routable 框架 我已经把Router 拷贝过来了 需要引用 org.apache.http.legacy.jar    -->
+        <activity
+            android:name=".ui.routable.RouterMainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.routable.UserActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.routable.NewUserActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
     </application>

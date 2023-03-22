@@ -28,6 +28,9 @@ import com.wuhai.myframe2.config.Config;
 import com.wuhai.myframe2.ui.dkplayer.DkAliPlayerFactory;
 import com.wuhai.myframe2.ui.lifecycle.ThreadStartActivity;
 import com.wuhai.myframe2.ui.retrofit.base.MyRequestHandler;
+import com.wuhai.myframe2.ui.routable.NewUserActivity;
+import com.wuhai.myframe2.ui.routable.Router;
+import com.wuhai.myframe2.ui.routable.UserActivity;
 import com.wuhai.myframe2.utils.DeviceUtil;
 import com.wuhai.retrofit.retrofit.BaseApi;
 import com.wuhai.retrofit.retrofit.NetProvider;
@@ -110,6 +113,16 @@ public class BaseApplication extends MultiDexApplication {
         initLifecycle();
 
         initPlayer();
+        
+        initRouter();
+    }
+
+    private void initRouter() {
+        // Set the global context
+        Router.sharedRouter().setContext(getApplicationContext());
+        // Symbol-esque params are passed as intent extras to the activities
+        Router.sharedRouter().map("users/:id", UserActivity.class);
+        Router.sharedRouter().map("users/new/:name/:zip", NewUserActivity.class);
     }
 
     /**

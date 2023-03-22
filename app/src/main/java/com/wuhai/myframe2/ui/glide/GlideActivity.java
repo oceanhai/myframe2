@@ -105,6 +105,7 @@ public class GlideActivity extends BaseActivity {
 
     //809x1000
     private String url = "https://b-ssl.duitang.com/uploads/item/201208/30/20120830173930_PBfJE.jpeg";
+    private String url_baidu_logo = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png";
 //    private String url = "https://xghpay-dev.dccnet.com.cn:8088/assets/background/icbcImg.png";
     //1024x768
     private String url2 = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574317078503&di=568c2051ddf3f4b81dae4f094c0667dc&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201312%2F04%2F20131204184148_hhXUT.jpeg";
@@ -170,7 +171,7 @@ public class GlideActivity extends BaseActivity {
          * 圆
          */
         Glide.with(this)
-                .load(url)
+                .load(url_baidu_logo)
                 .circleCrop()
                 .into(image22);
 

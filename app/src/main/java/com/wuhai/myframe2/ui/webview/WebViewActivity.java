@@ -21,7 +21,12 @@ import com.wuhai.myframe2.ui.base.BaseActivity;
  *
  * 创建日期 2019/4/3 11:45
  *
- * 描述：空ac
+ * 描述：
+ *
+ * 1、会跳 ConstraintLayoutActivity，然后把scheme 设置注释掉
+ * 雄安智慧app  mainac 清单文件中加了 android:permission="bfxasi.permission.OEPN_MAIN"
+ * 也是不允许跳转了，没有权限
+ *
  */
 public class WebViewActivity extends BaseActivity {
 

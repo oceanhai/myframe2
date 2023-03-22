@@ -60,6 +60,7 @@ import com.wuhai.myframe2.ui.plugin.PluginActivity;
 import com.wuhai.myframe2.ui.popwindow.PopWindowActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitNetworkRequestActivity;
 import com.wuhai.myframe2.ui.retrofit.RetrofitRxJavaRxLifecycleActivity;
+import com.wuhai.myframe2.ui.routable.RouterMainActivity;
 import com.wuhai.myframe2.ui.rxbus.RxBusAcceptActivity;
 import com.wuhai.myframe2.ui.rxjava.RxJavaActivity;
 import com.wuhai.myframe2.ui.service.ServiceActivity;
@@ -390,6 +391,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn01://ConstraintLayout约束布局
+                //2、清单文件，又追加了一个小测试，scheme和雄安智慧社保相同，h5跳转是会去选择是跳哪一个
                 ConstraintLayoutActivity.startActivity(this);
                 break;
             case R.id.btn02://Retrofit网络请求框架
@@ -665,6 +667,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn75://一些控件
                 WidgetActivity.startActivity(this);
+                break;
+            case R.id.btn76://okdownload框架
+                OkDownloadActivity.startActivity(this);
+                break;
+            case R.id.btn77://routable 框架 我已经把Router 拷贝过来了 需要引用 org.apache.http.legacy.jar
+                RouterMainActivity.startActivity(this);
                 break;
         }
     }
