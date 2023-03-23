@@ -35,6 +35,9 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 
+    <permission android:name="android.permission.USE_BIOMETRIC" />
+
+
     <!--个推 在Android 9.0以上默认不支持http通信，为保证SDK正常使用，maven库中已添加如下属性    -->
     <!--android:usesCleartextTraffic="true"    -->
     <application
@@ -673,6 +676,13 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.routable.NewUserActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+
+        <!--    Android生物识别    -->
+        <activity
+            android:name=".ui.BiometricActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
     </application>

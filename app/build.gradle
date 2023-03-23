@@ -189,6 +189,11 @@ dependencies {
     implementation "com.liulishuo.okdownload:okhttp:1.0.5"
     // provide interface to match filedownloader
     implementation "com.liulishuo.okdownload:filedownloader:1.0.5"
+
+    //
+    implementation "androidx.biometric:biometric:1.1.0"
+
+
 }
 repositories {
     mavenCentral()

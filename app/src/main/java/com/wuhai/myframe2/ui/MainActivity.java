@@ -674,6 +674,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn77://routable 框架 我已经把Router 拷贝过来了 需要引用 org.apache.http.legacy.jar
                 RouterMainActivity.startActivity(this);
                 break;
+            case R.id.btn78://生物识别
+//                FingerprintActivity.startActivity(this);
+                BiometricActivity.startActivity(this);
+                break;
         }
     }
 
