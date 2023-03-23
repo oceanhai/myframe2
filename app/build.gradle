@@ -190,7 +190,7 @@ dependencies {
     // provide interface to match filedownloader
     implementation "com.liulishuo.okdownload:filedownloader:1.0.5"
 
-    //
+    //生物识别
     implementation "androidx.biometric:biometric:1.1.0"
 
 

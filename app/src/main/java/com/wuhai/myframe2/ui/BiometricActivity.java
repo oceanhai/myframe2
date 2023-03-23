@@ -83,6 +83,7 @@ public class BiometricActivity extends AppCompatActivity {
                         .setNegativeButtonText("Cancel") //设置取消按钮
                         .build();
 
+        //TODO 还可以用默认的executor，也就是用两个参数的构造方法，madp中自己的executor就不会走回调，二个参数就可以
         //需要提供的参数callback
         BiometricPrompt biometricPrompt = new BiometricPrompt(BiometricActivity.this,
                 executor, new BiometricPrompt.AuthenticationCallback() {
