@@ -1,10 +1,9 @@
 package com.example.java_lib.designpattern.proxypattern.dynamicproxy;
 
-import java.io.FileOutputStream;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
-import sun.misc.ProxyGenerator;
+//import sun.misc.ProxyGenerator;
 
 /**
  * https://www.cnblogs.com/gonjan-blog/p/6685611.html
@@ -47,17 +46,17 @@ public class ProxyTest {
         stuProxy.handInHomework();
     }
 
-    private static void look() {
-        byte[] classFile = ProxyGenerator.generateProxyClass("$Proxy0", Student.class.getInterfaces());
-        String path = "D:/java_lib/designpattern/StuProxy.class";
-        try(FileOutputStream fos = new FileOutputStream(path)) {
-            fos.write(classFile);
-            fos.flush();
-            System.out.println("代理类class文件写入成功");
-        } catch (Exception e) {
-            System.out.println("写文件错误");
-        }
-    }
+//    private static void look() {
+//        byte[] classFile = ProxyGenerator.generateProxyClass("$Proxy0", Student.class.getInterfaces());
+//        String path = "D:/java_lib/designpattern/StuProxy.class";
+//        try(FileOutputStream fos = new FileOutputStream(path)) {
+//            fos.write(classFile);
+//            fos.flush();
+//            System.out.println("代理类class文件写入成功");
+//        } catch (Exception e) {
+//            System.out.println("写文件错误");
+//        }
+//    }
 
 
 }
