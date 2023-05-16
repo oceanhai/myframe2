@@ -15,7 +15,6 @@ include ':app', ':retrofitnetworkrequest', ':mvvm', ':java_lib', ':myclient', ':
         ':easeui', ':gesture01', ':gesture02', ':gaodeditu', ':aidlserver', ':aidlclient',
         ':broadcastreceiverdemo', ':lotteryticket', ':scan', ':share', ':xupdate-lib',
         ':recyclerview', ':datarequest'
-include ':ardemo'
 include ':AliyunVideoCommon'
 include ':AliyunPlayerBase'
 include ':AlivcPlayerTools'

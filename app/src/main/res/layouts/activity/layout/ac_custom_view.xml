@@ -108,6 +108,11 @@
                 android:textColor="#134BF2"
                 />
         </LinearLayout>
+
+        <com.wuhai.myframe2.ui.customview.view.CustomTextView
+            android:text="48.23%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </ScrollView>
