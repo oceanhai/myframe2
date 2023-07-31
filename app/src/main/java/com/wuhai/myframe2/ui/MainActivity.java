@@ -74,6 +74,7 @@ import com.wuhai.myframe2.ui.theme.ThemeMain3Activity;
 import com.wuhai.myframe2.ui.theme.ThemeMainActivity;
 import com.wuhai.myframe2.ui.thread.ThreadActivity;
 import com.wuhai.myframe2.ui.timer.CountDownTimeActivity;
+import com.wuhai.myframe2.ui.viewmodel.ViewModelActivity;
 import com.wuhai.myframe2.ui.webview.WebViewActivity;
 import com.wuhai.myframe2.ui.widget.WidgetActivity;
 import com.wuhai.myframe2.ui.xingneng.XingNingMainActivity;
@@ -677,6 +678,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn78://生物识别
 //                FingerprintActivity.startActivity(this);
                 BiometricActivity.startActivity(this);
+                break;
+            case R.id.btn79://viewmodel livedata
+                ViewModelActivity.startActivity(this);
                 break;
         }
     }

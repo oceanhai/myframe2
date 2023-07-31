@@ -685,6 +685,12 @@
             android:name=".ui.BiometricActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
+
+        <!--    viewmodel livedata    -->
+        <activity
+            android:name=".ui.viewmodel.ViewModelActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

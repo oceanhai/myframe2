@@ -4,10 +4,16 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.RelativeSizeSpan;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.View;
 
 import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
@@ -15,6 +21,7 @@ import androidx.databinding.DataBindingUtil;
 import com.wuhai.myframe2.R;
 import com.wuhai.myframe2.databinding.AcTestBinding;
 import com.wuhai.myframe2.ui.base.BaseActivity;
+import com.wuhai.myframe2.utils.DensityUtils;
 
 /**
  * 作者 wuhai
@@ -23,7 +30,7 @@ import com.wuhai.myframe2.ui.base.BaseActivity;
  *
  * 描述：空ac
  */
-public class TestActivity extends BaseActivity {
+public class TestActivity extends BaseActivity implements View.OnClickListener {
 
     private AcTestBinding binding;
 
@@ -75,6 +82,16 @@ public class TestActivity extends BaseActivity {
 
         getDeviceId();
 
+        method01();
+    }
+
+    private void method01() {
+        //调用
+        binding.tv01.setTextSize(TypedValue.COMPLEX_UNIT_DIP,
+                DensityUtils.px2dp(this, (float)60));
+        binding.tv01.setTextColor(Color.parseColor("#ff0000"));
+        SpannableString spannableString = changTVsize("53.92%");
+        binding.tv01.setText(spannableString);
     }
 
     /**
@@ -100,7 +117,6 @@ public class TestActivity extends BaseActivity {
     }
 
     private void setListener() {
-
     }
 
     /**
@@ -129,4 +145,22 @@ public class TestActivity extends BaseActivity {
 
         Log.e(TAG, "tel="+tel);
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+        }
+    }
+
+    public static SpannableString changTVsize(String value) {
+        SpannableString spannableString = new SpannableString(value);
+        if (value.contains(".")) {
+            spannableString.setSpan(new RelativeSizeSpan(0.6f),
+                    value.indexOf("."), value.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+        return spannableString;
+    }
+
+
+
 }
