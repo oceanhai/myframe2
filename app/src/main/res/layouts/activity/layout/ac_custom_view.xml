@@ -113,6 +113,11 @@
             android:text="48.23%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:background="@drawable/bg_home_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </ScrollView>

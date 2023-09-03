@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bg_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/bg_inner_layout"
+        android:layout_width="325dp"
+        android:layout_height="152dp"
+        android:background="@drawable/global_white_corners_10">
+
+        <TextView
+            android:id="@+id/dl_title_tv"
+            android:visibility="visible"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:text="预留信息"
+            android:textSize="17dp"
+            android:textColor="#222222"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/dl_message_tv"
+            android:layout_marginTop="59dp"
+            android:layout_centerHorizontal="true"
+            android:text="预留信息内容，这里是预留信息内容…"
+            android:textColor="#222222"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_above="@+id/bottom_layout"
+            android:background="#E6E6E6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:id="@+id/bottom_layout"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:id="@+id/dl_cancel_tv"
+                android:gravity="center"
+                android:text="退出 "
+                android:textColor="#222222"
+                android:textSize="15dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+            <View
+                android:background="#E6E6E6"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/dl_confirm_tv"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="创建"
+                android:textColor="#008E8F"
+                android:textSize="15dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

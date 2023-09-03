@@ -101,6 +101,7 @@ public class MyLuck {
         if(redSetNum == null){
             return getLotteryResRedBall(redNum);
         }
+        System.out.println("双色球 排除的红球：" + redSetNum);
 
         int excludeRedNum = redSetNum.size();
         if(33-excludeRedNum<=redNum){
@@ -119,20 +120,22 @@ public class MyLuck {
             }
         }
 
-        System.out.println("红球：" + set);
+        System.out.println("双色球 红球：" + set);
 
         return set.toString();
     }
 
     /**
      * 排除特定红球和蓝球 之蓝球
-     * @param blueSetNum
+     * @param blueSetNum        要排除的篮球数set集合
+     * @param blueNum           篮球数量
      * @return
      */
     public static String getLotteryResBlueBall(Set<String> blueSetNum, int blueNum){
         if(blueSetNum == null){
             return getLotteryResBlueBall(blueNum);
         }
+        System.out.println("双色球 排除的篮球：" + blueSetNum);
 
         int excludeBlueNum = blueSetNum.size();
         if(16-excludeBlueNum<=blueNum){
@@ -151,7 +154,7 @@ public class MyLuck {
             }
         }
 
-        System.out.println("蓝球：" + set2);
+        System.out.println("双色球 蓝球：" + set2);
 
         return set2.toString();
     }
@@ -199,7 +202,7 @@ public class MyLuck {
             }
         }
 
-        System.out.println("红球："+set);
+        System.out.println("双色球 红球："+set);
 
         return set.toString();
     }
@@ -218,7 +221,7 @@ public class MyLuck {
             }
         }
 
-        System.out.println("蓝球："+set2);
+        System.out.println("双色球 蓝球："+set2);
 
         return set2.toString();
     }

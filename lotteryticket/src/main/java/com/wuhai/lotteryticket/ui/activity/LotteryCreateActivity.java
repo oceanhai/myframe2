@@ -3,6 +3,7 @@ package com.wuhai.lotteryticket.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -30,9 +31,13 @@ import com.wuhai.lotteryticket.utils.MathUtils;
 import com.wuhai.lotteryticket.utils.MonetaryUnitUtil;
 import com.wuhai.lotteryticket.utils.MyLuck;
 import com.wuhai.lotteryticket.utils.StringUtil;
+import com.wuhai.lotteryticket.widget.autowrap.AutomaticWrapLayout;
+import com.wuhai.lotteryticket.widget.autowrap.AutomaticWrapModel;
 import com.wuhai.lotteryticket.widget.popupwindow.ListPopWindow;
 import com.wuhai.lotteryticket.widget.popupwindow.PositionCanChangePopupWindow;
+import com.wuhai.retrofit.utils.LogUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -102,6 +107,39 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
     private void initData() {
         List<Lottery> list = mLotteryModelImpl.queryLotteryAll();
         mLotteryCreateAdapter.setData(list);
+
+        //红球
+        String content1 = "<font color='#5f666d'>想要排除的</font><font color='#f10215'>红球</font>";
+        binding.lotteryRedHintTv.setText(Html.fromHtml(content1));
+        List<AutomaticWrapModel> list1 = new ArrayList<>();
+        for (int x=1;x<=33;x++){
+            AutomaticWrapModel model = new AutomaticWrapModel();
+            if(x<10){
+                model.setCaseText("0"+x);
+            }else{
+                model.setCaseText(""+x);
+            }
+            list1.add(model);
+        }
+        binding.caseview1.initView(list1,
+                AutomaticWrapLayout.CaseViewType.CASE_VIEW_TYPE_MULTIPLE_NORMAL,
+                AutomaticWrapLayout.BallType.RED);
+        //篮球
+        String content2 = "<font color='#5f666d'>想要排除的</font><font color='#616bf0'>篮球</font>";
+        binding.lotteryBlueHintTv.setText(Html.fromHtml(content2));
+        List<AutomaticWrapModel> list2 = new ArrayList<>();
+        for (int x=1;x<=16;x++){
+            AutomaticWrapModel model = new AutomaticWrapModel();
+            if(x<10){
+                model.setCaseText("0"+x);
+            }else{
+                model.setCaseText(""+x);
+            }
+            list2.add(model);
+        }
+        binding.caseview2.initView(list2,
+                AutomaticWrapLayout.CaseViewType.CASE_VIEW_TYPE_MULTIPLE_NORMAL,
+                AutomaticWrapLayout.BallType.BLUE);
     }
 
 
@@ -298,15 +336,32 @@ public class LotteryCreateActivity extends NewLoadingBaseActivity implements Vie
                  * 获取列表中 需要排除的 红球和蓝球
                  */
                 Map<String, Set<String>> map = null;
-                Set<String> redNumSet = null;
-                Set<String> blueNumSet = null;
+                Set<String> redNumSet = new TreeSet<>();
+                Set<String> blueNumSet = new TreeSet<>();
                 if(mLotteryCreateAdapter != null){
                     map = mLotteryCreateAdapter.getFactorSet();
                     if(map!=null && !map.isEmpty()){
                         redNumSet = map.get("red");
                         blueNumSet = map.get("blue");
                     }
+                    LogUtil.v("双色球","列表中要排除的 红球:"+redNumSet.toString()+
+                            ",篮球:"+blueNumSet.toString());
                 }
+
+                /**
+                 * 获取 多选框中，想要排除的红球和篮球
+                 */
+                Set<String> redBallSet = binding.caseview1.getBallSet();
+                Set<String> blueBallSet = binding.caseview2.getBallSet();
+                if(!redBallSet.isEmpty()){
+                    redNumSet.addAll(redBallSet);
+                }
+                if(!blueBallSet.isEmpty()){
+                    blueNumSet.addAll(blueBallSet);
+                }
+                LogUtil.v("双色球","主动选择排除的 红球:"+redBallSet+
+                        ",篮球:"+blueBallSet);
+
 
                 if(binding.lotteryFactorCb.isChecked()){//排除上期号码
                     if(redNumSet != null && !redNumSet.isEmpty()) {//排除列表选中的红蓝球+上期红蓝球

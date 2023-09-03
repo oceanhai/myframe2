@@ -301,6 +301,35 @@
                         android:textColor="@color/text_color_black_one"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/lottery_red_hint_tv"
+                        android:paddingLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="想要排除的红球"
+                        android:layout_marginTop="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <com.wuhai.lotteryticket.widget.autowrap.AutomaticWrapLayout
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:id="@+id/caseview1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/lottery_blue_hint_tv"
+                        android:paddingLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="想要排除的蓝球"
+                        android:layout_marginTop="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <com.wuhai.lotteryticket.widget.autowrap.AutomaticWrapLayout
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:id="@+id/caseview2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
                     <include layout="@layout/global_horizontal_gray_solid_line1"/>
                 </LinearLayout>
 

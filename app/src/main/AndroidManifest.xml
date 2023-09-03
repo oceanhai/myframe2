@@ -289,7 +289,7 @@
 
         <!--  日期选择      -->
         <activity
-            android:name=".ui.dialog.DialogChooseDateActivity"
+            android:name=".ui.dialog.DialogActivity"
             android:screenOrientation="portrait"/>
 
         <!--  地址选择      -->
@@ -584,11 +584,6 @@
             android:name=".ui.xingneng.UiOverDrawActivity"
             android:screenOrientation="portrait"/>
 
-        <!--    DatePickerDialog     -->
-        <activity
-            android:name=".ui.dialog.DatePickerDialogActivity"
-            android:screenOrientation="portrait"/>
-
         <!--    db     -->
         <activity
             android:name=".ui.db.DBActivity"
@@ -689,6 +684,12 @@
         <!--    viewmodel livedata    -->
         <activity
             android:name=".ui.viewmodel.ViewModelActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!--    utils 测试ac    -->
+        <activity
+            android:name=".ui.UtilsActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
     </application>

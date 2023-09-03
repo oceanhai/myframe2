@@ -87,6 +87,29 @@ public class DialogManager {
 
 	/**
 	 * Show dialog with single button.
+	 * @param context
+	 * @param title_str
+	 * @param msg_str
+	 * @param ok_str
+	 * @param cancelable
+	 * @param click
+	 * @return
+	 */
+	public static AlertDialog showSingleButton(Context context, String title_str,
+											   String msg_str, String ok_str, boolean cancelable, OnClickListener click) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setTitle(title_str);
+		builder.setMessage(msg_str);
+		builder.setPositiveButton(ok_str, click);
+		AlertDialog dialog = builder.create();
+		dialog.setCancelable(cancelable);
+		dialog.setCanceledOnTouchOutside(true);
+		dialog.show();
+		return dialog;
+	}
+
+	/**
+	 * Show dialog with single button.
 	 * 
 	 * @param context
 	 * @param title_rid

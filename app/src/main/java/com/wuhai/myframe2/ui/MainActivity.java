@@ -36,8 +36,7 @@ import com.wuhai.myframe2.ui.countdownview.CountdownViewActivity;
 import com.wuhai.myframe2.ui.customview.CustomViewActivity;
 import com.wuhai.myframe2.ui.dagger2.Dagger2Activity;
 import com.wuhai.myframe2.ui.db.DBActivity;
-import com.wuhai.myframe2.ui.dialog.DatePickerDialogActivity;
-import com.wuhai.myframe2.ui.dialog.DialogChooseDateActivity;
+import com.wuhai.myframe2.ui.dialog.DialogActivity;
 import com.wuhai.myframe2.ui.dkplayer.DkplayerActivity;
 import com.wuhai.myframe2.ui.eventbus.EnventbusActivity;
 import com.wuhai.myframe2.ui.eventtransmit.EventTransmitActivity;
@@ -498,8 +497,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn23://XUpdate轻量级升级框架
                 Toast.makeText(this, "还没加上去呢", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.btn24://日期选择 联动
-                DialogChooseDateActivity.startActivity(this);
+            case R.id.btn24://dialog
+                DialogActivity.startActivity(this);
                 break;
             case R.id.btn25://地址选择 联动
                 AddressChooseActivity.startActivity(this);
@@ -629,8 +628,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn64://权限设置
                 gotoPermission();
                 break;
-            case R.id.btn65://DatePickerDialog
-                DatePickerDialogActivity.startActivity(this);
+            case R.id.btn65://utils 测试ac
+                UtilsActivity.startActivity(this);
                 break;
             case R.id.btn66://db
                 DBActivity.startActivity(this);
