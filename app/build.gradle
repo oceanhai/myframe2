@@ -197,6 +197,9 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-livedata:2.3.1'
 
+    //pdf
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+
 }
 repositories {
     mavenCentral()

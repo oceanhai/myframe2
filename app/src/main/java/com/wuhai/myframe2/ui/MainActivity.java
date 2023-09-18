@@ -68,6 +68,7 @@ import com.wuhai.myframe2.ui.sound.SoundActivity;
 import com.wuhai.myframe2.ui.stickyheaderlistview.ui.StickyHeaderListView;
 import com.wuhai.myframe2.ui.study.LoginActivity;
 import com.wuhai.myframe2.ui.study.SnackBarActivity;
+import com.wuhai.myframe2.ui.teststartactivityforresult.FirstActivity;
 import com.wuhai.myframe2.ui.theme.ThemeMain2Activity;
 import com.wuhai.myframe2.ui.theme.ThemeMain3Activity;
 import com.wuhai.myframe2.ui.theme.ThemeMainActivity;
@@ -264,6 +265,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView btn581;
     @BindView(R.id.btn58_2)
     TextView btn582;
+    @BindView(R.id.btn81)
+    TextView btn81;
+    @BindView(R.id.btn82)
+    TextView btn82;
+    @BindView(R.id.btn83)
+    TextView btn83;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -385,6 +392,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn78.setOnClickListener(this);
         btn79.setOnClickListener(this);
         btn80.setOnClickListener(this);
+        btn81.setOnClickListener(this);
+        btn82.setOnClickListener(this);
+        btn83.setOnClickListener(this);
     }
 
     @Override
@@ -680,6 +690,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn79://viewmodel livedata
                 ViewModelActivity.startActivity(this);
+                break;
+            case R.id.btn80://activity生命周期
+                FirstActivity.startActivity(this);
                 break;
         }
     }

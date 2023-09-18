@@ -692,6 +692,36 @@
             android:name=".ui.UtilsActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
+
+        <!--   pdf    -->
+        <activity
+            android:name=".ui.PdfActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.teststartactivityforresult.FirstActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.teststartactivityforresult.SecondActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.teststartactivityforresult.ThirdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.teststartactivityforresult.SingleTopActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.teststartactivityforresult.SingleTaskActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.teststartactivityforresult.SingleInstanceActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
